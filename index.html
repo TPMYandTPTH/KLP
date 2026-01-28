@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TP 채용 말레이시아·태국 | 한국어 인재 채용</title>
+<meta name="description" content="Teleperformance(TP) 말레이시아·태국 한국어 인재 채용. 전 세계 100개국 이상에서 운영되는 글로벌 BPO 선두 기업. 비자 지원, 항공권, 숙소까지 회사가 지원합니다.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="TP 채용 말레이시아·태국 | 한국어 인재 채용">
+<meta property="og:description" content="한국어로 시작하는 해외 커리어. 말레이시아·태국에서 한국어 실력을 살려 일하세요.">
+<meta property="og:locale" content="ko_KR">
+<link rel="icon" href="photos/TPLogo11.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tp-black: #000000;
+  --tp-dark: #1a1a1a;
+  --tp-charcoal: #2d2d2d;
+  --tp-gray-dark: #4a4a4a;
+  --tp-gray: #666666;
+  --tp-gray-light: #999999;
+  --tp-silver: #cccccc;
+  --tp-light: #e5e5e5;
+  --tp-off: #f5f5f5;
+  --tp-white: #ffffff;
+  --gold-primary: #FFD700;
+  --gold-light: #FFAA00;
+  --gold-dark: #E6B800;
+  --gold-pale: #FFFBEB;
+  --max: 1050px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.16);
+  --shadow-gold: 0 4px 12px rgba(255,215,0,0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--tp-dark);
+  line-height: 1.75;
+  background: var(--tp-white);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--tp-light);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.75rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tp-black);
+}
+.brand-tagline {
+  font-size: 0.7rem;
+  color: var(--tp-gray);
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+nav a {
+  font-size: 0.85rem;
+  position: relative;
+  transition: all 0.3s;
+  padding: 0.2rem 0;
+  white-space: nowrap;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: width 0.3s ease;
+}
+nav a:hover::after, nav a:focus::after { width: 100%; }
+nav a[aria-current="page"] { font-weight: 600; }
+nav a[aria-current="page"]::after {
+  width: 100%;
+  background: var(--tp-black);
+}
+.apply-btn {
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--tp-black);
+  transition: all 0.3s;
+}
+.apply-btn:hover, .apply-btn:focus {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border-color: var(--gold-primary);
+}
+.apply-btn::after { display: none; }
+
+/* Mobile Menu */
+.mobile-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid var(--tp-black);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+.mobile-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--tp-black);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+.mobile-toggle span:nth-child(1) { top: 10px; }
+.mobile-toggle span:nth-child(2) { top: 17px; }
+.mobile-toggle span:nth-child(3) { bottom: 10px; }
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateX(-50%) rotate(45deg);
+  top: 17px;
+}
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateX(-50%) rotate(-45deg);
+  bottom: 17px;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--tp-white);
+  border-top: 1px solid var(--tp-light);
+  box-shadow: var(--shadow-lg);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  z-index: 999;
+}
+.mobile-menu.active { display: block; }
+.mobile-menu ul { list-style: none; padding: 0.875rem 0; }
+.mobile-menu a {
+  display: block;
+  padding: 0.625rem 1.25rem;
+  border-bottom: 1px solid var(--tp-light);
+  transition: background 0.3s;
+}
+.mobile-menu a:hover, .mobile-menu a:focus {
+  background: var(--gold-pale);
+}
+
+/* Hero */
+.hero {
+  min-height: 75vh;
+  background: linear-gradient(135deg, var(--tp-black) 0%, var(--tp-charcoal) 50%, var(--tp-dark) 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem 20px;
+}
+.hero::before {
+  content: '한';
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  font-size: clamp(15rem, 30vw, 35rem);
+  font-family: 'Noto Serif KR', serif;
+  color: var(--tp-white);
+  opacity: 0.03;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-weight: 900;
+}
+.hero-container {
+  max-width: var(--max);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--gold-primary);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  font-family: 'Noto Serif KR', serif;
+  letter-spacing: 0.02em;
+  min-height: 1.5em;
+}
+#hero-rotate {
+  display: inline-block;
+  min-width: 1px;
+}
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--tp-silver);
+  max-width: 620px;
+  margin-bottom: 1.75rem;
+  line-height: 1.9;
+}
+.hero-cta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.btn {
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s;
+  text-align: center;
+  border: 2px solid var(--gold-primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn:focus {
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 4px;
+}
+.btn-solid {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+}
+.btn-solid:hover {
+  background: var(--tp-white);
+  color: var(--tp-black);
+  border-color: var(--tp-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--gold-primary);
+}
+.btn-outline:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  background: transparent;
+  border: 2px solid var(--tp-white);
+  color: var(--tp-white);
+}
+.btn-ghost:hover {
+  background: var(--tp-white);
+  color: var(--tp-black);
+}
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+.hero-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.hero-pill {
+  background: rgba(255,255,255,0.1);
+  color: var(--tp-silver);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.hero-pill:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border-color: var(--gold-primary);
+}
+
+/* Social Proof Banner */
+.social-proof-banner {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  padding: 1rem 20px;
+  text-align: center;
+}
+.social-proof-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.proof-item .number {
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+/* Container & Section */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.625rem;
+  font-weight: 900;
+  color: var(--tp-black);
+  letter-spacing: 0.02em;
+  font-family: 'Noto Serif KR', serif;
+}
+.section-subtitle {
+  text-align: center;
+  color: var(--tp-gray);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+.section-title-decorated {
+  position: relative;
+  padding-bottom: 1rem;
+}
+.section-title-decorated::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+/* Why TP Section */
+.why-tp {
+  padding: 60px 20px;
+  background: var(--tp-white);
+}
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.why-card {
+  background: var(--tp-white);
+  border: 2px solid var(--tp-light);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gold-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.why-card:hover::before { transform: scaleX(1); }
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--gold-primary);
+}
+.why-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.why-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--tp-black);
+}
+.why-card p {
+  font-size: 0.85rem;
+  color: var(--tp-gray);
+  line-height: 1.7;
+}
+
+/* Locations Section */
+.locations {
+  padding: 60px 20px;
+  background: var(--tp-off);
+}
+.location-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.location-card {
+  background: var(--tp-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+}
+.location-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.location-card-content {
+  padding: 1.25rem;
+}
+.location-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.location-card .country {
+  font-size: 0.75rem;
+  color: var(--tp-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+.location-card p {
+  font-size: 0.85rem;
+  color: var(--tp-gray-dark);
+  line-height: 1.6;
+}
+
+/* Benefits Overview */
+.benefits-overview {
+  padding: 60px 20px;
+  background: var(--tp-white);
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.benefit-card {
+  background: var(--tp-white);
+  border: 1px solid var(--tp-light);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s;
+}
+.benefit-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--gold-primary);
+}
+.benefit-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.benefit-text h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: var(--tp-black);
+}
+.benefit-text p {
+  font-size: 0.75rem;
+  color: var(--tp-gray);
+}
+
+/* Quick Stats */
+.quick-stats {
+  padding: 60px 20px;
+  background: var(--tp-black);
+  color: var(--tp-white);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  text-align: center;
+}
+.stat-item {
+  padding: 1.5rem;
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255,215,0,0.05), transparent);
+  transition: all 0.3s;
+}
+.stat-item:hover {
+  border-color: var(--gold-primary);
+  transform: translateY(-3px);
+}
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--gold-primary);
+  font-family: 'Noto Serif KR', serif;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--tp-silver);
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 60px 20px;
+  background: var(--tp-off);
+}
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.testimonial {
+  background: var(--tp-white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  position: relative;
+  border: 1px solid var(--tp-light);
+  transition: all 0.3s;
+}
+.testimonial:hover {
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+  border-color: var(--gold-primary);
+}
+.testimonial::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--gold-primary);
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-family: Georgia, serif;
+  opacity: 0.5;
+}
+.testimonial-content {
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--tp-dark);
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-primary);
+}
+.author-info strong {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.1rem;
+}
+.author-info span {
+  color: var(--tp-gray);
+  font-size: 0.75rem;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--tp-charcoal) 0%, var(--tp-black) 100%);
+  color: var(--tp-white);
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+.cta-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  text-align: center;
+}
+.cta-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: 'Noto Serif KR', serif;
+  margin-bottom: 1rem;
+  color: var(--gold-primary);
+}
+.cta-section p {
+  color: var(--tp-silver);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cta-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: var(--max);
+  margin: 2rem auto 0;
+}
+.cta-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s;
+}
+.cta-link:hover {
+  background: rgba(255,215,0,0.1);
+  border-color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+.cta-link-icon {
+  font-size: 1.5rem;
+}
+.cta-link-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--tp-white);
+  margin-bottom: 0.2rem;
+}
+.cta-link-text span {
+  font-size: 0.8rem;
+  color: var(--tp-gray-light);
+}
+.cta-link-arrow {
+  margin-left: auto;
+  color: var(--gold-primary);
+  font-weight: 700;
+}
+
+/* Footer */
+footer {
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 40px 20px 16px;
+  position: relative;
+  overflow: hidden;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+.footer-content {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.footer-logo img {
+  width: 42px;
+  height: 42px;
+  filter: brightness(0) invert(1);
+}
+.footer-logo-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.footer-desc {
+  opacity: 0.8;
+  line-height: 1.75;
+  font-size: 0.85rem;
+}
+.footer-section h3 {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  color: var(--gold-primary);
+}
+.footer-section ul { list-style: none; }
+.footer-section li { margin-bottom: 0.3rem; }
+.footer-section a {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  font-size: 0.8rem;
+}
+.footer-section a:hover, .footer-section a:focus {
+  opacity: 1;
+  color: var(--gold-light);
+  outline: none;
+}
+.badges {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+.badges .badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.footer-cta { margin-top: 1rem; }
+.footer-bottom {
+  text-align: center;
+  padding-top: 12px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+.footer-bottom a {
+  color: var(--tp-white);
+  text-decoration: underline;
+  margin: 0 0.3rem;
+}
+.ssm-info {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.5rem;
+}
+
+/* Floating Buttons */
+.floating-apply {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+  z-index: 999;
+  transition: all 0.3s;
+  font-size: 0.85rem;
+}
+.floating-apply:hover, .floating-apply:focus {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255,215,0,0.5);
+  outline: none;
+}
+.floating-casual {
+  position: fixed;
+  bottom: 20px;
+  right: 130px;
+  background: var(--tp-white);
+  color: var(--tp-black);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  z-index: 998;
+  transition: all 0.3s;
+  border: 2px solid var(--tp-black);
+  font-size: 0.85rem;
+}
+.floating-casual:hover, .floating-casual:focus {
+  transform: scale(1.05);
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-gold);
+  outline: none;
+}
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--tp-white);
+  border: 2px solid var(--gold-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 997;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--gold-dark);
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav { display: none; }
+  .mobile-toggle { display: block; }
+  .why-cards { grid-template-columns: 1fr; }
+  .location-cards { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .testimonial-cards { grid-template-columns: 1fr; }
+  .cta-links { grid-template-columns: 1fr; }
+  .floating-casual { bottom: 80px; right: 20px; }
+  .back-to-top { bottom: 140px; }
+}
+@media (max-width: 768px) {
+  .hero h1 { font-size: 1.8rem; }
+  .section-title { font-size: 1.4rem; }
+  .footer-content { grid-template-columns: 1fr; text-align: center; }
+  .floating-apply { bottom: 14px; right: 14px; padding: 0.625rem 1rem; font-size: 0.8rem; }
+  .social-proof-inner { flex-direction: column; gap: 0.5rem; }
+}
+@media (max-width: 640px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">본문으로 이동</a>
+
+<!-- Header -->
+<header role="banner">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="photos/TPLogo11.png" alt="TP" width="40" height="40">
+      <div class="brand-text">
+        <span class="brand-name">TP</span>
+        <span class="brand-tagline">말레이시아·태국</span>
+      </div>
+    </a>
+    <nav aria-label="주요 내비게이션">
+      <ul>
+        <li><a href="index.html" aria-current="page">홈</a></li>
+        <li><a href="about-tp.html">회사소개</a></li>
+        <li><a href="salary-and-benefits.html">복리후생</a></li>
+        <li><a href="hiring-process.html">채용프로세스</a></li>
+        <li><a href="why-malaysia-thailand.html">도시소개</a></li>
+        <li><a href="relocation-visa.html">비자지원</a></li>
+        <li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="apply-btn">지원하기</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="모바일 내비게이션">
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="about-tp.html">회사 소개</a></li>
+      <li><a href="salary-and-benefits.html">급여 및 복리후생</a></li>
+      <li><a href="hiring-process.html">채용 프로세스</a></li>
+      <li><a href="open-jobs.html">채용 공고</a></li>
+      <li><a href="why-malaysia-thailand.html">도시 소개</a></li>
+      <li><a href="relocation-visa.html">비자·이주 지원</a></li>
+      <li><a href="casual-interview.html">캐주얼 면담</a></li>
+      <li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="apply-btn">지원하기</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <h1><span id="hero-rotate"></span></h1>
+      <p class="hero-subtitle">
+        말레이시아·태국에서 한국어 실력을 살려 일하세요.<br>
+        비자 지원, 항공권, 숙소까지 회사가 지원합니다.
+      </p>
+      <div class="hero-cta">
+        <a href="open-jobs.html" class="btn btn-solid">채용 공고 보기</a>
+        <a href="casual-interview.html" class="btn btn-outline">캐주얼 상담 예약</a>
+        <a href="https://line.me/R/ti/p/@286nmdsd" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LINE 문의</a>
+      </div>
+      <div class="hero-pills">
+        <a href="relocation-visa.html" class="hero-pill">✈️ 비자 지원</a>
+        <a href="salary-and-benefits.html" class="hero-pill">💰 복리후생</a>
+        <a href="why-malaysia-thailand.html" class="hero-pill">🌴 현지 생활</a>
+        <a href="testimonials.html" class="hero-pill">💬 직원 후기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Banner -->
+  <section class="social-proof-banner">
+    <div class="social-proof-inner">
+      <div class="proof-item"><span class="number">500+</span><span>한국어 직원 재직 중</span></div>
+      <div class="proof-item"><span class="number">6</span><span>년 연속 Great Place to Work®</span></div>
+      <div class="proof-item"><span class="number">5</span><span>년 연속 World's Best Workplaces™</span></div>
+    </div>
+  </section>
+
+  <!-- Why TP Section -->
+  <section class="why-tp">
+    <div class="container">
+      <h2 class="section-title section-title-decorated">왜 TP인가요?</h2>
+      <p class="section-subtitle">전 세계가 인정한 글로벌 기업에서 새로운 커리어를 시작하세요</p>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-card-icon">🌍</div>
+          <h3>글로벌 기업</h3>
+          <p>전 세계 100개국 이상에서 운영되는 글로벌 BPO 선두 기업입니다. 50만 명 이상의 직원과 함께합니다.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">🗣️</div>
+          <h3>한국어 지원</h3>
+          <p>채용 과정부터 입사 후까지 한국어로 지원합니다. 처음 해외 취업도 걱정 없이 시작할 수 있습니다.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">📈</div>
+          <h3>성장 기회</h3>
+          <p>체계적인 교육 프로그램과 명확한 커리어 패스로 빠른 성장이 가능합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hiring Locations -->
+  <section class="locations">
+    <div class="container">
+      <h2 class="section-title section-title-decorated">근무 가능 도시</h2>
+      <p class="section-subtitle">동남아시아의 매력적인 3개 도시에서 일할 수 있습니다</p>
+      <div class="location-cards">
+        <a href="why-malaysia-thailand.html#kl" class="location-card">
+          <img src="photos/KL%201.jpg" alt="쿠알라룸푸르" loading="lazy">
+          <div class="location-card-content">
+            <h3>쿠알라룸푸르 (KL)</h3>
+            <p class="country">말레이시아</p>
+            <p>다문화가 공존하는 국제도시. 한국 마트, 한국 식당이 많아 생활이 편리합니다.</p>
+          </div>
+        </a>
+        <a href="why-malaysia-thailand.html#penang" class="location-card">
+          <img src="photos/Penang.jpg" alt="페낭" loading="lazy">
+          <div class="location-card-content">
+            <h3>페낭 (Penang)</h3>
+            <p class="country">말레이시아</p>
+            <p>유네스코 세계문화유산 도시. 여유로운 섬 생활과 저렴한 물가를 누릴 수 있습니다.</p>
+          </div>
+        </a>
+        <a href="why-malaysia-thailand.html#bangkok" class="location-card">
+          <img src="photos/Bangkok%202.jpg" alt="방콕" loading="lazy">
+          <div class="location-card-content">
+            <h3>방콕 (Bangkok)</h3>
+            <p class="country">태국</p>
+            <p>동남아의 허브 도시. BTS/MRT로 편리한 출퇴근, 활기찬 도시 생활을 경험하세요.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Overview -->
+  <section class="benefits-overview">
+    <div class="container">
+      <h2 class="section-title section-title-decorated">복리후생 한눈에 보기</h2>
+      <p class="section-subtitle">안정적인 해외 생활을 위한 든든한 지원</p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🏥</div>
+          <div class="benefit-text">
+            <h4>의료보험</h4>
+            <p>입사 첫날부터 적용되는 의료보험</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌴</div>
+          <div class="benefit-text">
+            <h4>연차</h4>
+            <p>말레이시아 15일 / 태국 12일</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📚</div>
+          <div class="benefit-text">
+            <h4>언어 교육</h4>
+            <p>GoFluent, Language Bootcamp</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📋</div>
+          <div class="benefit-text">
+            <h4>비자 지원</h4>
+            <p>Work Permit 비용 회사 부담</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">✈️</div>
+          <div class="benefit-text">
+            <h4>항공권 제공</h4>
+            <p>편도 항공권 지원</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🏨</div>
+          <div class="benefit-text">
+            <h4>도착 숙소</h4>
+            <p>6박 7일 호텔 제공 (말레이시아)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="quick-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">한국어 직원</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">개 도시</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2~3</div>
+          <div class="stat-label">주 채용 기간</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">비자 회사 지원</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title section-title-decorated">직원 후기</h2>
+      <p class="section-subtitle">실제 근무 중인 직원들의 생생한 이야기</p>
+      <div class="testimonial-cards">
+        <div class="testimonial">
+          <p class="testimonial-content">한국어로 면접 보고, 한국어로 일해요. 영어는 천천히 늘리면 됩니다. 생각보다 적응이 빨랐어요.</p>
+          <div class="testimonial-author">
+            <img src="photos/TPLogo11.png" alt="K.M" class="author-img">
+            <div class="author-info">
+              <strong>K.M</strong>
+              <span>고객서비스, 쿠알라룸푸르</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-content">물가가 저렴해서 저축도 하면서 여유롭게 생활해요. 주말마다 동남아 여행 다니는 재미가 있습니다.</p>
+          <div class="testimonial-author">
+            <img src="photos/TPLogo11.png" alt="J.H" class="author-img">
+            <div class="author-info">
+              <strong>J.H</strong>
+              <span>기술지원, 페낭</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-content">입사 1년 만에 팀 리더로 승진했어요. 노력하면 인정받는 문화가 좋습니다.</p>
+          <div class="testimonial-author">
+            <img src="photos/TPLogo11.png" alt="S.Y" class="author-img">
+            <div class="author-info">
+              <strong>S.Y</strong>
+              <span>팀 리더, 방콕</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>다음 단계로 나아가세요</h2>
+      <p>처음이라 걱정되시나요? 저희가 도와드립니다.<br>궁금한 점이 있으면 부담 없이 상담부터 시작하세요.</p>
+      <div class="cta-links">
+        <a href="open-jobs.html" class="cta-link">
+          <span class="cta-link-icon">📋</span>
+          <div class="cta-link-text">
+            <strong>채용 공고</strong>
+            <span>현재 모집 중인 포지션 확인</span>
+          </div>
+          <span class="cta-link-arrow">→</span>
+        </a>
+        <a href="relocation-visa.html" class="cta-link">
+          <span class="cta-link-icon">✈️</span>
+          <div class="cta-link-text">
+            <strong>비자·이주 지원</strong>
+            <span>전 과정 회사 지원</span>
+          </div>
+          <span class="cta-link-arrow">→</span>
+        </a>
+        <a href="casual-interview.html" class="cta-link">
+          <span class="cta-link-icon">💬</span>
+          <div class="cta-link-text">
+            <strong>캐주얼 상담 예약</strong>
+            <span>30분, 부담 없는 상담</span>
+          </div>
+          <span class="cta-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="photos/TPLogo11.png" alt="TP">
+        <span class="footer-logo-text">TP</span>
+      </div>
+      <p class="footer-desc">
+        전 세계 100개국 이상에서 운영되는 글로벌 BPO 기업<br>
+        한국어 인재의 새로운 커리어를 지원합니다
+      </p>
+      <div class="badges">
+        <span class="badge-item">🏆 말레이시아 최고의 직장 6년 연속</span>
+        <span class="badge-item">🏆 글로벌 최고의 직장 5년 연속</span>
+      </div>
+      <div class="footer-cta">
+        <a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-sm">지원하기</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>회사 정보</h3>
+      <ul>
+        <li><a href="about-tp.html">회사 소개</a></li>
+        <li><a href="salary-and-benefits.html">급여 복리후생</a></li>
+        <li><a href="office-environment.html">근무 환경</a></li>
+        <li><a href="ta-team.html">채용팀 소개</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>채용 정보</h3>
+      <ul>
+        <li><a href="open-jobs.html">채용 공고</a></li>
+        <li><a href="hiring-process.html">채용 프로세스</a></li>
+        <li><a href="faq.html">자주 묻는 질문</a></li>
+        <li><a href="casual-interview.html">문의하기</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>생활 정보</h3>
+      <ul>
+        <li><a href="why-malaysia-thailand.html">도시 소개</a></li>
+        <li><a href="relocation-visa.html">이주 지원</a></li>
+        <li><a href="daily-life-malaysia.html">현지 생활</a></li>
+        <li><a href="https://line.me/R/ti/p/@286nmdsd" target="_blank" rel="noopener noreferrer">LINE 공식</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="ssm-info">Teleperformance Malaysia Sdn Bhd SSM: 201601023769 (1194708-K)</p>
+    <p>© 2026 TP. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Floating Buttons -->
+<a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="floating-apply">지원하기</a>
+<a href="casual-interview.html" class="floating-casual">상담 예약</a>
+<button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
+
+<script>
+// Typewriter Effect
+(function(){
+  const el = document.getElementById('hero-rotate');
+  if (!el) return;
+  const lines = [
+    '한국어로 시작하는 해외 커리어',
+    '동남아시아에서 새로운 삶을 시작하세요',
+    '전 세계 100개국, 50만 직원과 함께'
+  ];
+  const speed = 60, hold = 2000, gap = 500;
+  let i = 0, j = 0, del = false;
+  function tick() {
+    const text = lines[i];
+    el.textContent = del ? text.slice(0, j--) : text.slice(0, j++);
+    if (!del && j > text.length) { del = true; setTimeout(tick, hold); return; }
+    if (del && j < 0) { del = false; i = (i + 1) % lines.length; setTimeout(tick, gap); return; }
+    setTimeout(tick, speed);
+  }
+  tick();
+})();
+
+// Mobile Menu
+(function(){
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileMenu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', function() {
+      toggle.classList.toggle('active');
+      menu.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
+    });
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();
+
+// Back to Top
+(function(){
+  const backToTop = document.getElementById('backToTop');
+  if (!backToTop) return;
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
