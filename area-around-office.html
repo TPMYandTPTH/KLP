@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周边环境 | TP招聘 马来西亚·泰国</title>
+<meta name="description" content="各工作地点（吉隆坡/槟城/曼谷）的周边环境展示。通勤、美食、咖啡、购物、公园等日常生活体验。">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="photos/TPLogo11.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --tp-black: #000;
+  --tp-dark: #1a1a1a;
+  --tp-charcoal: #2d2d2d;
+  --tp-gray-dark: #4a4a4a;
+  --tp-gray: #666;
+  --tp-gray-light: #999;
+  --tp-silver: #ccc;
+  --tp-light: #e5e5e5;
+  --tp-off: #f5f5f5;
+  --tp-white: #fff;
+  --gold-primary: #FFD700;
+  --gold-light: #FFAA00;
+  --gold-dark: #E6B800;
+  --gold-pale: #FFFBEB;
+  --max: 1050px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 8px rgba(0,0,0,.12);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,.16);
+  --shadow-gold: 0 4px 12px rgba(255,215,0,.3);
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--tp-dark);
+  line-height: 1.8;
+  background: var(--tp-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+.sr-only {
+  position: absolute!important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.625rem;
+  font-weight: 900;
+  color: var(--tp-black);
+  letter-spacing: 0.02em;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--tp-gray);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle-banner {
+  background: linear-gradient(135deg, var(--tp-black) 0%, var(--tp-charcoal) 100%);
+  color: var(--tp-white);
+  padding: 0.5rem 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+.lang-toggle-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lang-toggle-label {
+  font-size: 0.8rem;
+  color: var(--tp-silver);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-toggle-label::before { content: '🌐'; }
+
+.lang-toggle-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lang-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--tp-silver);
+}
+
+.lang-btn:hover {
+  color: var(--tp-white);
+  border-color: var(--gold-primary);
+}
+
+.lang-btn.active {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  font-weight: 700;
+  border-color: var(--gold-primary);
+}
+
+.lang-dropdown {
+  position: relative;
+  display: none;
+}
+
+.lang-dropdown-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: var(--tp-white);
+  border: 1px solid var(--tp-gray);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-dropdown-btn::after { content: '▼'; font-size: 0.6rem; }
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--tp-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  min-width: 180px;
+  display: none;
+  z-index: 1002;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.lang-dropdown-menu.show { display: block; }
+
+.lang-dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--tp-dark);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--tp-light);
+  transition: all 0.3s;
+}
+
+.lang-dropdown-item:last-child { border-bottom: none; }
+.lang-dropdown-item:hover { background: var(--gold-pale); }
+
+.lang-dropdown-item.active {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  font-weight: 600;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--tp-light);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.75rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tp-black);
+}
+
+.brand-tagline {
+  font-size: 0.7rem;
+  color: var(--tp-gray);
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+nav a {
+  font-size: 0.85rem;
+  position: relative;
+  transition: all 0.3s;
+  padding: 0.2rem 0;
+  white-space: nowrap;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after { width: 100%; }
+
+nav a[aria-current="page"] {
+  font-weight: 600;
+}
+
+nav a[aria-current="page"]::after {
+  width: 100%;
+  background: var(--tp-black);
+}
+
+.apply-btn {
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--tp-black);
+  transition: all 0.3s;
+}
+
+.apply-btn:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border-color: var(--gold-primary);
+}
+
+/* Mobile Menu */
+.mobile-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid var(--tp-black);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--tp-black);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+
+.mobile-toggle span:nth-child(1) { top: 10px; }
+.mobile-toggle span:nth-child(2) { top: 17px; }
+.mobile-toggle span:nth-child(3) { bottom: 10px; }
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateX(-50%) rotate(45deg);
+  top: 17px;
+}
+
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateX(-50%) rotate(-45deg);
+  bottom: 17px;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--tp-white);
+  border-top: 1px solid var(--tp-light);
+  box-shadow: var(--shadow-lg);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.mobile-menu.active { display: block; }
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0.875rem 0;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.625rem 1.25rem;
+  border-bottom: 1px solid var(--tp-light);
+  transition: background 0.3s;
+}
+
+.mobile-menu a:hover { background: var(--gold-pale); }
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s;
+  text-align: center;
+  border: 2px solid var(--tp-black);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-gold {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border-color: var(--gold-primary);
+  padding: 0.85rem 1.2rem;
+  font-weight: 900;
+  border-radius: 999px;
+}
+
+.btn-gold:hover {
+  background: var(--tp-black);
+  color: var(--gold-primary);
+  filter: brightness(0.95);
+}
+
+.btn-outline {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  font-weight: 900;
+}
+
+.btn-outline:hover {
+  background: var(--gold-pale);
+}
+
+/* Footer */
+footer {
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 40px 20px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.footer-content {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand { display: flex; flex-direction: column; gap: 0.875rem; }
+.footer-logo { display: flex; align-items: center; gap: 0.625rem; }
+.footer-logo img { width: 42px; height: 42px; filter: brightness(0) invert(1); }
+.footer-logo-text { font-size: 1.15rem; font-weight: 700; }
+.footer-desc { opacity: 0.8; line-height: 1.75; font-size: 0.85rem; }
+
+.footer-section h3 {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+  color: var(--gold-primary);
+}
+
+.footer-section ul { list-style: none; }
+.footer-section li { margin-bottom: 0.3rem; }
+
+.footer-section a {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  font-size: 0.8rem;
+}
+
+.footer-section a:hover { opacity: 1; }
+
+.badges {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badges .badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.footer-cta { margin-top: 1rem; }
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 12px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.footer-bottom a {
+  color: var(--tp-white);
+  text-decoration: underline;
+  margin: 0 0.3rem;
+}
+
+.ssm-info {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.5rem;
+}
+
+/* Floating Buttons */
+.floating-apply {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: all 0.3s;
+  border: 2px solid var(--gold-primary);
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+}
+
+.floating-apply:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-gold);
+  background: var(--gold-primary);
+  color: var(--tp-black);
+}
+
+.floating-casual {
+  position: fixed;
+  bottom: 20px;
+  right: 130px;
+  background: rgba(255,255,255,0.9);
+  color: var(--tp-black);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 998;
+  transition: all 0.3s;
+  border: 2px solid var(--tp-black);
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+}
+
+.floating-casual:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--gold-primary);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.9);
+  border: 2px solid var(--gold-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 997;
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--gold-dark);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  transform: translateY(-2px);
+}
+
+/* PAGE SPECIFIC */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--tp-white) 0%, var(--tp-off) 100%);
+  padding: 3.6rem 20px;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  width: clamp(220px, 32vw, 480px);
+  height: clamp(220px, 32vw, 480px);
+  background-image: url('photos/TPLogo11.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.04;
+  filter: saturate(0);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 0.45rem;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.hero p {
+  color: var(--tp-gray-dark);
+}
+
+.hero-cta {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pill-nav {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pill {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--tp-light);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: var(--tp-dark);
+  transition: all 0.3s;
+}
+
+.pill:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
+  background: var(--gold-pale);
+}
+
+.section {
+  max-width: 1200px;
+  margin: 1.6rem auto;
+  padding: 0 20px;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.lead {
+  color: var(--tp-gray-dark);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--tp-light);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  color: #000;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--tp-gray-dark);
+  font-size: 0.95rem;
+}
+
+.img-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--tp-light);
+  background: #fff;
+  transition: all 0.3s;
+}
+
+.img-tile:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-primary);
+}
+
+.img-tile img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.img-tile .caption {
+  padding: 0.6rem 0.75rem;
+  font-weight: 800;
+}
+
+.img-tile small {
+  display: block;
+  color: var(--tp-gray-dark);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.city-h {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.2rem 0 1rem;
+}
+
+.city-h img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--tp-light);
+}
+
+.person {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #eee;
+  flex: 0 0 64px;
+  object-fit: cover;
+  border: 1px solid var(--tp-light);
+}
+
+blockquote {
+  border-left: 4px solid var(--gold-primary);
+  padding: 0.4rem 0.9rem;
+  background: var(--gold-pale);
+  border-radius: 8px;
+  margin-top: 0.4rem;
+  font-style: italic;
+  color: var(--tp-gray-dark);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  nav { display: none; }
+  .mobile-toggle { display: block; }
+  .floating-casual { bottom: 80px; right: 20px; }
+  .back-to-top { bottom: 140px; }
+}
+
+@media (max-width: 768px) {
+  .section-title { font-size: 1.4rem; }
+  .grid-3, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+  .footer-content { grid-template-columns: 1fr; text-align: center; }
+  .floating-apply { bottom: 14px; right: 14px; padding: 0.625rem 1rem; font-size: 0.8rem; }
+}
+
+@media (max-width: 640px) {
+  .lang-toggle-buttons { display: none; }
+  .lang-dropdown { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">跳转至主要内容</a>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle-banner">
+  <div class="lang-toggle-inner">
+    <span class="lang-toggle-label">选择语言版本</span>
+    <div class="lang-toggle-buttons">
+      <button class="lang-btn active" id="langLocal" onclick="setLanguage('local')">🇲🇾 本地华人</button>
+      <button class="lang-btn" id="langExpat" onclick="setLanguage('expat')">🌏 海外华人</button>
+    </div>
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-dropdown-btn" onclick="toggleDropdown()"><span id="currentLang">🇲🇾 本地华人</span></button>
+      <div class="lang-dropdown-menu" id="dropdownMenu">
+        <a href="#" class="lang-dropdown-item active" onclick="setLanguage('local');return false;">🇲🇾 本地华人<small>Malaysian Chinese</small></a>
+        <a href="#" class="lang-dropdown-item" onclick="setLanguage('expat');return false;">🌏 海外华人<small>Expat Chinese</small></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header role="banner">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="photos/TPLogo11.png" alt="TP" width="40" height="40">
+      <div class="brand-text">
+        <span class="brand-name">TP</span>
+        <span class="brand-tagline">马来西亚·泰国</span>
+      </div>
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about-tp.html">关于TP</a></li>
+        <li><a href="salary-and-benefits.html" data-local="薪资福利" data-expat="薪资福利">薪资福利</a></li>
+        <li><a href="hiring-process.html" data-local="招聘流程" data-expat="招聘流程">招聘流程</a></li>
+        <li><a href="area-around-office.html" aria-current="page" data-local="周边环境" data-expat="周边环境">周边环境</a></li>
+        <li><a href="relocation-visa.html" data-local="签证搬迁" data-expat="签证搬迁">签证搬迁</a></li>
+        <li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="apply-btn" data-local="立即申请" data-expat="立即申请">立即申请</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="移动端导航">
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about-tp.html">关于TP</a></li>
+      <li><a href="salary-and-benefits.html">薪资福利</a></li>
+      <li><a href="hiring-process.html">招聘流程</a></li>
+      <li><a href="area-around-office.html">周边环境</a></li>
+      <li><a href="relocation-visa.html">签证搬迁</a></li>
+      <li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="apply-btn">立即申请</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero">
+    <h1>周边环境</h1>
+    <p data-local="便捷的交通，丰富的美食，舒适的生活。这些是我们每天最看重的事。" data-expat="便捷交通、丰富美食、舒适生活。好的日常环境，让我们专注于工作和成长。">便捷交通、丰富美食、舒适生活。好的日常环境，让我们专注于工作和成长。</p>
+    <div class="hero-cta" role="group" aria-label="相关操作">
+      <a class="btn-gold" href="#kl">吉隆坡</a>
+      <a class="btn btn-outline" href="#penang">槟城</a>
+      <a class="btn btn-outline" href="#bangkok">曼谷</a>
+    </div>
+    <div class="pill-nav" aria-label="页面导航">
+      <a class="pill" href="#kl">吉隆坡</a>
+      <a class="pill" href="#penang">槟城</a>
+      <a class="pill" href="#bangkok">曼谷</a>
+      <a class="pill" href="#tips" data-local="员工分享" data-expat="员工分享">员工分享</a>
+    </div>
+  </section>
+
+  <!-- KL Section -->
+  <section id="kl" class="section">
+    <div class="city-h">
+      <img src="photos/KL%201.jpg" alt="吉隆坡城市风景">
+      <h2>吉隆坡（KL）</h2>
+    </div>
+    <p class="lead" data-local="城市繁华与绿色兼备，多元文化在这里共融。交通便利、美食众多、娱乐活动丰富。" data-expat="城市繁华与自然风景结合，多民族文化在此汇聚。便捷的交通、多样的美食、丰富的娱乐选择。">城市繁华与自然风景结合，多民族文化在此汇聚。便捷的交通、多样的美食、丰富的娱乐选择。</p>
+
+    <div class="grid-4" style="margin-top:0.8rem">
+      <figure class="img-tile">
+        <img src="photos/G%20TOWER.jpg" alt="办公楼周边外观">
+        <figcaption class="caption">办公室位置<small>中心商务区，交通便利</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/KL%202.jpg" alt="吉隆坡市景">
+        <figcaption class="caption">城市风景<small>下班后有很多去处</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Reception.png" alt="办公室前台">
+        <figcaption class="caption">办公环境<small>舒适专业的工作空间</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Maho%20in%20front%20ofKLCC.jpg" alt="KLCC周边">
+        <figcaption class="caption">周末热地<small>购物、美食、娱乐的聚集地</small></figcaption>
+      </figure>
+    </div>
+
+    <div class="grid-3" style="margin-top:1rem">
+      <div class="card">
+        <h3 data-local="交通出行" data-expat="交通出行">交通出行</h3>
+        <p class="muted" data-local="轻轨、公交、打车应用齐全，上班通勤便捷。位于市中心，出行方便。" data-expat="地铁、公交、打车应用一应俱全。中心位置，通勤快速便捷。">地铁、公交、打车应用一应俱全。中心位置，通勤快速便捷。</p>
+      </div>
+      <div class="card">
+        <h3 data-local="美食选择" data-expat="美食选择">美食选择</h3>
+        <p class="muted" data-local="街边小摊、本地菜、日本料理、咖啡厅应有尽有。吃饭便宜，总能发现新的美食。" data-expat="小食摊、本地菜、日本料理、特色咖啡应有尽有。外食便宜，每天都有新发现。">小食摊、本地菜、日本料理、特色咖啡应有尽有。外食便宜，每天都有新发现。</p>
+      </div>
+      <div class="card">
+        <h3 data-local="运动休闲" data-expat="运动休闲">运动休闲</h3>
+        <p class="muted" data-local="公寓有健身房和游泳池，市内公园和运动设施齐全。工作之余，轻松放松身心。" data-expat="公寓配备健身房、游泳池，周边运动设施完善。工作之余，轻松运动放松。">公寓配备健身房、游泳池，周边运动设施完善。工作之余，轻松运动放松。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Penang Section -->
+  <section id="penang" class="section">
+    <div class="city-h">
+      <img src="photos/Penang.jpg" alt="槟城海景">
+      <h2>槟城（Penang）</h2>
+    </div>
+    <p class="lead" data-local="靠海的小岛，有着慢生活的节奏。环境宁静，生活成本低，风景优美。" data-expat="滨海小岛，悠闲舒适的生活节奏。环境宁静、成本低廉、自然风景优美。">滨海小岛，悠闲舒适的生活节奏。环境宁静、成本低廉、自然风景优美。</p>
+
+    <div class="grid-4" style="margin-top:0.8rem">
+      <figure class="img-tile">
+        <img src="photos/Penang.jpg" alt="槟城全景">
+        <figcaption class="caption">靠近海滨<small>周末海边散步很常见</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Condo.jpg" alt="公寓配置">
+        <figcaption class="caption">住宅配套<small>健身房和游泳池是标配</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Reception%20(2).png" alt="办公室内部">
+        <figcaption class="caption">办公空间<small>舒适宁静的工作环境</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Reception%20(1).png" alt="前台区域">
+        <figcaption class="caption">接待区域<small>专业的办公设施</small></figcaption>
+      </figure>
+    </div>
+
+    <div class="grid-3" style="margin-top:1rem">
+      <div class="card">
+        <h3>交通出行</h3>
+        <p class="muted" data-local="打车应用是出门首选。无论住在海边还是市区，通勤都很轻松。" data-expat="打车应用方便快捷。海边或市区都很容易出行。">打车应用方便快捷。海边或市区都很容易出行。</p>
+      </div>
+      <div class="card">
+        <h3>美食文化</h3>
+        <p class="muted" data-local="街边小摊、美食广场、咖啡馆文化浓厚。各地美食应有尽有，天天吃不一样。" data-expat="小摊美食、广场小食、咖啡文化浓厚。多元美食选择，每天不重样。">小摊美食、广场小食、咖啡文化浓厚。多元美食选择，每天不重样。</p>
+      </div>
+      <div class="card">
+        <h3>休闲娱乐</h3>
+        <p class="muted" data-local="海滨散步、海滩游玩、咖啡厅小坐。慢生活在这里很常见。" data-expat="海边漫步、沙滩游玩、咖啡聚会。悠闲的生活方式在这里很普遍。">海边漫步、沙滩游玩、咖啡聚会。悠闲的生活方式在这里很普遍。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bangkok Section -->
+  <section id="bangkok" class="section">
+    <div class="city-h">
+      <img src="photos/Bangkok1.jpg" alt="曼谷城市风景">
+      <h2>曼谷（Bangkok）</h2>
+    </div>
+    <p class="lead" data-local="东南亚最国际化的城市，发达的交通、完善的服务、丰富的选择。" data-expat="东南亚最国际化城市，发达交通、完善服务、丰富选择。">东南亚最国际化城市，发达交通、完善服务、丰富选择。</p>
+
+    <div class="grid-4" style="margin-top:0.8rem">
+      <figure class="img-tile">
+        <img src="photos/Singha%20Complex1.jpg" alt="商业中心">
+        <figcaption class="caption">办公周边<small>购物和美食一应俱全</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Singha%20Complex2.jpg" alt="交通便利">
+        <figcaption class="caption">交通便利<small>地铁和打车都很方便</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Bangkok%202.jpg" alt="曼谷夜景">
+        <figcaption class="caption">夜生活<small>丰富的娱乐选择</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Reception%20(1).png" alt="办公前台">
+        <figcaption class="caption">办公设施<small>现代化的工作环境</small></figcaption>
+      </figure>
+    </div>
+
+    <div class="grid-3" style="margin-top:1rem">
+      <div class="card">
+        <h3>交通出行</h3>
+        <p class="muted" data-local="地铁网络发达，主要区域都能直达。打车应用也很方便实惠。" data-expat="地铁网络发达，覆盖主要区域。打车应用便宜便捷。">地铁网络发达，覆盖主要区域。打车应用便宜便捷。</p>
+      </div>
+      <div class="card">
+        <h3 data-local="日式便利" data-expat="日式便利">日式便利</h3>
+        <p class="muted" data-local="日本餐厅、日用品、医疗服务，日语支持完善。新手也能快速适应。" data-expat="日本餐厅、日用品、医疗服务齐全。日语支持完善，新手也能快速上手。">日本餐厅、日用品、医疗服务齐全。日语支持完善，新手也能快速上手。</p>
+      </div>
+      <div class="card">
+        <h3>休闲娱乐</h3>
+        <p class="muted" data-local="大型商场、特色餐厅、各类活动。工作之余，生活很丰富多彩。" data-expat="大型商城、特色美食、活动众多。工作之余，有很多方式放松。">大型商城、特色美食、活动众多。工作之余，有很多方式放松。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips Section -->
+  <section id="tips" class="section">
+    <h2>员工分享</h2>
+    <div class="grid-3" style="margin-top:0.6rem">
+      <div class="card">
+        <div class="person">
+          <img class="avatar" src="photos/TPLogo11.png" alt="H.U">
+          <div>
+            <strong>H.U（吉隆坡）</strong>
+            <blockquote data-local=""随便找个街边小摊吃饭，既便宜又好吃。现在我特别喜欢在这里生活。"" data-expat=""吃饭选择太多了，街边、商场、日本菜样样有。成本低，吃得又开心。"">"吃饭选择太多了，街边、商场、日本菜样样有。成本低，吃得又开心。"</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="person">
+          <img class="avatar" src="photos/TPLogo11.png" alt="M.Y">
+          <div>
+            <strong>M.Y（槟城）</strong>
+            <blockquote data-local=""大海就在身边，周末约朋友去海边咖啡厅，非常放松。"" data-expat=""靠近大海特别好，周末海边散步、咖啡厅小坐，工作压力都减半了。"">"靠近大海特别好，周末海边散步、咖啡厅小坐，工作压力都减半了。"</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="person">
+          <img class="avatar" src="photos/TPLogo11.png" alt="A.T">
+          <div>
+            <strong>A.T（曼谷）</strong>
+            <blockquote data-local=""地铁真的很方便，下班后可以直接去商场或咖啡厅。生活便利度很高。"" data-expat=""地铁四通八达，下班后想去哪就去哪。这座城市节奏快但很有活力。"">"地铁四通八达，下班后想去哪就去哪。这座城市节奏快但很有活力。"</blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-4" style="margin-top:1rem">
+      <figure class="img-tile">
+        <img src="photos/OPOutside.png" alt="槟城美食">
+        <figcaption class="caption">美食汇聚<small>各式各样的当地美食</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/JPteam.png" alt="招聘团队">
+        <figcaption class="caption">贴心支持<small>日语团队全力帮助</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/Joseph%20on%20vacation.jpg" alt="休假生活">
+        <figcaption class="caption">休假充实<small>旅游、放松样样齐全</small></figcaption>
+      </figure>
+      <figure class="img-tile">
+        <img src="photos/G%20TOWER.jpg" alt="办公楼周边">
+        <figcaption class="caption">舒适生活<small>便利的日常环境</small></figcaption>
+      </figure>
+    </div>
+
+    <p class="muted" style="margin-top:0.8rem"><small data-local="部分图片为示意图。实际工作地点、通勤方式、办公设施会因项目和时期有所不同。" data-expat="部分图片为示意。具体工作地点、通勤路线、办公环境因项目而异。">部分图片为示意。具体工作地点、通勤路线、办公环境因项目而异。</small></p>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="grid-3">
+      <div class="card">
+        <h3>查看职位</h3>
+        <p class="muted" data-local="华语职位众多，欢迎没有经验的朋友。" data-expat="华语岗位丰富，欢迎应届毕业生和职场新手。">华语岗位丰富，欢迎应届毕业生和职场新手。</p>
+        <p style="margin-top:0.4rem"><a class="btn-gold" href="open-jobs.html">查看职位</a></p>
+      </div>
+      <div class="card">
+        <h3>轻松对话</h3>
+        <p class="muted" data-local="不是正式面试，只是聊天了解一下。用日语提问也没问题。" data-expat="非正式面试，就是友好的聊天。用日语提问也完全可以。">非正式面试，就是友好的聊天。用日语提问也完全可以。</p>
+        <p style="margin-top:0.4rem"><a class="btn btn-outline" href="casual-interview.html">预约对话</a></p>
+      </div>
+      <div class="card">
+        <h3>官方LINE</h3>
+        <p class="muted" data-local="最新职位、生活资讯、工作建议。有问题也可以直接问。" data-expat="最新职位、当地资讯、工作提示。有任何问题都能直接提。">最新职位、当地资讯、工作提示。有任何问题都能直接提。</p>
+        <p style="margin-top:0.4rem"><a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="https://line.me/R/ti/p/@286nmdsd?from=page&searchId=286nmdsd">添加好友</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="photos/TPLogo11.png" alt="TP">
+        <span class="footer-logo-text">TP</span>
+      </div>
+      <p class="footer-desc">全球100多个国家运营的业务流程外包企业<br>支持华语人才开启职业新篇章</p>
+      <div class="badges">
+        <span class="badge-item">🏆 马来西亚最佳职场 6年连续</span>
+        <span class="badge-item">🏆 全球最佳职场 5年连续</span>
+      </div>
+      <div class="footer-cta">
+        <a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="btn btn-gold">申请职位</a>
+      </div>
+    </div>
+    
+    <div class="footer-section">
+      <h3>公司信息</h3>
+      <ul>
+        <li><a href="about-tp.html">公司介绍</a></li>
+        <li><a href="salary-and-benefits.html">薪资福利</a></li>
+        <li><a href="office-environment.html">办公环境</a></li>
+        <li><a href="ta-team.html">招聘团队</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>职位申请</h3>
+      <ul>
+        <li><a href="open-jobs.html">职位列表</a></li>
+        <li><a href="hiring-process.html">招聘流程</a></li>
+        <li><a href="faq.html">常见问题</a></li>
+        <li><a href="casual-interview.html">联系我们</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>生活资讯</h3>
+      <ul>
+        <li><a href="area-around-office.html">周边环境</a></li>
+        <li><a href="relocation-visa.html">搬迁支持</a></li>
+        <li><a href="daily-life-malaysia.html">日常生活</a></li>
+        <li><a href="https://line.me/R/ti/p/@286nmdsd" target="_blank" rel="noopener noreferrer">官方LINE</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p class="ssm-info">Teleperformance Malaysia Sdn Bhd 的 SSM（马来西亚公司委员会）注册号为 201601023769 (1194708-K)</p>
+    <p>&copy; 2026 TP. 版权所有。| <a href="#">隐私政策</a> | <a href="#">使用条款</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="floating-apply" data-local="立即申请" data-expat="立即申请">立即申请</a>
+<a href="https://forms.office.com/e/2UvpbweQww" target="_blank" rel="noopener noreferrer" class="floating-casual" data-local="轻松对话" data-expat="轻松对话">轻松对话</a>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<!-- JAVASCRIPT -->
+<script>
+let currentLanguage = localStorage.getItem('mlpLang') || 'local';
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('mlpLang', lang);
+  document.getElementById('langLocal').classList.toggle('active', lang === 'local');
+  document.getElementById('langExpat').classList.toggle('active', lang === 'expat');
+  document.getElementById('currentLang').textContent = lang === 'local' ? '🇲🇾 本地华人' : '🌏 海外华人';
+  document.querySelectorAll('.lang-dropdown-item').forEach(item => item.classList.remove('active'));
+  document.querySelector(`.lang-dropdown-item[onclick*="${lang}"]`).classList.add('active');
+  document.getElementById('dropdownMenu').classList.remove('show');
+  updateAllText(lang);
+}
+
+function updateAllText(lang) {
+  const attr = lang === 'local' ? 'data-local' : 'data-expat';
+  document.querySelectorAll('[data-local][data-expat]').forEach(el => {
+    const text = el.getAttribute(attr);
+    if(text) {
+      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.innerHTML = text;
+      }
+    }
+  });
+}
+
+function toggleDropdown() {
+  document.getElementById('dropdownMenu').classList.toggle('show');
+}
+
+document.addEventListener('click', e => {
+  if(!e.target.closest('.lang-dropdown'))
+    document.getElementById('dropdownMenu').classList.remove('show');
+});
+
+document.addEventListener('DOMContentLoaded', () => setLanguage(currentLanguage));
+
+// Mobile Menu
+(function(){
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileMenu');
+  if(toggle && menu){
+    toggle.addEventListener('click', function(){
+      toggle.classList.toggle('active');
+      menu.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
+    });
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if(!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();
+
+// Back to Top
+(function(){
+  const backToTop = document.getElementById('backToTop');
+  if(!backToTop) return;
+  window.addEventListener('scroll', () => {
+    if(window.pageYOffset > 300){
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// Smooth Scroll
+(function(){
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if(href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if(target){
+        const offset = 70;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+console.log('TP Area Around Office - Chinese bilingual version loaded');
+</script>
+</body>
+</html>

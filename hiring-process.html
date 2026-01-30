@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>招聘流程 | TP招聘 马来西亚·泰国</title>
+<meta name="description" content="TP招聘流程详解，面试步骤、所需时间、准备清单、Teams使用方法、评估要点。">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="photos/TPLogo11.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --tp-black: #000;
+  --tp-dark: #1a1a1a;
+  --tp-charcoal: #2d2d2d;
+  --tp-gray-dark: #4a4a4a;
+  --tp-gray: #666;
+  --tp-gray-light: #999;
+  --tp-silver: #ccc;
+  --tp-light: #e5e5e5;
+  --tp-off: #f5f5f5;
+  --tp-white: #fff;
+  --gold-primary: #FFD700;
+  --gold-light: #FFAA00;
+  --gold-dark: #E6B800;
+  --gold-pale: #FFFBEB;
+  --max: 1050px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 8px rgba(0,0,0,.12);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,.16);
+  --shadow-gold: 0 4px 12px rgba(255,215,0,.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--tp-dark);
+  line-height: 1.75;
+  background: var(--tp-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+.sr-only {
+  position: absolute!important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle-banner {
+  background: linear-gradient(135deg, var(--tp-black) 0%, var(--tp-charcoal) 100%);
+  color: var(--tp-white);
+  padding: 0.5rem 20px;
+  z-index: 1001;
+}
+
+.lang-toggle-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lang-toggle-label {
+  font-size: 0.8rem;
+  color: var(--tp-silver);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-toggle-label::before { content: '🌐'; }
+
+.lang-toggle-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--tp-silver);
+}
+
+.lang-btn:hover { color: var(--tp-white); border-color: var(--gold-primary); }
+.lang-btn.active {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  font-weight: 700;
+}
+
+.lang-dropdown {
+  position: relative;
+  display: none;
+}
+
+.lang-dropdown-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: var(--tp-white);
+  border: 1px solid var(--tp-gray);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-dropdown-btn::after { content: '▼'; font-size: 0.6rem; }
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--tp-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  min-width: 180px;
+  display: none;
+  z-index: 1002;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.lang-dropdown-menu.show { display: block; }
+
+.lang-dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--tp-dark);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--tp-light);
+  transition: all 0.3s;
+}
+
+.lang-dropdown-item:last-child { border-bottom: none; }
+.lang-dropdown-item:hover { background: var(--gold-pale); }
+.lang-dropdown-item.active {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  font-weight: 600;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--tp-light);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.75rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tp-black);
+}
+
+.brand-tagline {
+  font-size: 0.7rem;
+  color: var(--tp-gray);
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+nav a {
+  font-size: 0.85rem;
+  position: relative;
+  transition: all 0.3s;
+  padding: 0.2rem 0;
+  white-space: nowrap;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after { width: 100%; }
+
+nav a[aria-current="page"] {
+  font-weight: 600;
+}
+
+nav a[aria-current="page"]::after {
+  width: 100%;
+  background: var(--tp-black);
+}
+
+.apply-btn {
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--tp-black);
+  transition: all 0.3s;
+}
+
+.apply-btn:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border-color: var(--gold-primary);
+}
+
+/* Mobile Menu */
+.mobile-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid var(--tp-black);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--tp-black);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+
+.mobile-toggle span:nth-child(1) { top: 10px; }
+.mobile-toggle span:nth-child(2) { top: 17px; }
+.mobile-toggle span:nth-child(3) { bottom: 10px; }
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateX(-50%) rotate(45deg);
+  top: 17px;
+}
+
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateX(-50%) rotate(-45deg);
+  bottom: 17px;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--tp-white);
+  border-top: 1px solid var(--tp-light);
+  box-shadow: var(--shadow-lg);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.mobile-menu.active { display: block; }
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0.875rem 0;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.625rem 1.25rem;
+  border-bottom: 1px solid var(--tp-light);
+  transition: background 0.3s;
+}
+
+.mobile-menu a:hover { background: var(--gold-pale); }
+
+/* Buttons */
+.btn {
+  padding: 0.85rem 1.2rem;
+  font-weight: 900;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid var(--gold-primary);
+  color: var(--gold-primary);
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: var(--gold-primary);
+  color: #000;
+}
+
+.btn-solid {
+  background: var(--gold-primary);
+  color: #000;
+  border: 2px solid var(--gold-primary);  /* ADD THIS LINE */
+  border-radius: 999px;  /* ADD THIS LINE */
+  padding: 0.85rem 1.2rem;  /* ADD THIS LINE */
+  font-weight: 900;  /* ADD THIS LINE */
+}
+
+.btn-solid:hover {
+  filter: brightness(.95);
+}
+
+/* Footer */
+footer {
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 40px 20px 16px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.footer-content {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand { display: flex; flex-direction: column; gap: 0.875rem; }
+.footer-logo { display: flex; align-items: center; gap: 0.625rem; }
+.footer-logo img { width: 42px; height: 42px; filter: brightness(0) invert(1); }
+.footer-logo-text { font-size: 1.15rem; font-weight: 700; }
+.footer-desc { opacity: 0.8; line-height: 1.75; font-size: 0.85rem; }
+
+.footer-section h3 {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-primary);
+}
+
+.footer-section ul { list-style: none; }
+.footer-section li { margin-bottom: 0.3rem; }
+
+.footer-section a {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  font-size: 0.8rem;
+}
+
+.footer-section a:hover { opacity: 1; }
+
+.badges {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badges .badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.footer-cta { margin-top: 1rem; }
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 12px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.footer-bottom a {
+  color: var(--tp-white);
+  text-decoration: underline;
+  margin: 0 0.3rem;
+}
+
+.ssm-info {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.5rem;
+}
+
+/* Floating Buttons */
+.floating-apply {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: all 0.3s;
+  border: 2px solid var(--gold-primary);
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+}
+
+.floating-apply:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-gold);
+  background: var(--gold-primary);
+  color: var(--tp-black);
+}
+
+.floating-casual {
+  position: fixed;
+  bottom: 20px;
+  right: 130px;
+  background: rgba(255,255,255,0.9);
+  color: var(--tp-black);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 998;
+  transition: all 0.3s;
+  border: 2px solid var(--tp-black);
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+}
+
+.floating-casual:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--gold-primary);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.9);
+  border: 2px solid var(--gold-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 997;
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--gold-dark);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  transform: translateY(-2px);
+}
+
+/* PAGE SPECIFIC */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--tp-white) 0%, var(--tp-off) 100%);
+  padding: 3.75rem 20px;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  width: clamp(220px, 32vw, 480px);
+  height: clamp(220px, 32vw, 480px);
+  background-image: url('photos/TPLogo11.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.04;
+  filter: saturate(0);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 0.6rem;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.hero p {
+  color: var(--tp-gray-dark);
+}
+
+.hero-cta {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.lead {
+  color: var(--tp-gray-dark);
+  margin-bottom: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--tp-light);
+  border-radius: 12px;
+  padding: 1.1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.card p {
+  color: var(--tp-gray-dark);
+  font-size: 0.95rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.6rem;
+}
+
+.step {
+  background: #fff;
+  border: 1px solid var(--tp-light);
+  border-radius: 12px;
+  padding: 0.9rem 0.8rem;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.step:hover {
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-gold);
+}
+
+.step strong {
+  display: block;
+  color: #000;
+  font-weight: 700;
+}
+
+.step small {
+  display: block;
+  color: var(--tp-gray-dark);
+  font-size: 0.85rem;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.acc {
+  border: 1px solid var(--tp-light);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.acc-item + .acc-item {
+  border-top: 1px solid var(--tp-light);
+}
+
+.acc-q {
+  padding: 1rem 1.1rem;
+  background: #fff;
+  font-weight: 900;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.acc-q:hover {
+  background: var(--gold-pale);
+}
+
+.acc-q:focus {
+  outline: 2px dashed var(--gold-primary);
+  outline-offset: 3px;
+}
+
+.acc-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.1rem;
+  color: var(--tp-gray-dark);
+  background: #fff;
+}
+
+.acc-item.open .acc-a {
+  max-height: 900px;
+  padding: 0 1.1rem 1rem;
+}
+
+.plus {
+  font-size: 1.4rem;
+  font-weight: 300;
+  transition: transform 0.2s;
+}
+
+.acc-item.open .plus {
+  transform: rotate(45deg);
+}
+
+.helper {
+  background: #fff;
+  border-top: 1px solid var(--tp-light);
+  border-bottom: 1px solid var(--tp-light);
+  padding: 2rem 20px;
+  margin: 2rem 0;
+}
+
+.helper .inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.helper h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 0.4rem;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.helper p {
+  color: var(--tp-gray-dark);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 980px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards, .cols {
+    grid-template-columns: 1fr;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  nav { display: none; }
+  .mobile-toggle { display: block; }
+  .floating-casual { bottom: 80px; right: 20px; }
+  .back-to-top { bottom: 140px; }
+}
+
+@media (max-width: 640px) {
+  .lang-toggle-buttons { display: none; }
+  .lang-dropdown { display: block; }
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">跳转至主要内容</a>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle-banner">
+  <div class="lang-toggle-inner">
+    <span class="lang-toggle-label">选择语言</span>
+    <div class="lang-toggle-buttons">
+      <button class="lang-btn active" id="langLocal" onclick="setLanguage('local')">🇲🇾 本地华人</button>
+      <button class="lang-btn" id="langExpat" onclick="setLanguage('expat')">🌏 海外华人</button>
+    </div>
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-dropdown-btn" onclick="toggleDropdown()"><span id="currentLang">🇲🇾 本地华人</span></button>
+      <div class="lang-dropdown-menu" id="dropdownMenu">
+        <a href="#" class="lang-dropdown-item active" onclick="setLanguage('local');return false;">🇲🇾 本地华人</a>
+        <a href="#" class="lang-dropdown-item" onclick="setLanguage('expat');return false;">🌏 海外华人</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header role="banner">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="photos/TPLogo11.png" alt="TP" width="40" height="40">
+      <div class="brand-text">
+        <span class="brand-name">TP</span>
+        <span class="brand-tagline">马来西亚·泰国</span>
+      </div>
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about-tp.html">关于TP</a></li>
+        <li><a href="salary-and-benefits.html">薪资福利</a></li>
+        <li><a href="hiring-process.html" aria-current="page" data-local="招聘流程" data-expat="招聘流程">招聘流程</a></li>
+        <li><a href="area-around-office.html">周边环境</a></li>
+        <li><a href="cost-of-living.html">生活成本</a></li>
+        <li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="apply-btn">立即申请</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="移动端导航">
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about-tp.html">关于TP</a></li>
+      <li><a href="salary-and-benefits.html">薪资福利</a></li>
+      <li><a href="hiring-process.html">招聘流程</a></li>
+      <li><a href="area-around-office.html">周边环境</a></li>
+      <li><a href="cost-of-living.html">生活成本</a></li>
+      <li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="apply-btn">立即申请</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero">
+    <h1 data-local="招聘流程" data-expat="招聘流程">招聘流程</h1>
+    <p data-local="我们的中文团队会一路陪伴你。从申请到入职，全程关怀和支持。" data-expat="华语招聘团队全程协助。从投递简历到成功入职，每一步都有专业指导。">华语招聘团队全程协助。从投递简历到成功入职，每一步都有专业指导。</p>
+    <div class="hero-cta" role="group" aria-label="相关操作">
+      <a class="btn" href="open-jobs.html" data-local="查看职位" data-expat="查看职位">查看职位</a>
+      <a class="btn-solid" href="casual-interview.html" data-local="轻松对话" data-expat="轻松对话">轻松对话</a>
+      <a class="btn" href="relocation-visa.html" data-local="签证支持" data-expat="签证支持">签证支持</a>
+    </div>
+  </section>
+
+  <!-- At a glance -->
+  <section class="section">
+    <h2>速览</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 data-local="面试次数" data-expat="面试次数">面试次数</h3>
+        <p><strong data-local="2-3轮" data-expat="2-3轮">2-3轮</strong>（招聘官 > 部门经理），具体次数因项目而异。</p>
+      </div>
+      <div class="card">
+        <h3 data-local="所需时间" data-expat="所需时间">所需时间</h3>
+        <p>每轮面试<strong>30-45分钟</strong>，整体周期约<strong>2-3周</strong>。</p>
+      </div>
+      <div class="card">
+        <h3 data-local="面试工具" data-expat="面试工具">面试工具</h3>
+        <p data-local="Microsoft Teams（会发送链接给你）。准备好安静的环境和稳定网络。" data-expat="Microsoft Teams（发送链接）。需要稳定网络和安静环境。">Microsoft Teams（发送链接）。需要稳定网络和安静环境。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section">
+    <h2 data-local="招聘流程（标准步骤）" data-expat="招聘流程（标准步骤）">招聘流程（标准步骤）</h2>
+    <p class="lead" data-local="实际流程可能因项目而有调整。" data-expat="具体步骤因项目可能有所不同。">具体步骤因项目可能有所不同。</p>
+    <div class="steps" role="list">
+      <div class="step" role="listitem"><strong>1 投递</strong><small data-local="提交简历" data-expat="提交简历">提交简历</small></div>
+      <div class="step" role="listitem"><strong>2 初审</strong><small data-local="3个工作日" data-expat="3个工作日">3个工作日</small></div>
+      <div class="step" role="listitem"><strong>3 面试①</strong><small data-local="招聘官（日语）" data-expat="招聘官面试">招聘官面试</small></div>
+      <div class="step" role="listitem"><strong>4 面试②</strong><small data-local="部门经理面试" data-expat="经理面试">经理面试</small></div>
+      <div class="step" role="listitem"><strong>5 能力测评</strong><small data-local="语言·技能测试" data-expat="技能评估">技能评估</small></div>
+      <div class="step" role="listitem"><strong>6 结果通知</strong><small data-local="约1周" data-expat="约1周">约1周</small></div>
+      <div class="step" role="listitem"><strong>7 录用</strong><small data-local="确定入职日期" data-expat="确认入职">确认入职</small></div>
+    </div>
+  </section>
+
+  <!-- Online Interview -->
+  <section class="section">
+    <h2 data-local="在线面试要点" data-expat="在线面试要点">在线面试要点</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 data-local="进入会议" data-expat="进入会议">进入会议</h3>
+        <p data-local="点击发来的Teams链接 > 用你的真实姓名（拼音）进入。" data-expat="点击链接进入，使用真实姓名。">点击链接进入，使用真实姓名。</p>
+      </div>
+      <div class="card">
+        <h3 data-local="前期准备" data-expat="前期准备">前期准备</h3>
+        <p data-local="提前10分钟测试摄像头、麦克风、扬声器。背景简洁，关闭通知。" data-expat="提前10分钟检查设备。简洁背景，关闭通知。">提前10分钟检查设备。简洁背景，关闭通知。</p>
+      </div>
+      <div class="card">
+        <h3 data-local="服装建议" data-expat="服装建议">服装建议</h3>
+        <p data-local="整洁的商务休闲服。浅色上衣能更好地展现气色。" data-expat="整洁商务休闲。浅色衣服看起来更精神。">整洁商务休闲。浅色衣服看起来更精神。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interview Questions -->
+  <section class="section">
+    <h2 data-local="常见面试问题" data-expat="常见面试问题">常见面试问题</h2>
+    <div class="acc" role="region" aria-label="面试问题示例">
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false" data-local="自我介绍和求职动机 +" data-expat="自我介绍和求职动机 +">自我介绍和求职动机 <span class="plus">+</span></button>
+        <div class="acc-a">
+          <ul>
+            <li data-local="简要经历和应聘理由" data-expat="简要经历和应聘理由">简要经历和应聘理由</li>
+            <li data-local="为什么选择TP和这个地区" data-expat="为什么选择TP和这个地区">为什么选择TP和这个地区</li>
+            <li data-local="1年和3年的职业目标" data-expat="1年和3年的职业目标">1年和3年的职业目标</li>
+          </ul>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false" data-local="客户服务经验 +" data-expat="客户服务经验 +">客户服务经验 <span class="plus">+</span></button>
+        <div class="acc-a">
+          <ul>
+            <li data-local="处理困难客户的具体案例" data-expat="处理困难客户的具体案例">处理困难客户的具体案例</li>
+            <li data-local="如何确保服务质量" data-expat="如何确保服务质量">如何确保服务质量</li>
+            <li data-local="收到反馈后的改进方案" data-expat="收到反馈后的改进方案">收到反馈后的改进方案</li>
+          </ul>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false" data-local="多元文化和团队协作 +" data-expat="多元文化和团队协作 +">多元文化和团队协作 <span class="plus">+</span></button>
+        <div class="acc-a">
+          <ul>
+            <li data-local="与不同背景同事的合作经验" data-expat="与不同背景同事的合作经验">与不同背景同事的合作经验</li>
+            <li data-local="沟通时的注意事项" data-expat="沟通时的注意事项">沟通时的注意事项</li>
+            <li data-local="遇到问题时的协调方式" data-expat="遇到问题时的协调方式">遇到问题时的协调方式</li>
+          </ul>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false" data-local="语言和电脑技能 +" data-expat="语言和电脑技能 +">语言和电脑技能 <span class="plus">+</span></button>
+        <div class="acc-a">
+          <ul>
+            <li data-local="日语商务表达和书面沟通" data-expat="日语商务表达和书面沟通">日语商务表达和书面沟通</li>
+            <li data-local="英语使用场景（内部沟通）" data-expat="英语使用场景（内部沟通）">英语使用场景（内部沟通）</li>
+            <li data-local="打字速度和快捷键应用" data-expat="打字速度和快捷键应用">打字速度和快捷键应用</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Helper CTA -->
+  <section class="helper">
+    <div class="inner">
+      <h2 data-local="想先了解一下？" data-expat="想先了解一下？">想先了解一下？</h2>
+      <p data-local="非正式轻松对话（约30分钟，日语），可以咨询工作、生活、签证等各种问题。" data-expat="轻松对话（30分钟）可以咨询任何问题，用日语或中文都可以。">轻松对话（30分钟）可以咨询任何问题，用日语或中文都可以。</p>
+      <div style="margin-top:0.8rem">
+        <a class="btn" href="casual-interview.html" data-local="预约轻松对话" data-expat="预约轻松对话">预约轻松对话</a>
+        <a class="btn-solid" href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer">立即申请</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="photos/TPLogo11.png" alt="TP">
+        <span class="footer-logo-text">TP</span>
+      </div>
+      <p class="footer-desc">全球100多个国家运营的业务流程外包企业<br>支持华语人才开启职业新篇章</p>
+      <div class="badges">
+        <span class="badge-item">🏆 马来西亚最佳职场 6年连续</span>
+        <span class="badge-item">🏆 全球最佳职场 5年连续</span>
+      </div>
+      <div class="footer-cta">
+        <a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="btn btn-solid">申请职位</a>
+      </div>
+    </div>
+    
+    <div class="footer-section">
+      <h3>公司信息</h3>
+      <ul>
+        <li><a href="about-tp.html">公司介绍</a></li>
+        <li><a href="salary-and-benefits.html">薪资福利</a></li>
+        <li><a href="office-environment.html">办公环境</a></li>
+        <li><a href="ta-team.html">招聘团队</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>职位申请</h3>
+      <ul>
+        <li><a href="open-jobs.html">职位列表</a></li>
+        <li><a href="hiring-process.html" aria-current="page">招聘流程</a></li>
+        <li><a href="faq.html">常见问题</a></li>
+        <li><a href="casual-interview.html">联系我们</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>生活资讯</h3>
+      <ul>
+        <li><a href="area-around-office.html">周边环境</a></li>
+        <li><a href="relocation-visa.html">搬迁支持</a></li>
+        <li><a href="daily-life-malaysia.html">日常生活</a></li>
+        <li><a href="https://line.me/R/ti/p/@286nmdsd" target="_blank" rel="noopener noreferrer">官方LINE</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p class="ssm-info">Teleperformance Malaysia Sdn Bhd 的 SSM（马来西亚公司委员会）注册号为 201601023769 (1194708-K)</p>
+    <p>&copy; 2026 TP. 版权所有。| <a href="#">隐私政策</a> | <a href="#">使用条款</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="floating-apply" data-local="立即申请" data-expat="立即申请">立即申请</a>
+<a href="https://forms.office.com/e/2UvpbweQww" target="_blank" rel="noopener noreferrer" class="floating-casual btn" data-local="轻松对话" data-expat="轻松对话">轻松对话</a>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<script>
+let currentLanguage = localStorage.getItem('mlpLang') || 'local';
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('mlpLang', lang);
+  document.getElementById('langLocal').classList.toggle('active', lang === 'local');
+  document.getElementById('langExpat').classList.toggle('active', lang === 'expat');
+  document.getElementById('currentLang').textContent = lang === 'local' ? '🇲🇾 本地华人' : '🌏 海外华人';
+  document.querySelectorAll('.lang-dropdown-item').forEach(item => item.classList.remove('active'));
+  document.querySelector(`.lang-dropdown-item[onclick*="${lang}"]`).classList.add('active');
+  document.getElementById('dropdownMenu').classList.remove('show');
+  updateAllText(lang);
+}
+
+function updateAllText(lang) {
+  const attr = lang === 'local' ? 'data-local' : 'data-expat';
+  document.querySelectorAll('[data-local][data-expat]').forEach(el => {
+    const text = el.getAttribute(attr);
+    if(text) el.innerHTML = text;
+  });
+}
+
+function toggleDropdown() {
+  document.getElementById('dropdownMenu').classList.toggle('show');
+}
+
+document.addEventListener('click', e => {
+  if(!e.target.closest('.lang-dropdown'))
+    document.getElementById('dropdownMenu').classList.remove('show');
+});
+
+document.addEventListener('DOMContentLoaded', () => setLanguage(currentLanguage));
+
+// Mobile Menu
+(function(){
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileMenu');
+  if(toggle && menu){
+    toggle.addEventListener('click', function(){
+      toggle.classList.toggle('active');
+      menu.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
+    });
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if(!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();
+
+// Back to Top
+(function(){
+  const backToTop = document.getElementById('backToTop');
+  if(!backToTop) return;
+  window.addEventListener('scroll', () => {
+    if(window.pageYOffset > 300){
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// Accordion
+document.querySelectorAll('.acc-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.acc-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.acc-q').setAttribute('aria-expanded', 'false');
+    });
+    if(!open){
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if(href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if(target){
+      const offset = 70;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
+  });
+});
+
+console.log('TP Hiring Process - Chinese bilingual version loaded');
+</script>
+</body>
+</html>

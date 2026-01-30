@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于TP | TP招聘 马来西亚·泰国</title>
+<meta name="description" content="TP（Teleperformance）是全球100多个国家运营的业务流程外包企业。支持华语人才在马来西亚·泰国开启新事业。">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="photos/TPLogo11.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+/* CSS Variables - GOLD THEME */
+:root {
+  --tp-black: #000;
+  --tp-dark: #1a1a1a;
+  --tp-charcoal: #2d2d2d;
+  --tp-gray-dark: #4a4a4a;
+  --tp-gray: #666;
+  --tp-gray-light: #999;
+  --tp-silver: #ccc;
+  --tp-light: #e5e5e5;
+  --tp-off: #f5f5f5;
+  --tp-white: #fff;
+  --gold-primary: #FFD700;
+  --gold-light: #FFAA00;
+  --gold-dark: #E6B800;
+  --gold-pale: #FFFBEB;
+  --max: 1050px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 8px rgba(0,0,0,.12);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,.16);
+  --shadow-gold: 0 4px 12px rgba(255,215,0,.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--tp-dark);
+  line-height: 1.8;
+  background: var(--tp-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+.sr-only {
+  position: absolute!important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.625rem;
+  font-weight: 900;
+  color: var(--tp-black);
+  letter-spacing: 0.02em;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--tp-gray);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+/* LANGUAGE TOGGLE BANNER */
+.lang-toggle-banner {
+  background: linear-gradient(135deg, var(--tp-black) 0%, var(--tp-charcoal) 100%);
+  color: var(--tp-white);
+  padding: 0.5rem 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+.lang-toggle-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lang-toggle-label {
+  font-size: 0.8rem;
+  color: var(--tp-silver);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-toggle-label::before { content: '🌐'; }
+
+.lang-toggle-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lang-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--tp-silver);
+}
+
+.lang-btn:hover {
+  color: var(--tp-white);
+  border-color: var(--gold-primary);
+}
+
+.lang-btn.active {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  font-weight: 700;
+  border-color: var(--gold-primary);
+}
+
+.lang-dropdown {
+  position: relative;
+  display: none;
+}
+
+.lang-dropdown-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: var(--tp-white);
+  border: 1px solid var(--tp-gray);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-dropdown-btn::after { content: '▼'; font-size: 0.6rem; }
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--tp-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  min-width: 180px;
+  display: none;
+  z-index: 1002;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.lang-dropdown-menu.show { display: block; }
+
+.lang-dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--tp-dark);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--tp-light);
+  transition: all 0.3s;
+}
+
+.lang-dropdown-item:last-child { border-bottom: none; }
+.lang-dropdown-item:hover { background: var(--gold-pale); }
+
+.lang-dropdown-item.active {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  font-weight: 600;
+}
+
+.lang-dropdown-item small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--tp-gray);
+  margin-top: 0.2rem;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--tp-light);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.75rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tp-black);
+}
+
+.brand-tagline {
+  font-size: 0.7rem;
+  color: var(--tp-gray);
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+nav a {
+  font-size: 0.85rem;
+  position: relative;
+  transition: all 0.3s;
+  padding: 0.2rem 0;
+  white-space: nowrap;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
+
+nav a[aria-current="page"] {
+  font-weight: 600;
+}
+
+nav a[aria-current="page"]::after {
+  width: 100%;
+  background: var(--tp-black);
+}
+
+.apply-btn {
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--tp-black);
+  transition: all 0.3s;
+}
+
+.apply-btn:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border-color: var(--gold-primary);
+}
+
+/* Mobile Menu */
+.mobile-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid var(--tp-black);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--tp-black);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+
+.mobile-toggle span:nth-child(1) { top: 10px; }
+.mobile-toggle span:nth-child(2) { top: 17px; }
+.mobile-toggle span:nth-child(3) { bottom: 10px; }
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateX(-50%) rotate(45deg);
+  top: 17px;
+}
+
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateX(-50%) rotate(-45deg);
+  bottom: 17px;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--tp-white);
+  border-top: 1px solid var(--tp-light);
+  box-shadow: var(--shadow-lg);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.mobile-menu.active { display: block; }
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0.875rem 0;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.625rem 1.25rem;
+  border-bottom: 1px solid var(--tp-light);
+  transition: background 0.3s;
+}
+
+.mobile-menu a:hover { background: var(--gold-pale); }
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s;
+  text-align: center;
+  border: 2px solid var(--tp-black);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn:focus {
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 4px;
+}
+
+.btn-gold {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border-color: var(--gold-primary);
+}
+
+.btn-gold:hover {
+  background: var(--tp-black);
+  color: var(--gold-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Footer */
+footer {
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 40px 20px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.footer-content {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand { display: flex; flex-direction: column; gap: 0.875rem; }
+.footer-logo { display: flex; align-items: center; gap: 0.625rem; }
+.footer-logo img { width: 42px; height: 42px; filter: brightness(0) invert(1); }
+.footer-logo-text { font-size: 1.15rem; font-weight: 700; }
+.footer-desc { opacity: 0.8; line-height: 1.75; font-size: 0.85rem; }
+
+.footer-section h3 {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+  color: var(--gold-primary);
+}
+
+.footer-section ul { list-style: none; }
+.footer-section li { margin-bottom: 0.3rem; }
+
+.footer-section a {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  font-size: 0.8rem;
+}
+
+.footer-section a:hover { opacity: 1; }
+
+.badges {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badges .badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.footer-cta { margin-top: 1rem; }
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 12px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.footer-bottom a {
+  color: var(--tp-white);
+  text-decoration: underline;
+  margin: 0 0.3rem;
+}
+
+.ssm-info {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.5rem;
+}
+
+/* Floating Buttons */
+.floating-apply {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--tp-black);
+  color: var(--tp-white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: all 0.3s;
+  border: 2px solid var(--gold-primary);
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+}
+
+.floating-apply:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-gold);
+  background: var(--gold-primary);
+  color: var(--tp-black);
+}
+
+.floating-casual {
+  position: fixed;
+  bottom: 20px;
+  right: 130px;
+  background: rgba(255,255,255,0.9);
+  color: var(--tp-black);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 998;
+  transition: all 0.3s;
+  border: 2px solid var(--tp-black);
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+}
+
+.floating-casual:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--gold-primary);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.9);
+  border: 2px solid var(--gold-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 997;
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--gold-dark);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  transform: translateY(-2px);
+}
+
+/* Page specific */
+.about-hero {
+  padding: 120px 20px 56px;
+  background: linear-gradient(135deg, var(--tp-white) 0%, var(--tp-off) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: clamp(240px, 35vw, 520px);
+  height: clamp(240px, 35vw, 520px);
+  background-image: url('photos/TPLogo11.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.04;
+  filter: saturate(0);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: var(--max);
+  margin: 3rem auto;
+  padding: 2rem 0;
+}
+
+.about-text {
+  color: var(--tp-gray-dark);
+  line-height: 1.9;
+}
+
+.about-text h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--tp-black);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.about-image {
+  position: relative;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--tp-white);
+  border: 2px solid var(--gold-primary);
+  border-radius: 12px;
+  transition: all 0.3s;
+  box-shadow: var(--shadow-gold);
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(212,175,55,0.3);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #FFD700, #FFAA00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--tp-black);
+  margin-bottom: 0.3rem;
+}
+
+.stat-desc {
+  font-size: 0.8rem;
+  color: var(--tp-gray);
+}
+
+.award-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: var(--tp-white);
+  border: 1px solid var(--tp-light);
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.award-item:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-primary);
+}
+
+.award-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.award-item h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--tp-black);
+}
+
+.award-item p {
+  margin: 0;
+  color: var(--tp-gray);
+  font-size: 0.85rem;
+}
+
+/* GPTW Section */
+.gptw-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--gold-pale) 0%, var(--tp-white) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.gptw-section::before {
+  content: '华';
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  font-size: 20rem;
+  font-family: 'Noto Serif SC', serif;
+  color: var(--gold-primary);
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.gptw-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.gptw-badge {
+  width: 160px;
+  height: auto;
+  filter: drop-shadow(0 4px 20px rgba(255,215,0,0.3));
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 4px 20px rgba(255,215,0,0.3)); }
+  50% { filter: drop-shadow(0 4px 30px rgba(255,215,0,0.5)); }
+}
+
+.gptw-title-block { text-align: left; }
+
+.gptw-section .section-title {
+  color: var(--tp-black);
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.gptw-section .section-subtitle {
+  color: var(--tp-gray);
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.gptw-highlight {
+  display: inline-block;
+  background: linear-gradient(90deg, #FFD700, #FFAA00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+}
+
+.gptw-description {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  color: var(--tp-gray-dark);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.gptw-banner {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.gptw-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gptw-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.gptw-gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.gptw-gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(255,215,0,0.3);
+}
+
+.gptw-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gptw-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.gptw-stat { text-align: center; }
+
+.gptw-stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #FFD700, #FFAA00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.gptw-stat-label {
+  color: var(--tp-gray-dark);
+  font-size: 0.9rem;
+}
+
+.gptw-announcement {
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gptw-announcement h3 {
+  color: var(--tp-black);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gptw-announcement p {
+  color: var(--tp-gray-dark);
+  line-height: 1.6;
+}
+
+.gptw-quote {
+  font-style: italic;
+  color: var(--tp-gray);
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(255,215,0,0.5);
+}
+
+/* Why TP */
+.why-tp {
+  padding: 56px 20px;
+  background: var(--tp-off);
+}
+
+.reasons-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reason-card {
+  background: #fff;
+  border: 1px solid var(--tp-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.reason-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.reason-card:hover::before { transform: scaleX(1); }
+
+.reason-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--gold-primary);
+}
+
+.reason-head {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.reason-emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.reason-title {
+  font-weight: 900;
+  color: var(--tp-black);
+  margin-bottom: 0.5rem;
+}
+
+.reason-desc {
+  color: var(--tp-gray-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.locations {
+  margin-top: 2rem;
+  border: 2px solid var(--gold-primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(255,215,0,0.02));
+}
+
+.locations h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: var(--tp-black);
+  font-weight: 700;
+}
+
+.loc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.loc-tag {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--gold-primary);
+  border-radius: 20px;
+  background: var(--gold-pale);
+  color: var(--tp-dark);
+}
+
+.checklist {
+  margin-top: 2rem;
+  border: 1px solid var(--tp-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--tp-white);
+}
+
+.checklist h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.checklist ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.checklist li::before {
+  content: "✅ ";
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+.note-muted {
+  color: var(--tp-gray);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 56px 20px;
+  background: var(--tp-off);
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.testimonial {
+  background: var(--tp-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: relative;
+  border: 1px solid var(--tp-light);
+  transition: all 0.3s;
+}
+
+.testimonial:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-color: var(--gold-primary);
+}
+
+.testimonial::before {
+  content: '"';
+  font-size: 2.5rem;
+  color: var(--gold-pale);
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-family: Georgia, serif;
+}
+
+.testimonial-content {
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--tp-dark);
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info strong {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.1rem;
+}
+
+.author-info span {
+  color: var(--tp-gray);
+  font-size: 0.75rem;
+}
+
+/* Contact */
+.contact {
+  padding: 80px 20px;
+  background: var(--tp-off);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: var(--max);
+  margin: 3rem auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card {
+  background: var(--tp-white);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gold-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.contact-card:hover::before { transform: scaleX(1); }
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold-primary);
+}
+
+.contact-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--tp-black);
+}
+
+.contact-card p {
+  font-size: 0.95rem;
+  color: var(--tp-gray);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.contact-card-action {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.contact-card:hover .contact-card-action { transform: translateX(5px); }
+
+/* Responsive */
+@media (max-width: 880px) {
+  .reasons-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .about-content { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .contact-cards { grid-template-columns: 1fr; }
+  .gptw-gallery { grid-template-columns: repeat(2, 1fr); }
+  .gptw-gallery-item:nth-child(5) {
+    grid-column: span 2;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .floating-apply {
+    bottom: 14px;
+    right: 14px;
+    padding: 0.625rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .lang-toggle-buttons { display: none; }
+  .lang-dropdown { display: block; }
+  nav { display: none; }
+  .mobile-toggle { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">跳转至主要内容</a>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle-banner">
+  <div class="lang-toggle-inner">
+    <span class="lang-toggle-label">选择语言版本</span>
+    <div class="lang-toggle-buttons">
+      <button class="lang-btn active" id="langLocal" onclick="setLanguage('local')">🇲🇾 本地华人</button>
+      <button class="lang-btn" id="langExpat" onclick="setLanguage('expat')">🌏 海外华人</button>
+    </div>
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-dropdown-btn" onclick="toggleDropdown()"><span id="currentLang">🇲🇾 本地华人</span></button>
+      <div class="lang-dropdown-menu" id="dropdownMenu">
+        <a href="#" class="lang-dropdown-item active" onclick="setLanguage('local');return false;">🇲🇾 本地华人<small>Malaysian Chinese - 混合英文词汇</small></a>
+        <a href="#" class="lang-dropdown-item" onclick="setLanguage('expat');return false;">🌏 海外华人<small>Expat Chinese - 纯中文版本</small></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header role="banner">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="photos/TPLogo11.png" alt="TP" width="40" height="40">
+      <div class="brand-text">
+        <span class="brand-name">TP</span>
+        <span class="brand-tagline">马来西亚·泰国</span>
+      </div>
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about-tp.html" aria-current="page">关于TP</a></li>
+        <li><a href="salary-and-benefits.html" data-local="薪资·Benefits" data-expat="薪资福利">薪资福利</a></li>
+        <li><a href="hiring-process.html" data-local="招聘Process" data-expat="招聘流程">招聘流程</a></li>
+        <li><a href="why-malaysia-thailand.html" data-local="为什么选择MY/TH" data-expat="为什么选择马来西亚和泰国">为什么选择</a></li>
+        <li><a href="relocation-visa.html" data-local="Visa·搬迁" data-expat="签证·搬迁">签证·搬迁</a></li>
+        <li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="apply-btn" data-local="Apply Now" data-expat="立即申请">立即申请</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="移动端导航">
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about-tp.html">关于TP</a></li>
+      <li><a href="salary-and-benefits.html">薪资福利</a></li>
+      <li><a href="hiring-process.html">招聘流程</a></li>
+      <li><a href="why-malaysia-thailand.html">为什么选择</a></li>
+      <li><a href="relocation-visa.html">签证·搬迁</a></li>
+      <li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="apply-btn">立即申请</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <h1 class="section-title">关于TP</h1>
+      <p class="section-subtitle" data-local="全球最大BPO企业，为华语人才提供Career机会" data-expat="全球最大业务流程外包企业，为华语人才提供职业机会">全球最大业务流程外包企业，为华语人才提供职业机会</p>
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section style="padding: 0 20px;">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 data-local="关于TP" data-expat="关于TP">关于TP</h2>
+        <p data-local="TP（Teleperformance）于1978年在法国巴黎成立，是全球领先的BPO（Business Process Outsourcing）企业目前在全球100多个国家运营，拥有超过50万名员工" data-expat="TP（Teleperformance）于1978年在法国巴黎成立，是全球领先的业务流程外包企业目前在全球100多个国家运营，拥有超过50万名员工">
+          TP（Teleperformance）于1978年在法国巴黎成立，是全球领先的业务流程外包企业。目前在全球100多个国家运营，拥有超过50万名员工。
+        </p>
+        <p data-local="我们将尖端技术与优秀人才相结合，为全球知名Brand提供卓越的Customer Experience服务目前，我们正在马来西亚和泰国积极招聘华语人才" data-expat="我们将尖端技术与优秀人才相结合，为全球知名品牌提供卓越的客户体验服务目前，我们正在马来西亚和泰国积极招聘华语人才">
+          我们将尖端技术与优秀人才相结合，为全球知名品牌提供卓越的客户体验服务。目前，我们正在马来西亚和泰国积极招聘华语人才。
+        </p>
+        <p data-local="无论你是Fresh Graduate还是经验丰富的Professional，我们都为你准备了多元化、包容的工作环境" data-expat="无论你是应届毕业生还是经验丰富的专业人士，我们都为你准备了多元化、包容的工作环境">
+          无论你是应届毕业生还是经验丰富的专业人士，我们都为你准备了多元化、包容的工作环境。
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="photos/GBS.jpeg" alt="TP 办公环境" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- GPTW Section -->
+  <section class="gptw-section">
+    <div class="container">
+      <div class="gptw-announcement">
+        <h3>🎉 <span data-local="重要公告" data-expat="重要公告">重要公告</span></h3>
+        <p data-local="官方发布：TP 荣获 Great Place to Work® 评选的「World's Best Workplaces™」，并已<strong>连续 5 年</strong>获得该认证！" data-expat="官方发布：TP 荣获卓越职场研究机构评选的「全球最佳职场」，并已<strong>连续 5 年</strong>获得该认证！">
+          官方发布：TP 荣获 Great Place to Work® 评选的「World's Best Workplaces™」，并已<strong>连续 5 年</strong>获得该认证！
+        </p>
+        <p class="gptw-quote">
+          "这一认证基于员工的反馈与信任，充分展现了我们强大的企业文化"
+        </p>
+      </div>
+
+      <div class="gptw-stats">
+        <div class="gptw-stat">
+          <div class="gptw-stat-number">5</div>
+          <div class="gptw-stat-label" data-local="连续获奖年数" data-expat="连续获奖年数">连续获奖年数</div>
+        </div>
+        <div class="gptw-stat">
+          <div class="gptw-stat-number">100+</div>
+          <div class="gptw-stat-label" data-local="业务覆盖国家" data-expat="业务覆盖国家">业务覆盖国家</div>
+        </div>
+        <div class="gptw-stat">
+          <div class="gptw-stat-number">500K+</div>
+          <div class="gptw-stat-label" data-local="全球 Employee 人数" data-expat="全球员工人数">全球员工人数</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section style="padding: 60px 20px; background: var(--tp-off);">
+    <div class="container">
+      <h2 class="section-title" data-local="全球规模" data-expat="全球规模">全球规模</h2>
+      <p class="section-subtitle">在全球各地为客户提供优质服务</p>
+      
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <div class="stat-label" data-local="运营国家" data-expat="运营国家">运营国家</div>
+          <p class="stat-desc">遍布全球的服务中心</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500,000+</div>
+          <div class="stat-label" data-local="全球员工" data-expat="全球员工">全球员工</div>
+          <p class="stat-desc">来自多元背景的优秀人才</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">7,000+</div>
+          <div class="stat-label" data-local="MY/TH员工" data-expat="马来西亚/泰国员工">马来西亚/泰国员工</div>
+          <p class="stat-desc">两地合计（持续增长）</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <h2 class="section-title" data-local="荣誉与认证" data-expat="荣誉与认证">荣誉与认证</h2>
+        <div class="award-list">
+          <div class="award-item">
+            <span class="award-icon">🏆</span>
+            <div>
+              <h3>Great Place to Work®</h3>
+              <p data-local="马来西亚拠点 6年连续受奖" data-expat="马来西亚拠点 6年连续受奖">马来西亚拠点 6年连续受奖</p>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">🌍</span>
+            <div>
+              <h3>World's Best Workplaces™</h3>
+              <p data-local="全球5年连续认证" data-expat="全球5年连续认证">全球5年连续认证</p>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">📈</span>
+            <div>
+              <h3 data-local="成长企业" data-expat="成长企业">成长企业</h3>
+              <p data-local="华语人才招聘持续扩大" data-expat="华语人才招聘持续扩大">华语人才招聘持续扩大</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title" data-local="员工心声" data-expat="员工心声">员工心声</h2>
+      <p class="section-subtitle">来自真实员工的真实反馈</p>
+      <div class="testimonial-cards">
+        <div class="testimonial">
+          <p class="testimonial-content">多元文化让我心灵得到解放。自己能更坦诚地工作和生活。</p>
+          <div class="testimonial-author">
+            <img src="photos/TPLogo11.png" alt="TP" class="author-img">
+            <div class="author-info">
+              <strong>H.N</strong>
+              <span>招聘团队</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-content">坚持能力评价，我有机会晋升为Team Lead。Career的可能性无限！</p>
+          <div class="testimonial-author">
+            <img src="photos/TPLogo11.png" alt="TP" class="author-img">
+            <div class="author-info">
+              <strong>N.T</strong>
+              <span>团队主管</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-content">马来西亚生活比想象中舒适。中餐充足，周末还能去周边国家旅行！</p>
+          <div class="testimonial-author">
+            <img src="photos/TPLogo11.png" alt="TP" class="author-img">
+            <div class="author-info">
+              <strong>H.K</strong>
+              <span>质量专员</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <div class="container">
+      <h2 class="section-title">联系我们</h2>
+      <p class="section-subtitle">选择最合适的方式了解更多</p>
+      <div class="contact-cards">
+        <a href="https://forms.office.com/e/2UvpbweQww" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-card-icon">🗓️</span>
+          <h3>预约轻松面谈</h3>
+          <p>30分钟在线咨询</p>
+          <span class="contact-card-action">预约 →</span>
+        </a>
+        <a href="https://line.me/R/ti/p/@286nmdsd" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-card-icon">💬</span>
+          <h3 data-local="LINE官方账号" data-expat="LINE官方账号">LINE官方账号</h3>
+          <p>最新招聘信息推送</p>
+          <span class="contact-card-action">添加 →</span>
+        </a>
+        <a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-card-icon">✍️</span>
+          <h3 data-local="Apply Now" data-expat="立即申请">立即申请</h3>
+          <p>上传简历申请</p>
+          <span class="contact-card-action">申请 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="photos/TPLogo11.png" alt="TP">
+        <span class="footer-logo-text">TP</span>
+      </div>
+      <p class="footer-desc">在全球100多个国家运营的全球业务流程外包企业<br>支持华语人才开启新事业</p>
+      <div class="badges">
+        <span class="badge-item">🏆 马来西亚最佳职场 连续6年</span>
+        <span class="badge-item">🏆 全球最佳职场 连续5年</span>
+      </div>
+      <div class="footer-cta">
+        <a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="btn btn-gold">点击申请</a>
+      </div>
+    </div>
+    
+    <div class="footer-section">
+      <h3>公司信息</h3>
+      <ul>
+        <li><a href="about-tp.html">公司介绍</a></li>
+        <li><a href="salary-and-benefits.html">福利待遇</a></li>
+        <li><a href="office-environment.html">办公环境</a></li>
+        <li><a href="ta-team.html">招聘团队</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>职位·申请</h3>
+      <ul>
+        <li><a href="open-jobs.html" data-local="Open Jobs" data-expat="职位列表">职位列表</a></li>
+        <li><a href="hiring-process.html">招聘流程</a></li>
+        <li><a href="faq.html">常见问题</a></li>
+        <li><a href="casual-interview.html">联系我们</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>生活信息</h3>
+      <ul>
+        <li><a href="why-malaysia-thailand.html">工作城市</a></li>
+        <li><a href="relocation-visa.html">搬迁支持</a></li>
+        <li><a href="daily-life-malaysia.html">生活方式</a></li>
+        <li><a href="https://line.me/R/ti/p/@286nmdsd" target="_blank" rel="noopener noreferrer">LINE官方</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p class="ssm-info">Teleperformance Malaysia Sdn Bhd 的 SSM（马来西亚公司委员会）注册号为 201601023769 (1194708-K)</p>
+    <p>&copy; 2026 TP. All rights reserved. | <a href="#">隐私政策</a> | <a href="#">使用条款</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=chinese" target="_blank" rel="noopener noreferrer" class="floating-apply" data-local="Apply Now" data-expat="立即申请">立即申请</a>
+<a href="https://forms.office.com/e/2UvpbweQww" target="_blank" rel="noopener noreferrer" class="floating-casual" data-local="轻松面谈" data-expat="轻松面谈">轻松面谈</a>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<!-- JAVASCRIPT -->
+<script>
+let currentLanguage = localStorage.getItem('mlpLang') || 'local';
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('mlpLang', lang);
+  document.getElementById('langLocal').classList.toggle('active', lang === 'local');
+  document.getElementById('langExpat').classList.toggle('active', lang === 'expat');
+  document.getElementById('currentLang').textContent = lang === 'local' ? '🇲🇾 本地华人' : '🌏 海外华人';
+  document.querySelectorAll('.lang-dropdown-item').forEach(item => item.classList.remove('active'));
+  document.querySelector(`.lang-dropdown-item[onclick*="${lang}"]`).classList.add('active');
+  document.getElementById('dropdownMenu').classList.remove('show');
+  updateAllText(lang);
+}
+
+function updateAllText(lang) {
+  const attr = lang === 'local' ? 'data-local' : 'data-expat';
+  document.querySelectorAll('[data-local][data-expat]').forEach(el => {
+    const text = el.getAttribute(attr);
+    if(text) {
+      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.innerHTML = text;
+      }
+    }
+  });
+}
+
+function toggleDropdown() {
+  document.getElementById('dropdownMenu').classList.toggle('show');
+}
+
+document.addEventListener('click', e => {
+  if(!e.target.closest('.lang-dropdown'))
+    document.getElementById('dropdownMenu').classList.remove('show');
+});
+
+document.addEventListener('DOMContentLoaded', () => setLanguage(currentLanguage));
+
+// Mobile Menu
+(function(){
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileMenu');
+  if(toggle && menu){
+    toggle.addEventListener('click', function(){
+      toggle.classList.toggle('active');
+      menu.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
+    });
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if(!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();
+
+// Back to Top
+(function(){
+  const backToTop = document.getElementById('backToTop');
+  if(!backToTop) return;
+  window.addEventListener('scroll', () => {
+    if(window.pageYOffset > 300){
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// Smooth Scroll
+(function(){
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if(href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if(target){
+        const offset = 70;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+// Scroll Animation
+(function(){
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  const elements = document.querySelectorAll('.about-content, .stat-item, .award-item, .testimonial, .contact-card, .gptw-gallery-item, .gptw-banner');
+  elements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s, transform 0.6s';
+    observer.observe(el);
+  });
+})();
+
+console.log('TP About page initialized - Chinese bilingual version');
+</script>
+</body>
+</html>
