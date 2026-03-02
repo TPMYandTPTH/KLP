@@ -3,850 +3,945 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KLP Menu & Form Demo</title>
+<title>KLP Full-Screen Demo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
-:root {
-  --gold: #FFD700;
-  --gold-dark: #E6B800;
-  --gold-pale: #FFFBEB;
-  --black: #000;
-  --dark: #1a1a1a;
-  --gray: #666;
-  --light: #f5f5f5;
-  --white: #fff;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Noto Sans KR', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+  :root {
+    --gold: #FFD700;
+    --gold-dark: #E6B800;
+    --black: #000;
+    --dark: #1a1a1a;
+    --gray: #666;
+    --light: #f5f5f5;
+    --white: #fff;
+    --radius: 12px;
+  }
 
-/* ===== PAGE HEADER ===== */
-.page-title {
-  background: linear-gradient(135deg, var(--black), #333);
-  color: var(--gold);
-  text-align: center;
-  padding: 2rem;
-}
-.page-title h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-.page-title p { color: #ccc; font-size: 0.9rem; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
 
-/* ===== SECTION DIVIDER ===== */
-.section-divider {
-  background: var(--gold);
-  color: var(--black);
-  padding: 1rem 2rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin: 2rem 0 1rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+  /* Utility */
+  .full-section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #eee;
+    scroll-snap-align: start;
+  }
 
-/* ===== MENU DEMOS ===== */
-.menu-demos {
-  display: grid;
-  gap: 2rem;
-}
+  /* Section Label (Floating Info) */
+  .section-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    max-width: 300px;
+    transition: transform 0.3s;
+  }
+  
+  .section-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  }
 
-.menu-demo-card {
-  background: var(--white);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
+  .section-info h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-.menu-demo-header {
-  background: var(--dark);
-  color: var(--white);
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.menu-demo-header h3 { font-size: 1.1rem; }
-.menu-demo-header .badge {
-  background: var(--gold);
-  color: var(--black);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
+  .section-info .badge {
+    background: var(--black);
+    color: var(--white);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 
-.menu-demo-body {
-  padding: 0;
-}
+  .section-info .badge.gold {
+    background: var(--gold);
+    color: var(--black);
+  }
 
-.pros-cons-row {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 1.5rem;
-  background: var(--gold-pale);
-  font-size: 0.85rem;
-}
-.pros-cons-row div { flex: 1; }
-.pros-cons-row strong { display: block; margin-bottom: 0.25rem; }
-.pro { color: #1a7f1a; }
-.con { color: #c00; }
+  .pros-cons-mini {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--gray);
+    display: flex;
+    gap: 1rem;
+  }
+  .pros-cons-mini span.pro { color: #16a34a; }
+  .pros-cons-mini span.con { color: #dc2626; }
 
-/* ===== MENU OPTION 1: Minimal Sticky Header ===== */
-.demo-frame {
-  background: #f8f8f8;
-  border-top: 1px solid #e0e0e0;
-  min-height: 300px;
-  position: relative;
-  overflow: hidden;
-}
+  /* Navigation Dots */
+  .nav-dots {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--black);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .nav-dot:hover, .nav-dot.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.3);
+  }
 
-.menu-opt1 {
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e5e5e5;
-  padding: 0.75rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.menu-opt1 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-}
-.menu-opt1 .logo-icon {
-  width: 32px;
-  height: 32px;
-  background: var(--gold);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 0.9rem;
-}
-.menu-opt1 nav {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-.menu-opt1 nav a {
-  text-decoration: none;
-  color: var(--dark);
-  font-size: 0.9rem;
-  font-weight: 500;
-  position: relative;
-}
-.menu-opt1 nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gold);
-  transition: width 0.3s;
-}
-.menu-opt1 nav a:hover::after { width: 100%; }
-.menu-opt1 .cta-btn {
-  background: var(--gold);
-  color: var(--black);
-  padding: 0.5rem 1.25rem;
-  border-radius: 25px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-.menu-opt1 .cta-btn:hover {
-  background: var(--black);
-  color: var(--gold);
-}
+  /* Scroll Progress */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--black);
+    z-index: 1001;
+    width: 0%;
+  }
 
-/* ===== MENU OPTION 2: Bottom Mobile Nav ===== */
-.menu-opt2-container {
-  position: relative;
-  height: 400px;
-  background: linear-gradient(180deg, var(--dark) 0%, #333 100%);
-}
-.menu-opt2-content {
-  padding: 2rem;
-  color: var(--white);
-  text-align: center;
-}
-.menu-opt2-content h2 {
-  color: var(--gold);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
+  /* === DEMO STYLES === */
 
-.menu-opt2 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--white);
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-  display: flex;
-  justify-content: space-around;
-  padding: 0.75rem 0.5rem;
-  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0));
-}
-.menu-opt2 a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  text-decoration: none;
-  color: var(--gray);
-  font-size: 0.7rem;
-  font-weight: 500;
-  padding: 0.5rem;
-  border-radius: 12px;
-  transition: all 0.3s;
-  min-width: 60px;
-}
-.menu-opt2 a .icon {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-}
-.menu-opt2 a.active,
-.menu-opt2 a:hover {
-  color: var(--black);
-  background: var(--gold-pale);
-}
-.menu-opt2 a.active .icon,
-.menu-opt2 a:hover .icon {
-  background: var(--gold);
-  border-radius: 10px;
-}
-.menu-opt2 a.cta-special {
-  background: var(--gold);
-  color: var(--black);
-  margin-top: -1.5rem;
-  padding: 0.75rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(255,215,0,0.4);
-}
-.menu-opt2 a.cta-special .icon {
-  font-size: 1.4rem;
-}
+  /* 1. Minimal Sticky */
+  .opt1-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    border-bottom: 1px solid #eee;
+    z-index: 10;
+  }
+  .opt1-logo { font-weight: 900; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+  .opt1-logo span { width: 32px; height: 32px; background: var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+  .opt1-links { display: flex; gap: 2rem; align-items: center; }
+  .opt1-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; position: relative; }
+  .opt1-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
+  .opt1-links a:hover::after { width: 100%; }
+  .opt1-cta { background: var(--black); color: var(--white); padding: 0.6rem 1.5rem; border-radius: 25px; font-weight: 600; text-decoration: none; }
+  .opt1-cta:hover { background: var(--gold); color: var(--black); }
 
-/* ===== MENU OPTION 3: Floating Action Button ===== */
-.menu-opt3-container {
-  position: relative;
-  height: 400px;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23f5f5f5"/><circle cx="20" cy="20" r="2" fill="%23e0e0e0"/><circle cx="50" cy="50" r="2" fill="%23e0e0e0"/><circle cx="80" cy="80" r="2" fill="%23e0e0e0"/></svg>');
-  background-color: #f8f8f8;
-}
-.menu-opt3-header {
-  background: var(--white);
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-.menu-opt3-header .logo {
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.menu-opt3-header .hamburger {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  cursor: pointer;
-}
-.menu-opt3-header .hamburger span {
-  width: 100%;
-  height: 2px;
-  background: var(--black);
-  border-radius: 2px;
-}
+  /* 2. Bottom Nav */
+  .opt2-container {
+    height: 100vh;
+    background: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 80px; /* Space for nav */
+  }
+  .opt2-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: var(--white);
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .opt2-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--gray); font-size: 0.7rem; font-weight: 500; gap: 0.25rem; }
+  .opt2-item .icon { font-size: 1.4rem; transition: transform 0.2s; }
+  .opt2-item:hover .icon, .opt2-item.active .icon { transform: translateY(-2px); }
+  .opt2-item.active { color: var(--black); }
+  .opt2-center-btn { width: 56px; height: 56px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--black); font-size: 1.5rem; margin-top: -30px; box-shadow: 0 4px 15px rgba(255,215,0,0.4); font-weight: bold; }
 
-.fab-menu {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-}
-.fab-main {
-  width: 56px;
-  height: 56px;
-  background: var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 15px rgba(255,215,0,0.4);
-  cursor: pointer;
-  transition: all 0.3s;
-  z-index: 10;
-  position: relative;
-}
-.fab-main:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(255,215,0,0.5);
-}
-.fab-options {
-  position: absolute;
-  bottom: 70px;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  opacity: 1;
-}
-.fab-options a {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: var(--white);
-  padding: 0.75rem 1rem;
-  border-radius: 25px;
-  text-decoration: none;
-  color: var(--dark);
-  font-size: 0.85rem;
-  font-weight: 500;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  white-space: nowrap;
-  transition: all 0.3s;
-}
-.fab-options a:hover {
-  background: var(--gold-pale);
-  transform: translateX(-5px);
-}
-.fab-options a .icon {
-  width: 32px;
-  height: 32px;
-  background: var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  /* 3. FAB */
+  .fab-btn {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--black);
+    border-radius: 50%;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+  .fab-btn:hover { transform: scale(1.1) rotate(90deg); }
+  .fab-menu-list {
+    position: absolute;
+    bottom: 6.5rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    z-index: 15;
+  }
+  .fab-item {
+    background: var(--white);
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+  }
+  /* Simulating open state for demo */
+  .full-section:hover .fab-item { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .full-section:hover .fab-item:nth-child(1) { transition-delay: 0s; }
+  .full-section:hover .fab-item:nth-child(2) { transition-delay: 0.05s; }
+  .full-section:hover .fab-item:nth-child(3) { transition-delay: 0.1s; }
 
-/* ===== MENU OPTION 4: Scroll Progress + Section Dots ===== */
-.menu-opt4-container {
-  position: relative;
-  height: 400px;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-}
-.menu-opt4-section {
-  height: 100%;
-  scroll-snap-align: start;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-.menu-opt4-section:nth-child(1) { background: linear-gradient(135deg, var(--black), #333); color: var(--gold); }
-.menu-opt4-section:nth-child(2) { background: var(--gold-pale); color: var(--dark); }
-.menu-opt4-section:nth-child(3) { background: var(--white); color: var(--dark); }
-.menu-opt4-section:nth-child(4) { background: var(--dark); color: var(--gold); }
+  /* 4. Journey Timeline */
+  .journey-steps {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  .step-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+  .step-item:hover .step-circle, .step-item.active .step-circle {
+    border-color: var(--gold);
+    background: var(--gold);
+    transform: scale(1.1);
+    box-shadow: 0 0 0 5px rgba(255, 215, 0, 0.2);
+  }
+  .step-label { font-weight: 500; font-size: 0.9rem; color: var(--gray); }
+  .step-item.active .step-label { color: var(--black); font-weight: 700; }
+  .step-line { width: 40px; height: 2px; background: #ddd; }
 
-.scroll-dots {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.scroll-dots .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
-  border: 2px solid var(--white);
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.scroll-dots .dot.active {
-  background: var(--gold);
-  border-color: var(--gold);
-  transform: scale(1.2);
-}
-.scroll-dots .dot:hover {
-  background: var(--gold);
-}
+  /* 5. Overlay Menu (Full Screen) */
+  .overlay-menu-demo {
+    position: absolute;
+    inset: 0;
+    background: var(--white);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+  }
+  .overlay-item {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    color: #f0f0f0;
+    text-decoration: none;
+    line-height: 1;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
+    position: relative;
+  }
+  .overlay-item:hover {
+    color: var(--black);
+    transform: translateX(20px);
+  }
+  .overlay-item::before {
+    content: attr(data-num);
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--gold);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .overlay-item:hover::before { opacity: 1; }
 
-.scroll-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--gold);
-  width: 25%;
-}
+  /* 6. Floating Pills */
+  .pills-nav {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    padding: 0.5rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    display: flex;
+    gap: 0.25rem;
+    z-index: 10;
+  }
+  .pill-link {
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s;
+  }
+  .pill-link:hover { background: #f0f0f0; }
+  .pill-link.active { background: var(--gold); color: var(--black); font-weight: 700; }
 
-/* ===== MENU OPTION 5: Card Navigation ===== */
-.menu-opt5 {
-  padding: 1.5rem;
-  background: linear-gradient(135deg, var(--black), #222);
-}
-.menu-opt5 h3 {
-  color: var(--gold);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.card-nav {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
-}
-.card-nav-item {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  padding: 1rem 0.5rem;
-  text-align: center;
-  text-decoration: none;
-  color: var(--white);
-  transition: all 0.3s;
-}
-.card-nav-item:hover {
-  background: var(--gold);
-  color: var(--black);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255,215,0,0.3);
-}
-.card-nav-item .icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-.card-nav-item .label {
-  font-size: 0.75rem;
-  font-weight: 500;
-}
+  /* 7. Chat Style */
+  .chat-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+  }
+  .chat-header {
+    padding: 1rem 2rem;
+    background: var(--white);
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .chat-avatar { width: 40px; height: 40px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+  .chat-body { flex: 1; padding: 2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; }
+  .chat-bubble { max-width: 70%; padding: 1rem; background: var(--white); border-radius: 12px; font-size: 0.95rem; position: relative; }
+  .chat-bubble.bot { align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid #eee; }
+  .quick-replies { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 1rem 2rem; background: var(--white); border-top: 1px solid #eee; }
+  .qr-btn { padding: 0.75rem 1.25rem; border: 1px solid var(--gold); background: transparent; border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; color: var(--dark); }
+  .qr-btn:hover { background: var(--gold); color: var(--black); }
 
-/* ===== FORM SECTION ===== */
-.form-demo {
-  background: var(--white);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  margin-top: 2rem;
-}
-.form-demo-header {
-  background: var(--dark);
-  color: var(--white);
-  padding: 1.5rem;
-  text-align: center;
-}
-.form-demo-header h3 { font-size: 1.2rem; color: var(--gold); }
-.form-demo-header p { font-size: 0.85rem; color: #ccc; margin-top: 0.25rem; }
+  /* 8. Radial Menu */
+  .wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    z-index: 10;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .wheel-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 0.7rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+  }
+  .wheel-item .icon { font-size: 1.4rem; margin-bottom: 0.25rem; }
+  .wheel-item:hover { background: var(--gold); color: var(--black); transform: scale(1.15); }
+  /* Circle positioning */
+  .w1 { transform: translate(-50%, -50%) translate(0, -130px); }
+  .w2 { transform: translate(-50%, -50%) translate(120px, -50px); }
+  .w3 { transform: translate(-50%, -50%) translate(75px, 110px); }
+  .w4 { transform: translate(-50%, -50%) translate(-75px, 110px); }
+  .w5 { transform: translate(-50%, -50%) translate(-120px, -50px); }
 
-.form-demo-body {
-  padding: 2rem;
-  max-width: 500px;
-  margin: 0 auto;
-}
+  /* 9. Creative: Command Palette (New) */
+  .cmd-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 15vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .full-section:hover .cmd-overlay { opacity: 1; pointer-events: auto; }
+  .cmd-box {
+    width: 100%;
+    max-width: 600px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+  .cmd-input { width: 100%; padding: 1.25rem 1.5rem; border: none; border-bottom: 1px solid #eee; font-size: 1.1rem; outline: none; }
+  .cmd-list { padding: 0.5rem; }
+  .cmd-item { padding: 0.75rem 1rem; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+  .cmd-item:hover { background: #f5f5f5; }
+  .cmd-item span:first-child { font-weight: 500; }
+  .cmd-item span:last-child { font-size: 0.8rem; color: var(--gray); background: #f0f0f0; padding: 0.15rem 0.5rem; border-radius: 4px; }
 
-.form-group {
-  margin-bottom: 1.25rem;
-}
-.form-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
-  color: var(--dark);
-}
-.form-group .required { color: #c00; }
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: 2px solid #e5e5e5;
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 1rem;
-  transition: all 0.3s;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(255,215,0,0.1);
-}
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #aaa;
-}
-.form-group textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-.form-group .hint {
-  font-size: 0.8rem;
-  color: var(--gray);
-  margin-top: 0.35rem;
-}
+  /* 10. Creative: Magnetic Dock (New) */
+  .dock {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid #eee;
+  }
+  .dock-item {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    background: var(--white);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid #eee;
+  }
+  .dock-item:hover {
+    transform: translateY(-12px) scale(1.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  .dock-item:hover ~ .dock-item { transform: translateY(0); }
+  .dock-item.active { background: var(--gold); border-color: var(--gold); }
 
-.consent-box {
-  background: var(--gold-pale);
-  border: 1px solid var(--gold);
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 1.5rem 0;
-}
-.consent-box label {
-  display: flex;
-  gap: 0.75rem;
-  cursor: pointer;
-}
-.consent-box input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  accent-color: var(--gold);
-}
-.consent-box .consent-text {
-  font-size: 0.75rem;
-  color: var(--gray);
-  line-height: 1.6;
-}
-.consent-box a {
-  color: var(--gold-dark);
-  text-decoration: underline;
-  font-weight: 500;
-}
+  /* 11. Creative: Split Screen Hover (New) */
+  .split-container { display: flex; height: 100vh; }
+  .split-side { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: flex 0.5s; cursor: pointer; position: relative; overflow: hidden; }
+  .split-left { background: #f5f5f5; }
+  .split-right { background: #e5e5e5; }
+  .split-side:hover { flex: 1.5; }
+  .split-content { text-align: center; z-index: 2; pointer-events: none; }
+  .split-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; }
+  .split-links { display: flex; flex-direction: column; gap: 0.75rem; opacity: 0; transform: translateY(20px); transition: all 0.4s 0.1s; }
+  .split-side:hover .split-links { opacity: 1; transform: translateY(0); }
+  .split-link { color: var(--dark); text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; }
+  .split-link:hover { border-bottom-color: var(--gold); }
 
-.submit-btn {
-  width: 100%;
-  padding: 1rem;
-  background: var(--gold);
-  color: var(--black);
-  border: none;
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.submit-btn:hover {
-  background: var(--black);
-  color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+  /* Form Styles */
+  .form-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  .form-wrapper {
+    width: 100%;
+    max-width: 600px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+  }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.9rem; }
+  .form-input { width: 100%; padding: 0.85rem; border: 1px solid #eee; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s; background: #fafafa; }
+  .form-input:focus { outline: none; border-color: var(--black); background: var(--white); }
+  .form-btn { width: 100%; padding: 1rem; background: var(--black); color: var(--white); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
+  .form-btn:hover { background: var(--gold); color: var(--black); }
+  
+  /* Conversational Form (Creative) */
+  .conv-form { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center; }
+  .conv-q { font-size: 2.5rem; font-weight: 300; margin-bottom: 2rem; max-width: 800px; }
+  .conv-q strong { font-weight: 700; color: var(--gold-dark); }
+  .conv-input { width: 100%; max-width: 500px; padding: 1.25rem; border: none; border-bottom: 2px solid #ddd; font-size: 1.2rem; text-align: center; background: transparent; outline: none; }
+  .conv-input:focus { border-bottom-color: var(--black); }
 
-/* ===== RECOMMENDATION ===== */
-.recommendation {
-  background: linear-gradient(135deg, var(--black), #333);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-top: 2rem;
-  text-align: center;
-  color: var(--white);
-}
-.recommendation h2 {
-  color: var(--gold);
-  margin-bottom: 1rem;
-}
-.recommendation p {
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-.recommendation strong { color: var(--gold); }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .menu-opt1 nav { display: none; }
-  .card-nav { grid-template-columns: repeat(2, 1fr); }
-  .pros-cons-row { flex-direction: column; }
-}
+  /* Iframe adjustments */
+  iframe { width: 100%; height: 100%; border: none; flex: 1; }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section-info { top: 10px; left: 10px; right: 10px; max-width: none; }
+    .overlay-item { font-size: 2rem; }
+    .split-container { flex-direction: column; }
+    .journey-steps { flex-wrap: wrap; justify-content: center; }
+    .step-line { display: none; }
+  }
 </style>
 </head>
 <body>
 
-<div class="page-title">
-  <h1>🎨 KLP Menu & Form Demo</h1>
-  <p>Creative navigation options + Enquiry form design</p>
-</div>
+<div class="progress-bar" id="progressBar"></div>
 
-<div class="container">
+<!-- Navigation Dots -->
+<nav class="nav-dots" id="navDotsContainer">
+  <!-- Populated by JS -->
+</nav>
 
-  <!-- MENU OPTIONS -->
-  <div class="section-divider">📱 Menu Options (Mobile-Friendly)</div>
+<!-- ==================== MENUS ==================== -->
+
+<!-- 1. Minimal Sticky -->
+<section class="full-section" id="menu-1">
+  <div class="section-info">
+    <h2>Minimal Sticky <span class="badge gold">Desktop</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Clean look</span>
+      <span class="con">Hidden on mobile</span>
+    </div>
+  </div>
+
+  <nav class="opt1-nav">
+    <div class="opt1-logo"><span>TP</span> Korea</div>
+    <div class="opt1-links">
+      <a href="#">Why Malaysia</a>
+      <a href="#">Jobs</a>
+      <a href="#">Benefits</a>
+      <a href="#">FAQ</a>
+      <a href="#" class="opt1-cta">Apply Now</a>
+    </div>
+  </nav>
   
-  <div class="menu-demos">
-
-    <!-- Option 1: Minimal Sticky Header -->
-    <div class="menu-demo-card">
-      <div class="menu-demo-header">
-        <h3>Option 1: Minimal Sticky Header</h3>
-        <span class="badge">Desktop Best</span>
-      </div>
-      <div class="pros-cons-row">
-        <div><strong class="pro">✓ Pros</strong> Clean, professional, Apple-style, doesn't block content</div>
-        <div><strong class="con">✗ Cons</strong> Links hidden on mobile (needs hamburger)</div>
-      </div>
-      <div class="demo-frame">
-        <div class="menu-opt1">
-          <div class="logo">
-            <div class="logo-icon">TP</div>
-            <span>말레이시아·태국</span>
-          </div>
-          <nav>
-            <a href="#">왜 말레이시아?</a>
-            <a href="#">채용 공고</a>
-            <a href="#">FAQ</a>
-            <a href="#" class="cta-btn">지원하기</a>
-          </nav>
-        </div>
-        <div style="padding: 3rem; text-align: center; color: var(--gray);">
-          <p>Page content scrolls below...</p>
-          <p style="font-size: 0.85rem; margin-top: 1rem;">Header stays fixed at top</p>
-        </div>
-      </div>
+  <div style="flex:1; padding-top: 70px; display: flex; justify-content: center; align-items: center; background: #f9f9f9;">
+    <div style="text-align: center; max-width: 600px;">
+      <h1 style="font-size: 3rem; margin-bottom: 1rem; font-weight: 900;">Work Abroad</h1>
+      <p style="font-size: 1.2rem; color: var(--gray);">Scroll down to see more menu options. This header remains fixed at the top.</p>
     </div>
-
-    <!-- Option 2: Bottom Mobile Nav -->
-    <div class="menu-demo-card">
-      <div class="menu-demo-header">
-        <h3>Option 2: Bottom Navigation Bar</h3>
-        <span class="badge">⭐ Mobile Best</span>
-      </div>
-      <div class="pros-cons-row">
-        <div><strong class="pro">✓ Pros</strong> Thumb-friendly, app-like, clear CTAs, modern feel</div>
-        <div><strong class="con">✗ Cons</strong> Takes bottom space, less common on websites</div>
-      </div>
-      <div class="demo-frame">
-        <div class="menu-opt2-container">
-          <div class="menu-opt2-content">
-            <h2>한국어로 일하며,<br>해외에서 성장하다</h2>
-            <p style="color: #ccc;">Bottom nav is always accessible<br>with your thumb 👍</p>
-          </div>
-          <nav class="menu-opt2">
-            <a href="#">
-              <span class="icon">🏠</span>
-              <span>홈</span>
-            </a>
-            <a href="#">
-              <span class="icon">💼</span>
-              <span>채용</span>
-            </a>
-            <a href="#" class="cta-special">
-              <span class="icon">✉️</span>
-              <span>문의</span>
-            </a>
-            <a href="#" class="active">
-              <span class="icon">❓</span>
-              <span>FAQ</span>
-            </a>
-            <a href="#">
-              <span class="icon">📍</span>
-              <span>도시</span>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-
-    <!-- Option 3: FAB Menu -->
-    <div class="menu-demo-card">
-      <div class="menu-demo-header">
-        <h3>Option 3: Floating Action Button (FAB)</h3>
-        <span class="badge">CTA Focused</span>
-      </div>
-      <div class="pros-cons-row">
-        <div><strong class="pro">✓ Pros</strong> Minimal, action-oriented, doesn't clutter page</div>
-        <div><strong class="con">✗ Cons</strong> Requires tap to see options, may miss navigation</div>
-      </div>
-      <div class="demo-frame">
-        <div class="menu-opt3-container">
-          <div class="menu-opt3-header">
-            <div class="logo">
-              <div class="logo-icon" style="width:28px;height:28px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.8rem;">TP</div>
-              TP Korea
-            </div>
-            <div class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div style="padding: 3rem; text-align: center; color: var(--gray);">
-            <p>Clean page with FAB in corner</p>
-            <p style="font-size: 0.85rem; margin-top: 1rem;">Tap + to see quick actions</p>
-          </div>
-          <div class="fab-menu">
-            <div class="fab-options">
-              <a href="#"><span class="icon">💬</span> 문의하기</a>
-              <a href="#"><span class="icon">💼</span> 채용 공고</a>
-              <a href="#"><span class="icon">📅</span> 면담 예약</a>
-            </div>
-            <div class="fab-main">+</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Option 4: Scroll Progress -->
-    <div class="menu-demo-card">
-      <div class="menu-demo-header">
-        <h3>Option 4: Scroll Progress + Section Dots</h3>
-        <span class="badge">Story-style</span>
-      </div>
-      <div class="pros-cons-row">
-        <div><strong class="pro">✓ Pros</strong> Shows progress, encourages scrolling, immersive</div>
-        <div><strong class="con">✗ Cons</strong> No traditional nav links, best for single-page</div>
-      </div>
-      <div class="demo-frame">
-        <div class="menu-opt4-container">
-          <div class="scroll-progress"></div>
-          <div class="menu-opt4-section">왜 말레이시아?</div>
-          <div class="menu-opt4-section">복리후생</div>
-          <div class="menu-opt4-section">채용 공고</div>
-          <div class="menu-opt4-section">지원하기</div>
-          <div class="scroll-dots">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Option 5: Card Navigation -->
-    <div class="menu-demo-card">
-      <div class="menu-demo-header">
-        <h3>Option 5: Card-Based Navigation</h3>
-        <span class="badge">Visual</span>
-      </div>
-      <div class="pros-cons-row">
-        <div><strong class="pro">✓ Pros</strong> Visual, engaging, shows what to expect, touch-friendly</div>
-        <div><strong class="con">✗ Cons</strong> Takes more space, not as quick as links</div>
-      </div>
-      <div class="demo-frame">
-        <div class="menu-opt5">
-          <h3>어디로 가시겠어요?</h3>
-          <nav class="card-nav">
-            <a href="#" class="card-nav-item">
-              <div class="icon">🌏</div>
-              <div class="label">왜 말레이시아?</div>
-            </a>
-            <a href="#" class="card-nav-item">
-              <div class="icon">💰</div>
-              <div class="label">급여·복리후생</div>
-            </a>
-            <a href="#" class="card-nav-item">
-              <div class="icon">💼</div>
-              <div class="label">채용 공고</div>
-            </a>
-            <a href="#" class="card-nav-item">
-              <div class="icon">✈️</div>
-              <div class="label">비자 지원</div>
-            </a>
-            <a href="#" class="card-nav-item">
-              <div class="icon">🏢</div>
-              <div class="label">도시 소개</div>
-            </a>
-            <a href="#" class="card-nav-item">
-              <div class="icon">❓</div>
-              <div class="label">FAQ</div>
-            </a>
-            <a href="#" class="card-nav-item">
-              <div class="icon">💬</div>
-              <div class="label">문의하기</div>
-            </a>
-            <a href="#" class="card-nav-item">
-              <div class="icon">📝</div>
-              <div class="label">지원하기</div>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-
   </div>
+</section>
 
-  <!-- FORM DEMO -->
-  <div class="section-divider">📝 Enquiry Form Design</div>
-
-  <div class="form-demo">
-    <div class="form-demo-header">
-      <h3>문의하기</h3>
-      <p>궁금한 점이 있으시면 편하게 물어보세요</p>
-    </div>
-    <div class="form-demo-body">
-      <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
-        <input type="hidden" name="_subject" value="New KLP Enquiry">
-        
-        <div class="form-group">
-          <label>이름 (Name) <span class="required">*</span></label>
-          <input type="text" name="name" placeholder="홍길동" required>
-        </div>
-        
-        <div class="form-group">
-          <label>이메일 (Email) <span class="required">*</span></label>
-          <input type="email" name="email" placeholder="example@email.com" required>
-        </div>
-        
-        <div class="form-group">
-          <label>전화번호 (Phone)</label>
-          <input type="tel" name="phone" placeholder="+82-10-1234-5678">
-          <div class="hint">선택사항 (Optional)</div>
-        </div>
-        
-        <div class="form-group">
-          <label>문의 내용 (Question) <span class="required">*</span></label>
-          <textarea name="message" placeholder="예: 영어를 잘 못해도 지원할 수 있나요?" required></textarea>
-          <div class="hint">예: 비자 신청은 얼마나 걸리나요? / 한국어만 사용해도 되나요?</div>
-        </div>
-        
-        <div class="consent-box">
-          <label>
-            <input type="checkbox" name="consent" required>
-            <span class="consent-text">
-              I consent to TP collecting, using, and processing my personal data for communication purposes, including sending me relevant information about TP's services. I understand that my personal data will be processed in accordance with the Malaysian Personal Data Protection Act 2010 ("PDPA"). I understand that I can manage my preferences or unsubscribe at any time by <a href="#">using this link</a>. TP will not disclose, share, or sell my personal data to any third parties except as required by law or with my prior consent. For more details, please <a href="#">See TP's Privacy Policy</a>.
-            </span>
-          </label>
-        </div>
-        
-        <button type="submit" class="submit-btn">문의하기 (Submit)</button>
-      </form>
+<!-- 2. Bottom Nav -->
+<section class="full-section" id="menu-2">
+  <div class="section-info">
+    <h2>Bottom Navigation <span class="badge gold">Mobile</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Thumb-friendly</span>
+      <span class="con">Uses bottom space</span>
     </div>
   </div>
 
-  <!-- RECOMMENDATION -->
-  <div class="recommendation">
-    <h2>💡 My Recommendation for KLP</h2>
-    <p>
-      <strong>Combine Option 1 + Option 2:</strong><br><br>
-      • <strong>Desktop:</strong> Minimal sticky header (Option 1)<br>
-      • <strong>Mobile:</strong> Bottom navigation bar (Option 2)<br><br>
-      This gives the best of both worlds — clean Apple-style on desktop, and thumb-friendly app-like navigation on mobile.<br><br>
-      Add <strong>Option 4's scroll progress bar</strong> for the single-page LP feel.<br><br>
-      The <strong>FAB (Option 3)</strong> can be added as a secondary "Quick Apply" button.
-    </p>
+  <div class="opt2-container">
+    <div>
+      <h2 style="font-size: 3rem; font-weight: 900;">Full Screen Content</h2>
+      <p style="color: var(--gray); margin-top: 1rem;">Navigation stays at the bottom for easy reach.</p>
+    </div>
   </div>
 
-</div>
+  <nav class="opt2-nav">
+    <a href="#" class="opt2-item"><span class="icon">🏠</span>Home</a>
+    <a href="#" class="opt2-item"><span class="icon">💼</span>Jobs</a>
+    <a href="#" class="opt2-item active">
+      <div class="opt2-center-btn">+</div>
+    </a>
+    <a href="#" class="opt2-item"><span class="icon">💬</span>Chat</a>
+    <a href="#" class="opt2-item"><span class="icon">👤</span>Profile</a>
+  </nav>
+</section>
+
+<!-- 3. FAB (Floating Action Button) -->
+<section class="full-section" id="menu-3">
+  <div class="section-info">
+    <h2>FAB Menu <span class="badge">Action</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Minimalist</span>
+      <span class="con">Discoverability</span>
+    </div>
+  </div>
+
+  <div style="flex:1; display: flex; justify-content: center; align-items: center;">
+    <h2 style="font-size: 2rem; color: var(--gray);">Hover over the button to expand</h2>
+  </div>
+
+  <div class="fab-menu-list">
+    <a href="#" class="fab-item">📅 Schedule Interview</a>
+    <a href="#" class="fab-item">📄 View Job Description</a>
+    <a href="#" class="fab-item">❓ Ask a Question</a>
+  </div>
+  <div class="fab-btn">+</div>
+</section>
+
+<!-- 4. Journey Timeline -->
+<section class="full-section" id="menu-4">
+  <div class="section-info">
+    <h2>Journey Timeline <span class="badge gold">Story</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Guides users</span>
+      <span class="con">Fixed steps</span>
+    </div>
+  </div>
+
+  <div class="journey-steps">
+    <div class="step-item active">
+      <div class="step-circle">🧐</div>
+      <div class="step-label">Discover</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-circle">💡</div>
+      <div class="step-label">Learn</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-circle">📝</div>
+      <div class="step-label">Apply</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-circle">✈️</div>
+      <div class="step-label">Fly</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Full Screen Overlay -->
+<section class="full-section" id="menu-5" style="background: #fafafa;">
+  <div class="section-info" style="z-index: 30; border: none; box-shadow: none; background: transparent; pointer-events: none;">
+    <h2>Overlay Menu <span class="badge">Luxury</span></h2>
+    <div class="pros-cons-mini" style="background: #fff; padding: 5px 10px; border-radius: 6px;">
+      <span class="pro">Dramatic</span>
+      <span class="con">Hides content</span>
+    </div>
+  </div>
+
+  <div class="overlay-menu-demo">
+    <a href="#" class="overlay-item" data-num="01">Why Malaysia</a>
+    <a href="#" class="overlay-item" data-num="02">Benefits</a>
+    <a href="#" class="overlay-item" data-num="03">Careers</a>
+    <a href="#" class="overlay-item" data-num="04">Contact</a>
+  </div>
+</section>
+
+<!-- 6. Floating Pills -->
+<section class="full-section" id="menu-6">
+  <div class="section-info">
+    <h2>Floating Pills <span class="badge">Modern</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Trendy</span>
+      <span class="con">Limited items</span>
+    </div>
+  </div>
+
+  <nav class="pills-nav">
+    <a href="#" class="pill-link active">Home</a>
+    <a href="#" class="pill-link">Jobs</a>
+    <a href="#" class="pill-link">Life</a>
+    <a href="#" class="pill-link">FAQ</a>
+  </nav>
+
+  <div style="flex:1; display: flex; justify-content: center; align-items: center;">
+    <h1 style="font-size: 4rem; font-weight: 900;">KLP</h1>
+  </div>
+</section>
+
+<!-- 7. Chat Navigation -->
+<section class="full-section" id="menu-7">
+  <div class="section-info" style="top: auto; bottom: 20px; left: 20px; right: auto; top: 20px;">
+    <h2>Chat Style <span class="badge">Friendly</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Interactive</span>
+      <span class="con">Unconventional</span>
+    </div>
+  </div>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="chat-avatar">TP</div>
+      <div>
+        <h3>Recruitment Bot</h3>
+        <p style="font-size: 0.8rem; color: var(--gray);">Online</p>
+      </div>
+    </div>
+    <div class="chat-body">
+      <div class="chat-bubble bot">Welcome! I can help you find information about working in Malaysia or Thailand. What are you looking for?</div>
+    </div>
+    <div class="quick-replies">
+      <button class="qr-btn">💰 Salary Info</button>
+      <button class="qr-btn">📝 How to Apply</button>
+      <button class="qr-btn">✈️ Visa Process</button>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Radial/Wheel Menu -->
+<section class="full-section" id="menu-8">
+  <div class="section-info">
+    <h2>Radial Menu <span class="badge">Creative</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Unique</span>
+      <span class="con">Hard on touch</span>
+    </div>
+  </div>
+
+  <div class="wheel-center">TP<br>Korea</div>
+  <a href="#" class="wheel-item w1"><span class="icon">🏠</span>Home</a>
+  <a href="#" class="wheel-item w2"><span class="icon">💼</span>Jobs</a>
+  <a href="#" class="wheel-item w3"><span class="icon">❓</span>FAQ</a>
+  <a href="#" class="wheel-item w4"><span class="icon">💬</span>Chat</a>
+  <a href="#" class="wheel-item w5"><span class="icon">👤</span>Login</a>
+</section>
+
+<!-- 9. Creative: Command Palette (New) -->
+<section class="full-section" id="menu-9" style="background: #f0f0f0;">
+  <div class="section-info" style="opacity: 0.9;">
+    <h2>Command Palette <span class="badge">New Idea</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Power user</span>
+      <span class="con">Discovery</span>
+    </div>
+  </div>
+
+  <div style="flex:1; display: flex; justify-content: center; align-items: center;">
+    <p style="font-size: 1.5rem; color: var(--gray);">Hover to activate Command Mode</p>
+  </div>
+
+  <div class="cmd-overlay">
+    <div class="cmd-box">
+      <input type="text" class="cmd-input" placeholder="Type a command or search...">
+      <div class="cmd-list">
+        <div class="cmd-item"><span>Apply for Korean Speaker Role</span><span>Go</span></div>
+        <div class="cmd-item"><span>Check Application Status</span><span>Go</span></div>
+        <div class="cmd-item"><span>Download Visa Checklist</span><span>PDF</span></div>
+        <div class="cmd-item"><span>Contact Support</span><span>Email</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Creative: Magnetic Dock (New) -->
+<section class="full-section" id="menu-10">
+  <div class="section-info">
+    <h2>Magnetic Dock <span class="badge">New Idea</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Fun interaction</span>
+      <span class="con">Icon limit</span>
+    </div>
+  </div>
+
+  <div style="flex:1; display: flex; justify-content: center; align-items: center;">
+    <h1 style="font-size: 3rem; font-weight: 900;">MacOS Style</h1>
+  </div>
+
+  <div class="dock">
+    <div class="dock-item">🏠</div>
+    <div class="dock-item active">💼</div>
+    <div class="dock-item">📅</div>
+    <div class="dock-item">📊</div>
+    <div class="dock-item">💬</div>
+  </div>
+</section>
+
+<!-- 11. Creative: Split Reveal (New) -->
+<section class="full-section" id="menu-11" style="padding:0;">
+  <div class="section-info" style="z-index: 30;">
+    <h2>Split Reveal <span class="badge">New Idea</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Clean layout</span>
+      <span class="con">Limited cats</span>
+    </div>
+  </div>
+
+  <div class="split-container">
+    <div class="split-side split-left">
+      <div class="split-content">
+        <div class="split-title">Candidate</div>
+        <div class="split-links">
+          <a href="#" class="split-link">View Open Positions</a>
+          <a href="#" class="split-link">Application FAQ</a>
+          <a href="#" class="split-link">Life in Malaysia</a>
+        </div>
+      </div>
+    </div>
+    <div class="split-side split-right">
+      <div class="split-content">
+        <div class="split-title">Employer</div>
+        <div class="split-links">
+          <a href="#" class="split-link">Post a Job</a>
+          <a href="#" class="split-link">Talent Pool</a>
+          <a href="#" class="split-link">Partner with Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FORMS ==================== -->
+
+<!-- 12. Centered Card Form -->
+<section class="full-section" id="form-1">
+  <div class="section-info">
+    <h2>Standard Card Form <span class="badge">Classic</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Familiar</span>
+      <span class="con">Basic</span>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <div class="form-wrapper">
+      <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Contact Us</h2>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-input" placeholder="Your Name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-input" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="4" class="form-input" placeholder="How can we help?"></textarea>
+      </div>
+      <button class="form-btn">Submit Enquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Conversational Form (Creative) -->
+<section class="full-section" id="form-2">
+  <div class="section-info">
+    <h2>Conversational <span class="badge">Creative</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">High focus</span>
+      <span class="con">Many clicks</span>
+    </div>
+  </div>
+
+  <div class="conv-form">
+    <h2 class="conv-q">Hi! <strong>What is your name?</strong></h2>
+    <input type="text" class="conv-input" placeholder="Type your answer here...">
+    <p style="margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">Press Enter to continue</p>
+  </div>
+</section>
+
+<!-- 14. Google Form Embed -->
+<section class="full-section" id="form-3" style="padding:0;">
+  <div class="section-info">
+    <h2>Google Forms <span class="badge">Embed</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Free</span>
+      <span class="con">Branded</span>
+    </div>
+  </div>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbyehfxPXEHZIo562biKvKrpAHFaTxb-1_b3dIgi6fegBQTg/viewform?embedded=true" height="100%" frameborder="0">Loading…</iframe>
+</section>
+
+<!-- 15. Microsoft Form Embed -->
+<section class="full-section" id="form-4" style="padding:0;">
+  <div class="section-info">
+    <h2>Microsoft Forms <span class="badge">Embed</span></h2>
+    <div class="pros-cons-mini">
+      <span class="pro">Corporate</span>
+      <span class="con">Branded</span>
+    </div>
+  </div>
+  <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=r8uPY0y64UOtrlR1yXD-EIJIAj17Wp1PpY6WC9TVY4hUQzBPUVozWEdPRkdWSDk3TlVEMkZaRk43RS4u&embed=true" height="100%" frameborder="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+</section>
+
+<script>
+  // Scroll Progress Bar
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("progressBar").style.width = scrolled + "%";
+  });
+
+  // Navigation Dots Generation
+  const sections = document.querySelectorAll('.full-section');
+  const dotsContainer = document.getElementById('navDotsContainer');
+
+  sections.forEach((section, index) => {
+    const dot = document.createElement('a');
+    dot.href = `#${section.id}`;
+    dot.classList.add('nav-dot');
+    dot.title = section.querySelector('h2').innerText;
+    if(index === 0) dot.classList.add('active');
+    dotsContainer.appendChild(dot);
+  });
+
+  // Observer for active state
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        const id = entry.target.id;
+        document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
+        document.querySelector(`.nav-dot[href="#${id}"]`).classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
