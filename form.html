@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Examples - Choose Your Preferred Option</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold-primary: #FFD700;
+  --gold-pale: #FFFBEB;
+  --tp-black: #000;
+  --tp-dark: #1a1a1a;
+  --tp-gray: #666;
+  --tp-light: #e5e5e5;
+  --tp-white: #fff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans KR', sans-serif; background: #f5f5f5; color: var(--tp-dark); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+h1 { text-align: center; padding: 2rem; background: var(--tp-black); color: var(--gold-primary); margin-bottom: 2rem; }
+h1 span { display: block; font-size: 0.9rem; color: #ccc; font-weight: 400; margin-top: 0.5rem; }
+
+.options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+
+.option-card {
+  background: var(--tp-white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 2px solid var(--tp-light);
+  transition: all 0.3s;
+}
+.option-card:hover { border-color: var(--gold-primary); }
+
+.option-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--tp-light);
+}
+.option-number {
+  width: 36px;
+  height: 36px;
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.option-title { font-size: 1.2rem; font-weight: 700; }
+.option-subtitle { font-size: 0.85rem; color: var(--tp-gray); }
+
+.pros-cons { margin: 1rem 0; font-size: 0.9rem; }
+.pros-cons p { margin: 0.3rem 0; }
+.pro { color: green; }
+.con { color: #c00; }
+
+.demo-form { margin-top: 1rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--tp-light);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+}
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+.consent-box {
+  background: var(--gold-pale);
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border-left: 3px solid var(--gold-primary);
+}
+.consent-box label {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--tp-gray);
+  cursor: pointer;
+  line-height: 1.5;
+}
+.consent-box input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.consent-box a { color: #0066cc; text-decoration: underline; }
+
+.submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--gold-primary);
+  color: var(--tp-black);
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.submit-btn:hover {
+  background: var(--tp-black);
+  color: var(--gold-primary);
+}
+
+.mailto-btn {
+  display: block;
+  text-align: center;
+  padding: 0.85rem;
+  background: var(--tp-black);
+  color: var(--gold-primary);
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.mailto-btn:hover { background: #333; }
+
+.embed-placeholder {
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 6px;
+  color: var(--tp-gray);
+}
+
+.recommendation {
+  background: linear-gradient(135deg, var(--tp-black), #333);
+  color: var(--tp-white);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  text-align: center;
+}
+.recommendation h2 { color: var(--gold-primary); margin-bottom: 1rem; }
+.recommendation p { max-width: 700px; margin: 0 auto; }
+
+.note { 
+  background: #fff3cd; 
+  padding: 1rem; 
+  border-radius: 6px; 
+  margin-top: 2rem;
+  border-left: 4px solid #ffc107;
+}
+.note strong { color: #856404; }
+</style>
+</head>
+<body>
+
+<h1>
+  Form Options Comparison
+  <span>Choose the best option for KLP enquiry form</span>
+</h1>
+
+<div class="container">
+  <div class="options-grid">
+
+    <!-- Option 1: Formspree -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-number">1</div>
+        <div>
+          <div class="option-title">Formspree</div>
+          <div class="option-subtitle">formspree.io</div>
+        </div>
+      </div>
+      
+      <div class="pros-cons">
+        <p class="pro">✓ Sends directly to your email</p>
+        <p class="pro">✓ Free: 50 submissions/month</p>
+        <p class="pro">✓ Easy setup, no coding</p>
+        <p class="pro">✓ Spam protection included</p>
+        <p class="con">✗ Need to create account</p>
+      </div>
+
+      <form class="demo-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label>이름 (Name) *</label>
+          <input type="text" name="name" placeholder="홍길동" required>
+        </div>
+        <div class="form-group">
+          <label>이메일 (Email) *</label>
+          <input type="email" name="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>전화번호 (Phone)</label>
+          <input type="tel" name="phone" placeholder="+82-10-1234-5678">
+        </div>
+        <div class="form-group">
+          <label>문의 내용 (Question) *</label>
+          <textarea name="message" placeholder="예: 영어를 잘 못해도 지원할 수 있나요?" required></textarea>
+        </div>
+        <div class="consent-box">
+          <label>
+            <input type="checkbox" name="consent" required>
+            <span>I consent to TP collecting, using, and processing my personal data for communication purposes, including sending me relevant information about TP's services. I understand that my personal data will be processed in accordance with the Malaysian Personal Data Protection Act 2010 ("PDPA"). I understand that I can manage my preferences or unsubscribe at any time by <a href="#">using this link</a>. TP will not disclose, share, or sell my personal data to any third parties except as required by law or with my prior consent. For more details, please <a href="#">See TP's Privacy Policy</a>.</span>
+          </label>
+        </div>
+        <button type="submit" class="submit-btn">문의하기 (Submit)</button>
+      </form>
+    </div>
+
+    <!-- Option 2: FormSubmit -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-number">2</div>
+        <div>
+          <div class="option-title">FormSubmit</div>
+          <div class="option-subtitle">formsubmit.co</div>
+        </div>
+      </div>
+      
+      <div class="pros-cons">
+        <p class="pro">✓ Sends directly to your email</p>
+        <p class="pro">✓ Free & unlimited</p>
+        <p class="pro">✓ No account needed (initially)</p>
+        <p class="pro">✓ reCAPTCHA spam protection</p>
+        <p class="con">✗ Must confirm email first time</p>
+      </div>
+
+      <form class="demo-form" action="https://formsubmit.co/YOUR_EMAIL@teleperformance.com" method="POST">
+        <input type="hidden" name="_subject" value="New KLP Enquiry">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        
+        <div class="form-group">
+          <label>이름 (Name) *</label>
+          <input type="text" name="name" placeholder="홍길동" required>
+        </div>
+        <div class="form-group">
+          <label>이메일 (Email) *</label>
+          <input type="email" name="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>전화번호 (Phone)</label>
+          <input type="tel" name="phone" placeholder="+82-10-1234-5678">
+        </div>
+        <div class="form-group">
+          <label>문의 내용 (Question) *</label>
+          <textarea name="message" placeholder="예: 비자 신청은 얼마나 걸리나요?" required></textarea>
+        </div>
+        <div class="consent-box">
+          <label>
+            <input type="checkbox" name="consent" required>
+            <span>I consent to TP collecting, using, and processing my personal data for communication purposes, including sending me relevant information about TP's services. I understand that my personal data will be processed in accordance with the Malaysian Personal Data Protection Act 2010 ("PDPA"). I understand that I can manage my preferences or unsubscribe at any time by <a href="#">using this link</a>. TP will not disclose, share, or sell my personal data to any third parties except as required by law or with my prior consent. For more details, please <a href="#">See TP's Privacy Policy</a>.</span>
+          </label>
+        </div>
+        <button type="submit" class="submit-btn">문의하기 (Submit)</button>
+      </form>
+    </div>
+
+    <!-- Option 3: Google Forms -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-number">3</div>
+        <div>
+          <div class="option-title">Google Forms</div>
+          <div class="option-subtitle">Embedded iframe</div>
+        </div>
+      </div>
+      
+      <div class="pros-cons">
+        <p class="pro">✓ Free & unlimited</p>
+        <p class="pro">✓ Responses in Google Sheets</p>
+        <p class="pro">✓ Easy to edit questions</p>
+        <p class="pro">✓ Built-in analytics</p>
+        <p class="con">✗ Looks like Google, not TP branding</p>
+        <p class="con">✗ Redirects user to Google</p>
+      </div>
+
+      <div class="embed-placeholder">
+        <p><strong>Google Form would be embedded here</strong></p>
+        <p style="font-size:0.85rem; margin-top:0.5rem;">Create form at forms.google.com<br>Then embed with iframe</p>
+        <code style="font-size:0.75rem; background:#fff; padding:0.5rem; display:block; margin-top:1rem; border-radius:4px;">
+          &lt;iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"&gt;&lt;/iframe&gt;
+        </code>
+      </div>
+    </div>
+
+    <!-- Option 4: Microsoft Forms -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-number">4</div>
+        <div>
+          <div class="option-title">Microsoft Forms</div>
+          <div class="option-subtitle">Embedded iframe</div>
+        </div>
+      </div>
+      
+      <div class="pros-cons">
+        <p class="pro">✓ Free with Microsoft account</p>
+        <p class="pro">✓ Responses in Excel/SharePoint</p>
+        <p class="pro">✓ Integrates with Power Automate</p>
+        <p class="pro">✓ Good for TP if using MS ecosystem</p>
+        <p class="con">✗ Microsoft branding visible</p>
+        <p class="con">✗ May require login for some features</p>
+      </div>
+
+      <div class="embed-placeholder">
+        <p><strong>Microsoft Form would be embedded here</strong></p>
+        <p style="font-size:0.85rem; margin-top:0.5rem;">Create form at forms.office.com<br>Then embed with iframe</p>
+        <code style="font-size:0.75rem; background:#fff; padding:0.5rem; display:block; margin-top:1rem; border-radius:4px;">
+          &lt;iframe src="https://forms.office.com/r/YOUR_FORM_ID"&gt;&lt;/iframe&gt;
+        </code>
+      </div>
+    </div>
+
+    <!-- Option 5: Mailto -->
+    <div class="option-card">
+      <div class="option-header">
+        <div class="option-number">5</div>
+        <div>
+          <div class="option-title">Mailto Link</div>
+          <div class="option-subtitle">Opens email client</div>
+        </div>
+      </div>
+      
+      <div class="pros-cons">
+        <p class="pro">✓ No third-party service needed</p>
+        <p class="pro">✓ 100% free forever</p>
+        <p class="pro">✓ Direct email to you</p>
+        <p class="con">✗ User needs email client configured</p>
+        <p class="con">✗ Less professional experience</p>
+        <p class="con">✗ No data collection/tracking</p>
+        <p class="con">✗ Mobile users may have issues</p>
+      </div>
+
+      <div class="demo-form">
+        <p style="color: var(--tp-gray); font-size: 0.9rem; margin-bottom: 1rem;">
+          When clicked, this opens the user's email app (Outlook, Gmail app, etc.) with a pre-filled email:
+        </p>
+        
+        <a href="mailto:recruitment@teleperformance.com?subject=KLP%20Enquiry&body=이름%20(Name):%20%0A이메일%20(Email):%20%0A전화번호%20(Phone):%20%0A%0A문의%20내용%20(Question):%0A예:%20한국어만%20사용해도%20되나요?" class="mailto-btn">
+          📧 이메일로 문의하기 (Email Us)
+        </a>
+        
+        <p style="color: var(--tp-gray); font-size: 0.8rem; margin-top: 1rem; text-align: center;">
+          Opens: Outlook / Gmail / Apple Mail
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Recommendation -->
+  <div class="recommendation">
+    <h2>💡 My Recommendation</h2>
+    <p>
+      For KLP recruitment page, I recommend <strong>Option 1 (Formspree)</strong> or <strong>Option 2 (FormSubmit)</strong>.<br><br>
+      Both send submissions directly to your email inbox, look professional with TP branding, and are free for your expected volume.<br><br>
+      <strong>FormSubmit</strong> is slightly easier (no account needed initially), while <strong>Formspree</strong> has better dashboard for tracking.
+    </p>
+  </div>
+
+  <!-- Setup Note -->
+  <div class="note">
+    <strong>📝 To implement:</strong><br>
+    1. Tell me which option you prefer<br>
+    2. Give me the email address where you want to receive submissions<br>
+    3. I'll create the actual enquiry page with proper styling matching KLP design
+  </div>
+
+</div>
+
+</body>
+</html>
