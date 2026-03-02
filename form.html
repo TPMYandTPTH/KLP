@@ -3,385 +3,2138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form Examples - Choose Your Preferred Option</title>
+<title>KLP Design System - Menu & Form Options</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
 :root {
-  --gold-primary: #FFD700;
+  --gold: #FFD700;
+  --gold-dark: #E6B800;
   --gold-pale: #FFFBEB;
-  --tp-black: #000;
-  --tp-dark: #1a1a1a;
-  --tp-gray: #666;
-  --tp-light: #e5e5e5;
-  --tp-white: #fff;
+  --black: #000;
+  --dark: #0a0a0a;
+  --dark-card: #111;
+  --dark-border: #222;
+  --gray: #888;
+  --light: #f5f5f5;
+  --white: #fff;
+  --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Noto Sans KR', sans-serif; background: #f5f5f5; color: var(--tp-dark); line-height: 1.6; }
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-h1 { text-align: center; padding: 2rem; background: var(--tp-black); color: var(--gold-primary); margin-bottom: 2rem; }
-h1 span { display: block; font-size: 0.9rem; color: #ccc; font-weight: 400; margin-top: 0.5rem; }
 
-.options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-.option-card {
-  background: var(--tp-white);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border: 2px solid var(--tp-light);
+/* Animated Background */
+.bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255,215,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,215,0,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scroll Progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-gold);
+  z-index: 1000;
+  transition: width 0.1s;
+}
+
+/* Header Navigation */
+.main-header {
+  position: sticky;
+  top: 0;
+  background: rgba(10,10,10,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--dark-border);
+  z-index: 100;
+  padding: 0.75rem 0;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--gold);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: var(--black);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--gray);
+  font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.3s;
 }
-.option-card:hover { border-color: var(--gold-primary); }
 
-.option-header {
+.nav-link:hover, .nav-link.active {
+  color: var(--white);
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-link.active {
+  color: var(--gold);
+}
+
+.mobile-menu-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.mobile-menu-btn span {
+  width: 20px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.hero h1 .gold {
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Divider */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0 2rem;
+}
+
+.section-divider h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--dark-border), transparent);
+}
+
+.section-divider .count {
+  background: var(--gold);
+  color: var(--black);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Tabs Navigation */
+.tabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 10px;
+  color: var(--gray);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-btn:hover {
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+.tab-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+/* Menu Demo Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Menu Demo Card */
+.demo-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.demo-card:hover {
+  border-color: rgba(255,215,0,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.demo-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.demo-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.badge-gold {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.badge-outline {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.pros-cons {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255,215,0,0.03);
+  font-size: 0.8rem;
+}
+
+.pros-cons > div {
+  flex: 1;
+}
+
+.pros-cons strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.pro { color: #4ade80; }
+.con { color: #f87171; }
+
+.demo-frame {
+  background: var(--light);
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Option 1: Minimal Sticky */
+.opt1-header {
+  background: var(--white);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.opt1-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.opt1-logo span {
+  width: 28px;
+  height: 28px;
+  background: var(--gold);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.opt1-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.opt1-nav a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.opt1-cta {
+  background: var(--gold);
+  color: var(--black);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+/* Option 2: Bottom Nav */
+.opt2-container {
+  position: relative;
+  height: 320px;
+  background: linear-gradient(180deg, #1a1a1a, #2a2a2a);
+}
+
+.opt2-content {
+  padding: 2rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.opt2-content h2 {
+  color: var(--gold);
+  font-size: 1.25rem;
+}
+
+.opt2-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+.opt2-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--gray);
+  font-size: 0.65rem;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.opt2-nav a .icon {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.opt2-nav a:hover, .opt2-nav a.active {
+  background: var(--gold-pale);
+  color: var(--black);
+}
+
+.opt2-nav a.cta-special {
+  background: var(--gold);
+  color: var(--black);
+  margin-top: -1rem;
+  padding: 0.75rem;
+  border-radius: 16px;
+}
+
+/* Option 3: FAB */
+.opt3-header {
+  background: var(--white);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opt3-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.opt3-hamburger span {
+  width: 20px;
+  height: 2px;
+  background: var(--black);
+  border-radius: 2px;
+}
+
+.fab-container {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+.fab-main {
+  width: 50px;
+  height: 50px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+  cursor: pointer;
+}
+
+.fab-options {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fab-options a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  color: var(--black);
+  font-size: 0.8rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+.fab-options a span:first-child {
+  font-size: 1rem;
+}
+
+/* Option 4: Scroll Dots */
+.opt4-container {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.opt4-section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.opt4-section:nth-child(1) { background: linear-gradient(135deg, #1a1a1a, #333); color: var(--gold); }
+.opt4-section:nth-child(2) { background: var(--gold-pale); color: var(--black); }
+.opt4-section:nth-child(3) { background: var(--white); color: var(--black); }
+.opt4-section:nth-child(4) { background: #1a1a1a; color: var(--gold); }
+
+.scroll-dots {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scroll-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: 2px solid var(--white);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.scroll-dots .dot.active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Option 5: Card Nav */
+.opt5-container {
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #1a1a1a, #222);
+  height: 320px;
+}
+
+.opt5-container h3 {
+  color: var(--gold);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.card-nav-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  transition: all 0.3s;
+}
+
+.card-nav-item:hover {
+  background: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+.card-nav-item .icon {
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.card-nav-item .label {
+  font-size: 0.7rem;
+}
+
+/* Option 6: Full Overlay */
+.opt6-header {
+  background: var(--white);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opt6-menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--black);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.opt6-overlay {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.opt6-overlay nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.opt6-overlay a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.4rem 0;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--tp-light);
+  opacity: 0.7;
+  transition: all 0.3s;
 }
-.option-number {
+
+.opt6-overlay a:hover {
+  opacity: 1;
+  color: var(--gold);
+  transform: translateX(8px);
+}
+
+.opt6-overlay .num {
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+/* Option 7: Journey Timeline */
+.opt7-container {
+  padding: 1.25rem;
+  background: linear-gradient(180deg, #1a1a1a, #2a2a2a);
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.opt7-header {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.opt7-header h3 {
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+.opt7-header p {
+  color: var(--gray);
+  font-size: 0.75rem;
+}
+
+.journey-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0.75rem 0;
+}
+
+.journey-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  padding: 0.25rem;
+  transition: all 0.3s;
+  min-width: 60px;
+}
+
+.journey-step .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.journey-step:hover .icon, .journey-step.active .icon {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.journey-step .label {
+  font-size: 0.6rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.journey-step.active .label {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.journey-line {
+  width: 20px;
+  height: 2px;
+  background: rgba(255,255,255,0.2);
+}
+
+.journey-line.done {
+  background: var(--gold);
+}
+
+.opt7-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.opt7-content h2 {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+/* Option 8: Floating Pills */
+.opt8-container {
+  height: 320px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  display: flex;
+  flex-direction: column;
+}
+
+.opt8-header {
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opt8-logo {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.opt8-cta {
+  background: var(--white);
+  color: #4f46e5;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.floating-pills {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+}
+
+.floating-pills::-webkit-scrollbar { display: none; }
+
+.pill {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s;
+}
+
+.pill:hover, .pill.active {
+  background: var(--white);
+  color: #4f46e5;
+}
+
+.opt8-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+/* Option 9: Side Tab */
+.opt9-container {
+  display: flex;
+  height: 320px;
+}
+
+.opt9-sidebar {
+  width: 60px;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.25rem;
+}
+
+.opt9-sidebar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.6rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.opt9-sidebar a .icon {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.opt9-sidebar a:hover, .opt9-sidebar a.active {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.opt9-content {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--white);
+}
+
+.opt9-content h2 {
+  font-size: 1.2rem;
+  color: var(--black);
+}
+
+.opt9-content p {
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+/* Option 10: Chat Style */
+.opt10-container {
+  height: 320px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.opt10-header {
+  background: #1a1a1a;
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.opt10-avatar {
   width: 36px;
   height: 36px;
-  background: var(--gold-primary);
-  color: var(--tp-black);
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.opt10-header-text h3 {
+  font-size: 0.9rem;
+}
+
+.opt10-header-text p {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.opt10-chat {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-bubble {
+  background: #f0f0f0;
+  padding: 0.75rem 1rem;
+  border-radius: 15px 15px 15px 4px;
+  max-width: 85%;
+  font-size: 0.85rem;
+  color: var(--black);
+}
+
+.chat-bubble.bot {
+  background: var(--gold-pale);
+  border: 1px solid var(--gold);
+}
+
+.quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0 0.75rem 0.75rem;
+}
+
+.quick-reply {
+  background: var(--white);
+  border: 2px solid var(--gold);
+  color: var(--black);
+  padding: 0.4rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.quick-reply:hover {
+  background: var(--gold);
+}
+
+/* Option 11: Wheel Menu */
+.opt11-container {
+  height: 320px;
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wheel-menu {
+  position: relative;
+  width: 240px;
+  height: 240px;
+}
+
+.wheel-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--black);
+  box-shadow: 0 0 30px rgba(255,215,0,0.4);
+  cursor: pointer;
+}
+
+.wheel-center .big {
+  font-size: 1rem;
+}
+
+.wheel-item {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.6rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.wheel-item .icon {
+  font-size: 1rem;
+}
+
+.wheel-item:hover {
+  background: var(--gold);
+  color: var(--black);
+  transform: scale(1.15);
+  border-color: var(--gold);
+}
+
+.wheel-item:nth-child(2) { top: 0; left: 50%; transform: translateX(-50%); }
+.wheel-item:nth-child(3) { top: 20%; right: 5%; }
+.wheel-item:nth-child(4) { top: 60%; right: 0; }
+.wheel-item:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); }
+.wheel-item:nth-child(6) { top: 60%; left: 0; }
+.wheel-item:nth-child(7) { top: 20%; left: 5%; }
+
+/* Option 12: Sticky Tabs */
+.opt12-container {
+  height: 320px;
+  overflow-y: auto;
+}
+
+.opt12-hero {
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: var(--white);
+  padding: 1.5rem;
+  text-align: center;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.opt12-hero h2 {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.sticky-tabs {
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 10;
+}
+
+.sticky-tabs a {
+  flex: 1;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--gray);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+}
+
+.sticky-tabs a:hover, .sticky-tabs a.active {
+  color: var(--black);
+}
+
+.sticky-tabs a.active {
+  border-bottom-color: var(--gold);
+}
+
+.opt12-section {
+  padding: 1.5rem;
+  min-height: 150px;
+  border-bottom: 1px solid #e5e5e5;
+  color: var(--black);
+}
+
+.opt12-section h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Form Section */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.form-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.form-card:hover {
+  border-color: rgba(255,215,0,0.3);
+}
+
+.form-card-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--dark-border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-card-header .num {
+  width: 32px;
+  height: 32px;
+  background: var(--gold);
+  color: var(--black);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-}
-.option-title { font-size: 1.2rem; font-weight: 700; }
-.option-subtitle { font-size: 0.85rem; color: var(--tp-gray); }
-
-.pros-cons { margin: 1rem 0; font-size: 0.9rem; }
-.pros-cons p { margin: 0.3rem 0; }
-.pro { color: green; }
-.con { color: #c00; }
-
-.demo-form { margin-top: 1rem; }
-.form-group { margin-bottom: 1rem; }
-.form-group label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 0.3rem;
   font-size: 0.9rem;
 }
-.form-group input,
-.form-group textarea {
+
+.form-card-header h3 {
+  font-size: 1.1rem;
+}
+
+.form-card-header .subtitle {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.form-card-body {
+  padding: 1.25rem;
+}
+
+.form-card-body .pros-cons {
+  background: transparent;
+  margin-bottom: 1rem;
+}
+
+.embed-container {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.embed-container iframe {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--tp-light);
-  border-radius: 6px;
+  min-height: 400px;
+  border: none;
+}
+
+.form-demo {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+
+.form-demo .form-group {
+  margin-bottom: 1rem;
+}
+
+.form-demo label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.form-demo input,
+.form-demo textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--dark);
+  border: 1px solid var(--dark-border);
+  border-radius: 8px;
+  color: var(--white);
   font-family: inherit;
   font-size: 0.95rem;
   transition: border-color 0.3s;
 }
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--gold-primary);
-}
-.form-group textarea { resize: vertical; min-height: 80px; }
 
-.consent-box {
-  background: var(--gold-pale);
+.form-demo input:focus,
+.form-demo textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.form-demo .consent-box {
+  background: rgba(255,215,0,0.1);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 8px;
   padding: 1rem;
-  border-radius: 6px;
   margin: 1rem 0;
-  border-left: 3px solid var(--gold-primary);
 }
-.consent-box label {
+
+.form-demo .consent-box label {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   font-size: 0.75rem;
-  color: var(--tp-gray);
+  color: var(--gray);
   cursor: pointer;
-  line-height: 1.5;
 }
-.consent-box input[type="checkbox"] {
-  width: auto;
-  margin-top: 3px;
+
+.form-demo .consent-box input {
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--gold);
 }
-.consent-box a { color: #0066cc; text-decoration: underline; }
+
+.form-demo .consent-box a {
+  color: var(--gold);
+}
 
 .submit-btn {
   width: 100%;
   padding: 0.85rem;
-  background: var(--gold-primary);
-  color: var(--tp-black);
+  background: var(--gold);
+  color: var(--black);
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .submit-btn:hover {
-  background: var(--tp-black);
-  color: var(--gold-primary);
+  background: var(--white);
+  color: var(--black);
 }
 
 .mailto-btn {
   display: block;
   text-align: center;
   padding: 0.85rem;
-  background: var(--tp-black);
-  color: var(--gold-primary);
-  border-radius: 6px;
+  background: var(--white);
+  color: var(--black);
+  border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
   margin-top: 1rem;
-}
-.mailto-btn:hover { background: #333; }
-
-.embed-placeholder {
-  background: #f0f0f0;
-  border: 2px dashed #ccc;
-  padding: 2rem;
-  text-align: center;
-  border-radius: 6px;
-  color: var(--tp-gray);
+  transition: all 0.3s;
 }
 
+.mailto-btn:hover {
+  background: var(--gold);
+}
+
+/* Recommendation Section */
 .recommendation {
-  background: linear-gradient(135deg, var(--tp-black), #333);
-  color: var(--tp-white);
-  padding: 2rem;
-  border-radius: 12px;
-  margin-top: 2rem;
+  background: linear-gradient(135deg, var(--dark-card), #1a1a1a);
+  border: 1px solid var(--dark-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 3rem 0;
   text-align: center;
 }
-.recommendation h2 { color: var(--gold-primary); margin-bottom: 1rem; }
-.recommendation p { max-width: 700px; margin: 0 auto; }
 
-.note { 
-  background: #fff3cd; 
-  padding: 1rem; 
-  border-radius: 6px; 
-  margin-top: 2rem;
-  border-left: 4px solid #ffc107;
+.recommendation h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
 }
-.note strong { color: #856404; }
+
+.recommendation h2 .gold {
+  color: var(--gold);
+}
+
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.rec-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.rec-card h4 {
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.rec-card p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--dark-border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pros-cons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .card-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .journey-timeline {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+  }
+  
+  .stats-bar {
+    gap: 1.5rem;
+  }
+  
+  .wheel-menu {
+    transform: scale(0.8);
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.demo-card, .form-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.demo-card:nth-child(1) { animation-delay: 0.1s; }
+.demo-card:nth-child(2) { animation-delay: 0.15s; }
+.demo-card:nth-child(3) { animation-delay: 0.2s; }
+.demo-card:nth-child(4) { animation-delay: 0.25s; }
+.demo-card:nth-child(5) { animation-delay: 0.3s; }
+.demo-card:nth-child(6) { animation-delay: 0.35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-card, .form-card {
+    animation: none;
+    opacity: 1;
+  }
+}
 </style>
 </head>
 <body>
 
-<h1>
-  Form Options Comparison
-  <span>Choose the best option for KLP enquiry form</span>
-</h1>
+<div class="bg-grid"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
 
-<div class="container">
-  <div class="options-grid">
-
-    <!-- Option 1: Formspree -->
-    <div class="option-card">
-      <div class="option-header">
-        <div class="option-number">1</div>
-        <div>
-          <div class="option-title">Formspree</div>
-          <div class="option-subtitle">formspree.io</div>
-        </div>
-      </div>
-      
-      <div class="pros-cons">
-        <p class="pro">✓ Sends directly to your email</p>
-        <p class="pro">✓ Free: 50 submissions/month</p>
-        <p class="pro">✓ Easy setup, no coding</p>
-        <p class="pro">✓ Spam protection included</p>
-        <p class="con">✗ Need to create account</p>
-      </div>
-
-      <form class="demo-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-group">
-          <label>이름 (Name) *</label>
-          <input type="text" name="name" placeholder="홍길동" required>
-        </div>
-        <div class="form-group">
-          <label>이메일 (Email) *</label>
-          <input type="email" name="email" placeholder="example@email.com" required>
-        </div>
-        <div class="form-group">
-          <label>전화번호 (Phone)</label>
-          <input type="tel" name="phone" placeholder="+82-10-1234-5678">
-        </div>
-        <div class="form-group">
-          <label>문의 내용 (Question) *</label>
-          <textarea name="message" placeholder="예: 영어를 잘 못해도 지원할 수 있나요?" required></textarea>
-        </div>
-        <div class="consent-box">
-          <label>
-            <input type="checkbox" name="consent" required>
-            <span>I consent to TP collecting, using, and processing my personal data for communication purposes, including sending me relevant information about TP's services. I understand that my personal data will be processed in accordance with the Malaysian Personal Data Protection Act 2010 ("PDPA"). I understand that I can manage my preferences or unsubscribe at any time by <a href="#">using this link</a>. TP will not disclose, share, or sell my personal data to any third parties except as required by law or with my prior consent. For more details, please <a href="#">See TP's Privacy Policy</a>.</span>
-          </label>
-        </div>
-        <button type="submit" class="submit-btn">문의하기 (Submit)</button>
-      </form>
+<!-- Header -->
+<header class="main-header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">TP</div>
+      <span>KLP Design System</span>
     </div>
-
-    <!-- Option 2: FormSubmit -->
-    <div class="option-card">
-      <div class="option-header">
-        <div class="option-number">2</div>
-        <div>
-          <div class="option-title">FormSubmit</div>
-          <div class="option-subtitle">formsubmit.co</div>
-        </div>
-      </div>
-      
-      <div class="pros-cons">
-        <p class="pro">✓ Sends directly to your email</p>
-        <p class="pro">✓ Free & unlimited</p>
-        <p class="pro">✓ No account needed (initially)</p>
-        <p class="pro">✓ reCAPTCHA spam protection</p>
-        <p class="con">✗ Must confirm email first time</p>
-      </div>
-
-      <form class="demo-form" action="https://formsubmit.co/YOUR_EMAIL@teleperformance.com" method="POST">
-        <input type="hidden" name="_subject" value="New KLP Enquiry">
-        <input type="hidden" name="_captcha" value="true">
-        <input type="hidden" name="_template" value="table">
-        
-        <div class="form-group">
-          <label>이름 (Name) *</label>
-          <input type="text" name="name" placeholder="홍길동" required>
-        </div>
-        <div class="form-group">
-          <label>이메일 (Email) *</label>
-          <input type="email" name="email" placeholder="example@email.com" required>
-        </div>
-        <div class="form-group">
-          <label>전화번호 (Phone)</label>
-          <input type="tel" name="phone" placeholder="+82-10-1234-5678">
-        </div>
-        <div class="form-group">
-          <label>문의 내용 (Question) *</label>
-          <textarea name="message" placeholder="예: 비자 신청은 얼마나 걸리나요?" required></textarea>
-        </div>
-        <div class="consent-box">
-          <label>
-            <input type="checkbox" name="consent" required>
-            <span>I consent to TP collecting, using, and processing my personal data for communication purposes, including sending me relevant information about TP's services. I understand that my personal data will be processed in accordance with the Malaysian Personal Data Protection Act 2010 ("PDPA"). I understand that I can manage my preferences or unsubscribe at any time by <a href="#">using this link</a>. TP will not disclose, share, or sell my personal data to any third parties except as required by law or with my prior consent. For more details, please <a href="#">See TP's Privacy Policy</a>.</span>
-          </label>
-        </div>
-        <button type="submit" class="submit-btn">문의하기 (Submit)</button>
-      </form>
-    </div>
-
-    <!-- Option 3: Google Forms -->
-    <div class="option-card">
-      <div class="option-header">
-        <div class="option-number">3</div>
-        <div>
-          <div class="option-title">Google Forms</div>
-          <div class="option-subtitle">Embedded iframe</div>
-        </div>
-      </div>
-      
-      <div class="pros-cons">
-        <p class="pro">✓ Free & unlimited</p>
-        <p class="pro">✓ Responses in Google Sheets</p>
-        <p class="pro">✓ Easy to edit questions</p>
-        <p class="pro">✓ Built-in analytics</p>
-        <p class="con">✗ Looks like Google, not TP branding</p>
-        <p class="con">✗ Redirects user to Google</p>
-      </div>
-
-      <div class="embed-placeholder">
-        <p><strong>Google Form </strong></p>
-        <code style="font-size:0.75rem; background:#fff; padding:0.5rem; display:block; margin-top:1rem; border-radius:4px;">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbyehfxPXEHZIo562biKvKrpAHFaTxb-1_b3dIgi6fegBQTg/viewform?embedded=true" width="640" height="1168" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>        </code>
-      </div>
-    </div>
-
-    <!-- Option 4: Microsoft Forms -->
-    <div class="option-card">
-      <div class="option-header">
-        <div class="option-number">4</div>
-        <div>
-          <div class="option-title">Microsoft Forms</div>
-          <div class="option-subtitle">Embedded iframe</div>
-        </div>
-      </div>
-      
-      <div class="pros-cons">
-        <p class="pro">✓ Free with Microsoft account</p>
-        <p class="pro">✓ Responses in Excel/SharePoint</p>
-        <p class="pro">✓ Integrates with Power Automate</p>
-        <p class="pro">✓ Good for TP if using MS ecosystem</p>
-        <p class="con">✗ Microsoft branding visible</p>
-        <p class="con">✗ May require login for some features</p>
-      </div>
-
-      <div class="embed-placeholder">
-        <p><strong>Microsoft Form </strong></p>
-        <code style="font-size:0.75rem; background:#fff; padding:0.5rem; display:block; margin-top:1rem; border-radius:4px;">
-        <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=r8uPY0y64UOtrlR1yXD-EIJIAj17Wp1PpY6WC9TVY4hUQzBPUVozWEdPRkdWSDk3TlVEMkZaRk43RS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-        </code>
-      </div>
-    </div>
-
-    <!-- Option 5: Mailto -->
-    <div class="option-card">
-      <div class="option-header">
-        <div class="option-number">5</div>
-        <div>
-          <div class="option-title">Mailto Link</div>
-          <div class="option-subtitle">Opens email client</div>
-        </div>
-      </div>
-      
-      <div class="pros-cons">
-        <p class="pro">✓ No third-party service needed</p>
-        <p class="pro">✓ 100% free forever</p>
-        <p class="pro">✓ Direct email to you</p>
-        <p class="con">✗ User needs email client configured</p>
-        <p class="con">✗ Less professional experience</p>
-        <p class="con">✗ No data collection/tracking</p>
-        <p class="con">✗ Mobile users may have issues</p>
-      </div>
-
-      <div class="demo-form">
-        <p style="color: var(--tp-gray); font-size: 0.9rem; margin-bottom: 1rem;">
-          When clicked, this opens the user's email app (Outlook, Gmail app, etc.) with a pre-filled email:
-        </p>
-        
-        <a href="mailto:recruitment@teleperformance.com?subject=KLP%20Enquiry&body=이름%20(Name):%20%0A이메일%20(Email):%20%0A전화번호%20(Phone):%20%0A%0A문의%20내용%20(Question):%0A예:%20한국어만%20사용해도%20되나요?" class="mailto-btn">
-          📧 이메일로 문의하기 (Email Us)
-        </a>
-        
-        <p style="color: var(--tp-gray); font-size: 0.8rem; margin-top: 1rem; text-align: center;">
-          Opens: Outlook / Gmail / Apple Mail
-        </p>
-      </div>
-    </div>
-
+    <nav class="nav-links">
+      <a href="#menus" class="nav-link active">Menus</a>
+      <a href="#forms" class="nav-link">Forms</a>
+      <a href="#recommendations" class="nav-link">Recommendations</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+</header>
 
-  <!-- Recommendation -->
+<!-- Hero -->
+<section class="hero">
+  <h1>Menu & Form <span class="gold">Design Options</span></h1>
+  <p>Complete collection of navigation patterns and form solutions for KLP recruitment platform</p>
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">12</div>
+      <div class="stat-label">Menu Patterns</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">5</div>
+      <div class="stat-label">Form Options</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2</div>
+      <div class="stat-label">Live Embeds</div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu Options Section -->
+<section id="menus" class="container">
+  <div class="section-divider">
+    <h2>Navigation Patterns</h2>
+    <span class="count">12 Options</span>
+  </div>
+  
+  <div class="tabs-nav">
+    <button class="tab-btn active" data-filter="all">All</button>
+    <button class="tab-btn" data-filter="mobile">Mobile</button>
+    <button class="tab-btn" data-filter="desktop">Desktop</button>
+    <button class="tab-btn" data-filter="creative">Creative</button>
+  </div>
+  
+  <div class="menu-grid" id="menuGrid">
+    <!-- Option 1 -->
+    <article class="demo-card" data-type="desktop">
+      <div class="demo-header">
+        <h3>Option 1: Minimal Sticky Header</h3>
+        <span class="badge badge-gold">Desktop Best</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Clean, professional, Apple-style</div>
+        <div><strong class="con">Cons</strong> Links hidden on mobile</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt1-header">
+          <div class="opt1-logo"><span>TP</span> Korea</div>
+          <nav class="opt1-nav">
+            <a href="#">Cities</a>
+            <a href="#">Jobs</a>
+            <a href="#">FAQ</a>
+            <a href="#" class="opt1-cta">Apply Now</a>
+          </nav>
+        </div>
+        <div style="padding: 2rem; text-align: center; color: var(--gray);">
+          <p>Header stays fixed at top</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 2 -->
+    <article class="demo-card" data-type="mobile">
+      <div class="demo-header">
+        <h3>Option 2: Bottom Navigation</h3>
+        <span class="badge badge-gold">Mobile Best</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Thumb-friendly, app-like</div>
+        <div><strong class="con">Cons</strong> Takes bottom space</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt2-container">
+          <div class="opt2-content">
+            <h2>Work in Korea,<br>Grow Globally</h2>
+            <p style="color: #999; font-size: 0.85rem;">Bottom nav always accessible</p>
+          </div>
+          <nav class="opt2-nav">
+            <a href="#"><span class="icon">🏠</span><span>Home</span></a>
+            <a href="#"><span class="icon">💼</span><span>Jobs</span></a>
+            <a href="#" class="cta-special"><span class="icon">✉️</span><span>Contact</span></a>
+            <a href="#" class="active"><span class="icon">❓</span><span>FAQ</span></a>
+            <a href="#"><span class="icon">📍</span><span>Cities</span></a>
+          </nav>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 3 -->
+    <article class="demo-card" data-type="mobile creative">
+      <div class="demo-header">
+        <h3>Option 3: Floating Action Button</h3>
+        <span class="badge badge-outline">CTA Focused</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Minimal, action-oriented</div>
+        <div><strong class="con">Cons</strong> Requires tap to expand</div>
+      </div>
+      <div class="demo-frame">
+        <div style="position: relative; height: 320px; background: #f8f8f8;">
+          <div class="opt3-header">
+            <div style="display: flex; align-items: center; gap: 0.5rem; color: #000; font-weight: 700;">
+              <span style="width: 24px; height: 24px; background: var(--gold); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">TP</span>
+              TP Korea
+            </div>
+            <div class="opt3-hamburger">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div style="padding: 2rem; text-align: center; color: var(--gray);">
+            <p>Clean page with FAB</p>
+          </div>
+          <div class="fab-container">
+            <div class="fab-options">
+              <a href="#"><span>💬</span> Contact Us</a>
+              <a href="#"><span>💼</span> Job Openings</a>
+              <a href="#"><span>📅</span> Book Meeting</a>
+            </div>
+            <div class="fab-main">+</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 4 -->
+    <article class="demo-card" data-type="creative">
+      <div class="demo-header">
+        <h3>Option 4: Scroll Progress + Dots</h3>
+        <span class="badge badge-outline">Story-style</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Shows progress, immersive</div>
+        <div><strong class="con">Cons</strong> No traditional nav links</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt4-container">
+          <div class="opt4-section">Why Malaysia?</div>
+          <div class="opt4-section">Benefits</div>
+          <div class="opt4-section">Jobs</div>
+          <div class="opt4-section">Apply</div>
+          <div class="scroll-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 5 -->
+    <article class="demo-card" data-type="mobile">
+      <div class="demo-header">
+        <h3>Option 5: Card-Based Navigation</h3>
+        <span class="badge badge-outline">Visual</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Visual, engaging, touch-friendly</div>
+        <div><strong class="con">Cons</strong> Takes more space</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt5-container">
+          <h3>Where would you like to go?</h3>
+          <nav class="card-nav">
+            <a href="#" class="card-nav-item"><span class="icon">🌏</span><span class="label">Cities</span></a>
+            <a href="#" class="card-nav-item"><span class="icon">💰</span><span class="label">Salary</span></a>
+            <a href="#" class="card-nav-item"><span class="icon">💼</span><span class="label">Jobs</span></a>
+            <a href="#" class="card-nav-item"><span class="icon">✈️</span><span class="label">Visa</span></a>
+            <a href="#" class="card-nav-item"><span class="icon">❓</span><span class="label">FAQ</span></a>
+            <a href="#" class="card-nav-item"><span class="icon">💬</span><span class="label">Contact</span></a>
+            <a href="#" class="card-nav-item"><span class="icon">📝</span><span class="label">Apply</span></a>
+            <a href="#" class="card-nav-item"><span class="icon">🏢</span><span class="label">About</span></a>
+          </nav>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 6 -->
+    <article class="demo-card" data-type="desktop creative">
+      <div class="demo-header">
+        <h3>Option 6: Full-Screen Overlay</h3>
+        <span class="badge badge-gold">Luxury Style</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Dramatic, premium feel</div>
+        <div><strong class="con">Cons</strong> Hides content, extra click</div>
+      </div>
+      <div class="demo-frame">
+        <div style="position: relative; height: 320px;">
+          <div class="opt6-header">
+            <div style="display: flex; align-items: center; gap: 0.5rem; color: #000; font-weight: 700;">
+              <span style="width: 24px; height: 24px; background: var(--gold); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">TP</span>
+              Korea
+            </div>
+            <div class="opt6-menu-btn">MENU ☰</div>
+          </div>
+          <div class="opt6-overlay">
+            <nav>
+              <a href="#"><span class="num">01</span> Why Malaysia</a>
+              <a href="#"><span class="num">02</span> Salary & Benefits</a>
+              <a href="#"><span class="num">03</span> Job Openings</a>
+              <a href="#"><span class="num">04</span> FAQ</a>
+              <a href="#"><span class="num">05</span> Apply Now</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 7 -->
+    <article class="demo-card" data-type="creative">
+      <div class="demo-header">
+        <h3>Option 7: Journey Timeline</h3>
+        <span class="badge badge-gold">Story-Driven</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Shows clear path, guides user</div>
+        <div><strong class="con">Cons</strong> Limited items, horizontal space</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt7-container">
+          <div class="opt7-header">
+            <h3>TP Korea Journey</h3>
+            <p>Your path to working abroad</p>
+          </div>
+          <nav class="journey-timeline">
+            <a href="#" class="journey-step active"><div class="icon">🔍</div><span class="label">Discover</span></a>
+            <div class="journey-line done"></div>
+            <a href="#" class="journey-step"><div class="icon">💡</div><span class="label">Learn</span></a>
+            <div class="journey-line"></div>
+            <a href="#" class="journey-step"><div class="icon">💼</div><span class="label">Jobs</span></a>
+            <div class="journey-line"></div>
+            <a href="#" class="journey-step"><div class="icon">📝</div><span class="label">Apply</span></a>
+            <div class="journey-line"></div>
+            <a href="#" class="journey-step"><div class="icon">✈️</div><span class="label">Fly!</span></a>
+          </nav>
+          <div class="opt7-content">
+            <div>
+              <h2>Why Malaysia & Thailand?</h2>
+              <p style="color:#888; font-size: 0.85rem;">Current step: Discover</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 8 -->
+    <article class="demo-card" data-type="mobile desktop">
+      <div class="demo-header">
+        <h3>Option 8: Floating Pills</h3>
+        <span class="badge badge-outline">Modern & Clean</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Trendy, scrollable, compact</div>
+        <div><strong class="con">Cons</strong> Can get lost if too many</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt8-container">
+          <div class="opt8-header">
+            <div class="opt8-logo">TP Korea</div>
+            <a href="#" class="opt8-cta">Apply</a>
+          </div>
+          <nav class="floating-pills">
+            <a href="#" class="pill active">Home</a>
+            <a href="#" class="pill">Cities</a>
+            <a href="#" class="pill">Salary</a>
+            <a href="#" class="pill">Jobs</a>
+            <a href="#" class="pill">Visa</a>
+            <a href="#" class="pill">FAQ</a>
+          </nav>
+          <div class="opt8-content">
+            <div>
+              <h2 style="font-size: 1.25rem;">Work in Korean,<br>Grow Globally</h2>
+              <p style="opacity: 0.8; font-size: 0.9rem;">Overseas opportunity awaits</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 9 -->
+    <article class="demo-card" data-type="desktop">
+      <div class="demo-header">
+        <h3>Option 9: Side Tab Navigation</h3>
+        <span class="badge badge-outline">Dashboard Style</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Always visible, clear icons</div>
+        <div><strong class="con">Cons</strong> Takes side space on mobile</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt9-container">
+          <nav class="opt9-sidebar">
+            <a href="#" class="active"><span class="icon">🏠</span>Home</a>
+            <a href="#"><span class="icon">🌏</span>Cities</a>
+            <a href="#"><span class="icon">💰</span>Salary</a>
+            <a href="#"><span class="icon">💼</span>Jobs</a>
+            <a href="#"><span class="icon">✈️</span>Visa</a>
+            <a href="#"><span class="icon">❓</span>FAQ</a>
+          </nav>
+          <div class="opt9-content">
+            <h2>Work in Korean,<br>Grow Globally</h2>
+            <p>Side navigation stays visible as you scroll</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 10 -->
+    <article class="demo-card" data-type="mobile creative">
+      <div class="demo-header">
+        <h3>Option 10: Chat-Style Quick Replies</h3>
+        <span class="badge badge-gold">Friendly & Interactive</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Conversational, guides user</div>
+        <div><strong class="con">Cons</strong> Unconventional UX</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt10-container">
+          <div class="opt10-header">
+            <div class="opt10-avatar">👋</div>
+            <div class="opt10-header-text">
+              <h3>TP Korea Team</h3>
+              <p>Usually replies in hours</p>
+            </div>
+          </div>
+          <div class="opt10-chat">
+            <div class="chat-bubble bot">Welcome! How can we help you today? 😊</div>
+          </div>
+          <div class="quick-replies">
+            <a href="#" class="quick-reply">🌏 Why Malaysia?</a>
+            <a href="#" class="quick-reply">💰 Salary info</a>
+            <a href="#" class="quick-reply">💼 Job openings</a>
+            <a href="#" class="quick-reply">✈️ Visa help</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 11 -->
+    <article class="demo-card" data-type="creative">
+      <div class="demo-header">
+        <h3>Option 11: Radial / Wheel Menu</h3>
+        <span class="badge badge-outline">Creative</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Unique, memorable, fun</div>
+        <div><strong class="con">Cons</strong> Harder on mobile, limited items</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt11-container">
+          <div class="wheel-menu">
+            <div class="wheel-center"><span class="big">TP</span>Korea</div>
+            <a href="#" class="wheel-item"><span class="icon">🌏</span>City</a>
+            <a href="#" class="wheel-item"><span class="icon">💰</span>Pay</a>
+            <a href="#" class="wheel-item"><span class="icon">💼</span>Jobs</a>
+            <a href="#" class="wheel-item"><span class="icon">✈️</span>Visa</a>
+            <a href="#" class="wheel-item"><span class="icon">❓</span>FAQ</a>
+            <a href="#" class="wheel-item"><span class="icon">💬</span>Chat</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 12 -->
+    <article class="demo-card" data-type="desktop mobile">
+      <div class="demo-header">
+        <h3>Option 12: Sticky Section Tabs</h3>
+        <span class="badge badge-gold">Long-Page Best</span>
+      </div>
+      <div class="pros-cons">
+        <div><strong class="pro">Pros</strong> Always accessible, shows section</div>
+        <div><strong class="con">Cons</strong> Takes top space when scrolling</div>
+      </div>
+      <div class="demo-frame">
+        <div class="opt12-container">
+          <div class="opt12-hero">
+            <h2>Work in Korean, Grow Globally</h2>
+            <p style="color:#888; font-size: 0.8rem;">Scroll to see sticky tabs</p>
+          </div>
+          <nav class="sticky-tabs">
+            <a href="#" class="active">Why Malaysia?</a>
+            <a href="#">Benefits</a>
+            <a href="#">Jobs</a>
+            <a href="#">Visa</a>
+            <a href="#">FAQ</a>
+          </nav>
+          <div class="opt12-section">
+            <h3>Why Malaysia?</h3>
+            <p style="color: var(--gray);">Tabs stay fixed as you scroll down...</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Form Options Section -->
+<section id="forms" class="container">
+  <div class="section-divider">
+    <h2>Form Options</h2>
+    <span class="count">5 Solutions</span>
+  </div>
+  
+  <div class="form-grid">
+    <!-- Formspree -->
+    <article class="form-card">
+      <div class="form-card-header">
+        <div class="num">1</div>
+        <div>
+          <h3>Formspree</h3>
+          <div class="subtitle">formspree.io</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="pros-cons">
+          <div><strong class="pro">Pros</strong> Direct email, easy setup, spam protection</div>
+          <div><strong class="con">Cons</strong> Need account, 50/month free</div>
+        </div>
+        <div class="form-demo">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="3" placeholder="Your question..."></textarea>
+          </div>
+          <button class="submit-btn">Submit Enquiry</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- FormSubmit -->
+    <article class="form-card">
+      <div class="form-card-header">
+        <div class="num">2</div>
+        <div>
+          <h3>FormSubmit</h3>
+          <div class="subtitle">formsubmit.co</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="pros-cons">
+          <div><strong class="pro">Pros</strong> Free unlimited, no account needed initially</div>
+          <div><strong class="con">Cons</strong> Must confirm email first time</div>
+        </div>
+        <div class="form-demo">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="3" placeholder="Your question..."></textarea>
+          </div>
+          <button class="submit-btn">Submit Enquiry</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Google Forms -->
+    <article class="form-card">
+      <div class="form-card-header">
+        <div class="num">3</div>
+        <div>
+          <h3>Google Forms</h3>
+          <div class="subtitle">Embedded iframe</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="pros-cons">
+          <div><strong class="pro">Pros</strong> Free unlimited, Google Sheets integration</div>
+          <div><strong class="con">Cons</strong> Google branding visible</div>
+        </div>
+        <div class="embed-container">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbyehfxPXEHZIo562biKvKrpAHFaTxb-1_b3dIgi6fegBQTg/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Loading...</iframe>
+        </div>
+      </div>
+    </article>
+
+    <!-- Microsoft Forms -->
+    <article class="form-card">
+      <div class="form-card-header">
+        <div class="num">4</div>
+        <div>
+          <h3>Microsoft Forms</h3>
+          <div class="subtitle">Embedded iframe</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="pros-cons">
+          <div><strong class="pro">Pros</strong> Excel integration, Power Automate</div>
+          <div><strong class="con">Cons</strong> Microsoft branding visible</div>
+        </div>
+        <div class="embed-container">
+          <iframe width="640px" height="600px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=r8uPY0y64UOtrlR1yXD-EIJIAj17Wp1PpY6WC9TVY4hUQzBPUVozWEdPRkdWSDk3TlVEMkZaRk43RS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </article>
+
+    <!-- Mailto -->
+    <article class="form-card">
+      <div class="form-card-header">
+        <div class="num">5</div>
+        <div>
+          <h3>Mailto Link</h3>
+          <div class="subtitle">Opens email client</div>
+        </div>
+      </div>
+      <div class="form-card-body">
+        <div class="pros-cons">
+          <div><strong class="pro">Pros</strong> No third-party, 100% free, direct email</div>
+          <div><strong class="con">Cons</strong> Needs configured email app</div>
+        </div>
+        <div style="padding: 2rem 1rem; text-align: center;">
+          <p style="color: var(--gray); margin-bottom: 1rem; font-size: 0.9rem;">Opens user's email app with pre-filled message</p>
+          <a href="mailto:recruitment@teleperformance.com?subject=KLP%20Enquiry&body=Name:%20%0AEmail:%20%0APhone:%20%0A%0AQuestion:%20" class="mailto-btn">
+            Email Us Directly
+          </a>
+          <p style="color: var(--gray); font-size: 0.8rem; margin-top: 1rem;">Opens: Outlook / Gmail / Apple Mail</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Recommendations Section -->
+<section id="recommendations" class="container">
   <div class="recommendation">
-    <h2>💡 My Recommendation</h2>
-    <p>
-      For KLP recruitment page, I recommend <strong>Option 1 (Formspree)</strong> or <strong>Option 2 (FormSubmit)</strong>.<br><br>
-      Both send submissions directly to your email inbox, look professional with TP branding, and are free for your expected volume.<br><br>
-      <strong>FormSubmit</strong> is slightly easier (no account needed initially), while <strong>Formspree</strong> has better dashboard for tracking.
-    </p>
+    <h2>Top <span class="gold">Recommendations</span></h2>
+    <p style="color: var(--gray); max-width: 600px; margin: 0 auto;">Based on KLP recruitment needs, here are the best combinations</p>
+    
+    <div class="rec-grid">
+      <div class="rec-card">
+        <h4>Best Overall Experience</h4>
+        <p><strong>Journey Timeline (#7)</strong> + <strong>Sticky Tabs (#12)</strong><br><br>Shows clear path: Discover → Learn → Apply. Perfect for recruitment storytelling like Apple Careers.</p>
+      </div>
+      <div class="rec-card">
+        <h4>Most Modern Feel</h4>
+        <p><strong>Floating Pills (#8)</strong> + <strong>Chat Quick Replies (#10)</strong><br><br>Friendly, approachable, great for younger Korean audience. Feels like messaging a friend.</p>
+      </div>
+      <div class="rec-card">
+        <h4>Most Professional</h4>
+        <p><strong>Full-Screen Overlay (#6)</strong> + <strong>Bottom Nav (#2)</strong><br><br>Premium brand feel on desktop, app-like on mobile. Good for corporate image.</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- Setup Note -->
-  <div class="note">
-    <strong>📝 To implement:</strong><br>
-    1. Tell me which option you prefer<br>
-    2. Give me the email address where you want to receive submissions<br>
-    3. I'll create the actual enquiry page with proper styling matching KLP design
-  </div>
+<!-- Footer -->
+<footer>
+  <p>KLP Design System | Menu & Form Options Demo</p>
+</footer>
 
-</div>
+<script>
+// Initialize scroll progress
+const scrollProgress = document.getElementById('scrollProgress');
+
+function updateScrollProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  scrollProgress.style.width = scrollPercent + '%';
+}
+
+window.addEventListener('scroll', updateScrollProgress);
+updateScrollProgress();
+
+// Tab filtering
+const tabBtns = document.querySelectorAll('.tab-btn');
+const menuCards = document.querySelectorAll('.demo-card');
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    const filter = btn.dataset.filter;
+    
+    menuCards.forEach(card => {
+      if (filter === 'all' || card.dataset.type.includes(filter)) {
+        card.style.display = 'block';
+        card.style.animation = 'fadeInUp 0.5s ease forwards';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Scroll dots interaction
+const scrollDots = document.querySelectorAll('.scroll-dots .dot');
+scrollDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    scrollDots.forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+});
+
+// Intersection Observer for active nav state
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+const observerOptions = {
+  rootMargin: '-50% 0px -50% 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + id) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, observerOptions);
+
+sections.forEach(section => observer.observe(section));
+
+// Mobile menu toggle (basic)
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinksContainer = document.querySelector('.nav-links');
+
+mobileMenuBtn.addEventListener('click', () => {
+  mobileMenuBtn.classList.toggle('active');
+  // For a full implementation, you would show/hide a mobile menu panel
+});
+
+// Prefers reduced motion
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (prefersReducedMotion.matches) {
+  document.querySelectorAll('.demo-card, .form-card').forEach(el => {
+    el.style.animation = 'none';
+    el.style.opacity = '1';
+  });
+}
+</script>
 
 </body>
 </html>
