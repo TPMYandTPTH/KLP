@@ -55,14 +55,12 @@
 <meta name="description" content="말레이시아 생활비 분석. 쿠알라룸푸르와 서울 생활비 비교, 주거, 식비, 교통비, 월별 예산 예시.">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="photos/TPLogo11.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <style>
 :root{--tp-black:#000;--tp-dark:#1a1a1a;--tp-charcoal:#2d2d2d;--tp-gray-dark:#4a4a4a;--tp-gray:#666;--tp-gray-light:#999;--tp-silver:#ccc;--tp-light:#e5e5e5;--tp-off:#f5f5f5;--tp-white:#fff;--gold-primary:#FFD700;--gold-light:#FFAA00;--gold-dark:#E6B800;--gold-pale:#FFFBEB;--max:1050px;--maxw:1200px;--shadow-sm:0 2px 4px rgba(0,0,0,.08);--shadow-md:0 4px 8px rgba(0,0,0,.12);--shadow-lg:0 8px 16px rgba(0,0,0,.16);--shadow-gold:0 4px 12px rgba(255,215,0,.3);--radius:12px}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--tp-dark);line-height:1.8;background:var(--tp-white);-webkit-font-smoothing:antialiased}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--tp-dark);line-height:1.8;background:var(--tp-white);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -127,7 +125,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 .back-to-top:hover{background:var(--gold-primary);color:var(--tp-black);transform:translateY(-2px)}
 .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--tp-white) 0%,var(--tp-off) 100%);padding:3.6rem 20px;text-align:center}
 .hero::before{content:'';position:absolute;top:50%;right:6%;width:clamp(220px,32vw,480px);height:clamp(220px,32vw,480px);background-image:url('photos/TPLogo11.png');background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.04;filter:saturate(0);transform:translateY(-50%);pointer-events:none}
-.hero h1{font-size:2.3rem;font-weight:900;color:#000;margin-bottom:.45rem;font-family:'Noto Serif KR',serif}
+.hero h1{font-size:2.3rem;font-weight:900;color:#000;margin-bottom:.45rem}
 .hero p{color:var(--tp-gray-dark)}
 .hero-cta{margin-top:1rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
 .subnav{position:sticky;top:60px;z-index:900;background:#000;color:#fff;border-bottom:1px solid #222}
@@ -136,7 +134,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 .chip:hover{border-color:var(--gold-primary);color:var(--gold-primary)}
 .chip.active{background:var(--gold-primary);color:#000;border-color:var(--gold-primary)}
 .section{max-width:var(--maxw);margin:2rem auto;padding:0 20px}
-.section h2{font-size:1.6rem;color:#000;font-weight:900;margin-bottom:.6rem;font-family:'Noto Serif KR',serif}
+.section h2{font-size:1.6rem;color:#000;font-weight:900;margin-bottom:.6rem}
 .lead{color:var(--tp-gray-dark)}
 .muted{color:var(--tp-gray-dark)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}

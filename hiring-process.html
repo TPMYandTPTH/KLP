@@ -55,14 +55,12 @@
 <meta name="description" content="TP 채용 프로세스 상세 안내. 면접 단계, 소요 시간, 준비 체크리스트, Teams 사용법, 평가 기준.">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="photos/TPLogo11.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <style>
 :root{--tp-black:#000;--tp-dark:#1a1a1a;--tp-charcoal:#2d2d2d;--tp-gray-dark:#4a4a4a;--tp-gray:#666;--tp-gray-light:#999;--tp-silver:#ccc;--tp-light:#e5e5e5;--tp-off:#f5f5f5;--tp-white:#fff;--gold-primary:#FFD700;--gold-light:#FFAA00;--gold-dark:#E6B800;--gold-pale:#FFFBEB;--max:1050px;--shadow-sm:0 2px 4px rgba(0,0,0,.08);--shadow-md:0 4px 8px rgba(0,0,0,.12);--shadow-lg:0 8px 16px rgba(0,0,0,.16);--shadow-gold:0 4px 12px rgba(255,215,0,.3)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--tp-dark);line-height:1.75;background:var(--tp-white);-webkit-font-smoothing:antialiased}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--tp-dark);line-height:1.75;background:var(--tp-white);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -127,11 +125,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 .back-to-top:hover{background:var(--gold-primary);color:var(--tp-black);transform:translateY(-2px)}
 .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--tp-white) 0%,var(--tp-off) 100%);padding:3.75rem 20px;text-align:center}
 .hero::before{content:'';position:absolute;top:50%;right:6%;width:clamp(220px,32vw,480px);height:clamp(220px,32vw,480px);background-image:url('photos/TPLogo11.png');background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.04;filter:saturate(0);transform:translateY(-50%);pointer-events:none}
-.hero h1{font-size:2.4rem;font-weight:900;color:#000;margin-bottom:.6rem;font-family:'Noto Serif KR',serif}
+.hero h1{font-size:2.4rem;font-weight:900;color:#000;margin-bottom:.6rem}
 .hero p{color:var(--tp-gray-dark)}
 .hero-cta{margin-top:1rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
 .section{max-width:1200px;margin:2rem auto;padding:0 20px}
-.section h2{font-size:1.6rem;color:#000;font-weight:900;margin-bottom:.6rem;font-family:'Noto Serif KR',serif}
+.section h2{font-size:1.6rem;color:#000;font-weight:900;margin-bottom:.6rem}
 .lead{color:var(--tp-gray-dark);margin-bottom:1rem}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .card{background:#fff;border:1px solid var(--tp-light);border-radius:12px;padding:1.1rem;box-shadow:var(--shadow-sm);transition:all .3s}
@@ -154,7 +152,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 .acc-item.open .plus{transform:rotate(45deg)}
 .helper{background:#fff;border-top:1px solid var(--tp-light);border-bottom:1px solid var(--tp-light);padding:2rem 20px;margin:2rem 0}
 .helper .inner{max-width:1000px;margin:0 auto;text-align:center}
-.helper h2{font-size:1.6rem;font-weight:900;color:#000;margin-bottom:.4rem;font-family:'Noto Serif KR',serif}
+.helper h2{font-size:1.6rem;font-weight:900;color:#000;margin-bottom:.4rem}
 .helper p{color:var(--tp-gray-dark)}
 @media(max-width:1200px){.steps{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}

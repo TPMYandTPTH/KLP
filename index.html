@@ -56,14 +56,12 @@
 <meta name="description" content="Teleperformance(TP) – 전 세계 100개국에서 함께하는 글로벌 BPO 리더 | 말레이시아·태국 한국어 인재 채용">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="photos/TPLogo11.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <style>
 :root{--tp-black:#000;--tp-dark:#1a1a1a;--tp-charcoal:#2d2d2d;--tp-gray-dark:#4a4a4a;--tp-gray:#666;--tp-gray-light:#999;--tp-silver:#ccc;--tp-light:#e5e5e5;--tp-off:#f5f5f5;--tp-white:#fff;--gold-primary:#FFD700;--gold-light:#FFAA00;--gold-dark:#E6B800;--gold-pale:#FFFBEB;--max:1050px;--shadow-sm:0 2px 4px rgba(0,0,0,.08);--shadow-md:0 4px 8px rgba(0,0,0,.12);--shadow-lg:0 8px 16px rgba(0,0,0,.16);--shadow-gold:0 4px 12px rgba(255,215,0,.3)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--tp-dark);line-height:1.8;background:var(--tp-white);-webkit-font-smoothing:antialiased}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--tp-dark);line-height:1.8;background:var(--tp-white);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 header{position:sticky;top:0;background:rgba(255,255,255,.97);border-bottom:1px solid var(--tp-light);z-index:1000;backdrop-filter:blur(10px);box-shadow:var(--shadow-sm)}
@@ -98,7 +96,7 @@ nav a[aria-current="page"]::after{width:100%;background:var(--tp-black)}
 .hero{min-height:75vh;background:linear-gradient(135deg,var(--tp-white) 0%,var(--tp-off) 50%,var(--gold-pale) 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding:2.5rem 20px}
 .hero::before{content:'';position:absolute;top:50%;right:5%;width:clamp(240px,35vw,520px);height:clamp(240px,35vw,520px);background-image:url('photos/TPLogo11.png');background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.04;filter:saturate(0);transform:translateY(-50%);pointer-events:none}
 .hero-container{max-width:var(--max);margin:0 auto;position:relative;z-index:2}
-.hero h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;color:var(--tp-black);line-height:1.4;margin-bottom:1rem;font-family:'Noto Serif KR',serif;letter-spacing:.02em;min-height:1.5em}
+.hero h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;color:var(--tp-black);line-height:1.4;margin-bottom:1rem;letter-spacing:.02em;min-height:1.5em}
 #hero-rotate{display:inline-block;min-width:1px}
 .hero-subtitle{font-size:1.05rem;color:var(--tp-gray-dark);max-width:620px;margin-bottom:1.75rem;line-height:1.9}
 .hero-cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem}
@@ -116,14 +114,14 @@ nav a[aria-current="page"]::after{width:100%;background:var(--tp-black)}
 .hero-stats{display:flex;gap:2rem;flex-wrap:wrap}
 .stat-item{padding-right:2rem;border-right:1px solid var(--tp-light)}
 .stat-item:last-child{border-right:none}
-.stat-number{font-size:2rem;font-weight:900;color:var(--tp-black);display:block;line-height:1;margin-bottom:.3rem;font-family:'Noto Serif KR',serif}
+.stat-number{font-size:2rem;font-weight:900;color:var(--tp-black);display:block;line-height:1;margin-bottom:.3rem}
 .stat-label{font-size:.75rem;color:var(--tp-gray);letter-spacing:.05em}
 .social-proof-banner{background:var(--tp-black);color:var(--tp-white);padding:1rem 20px;text-align:center}
 .social-proof-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap}
 .proof-item{display:flex;align-items:center;gap:.5rem;font-size:.9rem}
 .proof-item .number{color:var(--gold-primary);font-weight:900;font-size:1.1rem}
 .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-.section-title{text-align:center;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.625rem;font-weight:900;color:var(--tp-black);letter-spacing:.02em;font-family:'Noto Serif KR',serif}
+.section-title{text-align:center;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.625rem;font-weight:900;color:var(--tp-black);letter-spacing:.02em}
 .section-subtitle{text-align:center;color:var(--tp-gray);margin-bottom:2rem;font-size:.9rem}
 .section-title-decorated{position:relative;padding-bottom:1rem}
 .section-title-decorated::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,transparent,var(--gold-primary),transparent)}
@@ -137,12 +135,12 @@ nav a[aria-current="page"]::after{width:100%;background:var(--tp-black)}
 .gptw-years img{height:24px;width:auto}
 .gptw-years strong{font-weight:800;color:var(--gold-dark)}
 .korean-community{padding:60px 20px;background:linear-gradient(135deg,var(--gold-pale) 0%,var(--tp-white) 100%);position:relative}
-.korean-community::before{content:'한';position:absolute;top:50%;right:10%;transform:translateY(-50%);font-size:20rem;font-family:'Noto Serif KR',serif;color:var(--gold-primary);opacity:.03;pointer-events:none}
+.korean-community::before{content:'한';position:absolute;top:50%;right:10%;transform:translateY(-50%);font-size:20rem;color:var(--gold-primary);opacity:.03;pointer-events:none}
 .community-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:var(--max);margin:2rem auto 0}
 .community-stat{background:var(--tp-white);border:2px solid var(--gold-primary);border-radius:12px;padding:1.5rem;text-align:center;box-shadow:var(--shadow-gold);transition:all .3s}
 .community-stat:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,175,55,.3)}
 .community-stat-icon{font-size:2rem;margin-bottom:.5rem}
-.community-stat-number{font-size:2rem;font-weight:900;color:var(--tp-black);font-family:'Noto Serif KR',serif}
+.community-stat-number{font-size:2rem;font-weight:900;color:var(--tp-black)}
 .community-stat-label{font-size:.85rem;color:var(--tp-gray);margin-top:.3rem}
 .gptw-section{padding:60px 20px;background:var(--tp-silver);position:relative;overflow:hidden}
 .gptw-header{display:flex;align-items:center;justify-content:center;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
@@ -161,7 +159,7 @@ nav a[aria-current="page"]::after{width:100%;background:var(--tp-black)}
 .gptw-gallery-item img{width:100%;height:auto;display:block}
 .gptw-stats{display:flex;justify-content:center;gap:3rem;margin-top:2.5rem;flex-wrap:wrap}
 .gptw-stat{text-align:center}
-.gptw-stat-number{font-size:3rem;font-weight:900;background:linear-gradient(90deg,#FFD700,#FFAA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.5rem;font-family:'Noto Serif KR',serif}
+.gptw-stat-number{font-size:3rem;font-weight:900;background:linear-gradient(90deg,#FFD700,#FFAA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.5rem}
 .gptw-stat-label{color:var(--tp-gray-dark);font-size:.9rem}
 .gptw-announcement{background:linear-gradient(135deg,rgba(255,215,0,.15),rgba(255,170,0,.1));border-radius:12px;padding:2rem;margin-bottom:2.5rem;backdrop-filter:blur(10px);border:3px solid var(--gold-primary);box-shadow:0 8px 32px rgba(255,215,0,.25);position:relative;overflow:hidden}
 .gptw-announcement::before{content:'🎉';position:absolute;top:-20px;right:-20px;font-size:8rem;opacity:.1;pointer-events:none}

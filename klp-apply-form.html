@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP Korea · 지원하기</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <style>
+    :root {
+      --bg:          #0a0a0a;
+      --bg-elev:     #141210;
+      --line:        rgba(212, 175, 55, 0.18);
+      --line-strong: rgba(212, 175, 55, 0.55);
+      --gold:        #D4AF37;
+      --gold-bright: #F4D47C;
+      --gold-soft:   rgba(212, 175, 55, 0.08);
+      --text:        #F5F1E8;
+      --muted:       #8a8275;
+      --danger:      #e67e7e;
+      --kakao:       #FEE500;
+      --kakao-ink:   #191919;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'system-ui', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* ============ LAYOUT ============ */
+    .klp-apply {
+      padding: clamp(72px, 10vw, 120px) 24px;
+      background:
+        radial-gradient(ellipse 800px 400px at top, rgba(212,175,55,0.08) 0%, transparent 60%),
+        var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .klp-apply::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 72px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+      opacity: 0.7;
+    }
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    /* ============ HEADER ============ */
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    h2 em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 600;
+    }
+    .lede {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 56px;
+      font-size: 15px;
+    }
+    /* ============ FORM ============ */
+    form { display: grid; gap: 28px; }
+    .field label.field-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .field label.field-label .opt {
+      color: var(--muted);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      margin-left: 6px;
+    }
+    .field input[type="text"],
+    .field input[type="email"],
+    .field input[type="tel"],
+    .field select {
+      width: 100%;
+      padding: 14px 0 12px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+      outline: none;
+    }
+    .field input:focus, .field select:focus {
+      border-bottom-color: var(--gold);
+    }
+    .field input::placeholder { color: #3a3630; }
+    .field select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1L6 6L11 1' stroke='%23D4AF37' stroke-width='1.5'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      padding-right: 28px;
+      cursor: pointer;
+    }
+    .field select option {
+      background: var(--bg-elev);
+      color: var(--text);
+    }
+    .phone-group {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      align-items: end;
+    }
+    /* Radio pills */
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+    .radio-group input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .radio-group label {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text);
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .radio-group label:hover { border-color: var(--line-strong); }
+    .radio-group input[type="radio"]:checked + label {
+      background: var(--gold-soft);
+      border-color: var(--gold);
+      color: var(--gold-bright);
+    }
+    .radio-group input[type="radio"]:focus-visible + label {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+    /* Consent */
+    .consent {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .consent input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--gold);
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+    }
+    .consent a { color: var(--gold); text-decoration: underline; }
+    /* Submit */
+    button.submit {
+      width: 100%;
+      padding: 18px;
+      background: var(--gold);
+      border: none;
+      color: #0a0a0a;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+    }
+    button.submit:hover { background: var(--gold-bright); transform: translateY(-1px); }
+    button.submit:disabled { opacity: 0.6; cursor: wait; transform: none; }
+    /* Errors */
+    .error {
+      color: var(--danger);
+      font-size: 12px;
+      margin-top: 6px;
+      display: none;
+    }
+    .field.has-error input,
+    .field.has-error select { border-bottom-color: var(--danger); }
+    .field.has-error .radio-group { padding-bottom: 4px; border-bottom: 1px dashed var(--danger); }
+    .field.has-error .error { display: block; }
+    .required { color: var(--danger); }
+    /* ============ SUCCESS STATE ============ */
+    .kakao-success {
+      display: none;
+      text-align: center;
+    }
+    .kakao-success.active {
+      display: block;
+      animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .checkmark {
+      width: 72px; height: 72px;
+      margin: 0 auto 32px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 30px;
+      position: relative;
+    }
+    .checkmark::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-soft);
+      animation: pulse 2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.25); opacity: 0; }
+    }
+    .kakao-success h3 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .kakao-success > p {
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    /* Kakao ID Card */
+    .kakao-id-card {
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 24px;
+      background: var(--bg-elev);
+      margin: 0 auto 28px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .kakao-id-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .kakao-id-value {
+      font-size: 28px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+    .copy-btn {
+      margin-top: 8px;
+      padding: 8px 20px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      border-radius: 6px;
+      color: var(--gold);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .copy-btn:hover {
+      background: var(--gold-soft);
+    }
+    /* Kakao Steps */
+    .kakao-steps {
+      list-style: none;
+      text-align: left;
+      max-width: 380px;
+      margin: 0 auto 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .kakao-steps li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 40px auto 20px;
+      max-width: 100px;
+    }
+    .success-footer {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 480px) {
+      .phone-group { grid-template-columns: 100px 1fr; gap: 12px; }
+      .radio-group label { padding: 9px 14px; font-size: 13px; }
+      .kakao-id-card { padding: 20px; }
+      .kakao-id-value { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="klp-apply" id="apply">
+    <div class="container">
+
+      <!-- ============ FORM VIEW ============ -->
+      <div id="form-view">
+        <div class="eyebrow">TP Korea Careers</div>
+        <h2>한국어로 새로운<br><em>커리어</em>를 시작하세요</h2>
+        <p class="lede">아래 정보를 입력하시면 담당자가 카카오톡으로 직접 안내해 드립니다.</p>
+
+        <form id="klpApplyForm" novalidate>
+          <div class="field">
+            <label class="field-label" for="name">성함 <span class="required">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+            <span class="error">성함을 입력해 주세요</span>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="email">이메일 <span class="required">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+            <span class="error">올바른 이메일을 입력해 주세요</span>
+          </div>
+
+          <div class="field">
+            <label class="field-label">휴대폰 번호 <span class="required">*</span></label>
+            <div class="phone-group">
+              <select id="phoneCode" name="phoneCode" aria-label="Country code">
+                <option value="+82">🇰🇷 +82</option>
+                <option value="+60">🇲🇾 +60</option>
+                <option value="+66">🇹🇭 +66</option>
+                <option value="+65">🇸🇬 +65</option>
+                <option value="+81">🇯🇵 +81</option>
+              </select>
+              <input type="tel" id="phone" name="phone" autocomplete="tel-national" placeholder="10 2345 6789" required>
+            </div>
+            <span class="error">전화번호를 입력해 주세요</span>
+          </div>
+
+          <div class="field" data-field="koreanLevel">
+            <label class="field-label">한국어 수준 <span class="required">*</span></label>
+            <div class="radio-group">
+              <input type="radio" id="kr-native" name="koreanLevel" value="Native">
+              <label for="kr-native">원어민</label>
+              <input type="radio" id="kr-fluent" name="koreanLevel" value="Fluent">
+              <label for="kr-fluent">유창함</label>
+              <input type="radio" id="kr-business" name="koreanLevel" value="Business">
+              <label for="kr-business">비즈니스</label>
+              <input type="radio" id="kr-conv" name="koreanLevel" value="Conversational">
+              <label for="kr-conv">회화 가능</label>
+            </div>
+            <span class="error">한국어 수준을 선택해 주세요</span>
+          </div>
+
+          <div class="field" data-field="location">
+            <label class="field-label">희망 근무 지역 <span class="required">*</span></label>
+            <div class="radio-group">
+              <input type="radio" id="loc-my" name="location" value="Malaysia">
+              <label for="loc-my">말레이시아</label>
+              <input type="radio" id="loc-th" name="location" value="Thailand">
+              <label for="loc-th">태국</label>
+              <input type="radio" id="loc-either" name="location" value="Either">
+              <label for="loc-either">상관없음</label>
+            </div>
+            <span class="error">희망 근무 지역을 선택해 주세요</span>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="role">관심 직무 <span class="opt">(선택)</span></label>
+            <input type="text" id="role" name="role" placeholder="예: 고객 상담, IT 지원, 콘텐츠 운영">
+          </div>
+
+          <label class="consent" for="consent">
+            <input type="checkbox" id="consent" required>
+            <span>개인정보 수집 및 이용에 동의하며, TP 채용팀이 안내를 위해 연락하는 것에 동의합니다.</span>
+          </label>
+
+          <button type="submit" class="submit">카카오톡 상담 신청</button>
+        </form>
+      </div>
+
+      <!-- ============ SUCCESS VIEW ============ -->
+      <div id="kakao-view" class="kakao-success" aria-live="polite">
+        <div class="checkmark">✓</div>
+        <h3>지원이 접수되었습니다</h3>
+        <p>카카오톡에서 아래 ID로 친구 추가 후,<br>담당자에게 메시지를 보내주세요.</p>
+
+        <div class="kakao-id-card">
+          <span class="kakao-id-label">KakaoTalk ID</span>
+          <span class="kakao-id-value" id="kakaoIdDisplay"></span>
+          <button type="button" class="copy-btn" id="copyIdBtn">Copy ID</button>
+        </div>
+
+        <ol class="kakao-steps">
+          <li><span class="step-num">1</span> 카카오톡 앱 열기</li>
+          <li><span class="step-num">2</span> 친구 탭 → 우측 상단 + 버튼</li>
+          <li><span class="step-num">3</span> 'ID로 추가' 선택</li>
+          <li><span class="step-num">4</span> ID 붙여넣기 (tpmy5114526) → 친구 추가</li>
+          <li><span class="step-num">5</span> 친구 목록에서 TP 담당자에게 1:1 채팅 시작</li>
+        </ol>
+
+        <div class="divider"></div>
+        <p class="success-footer">문의: recruitment.korea@tp.com</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    /* =============== CONFIG =============== */
+    // 1. Google Apps Script Web App URL (see companion .gs file)
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
+
+    // 2. Kakao personal ID — candidates add as friend via ID Search
+    const KAKAO_ID = 'tpmy5114526';
+
+    // 3. Set to false once backend is live. In DEMO_MODE the success screen still shows,
+    //    but data is only logged to the console.
+    const DEMO_MODE = true;
+    /* ====================================== */
+
+    const form = document.getElementById('klpApplyForm');
+    const formView = document.getElementById('form-view');
+    const kakaoView = document.getElementById('kakao-view');
+
+    // Capture UTM params on page load
+    const params = new URLSearchParams(window.location.search);
+    const utm = {
+      utm_source:   params.get('utm_source')   || '',
+      utm_medium:   params.get('utm_medium')   || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content:  params.get('utm_content')  || '',
+      referrer:     document.referrer          || ''
+    };
+
+    function markError(fieldEl) {
+      fieldEl.classList.add('has-error');
+    }
+    function clearErrors() {
+      document.querySelectorAll('.field.has-error').forEach(f => f.classList.remove('has-error'));
+    }
+
+    function gather() {
+      const fd = new FormData(form);
+      return {
+        name:         (fd.get('name') || '').trim(),
+        email:        (fd.get('email') || '').trim(),
+        phoneCode:    fd.get('phoneCode') || '',
+        phone:        (fd.get('phone') || '').trim(),
+        koreanLevel:  fd.get('koreanLevel') || '',
+        location:     fd.get('location') || '',
+        role:         (fd.get('role') || '').trim(),
+        consent:      document.getElementById('consent').checked,
+        ...utm,
+        timestamp:    new Date().toISOString(),
+        source:       'KLP',
+        userAgent:    navigator.userAgent
+      };
+    }
+
+    function validate(data) {
+      clearErrors();
+      let ok = true;
+      if (!data.name)  { markError(document.getElementById('name').closest('.field')); ok = false; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
+                       { markError(document.getElementById('email').closest('.field')); ok = false; }
+      if (!data.phone) { markError(document.getElementById('phone').closest('.field')); ok = false; }
+      if (!data.koreanLevel) { markError(document.querySelector('[data-field="koreanLevel"]')); ok = false; }
+      if (!data.location)    { markError(document.querySelector('[data-field="location"]')); ok = false; }
+      if (!data.consent) {
+        alert('개인정보 수집 및 이용에 동의해 주세요.');
+        ok = false;
+      }
+      return ok;
+    }
+
+    async function submitToBackend(data) {
+      if (DEMO_MODE) {
+        console.log('[DEMO_MODE] Would submit:', data);
+        await new Promise(r => setTimeout(r, 400));
+        return;
+      }
+      // 'no-cors' + text/plain avoids Apps Script preflight. Response is opaque
+      // but the row is still written server-side.
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode:   'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          ...data,
+          phone: (data.phoneCode ? data.phoneCode + ' ' : '') + data.phone
+        })
+      });
+    }
+
+    function showSuccess() {
+      formView.style.display = 'none';
+      kakaoView.classList.add('active');
+
+      // Populate Kakao ID
+      document.getElementById('kakaoIdDisplay').textContent = KAKAO_ID;
+
+      // Copy button
+      const copyBtn = document.getElementById('copyIdBtn');
+      copyBtn.addEventListener('click', () => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(KAKAO_ID).then(() => {
+            swapLabel(copyBtn);
+          }).catch(() => {
+            fallbackCopy();
+          });
+        } else {
+          fallbackCopy();
+        }
+      });
+
+      function swapLabel(btn) {
+        btn.textContent = '✓ 복사됨';
+        setTimeout(() => { btn.textContent = 'Copy ID'; }, 2000);
+      }
+
+      function fallbackCopy() {
+        const ta = document.createElement('textarea');
+        ta.value = KAKAO_ID;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          swapLabel(copyBtn);
+        } catch (_) {
+          alert('ID를 직접 복사해 주세요: ' + KAKAO_ID);
+        }
+        document.body.removeChild(ta);
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = gather();
+      if (!validate(data)) return;
+
+      const btn = form.querySelector('button.submit');
+      btn.disabled = true;
+      const originalLabel = btn.textContent;
+      btn.textContent = '전송 중...';
+
+      try {
+        await submitToBackend(data);
+        showSuccess();
+      } catch (err) {
+        console.error('KLP submit failed:', err);
+        alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
+    });
+
+    // Clear error on interaction
+    form.addEventListener('input', (e) => {
+      const field = e.target.closest('.field');
+      if (field && field.classList.contains('has-error')) field.classList.remove('has-error');
+    });
+    form.addEventListener('change', (e) => {
+      const field = e.target.closest('.field');
+      if (field && field.classList.contains('has-error')) field.classList.remove('has-error');
+    });
+  })();
+  </script>
+</body>
+</html>
