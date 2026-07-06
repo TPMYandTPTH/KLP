@@ -456,33 +456,33 @@
     // 1. Your Google Form's submit URL. Take the "action" URL from your form -
     //    it's the same base as the pre-filled link but ends in /formResponse instead of /viewform.
     //    Example: https://docs.google.com/forms/d/e/1FAIpQLSxxxxx/formResponse
-    const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+    const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSc9hIf-3R0R6pyt4kRGLga_ufMJGitfU3VBrIf-NkegFOaSVg/formResponse';
 
-    // 2. Map each field to its entry.XXXXXXX ID from the pre-filled link.
-    //    Get these from Form menu (⋮) -> "Get pre-filled link" -> fill dummy answers -> Get link.
-    //    Paste the resulting entry numbers below, in the SAME ORDER you created the questions.
+    // 2. Mapped from your pre-filled link, in the order the 13 questions were created.
+    //    NOTE: your link had 14 entry IDs, not 13 - the last one (entry.1815945658) is
+    //    unmapped below. If that's a real extra question, tell me what it is and I'll fix this.
     const ENTRY = {
-      name:        'entry.111111111',
-      email:       'entry.222222222',
-      phone:       'entry.333333333',
-      koreanLevel: 'entry.444444444',
-      location:    'entry.555555555',
-      role:        'entry.666666666',
-      utm_source:  'entry.777777777',
-      utm_medium:  'entry.888888888',
-      utm_campaign:'entry.999999999',
-      utm_content: 'entry.101010101',
-      referrer:    'entry.121212121',
-      timestamp:   'entry.131313131',
-      userAgent:   'entry.141414141'
+      name:        'entry.1480929272',
+      email:       'entry.649125899',
+      phone:       'entry.1155467213',
+      koreanLevel: 'entry.1040897650',
+      location:    'entry.562528507',
+      role:        'entry.1511856849',
+      utm_source:  'entry.1509924425',
+      utm_medium:  'entry.1715286303',
+      utm_campaign:'entry.895194203',
+      utm_content: 'entry.1052771553',
+      referrer:    'entry.1803482278',
+      timestamp:   'entry.945802280',
+      userAgent:   'entry.2068191113'
+      // entry.1815945658 - unmapped, extra field on the form
     };
 
     // 3. Kakao personal ID - candidates add as friend via ID Search
     const KAKAO_ID = 'tpmy5114526';
 
-    // 4. Set to false once GOOGLE_FORM_ACTION and ENTRY are filled in for real.
-    //    In DEMO_MODE the success screen still shows, but data is only logged to console.
-    const DEMO_MODE = true;
+    // 4. Live now - data submits to the real Google Form / Sheet.
+    const DEMO_MODE = false;
     /* ====================================== */
 
     const form = document.getElementById('klpApplyForm');
