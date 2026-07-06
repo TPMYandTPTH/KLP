@@ -30,7 +30,6 @@
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
-    /* ============ LAYOUT ============ */
     .klp-apply {
       padding: clamp(72px, 10vw, 120px) 24px;
       background:
@@ -55,7 +54,6 @@
       position: relative;
       z-index: 1;
     }
-    /* ============ HEADER ============ */
     .eyebrow {
       font-size: 11px;
       letter-spacing: 0.35em;
@@ -84,7 +82,6 @@
       margin-bottom: 56px;
       font-size: 15px;
     }
-    /* ============ FORM ============ */
     form { display: grid; gap: 28px; }
     .field label.field-label {
       display: block;
@@ -139,7 +136,6 @@
       gap: 16px;
       align-items: end;
     }
-    /* Radio pills */
     .radio-group {
       display: flex;
       flex-wrap: wrap;
@@ -173,7 +169,6 @@
       outline: 2px solid var(--gold);
       outline-offset: 2px;
     }
-    /* Consent */
     .consent {
       display: flex;
       gap: 12px;
@@ -190,7 +185,6 @@
       flex-shrink: 0;
     }
     .consent a { color: var(--gold); text-decoration: underline; }
-    /* Submit */
     button.submit {
       width: 100%;
       padding: 18px;
@@ -208,7 +202,6 @@
     }
     button.submit:hover { background: var(--gold-bright); transform: translateY(-1px); }
     button.submit:disabled { opacity: 0.6; cursor: wait; transform: none; }
-    /* Errors */
     .error {
       color: var(--danger);
       font-size: 12px;
@@ -220,7 +213,6 @@
     .field.has-error .radio-group { padding-bottom: 4px; border-bottom: 1px dashed var(--danger); }
     .field.has-error .error { display: block; }
     .required { color: var(--danger); }
-    /* ============ SUCCESS STATE ============ */
     .kakao-success {
       display: none;
       text-align: center;
@@ -265,7 +257,6 @@
       color: var(--muted);
       margin-bottom: 40px;
     }
-    /* Kakao ID Card */
     .kakao-id-card {
       border: 1px solid var(--gold);
       border-radius: 12px;
@@ -307,7 +298,6 @@
     .copy-btn:hover {
       background: var(--gold-soft);
     }
-    /* Kakao Steps */
     .kakao-steps {
       list-style: none;
       text-align: left;
@@ -348,7 +338,6 @@
       font-size: 12px;
       color: var(--muted);
     }
-    /* ============ RESPONSIVE ============ */
     @media (max-width: 480px) {
       .phone-group { grid-template-columns: 100px 1fr; gap: 12px; }
       .radio-group label { padding: 9px 14px; font-size: 13px; }
@@ -361,7 +350,6 @@
   <section class="klp-apply" id="apply">
     <div class="container">
 
-      <!-- ============ FORM VIEW ============ -->
       <div id="form-view">
         <div class="eyebrow">TP Korea Careers</div>
         <h2>한국어로 새로운<br><em>커리어</em>를 시작하세요</h2>
@@ -437,7 +425,6 @@
         </form>
       </div>
 
-      <!-- ============ SUCCESS VIEW ============ -->
       <div id="kakao-view" class="kakao-success" aria-live="polite">
         <div class="checkmark">✓</div>
         <h3>지원이 접수되었습니다</h3>
@@ -466,14 +453,35 @@
   <script>
   (function () {
     /* =============== CONFIG =============== */
-    // 1. Google Apps Script Web App URL (see companion .gs file)
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
+    // 1. Your Google Form's submit URL. Take the "action" URL from your form -
+    //    it's the same base as the pre-filled link but ends in /formResponse instead of /viewform.
+    //    Example: https://docs.google.com/forms/d/e/1FAIpQLSxxxxx/formResponse
+    const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
 
-    // 2. Kakao personal ID — candidates add as friend via ID Search
+    // 2. Map each field to its entry.XXXXXXX ID from the pre-filled link.
+    //    Get these from Form menu (⋮) -> "Get pre-filled link" -> fill dummy answers -> Get link.
+    //    Paste the resulting entry numbers below, in the SAME ORDER you created the questions.
+    const ENTRY = {
+      name:        'entry.111111111',
+      email:       'entry.222222222',
+      phone:       'entry.333333333',
+      koreanLevel: 'entry.444444444',
+      location:    'entry.555555555',
+      role:        'entry.666666666',
+      utm_source:  'entry.777777777',
+      utm_medium:  'entry.888888888',
+      utm_campaign:'entry.999999999',
+      utm_content: 'entry.101010101',
+      referrer:    'entry.121212121',
+      timestamp:   'entry.131313131',
+      userAgent:   'entry.141414141'
+    };
+
+    // 3. Kakao personal ID - candidates add as friend via ID Search
     const KAKAO_ID = 'tpmy5114526';
 
-    // 3. Set to false once backend is live. In DEMO_MODE the success screen still shows,
-    //    but data is only logged to the console.
+    // 4. Set to false once GOOGLE_FORM_ACTION and ENTRY are filled in for real.
+    //    In DEMO_MODE the success screen still shows, but data is only logged to console.
     const DEMO_MODE = true;
     /* ====================================== */
 
@@ -481,7 +489,6 @@
     const formView = document.getElementById('form-view');
     const kakaoView = document.getElementById('kakao-view');
 
-    // Capture UTM params on page load
     const params = new URLSearchParams(window.location.search);
     const utm = {
       utm_source:   params.get('utm_source')   || '',
@@ -511,7 +518,6 @@
         consent:      document.getElementById('consent').checked,
         ...utm,
         timestamp:    new Date().toISOString(),
-        source:       'KLP',
         userAgent:    navigator.userAgent
       };
     }
@@ -533,21 +539,36 @@
     }
 
     async function submitToBackend(data) {
+      const fullPhone = (data.phoneCode ? data.phoneCode + ' ' : '') + data.phone;
+
       if (DEMO_MODE) {
-        console.log('[DEMO_MODE] Would submit:', data);
+        console.log('[DEMO_MODE] Would submit to Google Form:', { ...data, phone: fullPhone });
         await new Promise(r => setTimeout(r, 400));
         return;
       }
-      // 'no-cors' + text/plain avoids Apps Script preflight. Response is opaque
-      // but the row is still written server-side.
-      await fetch(APPS_SCRIPT_URL, {
+
+      const body = new URLSearchParams();
+      body.append(ENTRY.name, data.name);
+      body.append(ENTRY.email, data.email);
+      body.append(ENTRY.phone, fullPhone);
+      body.append(ENTRY.koreanLevel, data.koreanLevel);
+      body.append(ENTRY.location, data.location);
+      body.append(ENTRY.role, data.role);
+      body.append(ENTRY.utm_source, data.utm_source);
+      body.append(ENTRY.utm_medium, data.utm_medium);
+      body.append(ENTRY.utm_campaign, data.utm_campaign);
+      body.append(ENTRY.utm_content, data.utm_content);
+      body.append(ENTRY.referrer, data.referrer);
+      body.append(ENTRY.timestamp, data.timestamp);
+      body.append(ENTRY.userAgent, data.userAgent);
+
+      // Google Forms rejects normal CORS requests but still records the response
+      // when sent as no-cors - the response is opaque but the row lands in the Sheet.
+      await fetch(GOOGLE_FORM_ACTION, {
         method: 'POST',
-        mode:   'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({
-          ...data,
-          phone: (data.phoneCode ? data.phoneCode + ' ' : '') + data.phone
-        })
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString()
       });
     }
 
@@ -555,10 +576,8 @@
       formView.style.display = 'none';
       kakaoView.classList.add('active');
 
-      // Populate Kakao ID
       document.getElementById('kakaoIdDisplay').textContent = KAKAO_ID;
 
-      // Copy button
       const copyBtn = document.getElementById('copyIdBtn');
       copyBtn.addEventListener('click', () => {
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -617,7 +636,6 @@
       }
     });
 
-    // Clear error on interaction
     form.addEventListener('input', (e) => {
       const field = e.target.closest('.field');
       if (field && field.classList.contains('has-error')) field.classList.remove('has-error');
