@@ -16,9 +16,6 @@
       --gold-soft:   rgba(212, 175, 55, 0.08);
       --text:        #F5F1E8;
       --muted:       #8a8275;
-      --danger:      #e67e7e;
-      --kakao:       #FEE500;
-      --kakao-ink:   #191919;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -79,113 +76,53 @@
     .lede {
       text-align: center;
       color: var(--muted);
-      margin-bottom: 56px;
+      margin-bottom: 52px;
       font-size: 15px;
     }
-    form { display: grid; gap: 28px; }
-    .field label.field-label {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-    .field label.field-label .opt {
-      color: var(--muted);
-      font-weight: 300;
-      letter-spacing: 0.05em;
-      text-transform: none;
-      margin-left: 6px;
-    }
-    .field input[type="text"],
-    .field input[type="email"],
-    .field input[type="tel"],
-    .field select {
-      width: 100%;
-      padding: 14px 0 12px;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--line);
-      color: var(--text);
-      font-family: inherit;
-      font-size: 16px;
-      transition: border-color 0.3s ease;
-      outline: none;
-    }
-    .field input:focus, .field select:focus {
-      border-bottom-color: var(--gold);
-    }
-    .field input::placeholder { color: #3a3630; }
-    .field select {
-      appearance: none;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1L6 6L11 1' stroke='%23D4AF37' stroke-width='1.5'/></svg>");
-      background-repeat: no-repeat;
-      background-position: right 4px center;
-      padding-right: 28px;
-      cursor: pointer;
-    }
-    .field select option {
-      background: var(--bg-elev);
-      color: var(--text);
-    }
-    .phone-group {
+
+    /* ---- How it works (2 steps) ---- */
+    .steps-intro {
       display: grid;
-      grid-template-columns: 120px 1fr;
       gap: 16px;
-      align-items: end;
+      margin-bottom: 48px;
     }
-    .radio-group {
+    .step-card {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      position: relative;
-    }
-    .radio-group input[type="radio"] {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-    .radio-group label {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 18px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 14px;
-      color: var(--text);
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-    .radio-group label:hover { border-color: var(--line-strong); }
-    .radio-group input[type="radio"]:checked + label {
-      background: var(--gold-soft);
-      border-color: var(--gold);
-      color: var(--gold-bright);
-    }
-    .radio-group input[type="radio"]:focus-visible + label {
-      outline: 2px solid var(--gold);
-      outline-offset: 2px;
-    }
-    .consent {
-      display: flex;
-      gap: 12px;
       align-items: flex-start;
-      font-size: 13px;
+      gap: 18px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elev);
+      transition: border-color 0.3s ease;
+    }
+    .step-card:hover { border-color: var(--line-strong); }
+    .step-badge {
+      width: 40px; height: 40px;
+      flex-shrink: 0;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 17px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .step-body h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .step-body p {
+      font-size: 13.5px;
       color: var(--muted);
-      cursor: pointer;
       line-height: 1.5;
     }
-    .consent input[type="checkbox"] {
-      margin-top: 3px;
-      accent-color: var(--gold);
-      width: 16px; height: 16px;
-      flex-shrink: 0;
-    }
-    .consent a { color: var(--gold); text-decoration: underline; }
-    button.submit {
+
+    /* ---- Primary CTA ---- */
+    .cta {
+      display: block;
       width: 100%;
       padding: 18px;
       background: var(--gold);
@@ -194,30 +131,27 @@
       font-family: inherit;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 8px;
     }
-    button.submit:hover { background: var(--gold-bright); transform: translateY(-1px); }
-    button.submit:disabled { opacity: 0.6; cursor: wait; transform: none; }
-    .error {
-      color: var(--danger);
+    .cta:hover { background: var(--gold-bright); transform: translateY(-1px); }
+    .cta-note {
+      text-align: center;
       font-size: 12px;
-      margin-top: 6px;
-      display: none;
+      color: var(--muted);
+      margin-top: 16px;
     }
-    .field.has-error input,
-    .field.has-error select { border-bottom-color: var(--danger); }
-    .field.has-error .radio-group { padding-bottom: 4px; border-bottom: 1px dashed var(--danger); }
-    .field.has-error .error { display: block; }
-    .required { color: var(--danger); }
-    .kakao-success {
+
+    /* ---- Kakao success view ---- */
+    .kakao-view {
       display: none;
       text-align: center;
     }
-    .kakao-success.active {
+    .kakao-view.active {
       display: block;
       animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -247,13 +181,13 @@
       0%   { transform: scale(1); opacity: 0.8; }
       100% { transform: scale(1.25); opacity: 0; }
     }
-    .kakao-success h3 {
+    .kakao-view h3 {
       font-size: 28px;
       font-weight: 700;
       letter-spacing: -0.03em;
       margin-bottom: 12px;
     }
-    .kakao-success > p {
+    .kakao-view > p {
       color: var(--muted);
       margin-bottom: 40px;
     }
@@ -295,13 +229,11 @@
       cursor: pointer;
       transition: all 0.2s ease;
     }
-    .copy-btn:hover {
-      background: var(--gold-soft);
-    }
+    .copy-btn:hover { background: var(--gold-soft); }
     .kakao-steps {
       list-style: none;
       text-align: left;
-      max-width: 380px;
+      max-width: 400px;
       margin: 0 auto 32px;
       display: flex;
       flex-direction: column;
@@ -331,16 +263,25 @@
     .divider {
       height: 1px;
       background: var(--line);
-      margin: 40px auto 20px;
+      margin: 40px auto 24px;
       max-width: 100px;
+    }
+    .reopen-link {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .reopen-link a {
+      color: var(--gold);
+      text-decoration: underline;
+      cursor: pointer;
     }
     .success-footer {
       font-size: 12px;
       color: var(--muted);
+      margin-top: 16px;
     }
     @media (max-width: 480px) {
-      .phone-group { grid-template-columns: 100px 1fr; gap: 12px; }
-      .radio-group label { padding: 9px 14px; font-size: 13px; }
+      .step-card { padding: 18px 18px; gap: 14px; }
       .kakao-id-card { padding: 20px; }
       .kakao-id-value { font-size: 24px; }
     }
@@ -350,85 +291,38 @@
   <section class="klp-apply" id="apply">
     <div class="container">
 
-      <div id="form-view">
+      <!-- ===== INTRO VIEW ===== -->
+      <div id="intro-view">
         <div class="eyebrow">TP Korea Careers</div>
         <h2>한국어로 새로운<br><em>커리어</em>를 시작하세요</h2>
-        <p class="lede">아래 정보를 입력하시면 담당자가 카카오톡으로 직접 안내해 드립니다.</p>
+        <p class="lede">두 단계면 충분합니다. 지원서를 작성하시면<br>담당자가 카카오톡으로 직접 안내해 드립니다.</p>
 
-        <form id="klpApplyForm" novalidate>
-          <div class="field">
-            <label class="field-label" for="name">성함 <span class="required">*</span></label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
-            <span class="error">성함을 입력해 주세요</span>
-          </div>
-
-          <div class="field">
-            <label class="field-label" for="email">이메일 <span class="required">*</span></label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com" required>
-            <span class="error">올바른 이메일을 입력해 주세요</span>
-          </div>
-
-          <div class="field">
-            <label class="field-label">휴대폰 번호 <span class="required">*</span></label>
-            <div class="phone-group">
-              <select id="phoneCode" name="phoneCode" aria-label="Country code">
-                <option value="+82">🇰🇷 +82</option>
-                <option value="+60">🇲🇾 +60</option>
-                <option value="+66">🇹🇭 +66</option>
-                <option value="+65">🇸🇬 +65</option>
-                <option value="+81">🇯🇵 +81</option>
-              </select>
-              <input type="tel" id="phone" name="phone" autocomplete="tel-national" placeholder="10 2345 6789" required>
+        <div class="steps-intro">
+          <div class="step-card">
+            <span class="step-badge">1</span>
+            <div class="step-body">
+              <h4>지원서 작성</h4>
+              <p>아래 버튼을 누르면 지원 양식이 열립니다. 성함·연락처·한국어 수준 등 기본 정보를 입력해 주세요. (약 2분 소요)</p>
             </div>
-            <span class="error">전화번호를 입력해 주세요</span>
           </div>
-
-          <div class="field" data-field="koreanLevel">
-            <label class="field-label">한국어 수준 <span class="required">*</span></label>
-            <div class="radio-group">
-              <input type="radio" id="kr-native" name="koreanLevel" value="Native">
-              <label for="kr-native">원어민</label>
-              <input type="radio" id="kr-fluent" name="koreanLevel" value="Fluent">
-              <label for="kr-fluent">유창함</label>
-              <input type="radio" id="kr-business" name="koreanLevel" value="Business">
-              <label for="kr-business">비즈니스</label>
-              <input type="radio" id="kr-conv" name="koreanLevel" value="Conversational">
-              <label for="kr-conv">회화 가능</label>
+          <div class="step-card">
+            <span class="step-badge">2</span>
+            <div class="step-body">
+              <h4>카카오톡 상담</h4>
+              <p>작성 완료 후, 화면에 안내되는 카카오톡 ID로 친구 추가하시면 담당자가 1:1로 안내해 드립니다.</p>
             </div>
-            <span class="error">한국어 수준을 선택해 주세요</span>
           </div>
+        </div>
 
-          <div class="field" data-field="location">
-            <label class="field-label">희망 근무 지역 <span class="required">*</span></label>
-            <div class="radio-group">
-              <input type="radio" id="loc-my" name="location" value="Malaysia">
-              <label for="loc-my">말레이시아</label>
-              <input type="radio" id="loc-th" name="location" value="Thailand">
-              <label for="loc-th">태국</label>
-              <input type="radio" id="loc-either" name="location" value="Either">
-              <label for="loc-either">상관없음</label>
-            </div>
-            <span class="error">희망 근무 지역을 선택해 주세요</span>
-          </div>
-
-          <div class="field">
-            <label class="field-label" for="role">관심 직무 <span class="opt">(선택)</span></label>
-            <input type="text" id="role" name="role" placeholder="예: 고객 상담, IT 지원, 콘텐츠 운영">
-          </div>
-
-          <label class="consent" for="consent">
-            <input type="checkbox" id="consent" required>
-            <span>개인정보 수집 및 이용에 동의하며, TP 채용팀이 안내를 위해 연락하는 것에 동의합니다.</span>
-          </label>
-
-          <button type="submit" class="submit">카카오톡 상담 신청</button>
-        </form>
+        <a href="#" class="cta" id="applyBtn" target="_blank" rel="noopener">지원서 작성하기</a>
+        <p class="cta-note">지원 양식이 새 탭에서 열립니다. 작성 후 이 화면으로 돌아와 주세요.</p>
       </div>
 
-      <div id="kakao-view" class="kakao-success" aria-live="polite">
+      <!-- ===== KAKAO VIEW ===== -->
+      <div id="kakao-view" class="kakao-view" aria-live="polite">
         <div class="checkmark">✓</div>
-        <h3>지원이 접수되었습니다</h3>
-        <p>카카오톡에서 아래 ID로 친구 추가 후,<br>담당자에게 메시지를 보내주세요.</p>
+        <h3>거의 다 되었습니다</h3>
+        <p>지원서를 제출하셨다면, 아래 ID로 카카오톡<br>친구 추가 후 담당자에게 메시지를 보내주세요.</p>
 
         <div class="kakao-id-card">
           <span class="kakao-id-label">KakaoTalk ID</span>
@@ -439,12 +333,14 @@
         <ol class="kakao-steps">
           <li><span class="step-num">1</span> 카카오톡 앱 열기</li>
           <li><span class="step-num">2</span> 친구 탭 → 우측 상단 👤+ 버튼</li>
-          <li><span class="step-num">3</span> '카카오톡 ID로 추가' 선택</li>
-          <li><span class="step-num">4</span> ID 붙여넣기 (tpmy5114526) → 친구 추가</li>
+          <li><span class="step-num">3</span> 'ID로 추가' 선택</li>
+          <li><span class="step-num">4</span> 위 ID 붙여넣기 → 친구 추가</li>
           <li><span class="step-num">5</span> 친구 목록에서 TP 담당자(TPMY)에게 1:1 채팅 시작</li>
         </ol>
 
         <div class="divider"></div>
+        <p class="reopen-link">아직 지원서를 작성하지 않으셨나요? <a id="reopenForm">지원 양식 다시 열기</a></p>
+        <p class="success-footer">TP Talent Acquisition</p>
       </div>
 
     </div>
@@ -453,196 +349,63 @@
   <script>
   (function () {
     /* =============== CONFIG =============== */
-    // 1. Your Google Form's submit URL. Take the "action" URL from your form -
-    //    it's the same base as the pre-filled link but ends in /formResponse instead of /viewform.
-    //    Example: https://docs.google.com/forms/d/e/1FAIpQLSxxxxx/formResponse
-    const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSc9hIf-3R0R6pyt4kRGLga_ufMJGitfU3VBrIf-NkegFOaSVg/formResponse';
+    // 1. Microsoft Forms share link (the form candidates fill in).
+    const MS_FORM_URL = 'https://forms.cloud.microsoft/e/1dCRVLdcWP';
 
-    // 2. Mapped from your pre-filled link, in the order the 13 questions were created.
-    //    NOTE: your link had 14 entry IDs, not 13 - the last one (entry.1815945658) is
-    //    unmapped below. If that's a real extra question, tell me what it is and I'll fix this.
-    const ENTRY = {
-      name:        'entry.1480929272',
-      email:       'entry.649125899',
-      phone:       'entry.1155467213',
-      koreanLevel: 'entry.1040897650',
-      location:    'entry.562528507',
-      role:        'entry.1511856849',
-      utm_source:  'entry.1509924425',
-      utm_medium:  'entry.1715286303',
-      utm_campaign:'entry.895194203',
-      utm_content: 'entry.1052771553',
-      referrer:    'entry.1803482278',
-      timestamp:   'entry.945802280',
-      userAgent:   'entry.2068191113'
-      // entry.1815945658 - unmapped, extra field on the form
-    };
-
-    // 3. Kakao personal ID - candidates add as friend via ID Search
+    // 2. Kakao personal ID - candidates add as friend via ID Search.
     const KAKAO_ID = 'tpmy5114526';
-
-    // 4. Live now - data submits to the real Google Form / Sheet.
-    const DEMO_MODE = false;
     /* ====================================== */
 
-    const form = document.getElementById('klpApplyForm');
-    const formView = document.getElementById('form-view');
-    const kakaoView = document.getElementById('kakao-view');
+    const introView = document.getElementById('intro-view');
+    const kakaoView  = document.getElementById('kakao-view');
+    const applyBtn   = document.getElementById('applyBtn');
+    const reopenForm = document.getElementById('reopenForm');
 
-    const params = new URLSearchParams(window.location.search);
-    const utm = {
-      utm_source:   params.get('utm_source')   || '',
-      utm_medium:   params.get('utm_medium')   || '',
-      utm_campaign: params.get('utm_campaign') || '',
-      utm_content:  params.get('utm_content')  || '',
-      referrer:     document.referrer          || ''
-    };
+    // Point both the anchor and the fallback at the MS Form.
+    applyBtn.setAttribute('href', MS_FORM_URL);
 
-    function markError(fieldEl) {
-      fieldEl.classList.add('has-error');
-    }
-    function clearErrors() {
-      document.querySelectorAll('.field.has-error').forEach(f => f.classList.remove('has-error'));
-    }
-
-    function gather() {
-      const fd = new FormData(form);
-      return {
-        name:         (fd.get('name') || '').trim(),
-        email:        (fd.get('email') || '').trim(),
-        phoneCode:    fd.get('phoneCode') || '',
-        phone:        (fd.get('phone') || '').trim(),
-        koreanLevel:  fd.get('koreanLevel') || '',
-        location:     fd.get('location') || '',
-        role:         (fd.get('role') || '').trim(),
-        consent:      document.getElementById('consent').checked,
-        ...utm,
-        timestamp:    new Date().toISOString(),
-        userAgent:    navigator.userAgent
-      };
-    }
-
-    function validate(data) {
-      clearErrors();
-      let ok = true;
-      if (!data.name)  { markError(document.getElementById('name').closest('.field')); ok = false; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
-                       { markError(document.getElementById('email').closest('.field')); ok = false; }
-      if (!data.phone) { markError(document.getElementById('phone').closest('.field')); ok = false; }
-      if (!data.koreanLevel) { markError(document.querySelector('[data-field="koreanLevel"]')); ok = false; }
-      if (!data.location)    { markError(document.querySelector('[data-field="location"]')); ok = false; }
-      if (!data.consent) {
-        alert('개인정보 수집 및 이용에 동의해 주세요.');
-        ok = false;
-      }
-      return ok;
-    }
-
-    async function submitToBackend(data) {
-      const fullPhone = (data.phoneCode ? data.phoneCode + ' ' : '') + data.phone;
-
-      if (DEMO_MODE) {
-        console.log('[DEMO_MODE] Would submit to Google Form:', { ...data, phone: fullPhone });
-        await new Promise(r => setTimeout(r, 400));
-        return;
-      }
-
-      const body = new URLSearchParams();
-      body.append(ENTRY.name, data.name);
-      body.append(ENTRY.email, data.email);
-      body.append(ENTRY.phone, fullPhone);
-      body.append(ENTRY.koreanLevel, data.koreanLevel);
-      body.append(ENTRY.location, data.location);
-      body.append(ENTRY.role, data.role);
-      body.append(ENTRY.utm_source, data.utm_source);
-      body.append(ENTRY.utm_medium, data.utm_medium);
-      body.append(ENTRY.utm_campaign, data.utm_campaign);
-      body.append(ENTRY.utm_content, data.utm_content);
-      body.append(ENTRY.referrer, data.referrer);
-      body.append(ENTRY.timestamp, data.timestamp);
-      body.append(ENTRY.userAgent, data.userAgent);
-
-      // Google Forms rejects normal CORS requests but still records the response
-      // when sent as no-cors - the response is opaque but the row lands in the Sheet.
-      await fetch(GOOGLE_FORM_ACTION, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
-      });
-    }
-
-    function showSuccess() {
-      formView.style.display = 'none';
+    function showKakao() {
+      introView.style.display = 'none';
       kakaoView.classList.add('active');
-
       document.getElementById('kakaoIdDisplay').textContent = KAKAO_ID;
-
-      const copyBtn = document.getElementById('copyIdBtn');
-      copyBtn.addEventListener('click', () => {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(KAKAO_ID).then(() => {
-            swapLabel(copyBtn);
-          }).catch(() => {
-            fallbackCopy();
-          });
-        } else {
-          fallbackCopy();
-        }
-      });
-
-      function swapLabel(btn) {
-        btn.textContent = '✓ 복사됨';
-        setTimeout(() => { btn.textContent = 'Copy ID'; }, 2000);
-      }
-
-      function fallbackCopy() {
-        const ta = document.createElement('textarea');
-        ta.value = KAKAO_ID;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try {
-          document.execCommand('copy');
-          swapLabel(copyBtn);
-        } catch (_) {
-          alert('ID를 직접 복사해 주세요: ' + KAKAO_ID);
-        }
-        document.body.removeChild(ta);
-      }
-
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = gather();
-      if (!validate(data)) return;
+    // Clicking "지원서 작성하기": the anchor opens the MS Form in a new tab
+    // (native behaviour, so no popup blocking), and we flip this tab to the Kakao card.
+    applyBtn.addEventListener('click', function () {
+      // Let the new tab open first, then swap the view.
+      setTimeout(showKakao, 100);
+    });
 
-      const btn = form.querySelector('button.submit');
-      btn.disabled = true;
-      const originalLabel = btn.textContent;
-      btn.textContent = '전송 중...';
+    // Re-open the form from the Kakao view if they need it again.
+    reopenForm.addEventListener('click', function () {
+      window.open(MS_FORM_URL, '_blank', 'noopener');
+    });
 
-      try {
-        await submitToBackend(data);
-        showSuccess();
-      } catch (err) {
-        console.error('KLP submit failed:', err);
-        alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
-        btn.disabled = false;
-        btn.textContent = originalLabel;
+    // Copy Kakao ID.
+    const copyBtn = document.getElementById('copyIdBtn');
+    function swapLabel() {
+      copyBtn.textContent = '✓ 복사됨';
+      setTimeout(function () { copyBtn.textContent = 'Copy ID'; }, 2000);
+    }
+    function fallbackCopy() {
+      const ta = document.createElement('textarea');
+      ta.value = KAKAO_ID;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); swapLabel(); }
+      catch (_) { alert('ID를 직접 복사해 주세요: ' + KAKAO_ID); }
+      document.body.removeChild(ta);
+    }
+    copyBtn.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(KAKAO_ID).then(swapLabel).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
       }
-    });
-
-    form.addEventListener('input', (e) => {
-      const field = e.target.closest('.field');
-      if (field && field.classList.contains('has-error')) field.classList.remove('has-error');
-    });
-    form.addEventListener('change', (e) => {
-      const field = e.target.closest('.field');
-      if (field && field.classList.contains('has-error')) field.classList.remove('has-error');
     });
   })();
   </script>
