@@ -153,13 +153,14 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 .lightbox.open{display:flex}
 .lightbox img{max-width:96vw;max-height:86vh;border-radius:12px;box-shadow:var(--shadow-lg)}
 .lightbox button{position:absolute;top:16px;right:16px;border:0;background:var(--gold-primary);color:var(--tp-black);padding:.5rem .7rem;border-radius:8px;font-weight:700;cursor:pointer}
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.tiles{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+.tiles .card{flex:1 1 300px;max-width:340px}
 @media(max-width:1020px){.grid-3{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:960px){.tiles{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){nav{display:none}.mobile-toggle{display:block}.floating-casual{bottom:80px;right:20px}.back-to-top{bottom:140px}}
 @media(max-width:768px){.footer-content{grid-template-columns:1fr;text-align:center}.floating-apply{bottom:14px;right:14px;padding:.625rem 1rem;font-size:.8rem}}
 @media(max-width:720px){.grid-3,.grid-2{grid-template-columns:1fr}}
-@media(max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}.tiles{grid-template-columns:1fr}}
+@media(max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -231,7 +232,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
         <h3>오피스 환경</h3>
         <p class="muted">페트로나스 트윈타워에서 도보 약 10분 거리에 위치한 편리한 지역으로, 가장 가까운 역에는 MRT와 LRT 두 노선이 지나며, 역에서 오피스 빌딩까지는 도보 약 2분 거리입니다. 또한 도보권 내에 쇼핑몰, 레스토랑, 이세탄, 슈퍼마켓, 헬스장 등 생활에 필요한 모든 시설이 갖춰져 있습니다.</p>
         <table class="spec" aria-label="KL 상세">
-          <tbody><tr><th>미식</th><td>LRT/MRT/버스/Grab</td></tr>
+          <tbody><tr><th>교통</th><td>LRT/MRT/버스/Grab</td></tr>
           <tr><th>시설</th><td>미팅룸, 트레이닝룸, 휴게실, 당구대, 게임, 스낵 판매, 냉장고, 정수기, 커피 머신 등</td></tr>
           <tr><th>주변</th><td>KLCC | 대형 쇼핑몰, 클리닉, 은행, 한식당</td></tr>
         </tbody></table>
@@ -255,7 +256,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
         <h3>오피스 환경</h3>
         <p class="muted">Bayan Lepas와 George Town 지역에 3개의 오피스를 운영하고 있습니다. 세계문화유산 도시이자 미식의 도시로, KL보다 저렴한 식당과 개인 카페가 즐비하고, 해변가를 산책하는 여유까지 모두 즐길 수 있습니다.</p>
         <table class="spec" aria-label="페낭 상세">
-          <tbody><tr><th>미식</th><td>주요 도로 및 공항 접근성 좋음, 버스/Grab</td></tr>
+          <tbody><tr><th>교통</th><td>주요 도로 및 공항 접근성 좋음, 버스/Grab</td></tr>
           <tr><th>시설</th><td>미팅룸, 폰 부스, 트레이닝룸, 휴게 공간 등</td></tr>
           <tr><th>주변</th><td>바다 인접 콘도, 카페, 병원, 슈퍼마켓, 한식당</td></tr>
         </tbody></table>
@@ -279,7 +280,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
         <h3>오피스 환경</h3>
         <p class="muted">BTS/MRT 근처의 시내 중심에 위치한 오피스입니다. 한인·교민이 많이 사는 지역과 인접하며, 슈퍼마켓, 레스토랑, 의료시설 등이 완비되어 있습니다.</p>
         <table class="spec" aria-label="방콕 상세">
-          <tbody><tr><th>미식</th><td>BTS/MRT 도보권, Grab/버스도 편리</td></tr>
+          <tbody><tr><th>교통</th><td>BTS/MRT 도보권, Grab/버스도 편리</td></tr>
           <tr><th>시설</th><td>미팅룸, 폰 부스, 트레이닝룸, 리프레시 공간</td></tr>
           <tr><th>주변</th><td>대형 쇼핑몰, 아시안 슈퍼마켓, 한식당, 은행</td></tr>
         </tbody></table>
@@ -320,7 +321,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <div class="card">
         <h3>오피스 미리보기</h3>
         <p class="muted">각 지역의 현지 분위기, 시설, 업무 공간을 VR로 둘러볼 수 있습니다.</p>
-        <p style="margin-top:.4rem"><a class="btn" target="_blank" rel="noopener noreferrer" href="https://vtour.cloud/mh2n0j/29cekgq3/">TP 더 알아보기</a></p>
+        <p style="margin-top:.4rem"><a class="btn" target="_blank" rel="noopener noreferrer" href="https://vtour.cloud/mh2n0j/29cekgq3/">VR 오피스 투어</a></p>
       </div>
       <div class="card">
         <h3>임직원 인터뷰 (영상)</h3>
