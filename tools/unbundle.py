@@ -5,9 +5,15 @@ The export (e.g. ``TP_Careers_KR.html``) is a wrapper: the real page lives
 inside ``<script type="__bundler/*">`` blocks.
 
     __bundler/template        the page HTML, stored as an escaped JS string
-    __bundler/ext_resources   fonts/images/scripts as base64, keyed by UUID
-    __bundler/manifest        metadata
+    __bundler/manifest        fonts/images/scripts as base64, keyed by UUID
+    __bundler/ext_resources   original URLs for the UUIDs pulled from a CDN
     __bundler/page_order      metadata
+
+Exports disagree about which block holds the payload bytes, so both the
+manifest and ext_resources blocks are scanned and whichever entries carry a
+``data`` field are treated as the resource store. Entries may be gzipped
+(``"compressed": true``); entries that only carry an ``id``/``uuid`` pair are
+used to give the decoded file a meaningful name.
 
 This script pulls those apart and writes a clean, self-contained page:
 
@@ -28,12 +34,15 @@ from __future__ import annotations
 import argparse
 import base64
 import binascii
+import gzip
 import html
 import json
 import os
 import re
 import sys
+import zlib
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 # --------------------------------------------------------------------------
 # block extraction
@@ -255,6 +264,22 @@ def clean_stem(value: str, fallback: str) -> str:
     return stem or fallback
 
 
+def maybe_decompress(blob: bytes, flagged: bool) -> bytes:
+    """Gunzip a resource body when the entry is marked compressed.
+
+    The flag is trusted only as a hint: the gzip magic number is the real
+    test, so a mislabelled entry still comes out correct either way.
+    """
+    if blob[:2] != b'\x1f\x8b':
+        return blob
+    try:
+        return gzip.decompress(blob)
+    except (OSError, EOFError, zlib.error) as exc:
+        if flagged:
+            print(f'  ! gzip decompress failed: {exc}', file=sys.stderr)
+        return blob
+
+
 def decode_base64(payload: str) -> bytes | None:
     """Decode a base64 payload, tolerating data: URIs and stray whitespace."""
     text = payload.strip()
@@ -335,18 +360,49 @@ def pick(entry: dict, *fields: str) -> str | None:
     return None
 
 
-def extract_resources(raw: str, assets_dir: Path, verbose: bool) -> dict[str, str]:
-    """Write every resource to ``assets_dir``; return ``{uuid: relative path}``."""
-    text = raw.strip()
-    if not text:
+def parse_resource_block(raw: str | None) -> dict[str, dict]:
+    """Parse one bundler block into ``{uuid: entry}``, tolerating escaping."""
+    if not raw or not raw.strip():
         return {}
-
+    text = raw.strip()
     try:
         parsed = json.loads(text)
     except (json.JSONDecodeError, ValueError):
-        parsed = json.loads(decode_template(text))
+        try:
+            parsed = json.loads(decode_template(text))
+        except (json.JSONDecodeError, ValueError):
+            return {}
+    return normalise_resources(parsed)
 
-    resources = normalise_resources(parsed)
+
+def name_from_url(url: str) -> str | None:
+    """Filename hint from an original CDN URL, e.g. react.production.min.js."""
+    if not url or '://' not in url:
+        return None
+    tail = unquote(urlsplit(url).path).rsplit('/', 1)[-1]
+    return tail or None
+
+
+def extract_resources(
+    blocks: dict[str, str | None], assets_dir: Path, verbose: bool
+) -> dict[str, str]:
+    """Write every resource to ``assets_dir``; return ``{uuid: relative path}``.
+
+    ``blocks`` maps a block name to its raw text. Entries are merged across
+    blocks by UUID so that a payload in one block can be named by metadata in
+    another (the CDN-backed scripts arrive that way).
+    """
+    resources: dict[str, dict] = {}
+    for raw in blocks.values():
+        for key, entry in parse_resource_block(raw).items():
+            resources.setdefault(key, {}).update(entry)
+
+    # Entries with no payload are metadata for a payload stored elsewhere.
+    resources = {
+        key: entry
+        for key, entry in resources.items()
+        if pick(entry, 'data', 'content', 'base64', 'b64', 'body', 'value', 'src')
+    }
     if not resources:
         return {}
 
@@ -367,12 +423,17 @@ def extract_resources(raw: str, assets_dir: Path, verbose: bool) -> dict[str, st
             print(f'  ! {key}: payload is not valid base64', file=sys.stderr)
             continue
 
+        packed = len(blob)
+        blob = maybe_decompress(blob, bool(entry.get('compressed')))
+
         mime = pick(entry, 'mime', 'mimeType', 'mime_type', 'type', 'contentType')
         if mime is None:
             data_uri = DATA_URI_RE.match(payload.strip())
             mime = data_uri.group(1) if data_uri else None
 
         original = pick(entry, 'name', 'filename', 'file', 'path', 'url')
+        if original is None:
+            original = name_from_url(entry.get('id', '') or '')
         extension = sniff_extension(blob, mime, original)
 
         uuid_match = BARE_UUID_RE.search(str(key))
@@ -393,7 +454,8 @@ def extract_resources(raw: str, assets_dir: Path, verbose: bool) -> dict[str, st
             mapping[uuid_match.group(0)] = relative
 
         if verbose:
-            print(f'  · {short}  {len(blob):>9,} B  -> {relative}')
+            note = f' (gz {packed:,})' if packed != len(blob) else ''
+            print(f'  · {short}  {len(blob):>9,} B{note}  -> {relative}')
 
     return mapping
 
@@ -482,22 +544,23 @@ def inspect(source: str) -> None:
         print(f'\n[{name}] {len(stripped):,} chars')
         print(f'  head: {stripped[:200]!r}')
 
-        if name in ('manifest', 'page_order'):
+        if name == 'page_order':
             try:
                 print(f'  json: {json.dumps(json.loads(stripped))[:600]}')
             except (json.JSONDecodeError, ValueError):
                 pass
-        elif name == 'ext_resources':
-            try:
-                parsed = json.loads(stripped)
-            except (json.JSONDecodeError, ValueError):
-                print('  (not top-level JSON)')
+        elif name in ('manifest', 'ext_resources'):
+            resources = parse_resource_block(block)
+            if not resources:
+                print('  (no resource entries)')
                 continue
-            resources = normalise_resources(parsed)
-            print(f'  container: {type(parsed).__name__}, {len(resources)} resource(s)')
-            for key, entry in list(sorted(resources.items()))[:5]:
-                fields = ', '.join(sorted(entry)) if isinstance(entry, dict) else '-'
-                print(f'    {key}  fields: {fields}')
+            print(f'  {len(resources)} entr(ies)')
+            for key, entry in sorted(resources.items()):
+                fields = ', '.join(sorted(entry))
+                payload = pick(entry, 'data', 'content', 'base64', 'b64')
+                size = f'{len(payload):>9,} b64' if payload else 'metadata only'
+                mime = entry.get('mime', '-')
+                print(f'    {key[:8]}  {mime:<24} {size}   [{fields}]')
 
     props = read_design_props(source)
     print(f'\n[design props] {props or "none found"}')
@@ -543,14 +606,14 @@ def main() -> int:
     if verbose:
         print(f'template: {len(markup):,} chars of HTML')
 
-    resources_raw = find_block(source, 'ext_resources')
-    mapping: dict[str, str] = {}
-    if resources_raw:
-        if verbose:
-            print('resources:')
-        mapping = extract_resources(resources_raw, assets_dir, verbose)
-    elif verbose:
-        print('resources: none')
+    blocks = {
+        name: find_block(source, name) for name in ('manifest', 'ext_resources')
+    }
+    if verbose:
+        print('resources:')
+    mapping = extract_resources(blocks, assets_dir, verbose)
+    if verbose and not mapping:
+        print('  (none)')
 
     markup, replaced, missing = rewrite_references(markup, mapping)
     markup = strip_bundler_blocks(markup)

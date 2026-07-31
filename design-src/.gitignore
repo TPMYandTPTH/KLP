@@ -1,0 +1,9 @@
+# Vendor blobs from the design export. Regenerate at any time with:
+#   python3 tools/unbundle.py TP_Careers_KR.html -o design-src
+# Excluded because they are ~2.5 MB, add nothing to a design diff, and none of
+# them ship (the site uses Google Fonts + inlined lucide SVGs instead).
+assets/*.ttf
+assets/react*.js
+assets/asset-03-*.js
+assets/asset-08-*.js
+assets/asset-09-*.js

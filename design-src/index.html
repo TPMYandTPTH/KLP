@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/asset-03-1f99bf49.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>:root{
+/* --- Primary (all audiences) --- */
+--tp-dark-slate:#4B4C6A;
+--tp-pink:#FF0082;
+--tp-black:#000000;
+--tp-white:#FFFFFF;
+/* --- Neutral / muted (clients, investors) --- */
+--tp-slate:#848DAD;
+--tp-muted-violet:#706398;
+--tp-dark-sand:#918E81;
+--tp-sand:#D4D2CA;
+--tp-pastel-sand:#ECE9E7;
+--tp-pastel-slate:#C2C7CD;
+--tp-pastel-violet:#E2DFE8;
+--tp-dark-gray:#414141;
+--tp-gray:#676767;
+--tp-light-gray:#CCCCCC;
+--tp-pastel-gray:#E6E6E5;
+/* --- Vibrant (internal / employee audiences only) --- */
+--tp-blue:#3047B0;
+--tp-light-blue:#0087FF;
+--tp-turquoise:#00AF9B;
+--tp-green-flash:#00D769;
+--tp-green-light:#84C98B;
+--tp-yellow:#F5D200;
+--tp-orange:#FF5C00;
+--tp-purple:#780096;
+--tp-violet:#8042CF;
+--tp-light-violet:#8F51FF;
+--tp-lavender:#8051FF;
+--tp-indigo:#4D3293;
+--tp-light-indigo:#6648CC;
+--tp-dark-indigo:#3E2666;
+--tp-burgundy:#5F365E;
+--tp-carmine:#AB2C37;
+--tp-dark-coral:#E04C5C;
+--tp-dark-muted-purple:#4C3661;
+/* --- Gradient (use minimally, never on type) --- */
+--tp-gradient-brand: linear-gradient(135deg, var(--tp-dark-slate), var(--tp-pink));
+/* --- PPTX corporate theme (Oct 2025 global template) — close variants, used in deck contexts --- */
+--tp-pptx-pink:#ED1E81;
+--tp-pptx-warm-grey:#918D80;
+--tp-pptx-deep-violet:#4C3193;
+--tp-pptx-dusty-violet:#706297;
+--tp-pptx-navy-slate:#4A4C6A;
+
+/* --- Semantic aliases --- */
+--color-bg: var(--tp-white);
+--color-bg-subtle: var(--tp-pastel-sand);
+--color-bg-muted: var(--tp-pastel-gray);
+--color-surface-card: var(--tp-white);
+--color-surface-sunken: var(--tp-pastel-sand);
+--color-border: var(--tp-light-gray);
+--color-border-subtle: var(--tp-pastel-slate);
+--color-text-primary: var(--tp-black);
+--color-text-secondary: var(--tp-dark-gray);
+--color-text-tertiary: var(--tp-gray);
+--color-text-inverse: var(--tp-white);
+--color-primary: var(--tp-dark-slate);
+--color-primary-hover: #3d3e57;
+--color-primary-active: #34354a;
+--color-accent: var(--tp-pink);
+--color-accent-hover: #e0007a;
+--color-accent-active: #c40068;
+--color-focus-ring: var(--tp-light-blue);
+--color-success: var(--tp-green-flash);
+--color-warning: var(--tp-yellow);
+--color-danger: var(--tp-carmine);
+--color-info: var(--tp-light-blue);
+}
+</style>
+<style>@font-face{font-family:'TP Sans';src:url("assets/asset-01-043adeb3.ttf") format('truetype');font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-04-2da48c92.ttf") format('truetype');font-weight:100;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-15-9d2b5e26.ttf") format('truetype');font-weight:150;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-10-6a2b1627.ttf") format('truetype');font-weight:150;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-02-185e9fcb.ttf") format('truetype');font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-18-b33c6d8e.ttf") format('truetype');font-weight:200;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-21-cfa3e8ac.ttf") format('truetype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-20-bcb16650.ttf") format('truetype');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-12-70a50394.ttf") format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-05-302bc656.ttf") format('truetype');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-14-8c70a29b.ttf") format('truetype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-00-00b3af98.ttf") format('truetype');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-23-f61d74c0.ttf") format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-17-a3c6aa88.ttf") format('truetype');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-06-3f9d00ee.ttf") format('truetype');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-22-ea5b6d90.ttf") format('truetype');font-weight:800;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-07-48d6da2c.ttf") format('truetype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-11-6d8b9c29.ttf") format('truetype');font-weight:900;font-style:italic;font-display:swap}
+:root{
+--font-sans:'TP Sans','Calibri',sans-serif;
+--font-weight-thin:100;
+--font-weight-ultralight:150;
+--font-weight-extralight:200;
+--font-weight-light:300;
+--font-weight-regular:400;
+--font-weight-medium:500;
+--font-weight-bold:700;
+--font-weight-extrabold:800;
+--font-weight-black:900;
+
+--text-display:clamp(2.75rem,5vw,4.5rem);
+--text-display-lh:1.0;
+--text-h1:2.5rem;
+--text-h1-lh:1.1;
+--text-h2:2rem;
+--text-h2-lh:1.15;
+--text-h3:1.5rem;
+--text-h3-lh:1.2;
+--text-h4:1.25rem;
+--text-h4-lh:1.3;
+--text-body-lg:1.125rem;
+--text-body-lg-lh:1.4;
+--text-body:1rem;
+--text-body-lh:1.5;
+--text-body-sm:0.875rem;
+--text-body-sm-lh:1.5;
+--text-caption:0.75rem;
+--text-caption-lh:1.4;
+--text-mono:'SFMono-Regular',Consolas,monospace;
+}
+</style>
+<style>:root{
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:20px;
+--space-6:24px;
+--space-8:32px;
+--space-10:40px;
+--space-12:48px;
+--space-16:64px;
+--space-20:80px;
+--space-24:96px;
+--space-32:128px;
+
+--radius-sm:4px;
+--radius-md:8px;
+--radius-lg:12px;
+--radius-xl:20px;
+--radius-pill:999px;
+
+--shadow-sm:0 1px 2px rgba(20,20,30,0.06);
+--shadow-md:0 4px 12px rgba(20,20,30,0.08);
+--shadow-lg:0 12px 32px rgba(20,20,30,0.12);
+
+--border-width:1px;
+--ease-standard:cubic-bezier(.4,0,.2,1); /* @kind other */
+--duration-fast:120ms; /* @kind other */
+--duration-base:200ms; /* @kind other */
+}
+</style>
+<style>:root{
+/* --- Primary (all audiences) --- */
+--tp-dark-slate:#4B4C6A;
+--tp-pink:#FF0082;
+--tp-black:#000000;
+--tp-white:#FFFFFF;
+/* --- Neutral / muted (clients, investors) --- */
+--tp-slate:#848DAD;
+--tp-muted-violet:#706398;
+--tp-dark-sand:#918E81;
+--tp-sand:#D4D2CA;
+--tp-pastel-sand:#ECE9E7;
+--tp-pastel-slate:#C2C7CD;
+--tp-pastel-violet:#E2DFE8;
+--tp-dark-gray:#414141;
+--tp-gray:#676767;
+--tp-light-gray:#CCCCCC;
+--tp-pastel-gray:#E6E6E5;
+/* --- Vibrant (internal / employee audiences only) --- */
+--tp-blue:#3047B0;
+--tp-light-blue:#0087FF;
+--tp-turquoise:#00AF9B;
+--tp-green-flash:#00D769;
+--tp-green-light:#84C98B;
+--tp-yellow:#F5D200;
+--tp-orange:#FF5C00;
+--tp-purple:#780096;
+--tp-violet:#8042CF;
+--tp-light-violet:#8F51FF;
+--tp-lavender:#8051FF;
+--tp-indigo:#4D3293;
+--tp-light-indigo:#6648CC;
+--tp-dark-indigo:#3E2666;
+--tp-burgundy:#5F365E;
+--tp-carmine:#AB2C37;
+--tp-dark-coral:#E04C5C;
+--tp-dark-muted-purple:#4C3661;
+/* --- Gradient (use minimally, never on type) --- */
+--tp-gradient-brand: linear-gradient(135deg, var(--tp-dark-slate), var(--tp-pink));
+/* --- PPTX corporate theme (Oct 2025 global template) — close variants, used in deck contexts --- */
+--tp-pptx-pink:#ED1E81;
+--tp-pptx-warm-grey:#918D80;
+--tp-pptx-deep-violet:#4C3193;
+--tp-pptx-dusty-violet:#706297;
+--tp-pptx-navy-slate:#4A4C6A;
+
+/* --- Semantic aliases --- */
+--color-bg: var(--tp-white);
+--color-bg-subtle: var(--tp-pastel-sand);
+--color-bg-muted: var(--tp-pastel-gray);
+--color-surface-card: var(--tp-white);
+--color-surface-sunken: var(--tp-pastel-sand);
+--color-border: var(--tp-light-gray);
+--color-border-subtle: var(--tp-pastel-slate);
+--color-text-primary: var(--tp-black);
+--color-text-secondary: var(--tp-dark-gray);
+--color-text-tertiary: var(--tp-gray);
+--color-text-inverse: var(--tp-white);
+--color-primary: var(--tp-dark-slate);
+--color-primary-hover: #3d3e57;
+--color-primary-active: #34354a;
+--color-accent: var(--tp-pink);
+--color-accent-hover: #e0007a;
+--color-accent-active: #c40068;
+--color-focus-ring: var(--tp-light-blue);
+--color-success: var(--tp-green-flash);
+--color-warning: var(--tp-yellow);
+--color-danger: var(--tp-carmine);
+--color-info: var(--tp-light-blue);
+}
+
+@font-face{font-family:'TP Sans';src:url("assets/asset-01-043adeb3.ttf") format('truetype');font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-04-2da48c92.ttf") format('truetype');font-weight:100;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-15-9d2b5e26.ttf") format('truetype');font-weight:150;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-10-6a2b1627.ttf") format('truetype');font-weight:150;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-02-185e9fcb.ttf") format('truetype');font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-18-b33c6d8e.ttf") format('truetype');font-weight:200;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-21-cfa3e8ac.ttf") format('truetype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-20-bcb16650.ttf") format('truetype');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-12-70a50394.ttf") format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-05-302bc656.ttf") format('truetype');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-14-8c70a29b.ttf") format('truetype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-00-00b3af98.ttf") format('truetype');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-23-f61d74c0.ttf") format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-17-a3c6aa88.ttf") format('truetype');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-06-3f9d00ee.ttf") format('truetype');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-22-ea5b6d90.ttf") format('truetype');font-weight:800;font-style:italic;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-07-48d6da2c.ttf") format('truetype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'TP Sans';src:url("assets/asset-11-6d8b9c29.ttf") format('truetype');font-weight:900;font-style:italic;font-display:swap}
+:root{
+--font-sans:'TP Sans','Calibri',sans-serif;
+--font-weight-thin:100;
+--font-weight-ultralight:150;
+--font-weight-extralight:200;
+--font-weight-light:300;
+--font-weight-regular:400;
+--font-weight-medium:500;
+--font-weight-bold:700;
+--font-weight-extrabold:800;
+--font-weight-black:900;
+
+--text-display:clamp(2.75rem,5vw,4.5rem);
+--text-display-lh:1.0;
+--text-h1:2.5rem;
+--text-h1-lh:1.1;
+--text-h2:2rem;
+--text-h2-lh:1.15;
+--text-h3:1.5rem;
+--text-h3-lh:1.2;
+--text-h4:1.25rem;
+--text-h4-lh:1.3;
+--text-body-lg:1.125rem;
+--text-body-lg-lh:1.4;
+--text-body:1rem;
+--text-body-lh:1.5;
+--text-body-sm:0.875rem;
+--text-body-sm-lh:1.5;
+--text-caption:0.75rem;
+--text-caption-lh:1.4;
+--text-mono:'SFMono-Regular',Consolas,monospace;
+}
+
+:root{
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:20px;
+--space-6:24px;
+--space-8:32px;
+--space-10:40px;
+--space-12:48px;
+--space-16:64px;
+--space-20:80px;
+--space-24:96px;
+--space-32:128px;
+
+--radius-sm:4px;
+--radius-md:8px;
+--radius-lg:12px;
+--radius-xl:20px;
+--radius-pill:999px;
+
+--shadow-sm:0 1px 2px rgba(20,20,30,0.06);
+--shadow-md:0 4px 12px rgba(20,20,30,0.08);
+--shadow-lg:0 12px 32px rgba(20,20,30,0.12);
+
+--border-width:1px;
+--ease-standard:cubic-bezier(.4,0,.2,1); /* @kind other */
+--duration-fast:120ms; /* @kind other */
+--duration-base:200ms; /* @kind other */
+}
+
+</style>
+<script src="assets/asset-09-656386e4.js"></script>
+<script src="assets/asset-08-64761517.js"></script>
+<style>
+  body{margin:0;font-family:var(--font-sans);color:var(--tp-dark-slate);background:var(--tp-pastel-sand);-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:var(--tp-dark-slate);text-decoration:none}
+  a:hover{color:var(--tp-pink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--tp-pink)!important;background:#fff!important}
+  @keyframes bsPulse{0%,100%{opacity:1}50%{opacity:.2}}
+  @keyframes bsCloud{from{transform:translateX(-18px)}to{transform:translateX(18px)}}
+  @keyframes bsFly{0%{left:6px;transform:translateY(0)}40%{transform:translateY(-6px)}72%{left:calc(100% - 44px);transform:translateY(0)}100%{left:calc(100% - 44px)}}
+  @keyframes bsDraw{0%{width:0}72%{width:calc(100% - 50px)}100%{width:calc(100% - 50px)}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</helmet>
+
+<div style="font-family:var(--font-sans);color:var(--tp-dark-slate)">
+
+  <!-- ============ NAV ============ -->
+  <header style="position:sticky;top:0;z-index:50;background:var(--tp-dark-slate);color:#fff">
+    <nav style="max-width:1120px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <img src="assets/asset-16-a39f096f.png" alt="TP" style="height:26px;width:auto">
+      <div style="display:flex;align-items:center;gap:28px">
+        <a href="#benefits" style="color:rgba(255,255,255,.82);font-size:.9rem;font-weight:300">TP에서 일한다는 것</a>
+        <a href="#journey" style="color:rgba(255,255,255,.82);font-size:.9rem;font-weight:300">채용 여정</a>
+        <a href="#positions" style="color:rgba(255,255,255,.82);font-size:.9rem;font-weight:300">채용 중인 포지션</a>
+        <a href="#apply"><x-import component-from-global-scope="TPDesignSystem_9211d8.Button" variant="accent" size="md" hint-size="auto,40px">지원하기</x-import></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section style="background:var(--tp-pastel-violet);position:relative;overflow:hidden">
+    <div style="position:absolute;right:-160px;top:-120px;width:480px;height:480px;border-radius:50%;background:rgba(75,76,106,.06)"></div>
+    <div style="max-width:1120px;margin:0 auto;padding:72px 24px 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1">
+      <div>
+        <span style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--tp-dark-slate);font-size:.72rem;letter-spacing:.14em;font-weight:500;padding:7px 16px;border-radius:999px">
+          <i data-lucide="plane-takeoff" style="width:15px;height:15px;color:var(--tp-pink)"></i>TP KOREA CAREERS
+        </span>
+        <h1 style="font-size:clamp(2.4rem,4vw,3.4rem);line-height:1.12;font-weight:800;letter-spacing:-.02em;margin:22px 0 0;color:var(--tp-dark-slate)">당신의 커리어,<br>여기서 이륙합니다</h1>
+        <p style="font-size:1.05rem;font-weight:300;color:#5f607d;margin:20px 0 0;max-width:460px;text-wrap:pretty">서류부터 비자, 항공권, 첫 숙소까지 — 해외 취업의 모든 단계를 TP 한국팀이 함께합니다.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
+          <a href="#apply"><x-import component-from-global-scope="TPDesignSystem_9211d8.Button" variant="accent" size="lg" hint-size="auto,52px">지원하기</x-import></a>
+          <a href="#positions"><x-import component-from-global-scope="TPDesignSystem_9211d8.Button" variant="secondary" size="lg" hint-size="auto,52px">포지션 둘러보기</x-import></a>
+        </div>
+      </div>
+
+      <!-- boarding pass visual -->
+      <div style="background:#fff;border-radius:24px;box-shadow:0 24px 60px rgba(75,76,106,.16);overflow:hidden">
+        <div style="background:var(--tp-dark-slate);color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:space-between">
+          <div style="display:flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.12em;color:rgba(255,255,255,.7)">
+            <span style="background:rgba(255,255,255,.14);padding:4px 12px;border-radius:999px;font-weight:500;color:#fff">TP-2026</span>
+            <span>BOARDING PASS</span>
+          </div>
+          <span style="display:inline-flex;align-items:center;gap:7px;font-size:.68rem;letter-spacing:.14em;font-weight:500">
+            <i style="width:7px;height:7px;border-radius:50%;background:var(--tp-pink);display:inline-block;animation:bsPulse 1.6s infinite"></i>NOW BOARDING
+          </span>
+        </div>
+        <div style="padding:28px 26px 22px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between">
+            <div>
+              <div style="font-size:1.9rem;font-weight:800;color:var(--tp-dark-slate);line-height:1">ICN</div>
+              <div style="font-size:.66rem;letter-spacing:.14em;color:var(--tp-gray);margin-top:4px">SEOUL</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.9rem;font-weight:800;color:var(--tp-dark-slate);line-height:1">KUL</div>
+              <div style="font-size:.66rem;letter-spacing:.14em;color:var(--tp-gray);margin-top:4px">KUALA LUMPUR</div>
+            </div>
+          </div>
+          <div style="position:relative;height:40px;margin:18px 0 6px">
+            <div style="position:absolute;left:6px;right:6px;top:20px;border-top:2px dotted var(--tp-pastel-slate)"></div>
+            <div style="position:absolute;left:6px;top:19px;height:2px;background:var(--tp-pink);border-radius:2px;animation:bsDraw 3.6s ease-in-out infinite"></div>
+            <i data-lucide="plane" style="position:absolute;top:6px;left:6px;width:26px;height:26px;color:var(--tp-dark-slate);animation:bsFly 3.6s ease-in-out infinite"></i>
+          </div>
+          <div style="border-top:1px dashed var(--tp-pastel-slate);margin-top:16px;padding-top:16px;display:flex;justify-content:space-between;font-size:.72rem;color:var(--tp-gray)">
+            <div><div style="letter-spacing:.1em;font-size:.6rem">PASSENGER</div><div style="font-weight:500;color:var(--tp-dark-slate);margin-top:3px">FUTURE TP EXPERT</div></div>
+            <div style="text-align:right"><div style="letter-spacing:.1em;font-size:.6rem">GATE</div><div style="font-weight:500;color:var(--tp-dark-slate);margin-top:3px">2026</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section style="background:var(--tp-dark-slate)">
+    <div style="max-width:1120px;margin:0 auto;padding:40px 24px;display:flex;flex-wrap:wrap;justify-content:center;gap:64px">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+        <div style="text-align:center;color:#fff">
+          <div style="font-size:2.4rem;font-weight:800;line-height:1">{{ s.n }}</div>
+          <div style="font-size:.82rem;font-weight:300;color:rgba(255,255,255,.65);margin-top:6px;letter-spacing:.02em">{{ s.l }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section id="benefits" style="background:#fff">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 24px">
+      <div style="text-align:center;max-width:600px;margin:0 auto 48px">
+        <div style="font-size:.74rem;letter-spacing:.16em;font-weight:500;color:var(--tp-pink)">WHY TP</div>
+        <h2 style="font-size:clamp(1.7rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-.02em;color:var(--tp-dark-slate);margin:12px 0 0">해외에서의 커리어, 혼자가 아닙니다</h2>
+        <p style="font-size:1rem;font-weight:300;color:#5f607d;margin:14px 0 0">준비부터 정착까지, TP 한국팀이 모든 단계를 함께합니다.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="6">
+          <x-import component-from-global-scope="TPDesignSystem_9211d8.Card" padding="28px 24px" hint-size="100%,190px">
+            <div style="width:46px;height:46px;border-radius:13px;background:var(--tp-pastel-sand);border:1px solid var(--tp-pastel-slate);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+              <i data-lucide="{{ b.icon }}" style="width:22px;height:22px;color:var(--tp-dark-slate)"></i>
+            </div>
+            <div style="font-size:1.05rem;font-weight:700;color:var(--tp-dark-slate)">{{ b.t }}</div>
+            <div style="font-size:.9rem;font-weight:300;color:#5f607d;margin-top:8px;line-height:1.55;text-wrap:pretty">{{ b.d }}</div>
+          </x-import>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOARDING PASS CARDS ============ -->
+  <section style="background:var(--tp-pastel-sand)">
+    <div style="max-width:1120px;margin:0 auto;padding:76px 24px">
+      <div style="text-align:center;margin-bottom:40px">
+        <h2 style="font-size:clamp(1.6rem,2.4vw,2rem);font-weight:800;letter-spacing:-.02em;color:var(--tp-dark-slate);margin:0">어디부터 시작할까요?</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <sc-for list="{{ tickets }}" as="t" hint-placeholder-count="3">
+          <a href="#apply" style="display:block;background:#fff;border:1px solid var(--tp-pastel-slate);border-radius:20px;overflow:hidden" style-hover="border-color:var(--tp-pink);box-shadow:0 16px 36px rgba(75,76,106,.14);transform:translateY(-3px);transition:.25s">
+            <div style="background:var(--tp-dark-slate);color:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between">
+              <span style="display:flex;align-items:center;gap:10px;font-weight:700;font-size:.98rem"><i data-lucide="{{ t.icon }}" style="width:18px;height:18px;color:#fff"></i>{{ t.t }}</span>
+              <span style="font-size:.6rem;letter-spacing:.14em;background:rgba(255,255,255,.14);padding:4px 11px;border-radius:999px;color:rgba(255,255,255,.85)">{{ t.gate }}</span>
+            </div>
+            <div style="padding:22px 20px;border-top:2px dashed var(--tp-pastel-slate)">
+              <p style="font-size:.9rem;font-weight:300;color:#5f607d;margin:0 0 14px">{{ t.d }}</p>
+              <span style="display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:500;color:var(--tp-pink)">보러가기 <i data-lucide="arrow-right" style="width:15px;height:15px"></i></span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY ============ -->
+  <section id="journey" style="background:#fff">
+    <div style="max-width:1000px;margin:0 auto;padding:80px 24px">
+      <div style="text-align:center;margin-bottom:48px">
+        <div style="font-size:.74rem;letter-spacing:.16em;font-weight:500;color:var(--tp-pink)">HIRING JOURNEY</div>
+        <h2 style="font-size:clamp(1.7rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-.02em;color:var(--tp-dark-slate);margin:12px 0 0">채용 여정</h2>
+        <p style="font-size:1rem;font-weight:300;color:#5f607d;margin:12px 0 0">전 과정 온라인 · 모든 단계 한국어 지원</p>
+      </div>
+      <div style="position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+        <sc-if value="{{ showJourneyLine }}" hint-placeholder-val="{{ true }}">
+          <div style="position:absolute;top:30px;left:10%;right:10%;border-top:2px dotted var(--tp-pastel-slate);z-index:0"></div>
+        </sc-if>
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="width:60px;height:60px;border-radius:18px;background:#fff;border:1px solid var(--tp-pastel-slate);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 4px 14px rgba(75,76,106,.08)">
+              <i data-lucide="{{ st.icon }}" style="width:24px;height:24px;color:var(--tp-dark-slate)"></i>
+            </div>
+            <div style="font-size:.92rem;font-weight:700;color:var(--tp-dark-slate)">{{ st.t }}</div>
+            <div style="font-size:.74rem;font-weight:300;color:var(--tp-gray);margin-top:3px">{{ st.s }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPEN POSITIONS ============ -->
+  <sc-if value="{{ showPositions }}" hint-placeholder-val="{{ true }}">
+  <section id="positions" style="background:var(--tp-pastel-sand)">
+    <div style="max-width:920px;margin:0 auto;padding:80px 24px">
+      <div style="text-align:center;margin-bottom:40px">
+        <div style="font-size:.74rem;letter-spacing:.16em;font-weight:500;color:var(--tp-pink)">OPEN ROLES</div>
+        <h2 style="font-size:clamp(1.7rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-.02em;color:var(--tp-dark-slate);margin:12px 0 0">채용 중인 포지션</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ positions }}" as="p" hint-placeholder-count="4">
+          <a href="#apply" style="display:flex;align-items:center;justify-content:space-between;gap:20px;background:#fff;border:1px solid var(--tp-pastel-slate);border-radius:16px;padding:22px 26px" style-hover="border-color:var(--tp-pink);transition:.2s">
+            <div style="min-width:0">
+              <div style="font-size:1.08rem;font-weight:700;color:var(--tp-dark-slate)">{{ p.t }}</div>
+              <div style="display:flex;align-items:center;gap:16px;margin-top:8px;font-size:.82rem;font-weight:300;color:var(--tp-gray);flex-wrap:wrap">
+                <span style="display:inline-flex;align-items:center;gap:6px"><i data-lucide="map-pin" style="width:14px;height:14px"></i>{{ p.loc }}</span>
+                <span style="display:inline-flex;align-items:center;gap:6px"><i data-lucide="clock" style="width:14px;height:14px"></i>{{ p.type }}</span>
+                <x-import component-from-global-scope="TPDesignSystem_9211d8.Badge" tone="primary" hint-size="auto,24px">한국어</x-import>
+              </div>
+            </div>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--tp-pastel-sand);color:var(--tp-dark-slate);flex-shrink:0"><i data-lucide="arrow-right" style="width:18px;height:18px"></i></span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- ============ CTA + FORM ============ -->
+  <section id="apply" style="background:#fff">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 24px">
+      <div style="background:var(--tp-dark-slate);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr">
+        <div style="padding:52px 48px;color:#fff;position:relative">
+          <div style="position:absolute;right:-80px;bottom:-90px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.05)"></div>
+          <div style="position:relative;z-index:1">
+            <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);font-size:.68rem;letter-spacing:.14em;font-weight:500;padding:6px 14px;border-radius:999px">
+              <i style="width:7px;height:7px;border-radius:50%;background:var(--tp-pink);display:inline-block;animation:bsPulse 1.6s infinite"></i>다음 출발편 준비 완료
+            </span>
+            <h2 style="font-size:1.9rem;font-weight:800;letter-spacing:-.02em;margin:20px 0 0;line-height:1.2">지금 지원하면<br>담당자가 카카오톡으로<br>안내드립니다</h2>
+            <p style="font-size:.95rem;font-weight:300;color:rgba(255,255,255,.7);margin:18px 0 0">모든 상담은 한국어로 진행됩니다.</p>
+          </div>
+        </div>
+        <div style="background:#fff;padding:44px 44px">
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <x-import component-from-global-scope="TPDesignSystem_9211d8.Input" label="성함 *" placeholder="홍길동" hint-size="100%,74px"></x-import>
+            <x-import component-from-global-scope="TPDesignSystem_9211d8.Input" label="연락처 (카카오톡 ID 또는 전화번호) *" placeholder="kakao_id / 010-0000-0000" hint-size="100%,74px"></x-import>
+            <x-import component-from-global-scope="TPDesignSystem_9211d8.Select" label="관심 포지션" options="{{ formOptions }}" hint-size="100%,74px"></x-import>
+            <a href="#" style="display:block;margin-top:4px"><x-import component-from-global-scope="TPDesignSystem_9211d8.Button" variant="accent" size="lg" dc-props="{{ fullBtn }}" hint-size="100%,52px">카카오톡 상담 신청</x-import></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--tp-dark-slate);color:rgba(255,255,255,.6)">
+    <div style="max-width:1120px;margin:0 auto;padding:44px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <img src="assets/asset-16-a39f096f.png" alt="TP" style="height:24px;width:auto">
+      <div style="font-size:.82rem;font-weight:300">© 2026 TP. 전 세계 170여 개 시장의 디지털 비즈니스 서비스 파트너.</div>
+    </div>
+  </footer>
+
+</div>
+
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{"$preview":{"width":1120,"height":900},"showOpenPositions":{"editor":"boolean","default":true,"tsType":"boolean","section":"Sections"},"showJourneyLine":{"editor":"boolean","default":true,"tsType":"boolean","section":"Sections"}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const draw = (n) => {
+      if (window.lucide) { window.lucide.createIcons(); }
+      else if (n > 0) { setTimeout(() => draw(n - 1), 120); }
+    };
+    draw(40);
+  }
+  componentDidUpdate() { if (window.lucide) window.lucide.createIcons(); }
+  renderVals() {
+    return {
+      showPositions: this.props.showOpenPositions ?? true,
+      showJourneyLine: this.props.showJourneyLine ?? true,
+      fullBtn: { style: { width: '100%' } },
+      formOptions: ['한국어 고객 지원 (CS)', '한국어 테크 서포트', '한국어 콘텐츠 모더레이터', '한국어 세일즈 서포트', '아직 정하지 못했어요'],
+      stats: [
+        { n: '200+', l: '한국팀 동료' },
+        { n: '170+', l: '거점 국가' },
+        { n: '5년 연속', l: 'GPTW 수상' },
+      ],
+      benefits: [
+        { icon: 'plane-takeoff', t: '출국 전 과정 지원', d: '항공권 · 비자 · 초기 정착까지 전담팀이 함께합니다.' },
+        { icon: 'languages', t: '한국어 근무환경', d: '채용부터 온보딩까지 모든 과정을 한국어로 안내합니다.' },
+        { icon: 'globe', t: '글로벌 커리어', d: '170여 개국 거점에서 성장하는 커리어 경로를 제공합니다.' },
+        { icon: 'hand-heart', t: '복지 · 수당', d: '주거 지원, 항공권, 경쟁력 있는 급여 패키지를 제공합니다.' },
+        { icon: 'graduation-cap', t: '체계적인 교육', d: '입사 후 직무 · 언어 트레이닝 프로그램을 지원합니다.' },
+        { icon: 'users', t: '다양한 동료', d: '전 세계에서 모인 200여 명의 한국팀 동료가 함께합니다.' },
+      ],
+      tickets: [
+        { gate: 'GATE 01', icon: 'briefcase', t: '채용공고', d: '한국어 인재 포지션을 확인하세요.' },
+        { gate: 'GATE 02', icon: 'luggage', t: '이주 · 비자', d: '항공권부터 비자까지 전 과정을 지원합니다.' },
+        { gate: 'GATE 03', icon: 'palmtree', t: '근무조건 · 복지', d: '급여, 수당, 휴가를 상세히 안내합니다.' },
+      ],
+      steps: [
+        { icon: 'file-text', t: '서류 심사', s: '이력서 제출' },
+        { icon: 'monitor', t: '온라인 테스트', s: '언어 · 역량' },
+        { icon: 'message-square', t: '1차 면접', s: '채용팀' },
+        { icon: 'user-check', t: '2차 면접', s: '실무팀' },
+        { icon: 'plane-takeoff', t: '비자 · 출국', s: '전 과정 동행' },
+      ],
+      positions: [
+        { t: '한국어 고객 지원 (CS)', loc: '말레이시아 쿠알라룸푸르', type: '정규직' },
+        { t: '한국어 테크 서포트', loc: '말레이시아 쿠알라룸푸르', type: '정규직' },
+        { t: '한국어 콘텐츠 모더레이터', loc: '태국 방콕', type: '정규직' },
+        { t: '한국어 세일즈 서포트', loc: '말레이시아 페낭', type: '정규직' },
+      ],
+    };
+  }
+}
+</script>
+
+
+</body></html>
