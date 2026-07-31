@@ -236,6 +236,15 @@ img.card-img,.card>img,.city-card>img,.office-image{border-radius:0}
 /* Hero blocks on subpages sit on the Boarding Soft gradient. */
 .page-hero,.hero{background:var(--hero-gradient)!important}
 .page-hero h1,.hero h1{color:var(--slate)}
+
+/* A few numbers were painted with a hardcoded gold gradient clipped to the
+   text, so they sit outside the token remap. Solid slate instead. */
+.stat-number,.gptw-stat-number,.gptw-highlight{
+  background:none!important;-webkit-background-clip:initial!important;
+  background-clip:initial!important;-webkit-text-fill-color:currentColor!important;
+  color:var(--slate)!important;
+}
+.gptw-highlight{color:var(--pink)!important}
 </style>
 </head>
 <body>
@@ -267,7 +276,7 @@ img.card-img,.card>img,.city-card>img,.office-image{border-radius:0}
       <a class="pill" href="#kl" style="background:#E8F4FD;border-color:#90CAF9;color:#1565C0">🏙️ 쿠알라룸푸르</a>
       <a class="pill" href="#penang" style="background:#E8F8E8;border-color:#A5D6A7;color:#2E7D32">🌴 페낭</a>
       <a class="pill" href="#bangkok" style="background:#FFF3E0;border-color:#FFCC80;color:#E65100">🐘 방콕</a>
-      <a class="pill" href="#tips" style="background:#FFFBEB;border-color:#FFD700;color:#7B5E00">⭐ 직원 후기</a>
+      <a class="pill" href="#tips" style="background:#FFF0F7;border-color:#FF0082;color:#C40068">⭐ 직원 후기</a>
     </div>
   </section>
 

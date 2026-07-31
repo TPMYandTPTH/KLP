@@ -225,42 +225,16 @@ POSITIONS = f'''<section class="section section-soft" id="positions">
     </div>
   </section>'''
 
-FOOTER = f'''<footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div>
-          <div class="footer-logo"><img src="photos/tp-logo.png" alt="TP" width="34" height="34"><span>TP</span></div>
-          <p class="footer-desc">전 세계 100개국에서 함께하는 글로벌 BPO 리더<br>한국어 역량을 보유한 인재의 새로운 커리어를 지원합니다</p>
-          <div class="footer-badges">
-            <span class="footer-badge">🏆 6년 연속 말레이시아에서 가장 일하기 좋은 기업</span>
-            <span class="footer-badge">🏆 5년 연속 세계에서 가장 일하기 좋은 기업</span>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>채용 정보</h4>
-          <ul>
-            <li><a href="open-jobs.html">채용공고</a></li>
-            <li><a href="hiring-process.html">채용프로세스</a></li>
-            <li><a href="salary-and-benefits.html">근무조건·복지</a></li>
-            <li><a href="relocation-visa.html">이주·비자</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>생활 안내</h4>
-          <ul>
-            <li><a href="why-malaysia-thailand.html">도시안내</a></li>
-            <li><a href="cost-of-living.html">생활비</a></li>
-            <li><a href="daily-life-malaysia.html">생활가이드</a></li>
-            <li><a href="office-environment.html">오피스·VR 투어</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Teleperformance. All rights reserved.</span>
-        <span>Teleperformance Malaysia Sdn Bhd의 SSM(말레이시아 기업위원회) 등록번호: 201601023769 (1194708-K)</span>
-      </div>
-    </div>
-  </footer>'''
+# The same footer every other page uses, so there is exactly one of them.
+FOOTER = f'''<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-brand"><div class="footer-logo"><img src="photos/tp-logo.png" alt="TP"><span class="footer-logo-text">TP</span></div><p class="footer-desc">전 세계 100개국에서 함께하는 글로벌 BPO 리더<br>한국어 역량을 보유한 인재의 새로운 커리어를 지원합니다</p><div class="badges"><span class="badge-item">🏆 6년 연속 말레이시아에서 가장 일하기 좋은 기업</span><span class="badge-item">🏆 5년 연속 세계에서 가장 일하기 좋은 기업</span></div><div class="footer-cta"><a href="{ICIMS}" target="_blank" rel="noopener noreferrer" class="btn btn-accent">지원하기</a></div></div>
+    <div class="footer-section"><h3>기업정보</h3><ul><li><a href="about-tp.html">기업소개</a></li><li><a href="salary-and-benefits.html#benefits">근무조건·복지</a></li><li><a href="office-environment.html">근무환경</a></li></ul></div>
+    <div class="footer-section"><h3>채용·지원</h3><ul><li><a href="open-jobs.html">채용공고</a></li><li><a href="hiring-process.html">채용프로세스</a></li><li><a href="klp-apply-form.html">카카오톡 상담 신청</a></li></ul></div>
+    <div class="footer-section"><h3>현지 생활</h3><ul><li><a href="why-malaysia-thailand.html">도시안내</a></li><li><a href="relocation-visa.html">이주·비자</a></li><li><a href="daily-life-malaysia.html">생활가이드</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p class="ssm-info">Teleperformance Malaysia Sdn Bhd의 SSM(말레이시아 기업위원회) 등록번호: 201601023769 (1194708-K)</p><p>© 2026 TP. All rights reserved.</p></div>
+</footer>'''
 
 FLOATING = f'''<div class="floating">
   <button class="back-to-top" id="backToTop" type="button" aria-label="맨 위로">{svg("arrow-up")}</button>

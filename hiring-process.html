@@ -237,6 +237,15 @@ img.card-img,.card>img,.city-card>img,.office-image{border-radius:0}
 /* Hero blocks on subpages sit on the Boarding Soft gradient. */
 .page-hero,.hero{background:var(--hero-gradient)!important}
 .page-hero h1,.hero h1{color:var(--slate)}
+
+/* A few numbers were painted with a hardcoded gold gradient clipped to the
+   text, so they sit outside the token remap. Solid slate instead. */
+.stat-number,.gptw-stat-number,.gptw-highlight{
+  background:none!important;-webkit-background-clip:initial!important;
+  background-clip:initial!important;-webkit-text-fill-color:currentColor!important;
+  color:var(--slate)!important;
+}
+.gptw-highlight{color:var(--pink)!important}
 </style>
 </head>
 <body>
