@@ -1,0 +1,758 @@
+/* ==========================================================================
+   KLP — "Boarding Soft" theme
+   Shared tokens and components for every page of the TP Korea landing site.
+   Pure CSS, no build step. Page-specific rules stay inline on their page.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Brand ---------------------------------------------------------------- */
+  --slate: #4B4C6A;          /* dominant structural colour */
+  --slate-hover: #3d3e57;
+  --slate-deep: #34354a;
+  --pink: #FF0082;           /* action / accent ONLY */
+  --pink-hover: #e0007a;
+  --pink-soft: rgba(255, 0, 130, .08);
+
+  /* Soft neutrals -------------------------------------------------------- */
+  --n-100: #FAF9FC;
+  --n-200: #F3F1F7;
+  --n-300: #EAE8F1;
+  --n-400: #C2C7CD;          /* hairline borders */
+  --n-500: #676767;
+  --white: #fff;
+
+  /* Type ----------------------------------------------------------------- */
+  --ink: var(--slate);
+  --ink-soft: #5f607d;       /* body copy on light surfaces */
+  --ink-mute: var(--n-500);
+  --on-slate: rgba(255, 255, 255, .82);
+  --on-slate-mute: rgba(255, 255, 255, .62);
+
+  --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui,
+    'Malgun Gothic', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Shape ---------------------------------------------------------------- */
+  --r-card: 20px;
+  --r-card-lg: 22px;
+  --r-sm: 16px;
+  --r-pill: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(75, 76, 106, .06);
+  --shadow-md: 0 8px 24px rgba(75, 76, 106, .10);
+  --shadow-lg: 0 16px 40px rgba(75, 76, 106, .14);
+  --shadow-xl: 0 24px 60px rgba(75, 76, 106, .16);
+
+  --max: 1120px;
+  --ease: cubic-bezier(.4, 0, .2, 1);
+
+  --hero-gradient: linear-gradient(160deg, #E9E7F0 0%, #f8f7fb 55%, #ffeef7 100%);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base
+   -------------------------------------------------------------------------- */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* Airport codes, gate labels, flight numbers only. */
+.mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 2000;
+  background: var(--pink); color: #fff;
+  padding: 10px 18px; border-radius: var(--r-pill);
+  font-size: .85rem; font-weight: 700;
+  transition: top .2s var(--ease);
+}
+.skip-link:focus { top: 12px; }
+
+:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; border-radius: 4px; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+.icon { width: 1em; height: 1em; display: inline-block; vertical-align: -.125em; flex-shrink: 0; }
+
+/* --------------------------------------------------------------------------
+   3. Departure board strip
+   -------------------------------------------------------------------------- */
+
+.departure-board {
+  background: var(--slate-deep);
+  color: #fff;
+  font-family: var(--font-mono);
+}
+
+.departure-board .inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 9px 24px;
+  display: flex; align-items: center; gap: 14px;
+  flex-wrap: wrap;
+  font-size: .68rem; letter-spacing: .14em;
+}
+
+.board-chip {
+  background: rgba(255, 255, 255, .12);
+  padding: 4px 13px; border-radius: var(--r-pill);
+  font-weight: 600; color: #fff; white-space: nowrap;
+}
+
+.board-route {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: rgba(255, 255, 255, .7); white-space: nowrap;
+}
+.board-route .icon { width: 13px; height: 13px; color: var(--pink); }
+
+.board-status {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--pink); color: #fff;
+  padding: 4px 14px; border-radius: var(--r-pill);
+  font-weight: 600; white-space: nowrap;
+}
+.board-status .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #fff; animation: bsPulse 1.6s infinite;
+}
+
+/* --------------------------------------------------------------------------
+   4. Header / nav
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--slate);
+  color: #fff;
+  box-shadow: 0 2px 14px rgba(75, 76, 106, .18);
+}
+
+.header-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 12px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand img { width: 34px; height: 34px; object-fit: contain; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-name { font-size: .95rem; font-weight: 700; color: #fff; }
+.brand-tagline { font-size: .66rem; color: var(--on-slate-mute); letter-spacing: .04em; }
+
+.site-nav ul { display: flex; align-items: center; gap: 22px; list-style: none; }
+.site-nav a {
+  font-size: .86rem; font-weight: 400; color: var(--on-slate);
+  position: relative; padding: 3px 0;
+  transition: color .2s var(--ease);
+}
+.site-nav a:hover { color: #fff; }
+.site-nav a::after {
+  content: ''; position: absolute; left: 0; bottom: -3px;
+  width: 0; height: 2px; background: var(--pink); border-radius: 2px;
+  transition: width .25s var(--ease);
+}
+.site-nav a:hover::after, .site-nav a:focus-visible::after { width: 100%; }
+.site-nav a[aria-current="page"] { color: #fff; font-weight: 700; }
+.site-nav a[aria-current="page"]::after { width: 100%; }
+.site-nav .btn::after { display: none; }
+
+.mobile-toggle {
+  display: none; width: 38px; height: 38px;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 12px; cursor: pointer; position: relative;
+}
+.mobile-toggle span {
+  display: block; width: 17px; height: 2px; border-radius: 2px;
+  background: #fff; position: absolute; left: 50%;
+  transform: translateX(-50%); transition: all .25s var(--ease);
+}
+.mobile-toggle span:nth-child(1) { top: 12px; }
+.mobile-toggle span:nth-child(2) { top: 18px; }
+.mobile-toggle span:nth-child(3) { top: 24px; }
+.mobile-toggle.active span:nth-child(1) { top: 18px; transform: translateX(-50%) rotate(45deg); }
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-toggle.active span:nth-child(3) { top: 18px; transform: translateX(-50%) rotate(-45deg); }
+
+.mobile-menu {
+  display: none; background: var(--slate-hover);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  max-height: calc(100vh - 62px); overflow-y: auto;
+}
+.mobile-menu.active { display: block; }
+.mobile-menu ul { list-style: none; padding: 8px 0; }
+.mobile-menu a {
+  display: block; padding: 12px 24px; font-size: .92rem;
+  color: var(--on-slate);
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+.mobile-menu a:hover, .mobile-menu a:focus { background: rgba(255, 255, 255, .07); color: #fff; }
+.mobile-menu a[aria-current="page"] { color: #fff; font-weight: 700; }
+.mobile-menu .btn { margin: 12px 24px; display: flex; }
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 26px;
+  border-radius: var(--r-pill);
+  font-family: inherit; font-size: .9rem; font-weight: 700;
+  border: 1.5px solid transparent; cursor: pointer;
+  text-align: center; white-space: nowrap;
+  transition: background .2s var(--ease), color .2s var(--ease),
+              border-color .2s var(--ease), transform .2s var(--ease),
+              box-shadow .2s var(--ease);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn .icon { width: 16px; height: 16px; }
+
+.btn-accent { background: var(--pink); color: #fff; border-color: var(--pink); }
+.btn-accent:hover { background: var(--pink-hover); border-color: var(--pink-hover); color: #fff; box-shadow: 0 10px 24px rgba(255, 0, 130, .28); }
+
+.btn-primary { background: var(--slate); color: #fff; border-color: var(--slate); }
+.btn-primary:hover { background: var(--slate-hover); border-color: var(--slate-hover); color: #fff; box-shadow: var(--shadow-md); }
+
+.btn-secondary { background: #fff; color: var(--slate); border-color: var(--n-400); }
+.btn-secondary:hover { border-color: var(--slate); color: var(--slate); box-shadow: var(--shadow-md); }
+
+.btn-ghost { background: transparent; color: var(--slate); border-color: var(--n-400); }
+.btn-ghost:hover { background: var(--slate); color: #fff; border-color: var(--slate); }
+
+/* On slate surfaces */
+.on-slate .btn-secondary,
+.site-header .btn-secondary {
+  background: rgba(255, 255, 255, .12); color: #fff; border-color: rgba(255, 255, 255, .28);
+}
+.on-slate .btn-secondary:hover,
+.site-header .btn-secondary:hover { background: rgba(255, 255, 255, .2); color: #fff; }
+
+.btn-sm { padding: 8px 18px; font-size: .8rem; }
+.btn-lg { padding: 15px 32px; font-size: .96rem; }
+.btn-block { width: 100%; }
+
+/* --------------------------------------------------------------------------
+   6. Sections and headings
+   -------------------------------------------------------------------------- */
+
+.section { padding: 76px 0; }
+.section-tight { padding: 56px 0; }
+.section-soft { background: var(--n-200); }
+.section-softer { background: var(--n-100); }
+.section-slate { background: var(--slate); color: #fff; }
+
+.section-head { text-align: center; margin-bottom: 44px; }
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: .72rem; letter-spacing: .16em; font-weight: 600;
+  color: var(--pink); text-transform: uppercase;
+}
+.section-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.15rem);
+  font-weight: 900; letter-spacing: -.02em;
+  color: var(--slate); margin-top: 10px; line-height: 1.3;
+}
+.section-slate .section-title { color: #fff; }
+.section-subtitle {
+  font-size: 1rem; font-weight: 300; color: var(--ink-soft);
+  margin-top: 12px; text-wrap: pretty;
+}
+.section-slate .section-subtitle { color: var(--on-slate-mute); }
+
+/* --------------------------------------------------------------------------
+   7. Cards
+   -------------------------------------------------------------------------- */
+
+.card {
+  background: #fff;
+  border: 1px solid var(--n-300);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease),
+              transform .25s var(--ease);
+}
+a.card:hover, .card-hover:hover {
+  border-color: var(--pink);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+.card-body { padding: 22px 24px; }
+.card-title { font-size: 1.05rem; font-weight: 700; color: var(--slate); }
+.card-desc { font-size: .9rem; font-weight: 300; color: var(--ink-soft); margin-top: 8px; line-height: 1.6; }
+.card img { display: block; width: 100%; height: 190px; object-fit: cover; }
+
+.grid { display: grid; gap: 20px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Icon tile used by benefits / journey steps */
+.icon-tile {
+  width: 46px; height: 46px; border-radius: 13px;
+  background: var(--n-200); border: 1px solid var(--n-300);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--slate);
+}
+.icon-tile .icon { width: 22px; height: 22px; }
+
+/* --------------------------------------------------------------------------
+   8. Boarding-pass ticket cards
+   -------------------------------------------------------------------------- */
+
+.ticket {
+  display: block; background: #fff;
+  border: 1px solid var(--n-300);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease),
+              transform .25s var(--ease);
+}
+.ticket:hover {
+  border-color: var(--pink);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+.ticket-head {
+  background: var(--slate); color: #fff;
+  padding: 15px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.ticket-name {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 700; font-size: .98rem;
+}
+.ticket-name .icon { width: 18px; height: 18px; }
+.ticket-gate {
+  font-family: var(--font-mono);
+  font-size: .6rem; letter-spacing: .14em; font-weight: 600;
+  background: rgba(255, 255, 255, .14);
+  padding: 4px 11px; border-radius: var(--r-pill);
+  color: rgba(255, 255, 255, .9); white-space: nowrap;
+}
+.ticket-body { padding: 22px 20px; border-top: 2px dashed var(--n-400); }
+.ticket-body p { font-size: .9rem; font-weight: 300; color: var(--ink-soft); margin-bottom: 14px; }
+.ticket-go {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .86rem; font-weight: 700; color: var(--pink);
+}
+.ticket-go .icon { width: 15px; height: 15px; transition: transform .2s var(--ease); }
+.ticket:hover .ticket-go .icon { transform: translateX(3px); }
+
+/* --------------------------------------------------------------------------
+   9. Hero + ICN → KUL route
+   -------------------------------------------------------------------------- */
+
+.hero {
+  background: var(--hero-gradient);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute;
+  right: -160px; top: -120px; width: 480px; height: 480px;
+  border-radius: 50%; background: rgba(75, 76, 106, .05);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 68px 24px 76px;
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: 52px;
+  align-items: center; position: relative; z-index: 1;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: var(--slate);
+  font-family: var(--font-mono);
+  font-size: .7rem; letter-spacing: .14em; font-weight: 600;
+  padding: 7px 16px; border-radius: var(--r-pill);
+  box-shadow: var(--shadow-sm);
+}
+.hero-eyebrow .icon { width: 15px; height: 15px; color: var(--pink); }
+.hero h1 {
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
+  line-height: 1.2; font-weight: 900; letter-spacing: -.02em;
+  color: var(--slate); margin: 22px 0 0;
+}
+.hero-sub {
+  font-size: 1.05rem; font-weight: 300; color: var(--ink-soft);
+  margin: 20px 0 0; max-width: 480px; text-wrap: pretty;
+}
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+
+/* Boarding-pass visual with the animated route */
+.pass {
+  background: #fff; border-radius: 24px;
+  box-shadow: var(--shadow-xl); overflow: hidden;
+}
+.pass-head {
+  background: var(--slate); color: #fff;
+  padding: 15px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  font-family: var(--font-mono);
+  font-size: .68rem; letter-spacing: .12em;
+}
+.pass-head .label { color: rgba(255, 255, 255, .7); }
+.pass-body { padding: 26px 26px 22px; }
+
+.route-ends { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.airport {
+  background: var(--n-200);
+  border: 1px solid var(--n-300);
+  border-radius: var(--r-sm);
+  padding: 12px 18px; text-align: center; min-width: 104px;
+}
+.airport .code {
+  font-family: var(--font-mono);
+  font-size: 1.7rem; font-weight: 600; color: var(--slate); line-height: 1;
+}
+.airport .city {
+  font-family: var(--font-mono);
+  font-size: .6rem; letter-spacing: .12em; color: var(--ink-mute); margin-top: 6px;
+}
+
+.route { position: relative; height: 42px; margin: 18px 0 6px; }
+.route .track {
+  position: absolute; left: 6px; right: 6px; top: 20px;
+  border-top: 2px dotted var(--n-400);
+}
+.route .progress {
+  position: absolute; left: 6px; top: 19px; height: 2px;
+  background: var(--pink); border-radius: 2px;
+  animation: bsDraw 3.6s ease-in-out infinite;
+}
+.route .plane {
+  position: absolute; top: 6px; left: 6px;
+  width: 26px; height: 26px; color: var(--slate);
+  animation: bsFly 3.6s ease-in-out infinite;
+}
+.pass-meta {
+  border-top: 1px dashed var(--n-400);
+  margin-top: 16px; padding-top: 16px;
+  display: flex; justify-content: space-between; gap: 16px;
+  font-size: .72rem; color: var(--ink-mute);
+}
+.pass-meta .k {
+  font-family: var(--font-mono);
+  letter-spacing: .1em; font-size: .58rem;
+}
+.pass-meta .v { font-weight: 700; color: var(--slate); margin-top: 3px; }
+
+/* --------------------------------------------------------------------------
+   10. Stat chips
+   -------------------------------------------------------------------------- */
+
+.stat-chips {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 14px;
+}
+.stat-chip {
+  display: inline-flex; align-items: baseline; gap: 9px;
+  background: #fff; border: 1px solid var(--n-300);
+  border-radius: var(--r-pill);
+  padding: 11px 24px; box-shadow: var(--shadow-sm);
+}
+.stat-chip .n { font-size: 1.4rem; font-weight: 900; color: var(--slate); line-height: 1; }
+.stat-chip .l { font-size: .84rem; font-weight: 400; color: var(--ink-soft); }
+.section-slate .stat-chip {
+  background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .18); box-shadow: none;
+}
+.section-slate .stat-chip .n { color: #fff; }
+.section-slate .stat-chip .l { color: var(--on-slate-mute); }
+
+/* --------------------------------------------------------------------------
+   11. Journey steps
+   -------------------------------------------------------------------------- */
+
+.journey { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.journey-line {
+  position: absolute; top: 30px; left: 10%; right: 10%;
+  border-top: 2px dotted var(--n-400); z-index: 0;
+}
+.journey-step { text-align: center; position: relative; z-index: 1; }
+.journey-step .tile {
+  width: 60px; height: 60px; border-radius: 18px;
+  background: #fff; border: 1px solid var(--n-300);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px; box-shadow: var(--shadow-sm);
+  color: var(--slate);
+}
+.journey-step .tile .icon { width: 24px; height: 24px; }
+.journey-step:last-child .tile { border-color: var(--pink); color: var(--pink); }
+.journey-step .t { font-size: .92rem; font-weight: 700; color: var(--slate); }
+.journey-step .s { font-size: .74rem; font-weight: 300; color: var(--ink-mute); margin-top: 3px; }
+
+/* --------------------------------------------------------------------------
+   12. Position rows
+   -------------------------------------------------------------------------- */
+
+.positions { display: flex; flex-direction: column; gap: 12px; }
+.position {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  background: #fff; border: 1px solid var(--n-300);
+  border-radius: var(--r-sm); padding: 20px 24px;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.position:hover { border-color: var(--pink); box-shadow: var(--shadow-md); }
+.position .t { font-size: 1.05rem; font-weight: 700; color: var(--slate); }
+.position .meta {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  margin-top: 8px; font-size: .82rem; font-weight: 300; color: var(--ink-mute);
+}
+.position .meta span { display: inline-flex; align-items: center; gap: 6px; }
+.position .meta .icon { width: 14px; height: 14px; }
+
+.badge {
+  display: inline-flex; align-items: center;
+  background: var(--pink-soft); color: var(--pink);
+  font-size: .72rem; font-weight: 700;
+  padding: 3px 11px; border-radius: var(--r-pill);
+}
+.badge-slate { background: var(--n-200); color: var(--slate); }
+
+/* --------------------------------------------------------------------------
+   13. FAQ accordion
+   -------------------------------------------------------------------------- */
+
+.faq { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: #fff; border: 1px solid var(--n-300);
+  border-radius: var(--r-sm); overflow: hidden;
+  transition: border-color .2s var(--ease);
+}
+.faq-item.open { border-color: var(--pink); }
+.faq-question {
+  width: 100%; text-align: left;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 22px; cursor: pointer;
+  background: none; border: 0; font-family: inherit;
+  font-size: .96rem; font-weight: 700; color: var(--slate);
+}
+.faq-question .icon {
+  width: 18px; height: 18px; color: var(--pink);
+  transition: transform .25s var(--ease); flex-shrink: 0;
+}
+.faq-item.open .faq-question .icon { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height .3s var(--ease);
+}
+.faq-answer p {
+  padding: 0 22px 20px;
+  font-size: .92rem; font-weight: 300; color: var(--ink-soft); line-height: 1.75;
+}
+
+/* --------------------------------------------------------------------------
+   14. Form fields
+   -------------------------------------------------------------------------- */
+
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field-label { font-size: .85rem; font-weight: 700; color: var(--slate); }
+.field-label .required { color: var(--pink); }
+
+.field input[type="text"], .field input[type="email"], .field input[type="tel"],
+.field select, .field textarea {
+  width: 100%; padding: 13px 16px;
+  font-family: inherit; font-size: .92rem; color: var(--slate);
+  background: var(--n-100);
+  border: 1.5px solid var(--n-300);
+  border-radius: 14px;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+}
+.field input::placeholder { color: #a9a8b8; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--pink); background: #fff;
+}
+
+.phone-group { display: flex; gap: 10px; }
+.phone-group select { flex: 0 0 118px; }
+.phone-group input { flex: 1 1 auto; min-width: 0; }
+
+.choice-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.choice {
+  position: relative; display: inline-flex;
+  border: 1.5px solid var(--n-300); border-radius: var(--r-pill);
+  background: var(--n-100);
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+}
+.choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.choice span { padding: 9px 18px; font-size: .86rem; font-weight: 500; color: var(--ink-soft); cursor: pointer; }
+.choice:has(input:checked) { border-color: var(--pink); background: var(--pink-soft); }
+.choice:has(input:checked) span { color: var(--pink); font-weight: 700; }
+.choice:has(input:focus-visible) { outline: 3px solid var(--pink); outline-offset: 3px; }
+
+.consent {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: .84rem; color: var(--ink-soft); line-height: 1.6; cursor: pointer;
+}
+.consent input[type="checkbox"] {
+  margin-top: 3px; width: 17px; height: 17px;
+  accent-color: var(--pink); flex-shrink: 0; cursor: pointer;
+}
+
+.error {
+  display: none; font-size: .78rem; font-weight: 500; color: var(--pink);
+}
+.field.has-error .error { display: block; }
+.field.has-error input, .field.has-error select { border-color: var(--pink); }
+
+/* Form on a slate card */
+.form-card { background: var(--slate); border-radius: 28px; overflow: hidden; color: #fff; }
+.form-card .field-label { color: rgba(255, 255, 255, .9); }
+.form-card .consent { color: var(--on-slate-mute); }
+.form-card .error { color: #ff9ecb; }
+.form-card .field.has-error input, .form-card .field.has-error select { border-color: #ff9ecb; }
+.form-card .choice { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .2); }
+.form-card .choice span { color: rgba(255, 255, 255, .8); }
+.form-card .choice:has(input:checked) { background: var(--pink); border-color: var(--pink); }
+.form-card .choice:has(input:checked) span { color: #fff; }
+
+/* --------------------------------------------------------------------------
+   15. Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer { background: var(--slate); color: var(--on-slate-mute); }
+.footer-inner { max-width: var(--max); margin: 0 auto; padding: 52px 24px 30px; }
+.footer-top {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px;
+  padding-bottom: 32px; border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.footer-logo img { width: 34px; height: 34px; object-fit: contain; }
+.footer-logo span { font-size: 1.05rem; font-weight: 700; color: #fff; }
+.footer-desc { font-size: .86rem; font-weight: 300; line-height: 1.75; }
+.footer-col h4 { font-size: .82rem; font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: .04em; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-col a { font-size: .84rem; font-weight: 300; transition: color .2s var(--ease); }
+.footer-col a:hover { color: var(--pink); }
+.footer-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.footer-badge {
+  font-size: .72rem; background: rgba(255, 255, 255, .1);
+  padding: 5px 13px; border-radius: var(--r-pill); color: rgba(255, 255, 255, .78);
+}
+.footer-bottom {
+  padding-top: 22px; display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: space-between; font-size: .76rem; font-weight: 300;
+  color: rgba(255, 255, 255, .5);
+}
+
+/* --------------------------------------------------------------------------
+   16. Floating actions
+   -------------------------------------------------------------------------- */
+
+.floating { position: fixed; right: 20px; bottom: 20px; z-index: 900; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.float-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border-radius: var(--r-pill);
+  font-size: .86rem; font-weight: 700;
+  box-shadow: var(--shadow-lg); border: 0; cursor: pointer;
+  font-family: inherit;
+  transition: transform .2s var(--ease), background .2s var(--ease);
+}
+.float-btn:hover { transform: translateY(-2px); }
+.float-apply { background: var(--pink); color: #fff; }
+.float-apply:hover { background: var(--pink-hover); color: #fff; }
+.float-contact { background: var(--slate); color: #fff; }
+.float-contact:hover { background: var(--slate-hover); color: #fff; }
+.float-btn .icon { width: 16px; height: 16px; }
+
+.back-to-top {
+  width: 44px; height: 44px; padding: 0;
+  border-radius: 50%; background: #fff; color: var(--slate);
+  border: 1px solid var(--n-300);
+  display: none; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: var(--shadow-md);
+  transition: transform .2s var(--ease), border-color .2s var(--ease);
+}
+.back-to-top.visible { display: inline-flex; }
+.back-to-top:hover { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
+.back-to-top .icon { width: 20px; height: 20px; }
+
+/* --------------------------------------------------------------------------
+   17. Animations
+   -------------------------------------------------------------------------- */
+
+@keyframes bsPulse { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+@keyframes bsFly {
+  0%   { left: 6px; transform: translateY(0); }
+  40%  { transform: translateY(-6px); }
+  72%  { left: calc(100% - 44px); transform: translateY(0); }
+  100% { left: calc(100% - 44px); }
+}
+@keyframes bsDraw {
+  0%   { width: 0; }
+  72%  { width: calc(100% - 50px); }
+  100% { width: calc(100% - 50px); }
+}
+@keyframes bsCloud { from { transform: translateX(-18px); } to { transform: translateX(18px); } }
+
+/* --------------------------------------------------------------------------
+   18. Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 980px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 52px 24px 60px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .journey { grid-template-columns: repeat(3, 1fr); gap: 28px 14px; }
+  .journey-line { display: none; }
+}
+
+@media (max-width: 860px) {
+  .site-nav { display: none; }
+  .mobile-toggle { display: block; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 56px 0; }
+  .container, .header-inner, .hero-inner, .footer-inner, .departure-board .inner { padding-left: 18px; padding-right: 18px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .journey { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+  .hero h1 { font-size: clamp(1.75rem, 7vw, 2.3rem); }
+  .position { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .board-status { margin-left: 0; }
+  .departure-board .inner { font-size: .6rem; gap: 9px; }
+  .airport { min-width: 88px; padding: 10px 12px; }
+  .airport .code { font-size: 1.4rem; }
+  .floating { right: 12px; bottom: 12px; }
+  .float-btn { padding: 10px 18px; font-size: .8rem; }
+  .phone-group { flex-wrap: wrap; }
+  .phone-group select { flex: 1 1 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .route .progress { width: calc(100% - 50px); }
+  .route .plane { left: calc(100% - 44px); }
+}
