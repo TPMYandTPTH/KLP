@@ -52,362 +52,684 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TP 채용 | 말레이시아·태국 한국어 채용</title>
 <meta name="description" content="Teleperformance(TP) – 전 세계 100개국에서 함께하는 글로벌 BPO 리더 | 말레이시아·태국 한국어 인재 채용">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#4B4C6A">
 <link rel="icon" href="photos/tp-logo.png">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="assets/klp-theme.css">
 <style>
-:root{--tp-black:#000;--tp-dark:#1a1a1a;--tp-charcoal:#2d2d2d;--tp-gray-dark:#4a4a4a;--tp-gray:#666;--tp-gray-light:#999;--tp-silver:#ccc;--tp-light:#e5e5e5;--tp-off:#f5f5f5;--tp-white:#fff;--gold-primary:#FFD700;--gold-light:#FFAA00;--gold-dark:#E6B800;--gold-pale:#FFFBEB;--max:1050px;--shadow-sm:0 2px 4px rgba(0,0,0,.08);--shadow-md:0 4px 8px rgba(0,0,0,.12);--shadow-lg:0 8px 16px rgba(0,0,0,.16);--shadow-gold:0 4px 12px rgba(255,215,0,.3)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--tp-dark);line-height:1.8;background:var(--tp-white);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-header{position:sticky;top:0;background:rgba(255,255,255,.97);border-bottom:1px solid var(--tp-light);z-index:1000;backdrop-filter:blur(10px);box-shadow:var(--shadow-sm)}
-.header-inner{max-width:var(--max);margin:0 auto;padding:.75rem 20px;display:flex;justify-content:space-between;align-items:center;gap:1.25rem}
-.brand{display:flex;align-items:center;gap:.625rem}
-.brand img{width:40px;height:40px;object-fit:contain}
-.brand-text{display:flex;flex-direction:column;line-height:1.2}
-.brand-name{font-size:1rem;font-weight:700;color:var(--tp-black)}
-.brand-tagline{font-size:.7rem;color:var(--tp-gray)}
-nav ul{display:flex;gap:1rem;list-style:none;align-items:center}
-nav a{font-size:.85rem;position:relative;transition:all .3s;padding:.2rem 0;white-space:nowrap}
-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--gold-primary);transition:width .3s ease}
-nav a:hover::after,nav a:focus::after{width:100%}
-nav a[aria-current="page"]{font-weight:600}
-nav a[aria-current="page"]::after{width:100%;background:var(--tp-black)}
-.apply-btn{background:var(--tp-black);color:var(--tp-white);padding:.5rem 1.25rem;border-radius:4px;font-weight:600;border:2px solid var(--tp-black);transition:all .3s}
-.apply-btn:hover,.apply-btn:focus{background:var(--gold-primary);color:var(--tp-black);border-color:var(--gold-primary)}
-.apply-btn::after{display:none}
-.mobile-toggle{display:none;width:36px;height:36px;background:transparent;border:2px solid var(--tp-black);border-radius:4px;cursor:pointer;position:relative}
-.mobile-toggle span{display:block;width:18px;height:2px;background:var(--tp-black);position:absolute;left:50%;transform:translateX(-50%);transition:all .3s}
-.mobile-toggle span:nth-child(1){top:10px}
-.mobile-toggle span:nth-child(2){top:17px}
-.mobile-toggle span:nth-child(3){bottom:10px}
-.mobile-toggle.active span:nth-child(1){transform:translateX(-50%) rotate(45deg);top:17px}
-.mobile-toggle.active span:nth-child(2){opacity:0}
-.mobile-toggle.active span:nth-child(3){transform:translateX(-50%) rotate(-45deg);bottom:17px}
-.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:var(--tp-white);border-top:1px solid var(--tp-light);box-shadow:var(--shadow-lg);max-height:calc(100vh - 60px);overflow-y:auto;z-index:999}
-.mobile-menu.active{display:block}
-.mobile-menu ul{list-style:none;padding:.875rem 0}
-.mobile-menu a{display:block;padding:.625rem 1.25rem;border-bottom:1px solid var(--tp-light);transition:background .3s}
-.mobile-menu a:hover,.mobile-menu a:focus{background:var(--gold-pale)}
-.hero{min-height:75vh;background:linear-gradient(135deg,var(--tp-white) 0%,var(--tp-off) 50%,var(--gold-pale) 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding:2.5rem 20px}
-.hero::before{content:'';position:absolute;top:50%;right:5%;width:clamp(240px,35vw,520px);height:clamp(240px,35vw,520px);background-image:url('photos/tp-logo.png');background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.04;filter:saturate(0);transform:translateY(-50%);pointer-events:none}
-.hero-container{max-width:var(--max);margin:0 auto;position:relative;z-index:2}
-.hero h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;color:var(--tp-black);line-height:1.4;margin-bottom:1rem;letter-spacing:.02em;min-height:1.5em}
-#hero-rotate{display:inline-block;min-width:1px}
-.hero-subtitle{font-size:1.05rem;color:var(--tp-gray-dark);max-width:620px;margin-bottom:1.75rem;line-height:1.9}
-.hero-cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem}
-.btn{padding:.75rem 1.75rem;border-radius:4px;font-weight:600;display:inline-block;transition:all .3s;text-align:center;border:2px solid var(--tp-black);cursor:pointer;font-size:.9rem}
-.btn:focus{outline:2px solid var(--gold-primary);outline-offset:4px}
-.btn-primary{background:var(--tp-black);color:var(--tp-white)}
-.btn-primary:hover{background:var(--gold-primary);color:var(--tp-black);border-color:var(--gold-primary);transform:translateY(-2px);box-shadow:var(--shadow-gold)}
-.btn-gold{background:var(--gold-primary);color:var(--tp-black);border-color:var(--gold-primary)}
-.btn-gold:hover{background:var(--tp-black);color:var(--gold-primary);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-.btn-secondary{background:var(--tp-white);color:var(--tp-black)}
-.btn-secondary:hover{background:var(--tp-black);color:var(--tp-white);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.btn-ghost{background:transparent;border:2px solid var(--tp-black);color:var(--tp-black)}
-.btn-ghost:hover{background:var(--tp-black);color:var(--tp-white)}
-.btn-sm{padding:.5rem 1rem;font-size:.85rem}
-.hero-stats{display:flex;gap:2rem;flex-wrap:wrap}
-.stat-item{padding-right:2rem;border-right:1px solid var(--tp-light)}
-.stat-item:last-child{border-right:none}
-.stat-number{font-size:2rem;font-weight:900;color:var(--tp-black);display:block;line-height:1;margin-bottom:.3rem}
-.stat-label{font-size:.75rem;color:var(--tp-gray);letter-spacing:.05em}
-.social-proof-banner{background:var(--tp-black);color:var(--tp-white);padding:1rem 20px;text-align:center}
-.social-proof-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap}
-.proof-item{display:flex;align-items:center;gap:.5rem;font-size:.9rem}
-.proof-item .number{color:var(--gold-primary);font-weight:900;font-size:1.1rem}
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
-.section-title{text-align:center;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.625rem;font-weight:900;color:var(--tp-black);letter-spacing:.02em}
-.section-subtitle{text-align:center;color:var(--tp-gray);margin-bottom:2rem;font-size:.9rem}
-.section-title-decorated{position:relative;padding-bottom:1rem}
-.section-title-decorated::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,transparent,var(--gold-primary),transparent)}
-.about-section{padding:60px 20px;background:var(--tp-white)}
-.about-content{display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;align-items:center;max-width:var(--max);margin:0 auto}
-.about-text{color:var(--tp-gray-dark);line-height:1.9}
-.about-text p{margin-bottom:1rem;font-size:.95rem}
-.about-image{position:relative;text-align:center}
-.about-image img{width:100%;max-width:280px;height:auto;border-radius:8px;box-shadow:var(--shadow-lg)}
-.gptw-years{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:2px solid var(--gold-primary);border-radius:999px;padding:.5rem 1rem;box-shadow:var(--shadow-gold);margin-top:1rem}
-.gptw-years img{height:24px;width:auto}
-.gptw-years strong{font-weight:800;color:var(--gold-dark)}
-.korean-community{padding:60px 20px;background:linear-gradient(135deg,var(--gold-pale) 0%,var(--tp-white) 100%);position:relative}
-.korean-community::before{content:'한';position:absolute;top:50%;right:10%;transform:translateY(-50%);font-size:20rem;color:var(--gold-primary);opacity:.03;pointer-events:none}
-.community-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:var(--max);margin:2rem auto 0}
-.community-stat{background:var(--tp-white);border:2px solid var(--gold-primary);border-radius:12px;padding:1.5rem;text-align:center;box-shadow:var(--shadow-gold);transition:all .3s}
-.community-stat:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,175,55,.3)}
-.community-stat-icon{font-size:2rem;margin-bottom:.5rem}
-.community-stat-number{font-size:2rem;font-weight:900;color:var(--tp-black)}
-.community-stat-label{font-size:.85rem;color:var(--tp-gray);margin-top:.3rem}
-.gptw-section{padding:60px 20px;background:var(--tp-silver);position:relative;overflow:hidden}
-.gptw-header{display:flex;align-items:center;justify-content:center;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
-.gptw-badge{width:160px;height:auto;filter:drop-shadow(0 4px 20px rgba(255,215,0,.3));animation:glow 3s ease-in-out infinite}
-@keyframes glow{0%,100%{filter:drop-shadow(0 4px 20px rgba(255,215,0,.3))}50%{filter:drop-shadow(0 4px 30px rgba(255,215,0,.5))}}
-.gptw-title-block{text-align:left}
-.gptw-section .section-title{color:var(--tp-black);text-align:left;margin-bottom:.5rem}
-.gptw-section .section-subtitle{color:var(--tp-gray);text-align:left;margin-bottom:0}
-.gptw-highlight{display:inline-block;background:linear-gradient(90deg,#FFD700,#FFAA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:900}
-.gptw-description{max-width:800px;margin:0 auto 2.5rem;text-align:center;color:var(--tp-gray-dark);font-size:1rem;line-height:1.8}
-.gptw-banner{width:100%;max-width:900px;margin:0 auto 2.5rem;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3)}
-.gptw-banner img{width:100%;height:auto;display:block}
-.gptw-gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;max-width:var(--max);margin:0 auto}
-.gptw-gallery-item{border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:all .3s;cursor:pointer}
-.gptw-gallery-item:hover{transform:scale(1.05);box-shadow:0 8px 24px rgba(255,215,0,.3)}
-.gptw-gallery-item img{width:100%;height:auto;display:block}
-.gptw-stats{display:flex;justify-content:center;gap:3rem;margin-top:2.5rem;flex-wrap:wrap}
-.gptw-stat{text-align:center}
-.gptw-stat-number{font-size:3rem;font-weight:900;background:linear-gradient(90deg,#FFD700,#FFAA00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.5rem}
-.gptw-stat-label{color:var(--tp-gray-dark);font-size:.9rem}
-.gptw-announcement{background:linear-gradient(135deg,rgba(255,215,0,.15),rgba(255,170,0,.1));border-radius:12px;padding:2rem;margin-bottom:2.5rem;backdrop-filter:blur(10px);border:3px solid var(--gold-primary);box-shadow:0 8px 32px rgba(255,215,0,.25);position:relative;overflow:hidden}
-.gptw-announcement::before{content:'🎉';position:absolute;top:-20px;right:-20px;font-size:8rem;opacity:.1;pointer-events:none}
-.gptw-announcement h3{color:var(--tp-black);font-size:1.5rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;font-weight:900}
-.gptw-announcement>p{color:var(--tp-dark);line-height:1.8;font-size:1.1rem}
-.gptw-announcement>p strong{color:var(--gold-dark);font-size:1.2rem}
-.gptw-quote{font-style:italic;color:var(--tp-gray-dark);margin:1.5rem 0 0;padding-left:1.5rem;border-left:4px solid var(--gold-primary);font-size:1rem}
-.priority-menu{padding:60px 20px;background:var(--tp-off)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.card{background:var(--tp-white);border:1px solid var(--tp-light);border-radius:8px;overflow:hidden;transition:all .3s;position:relative}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold-primary);transform:scaleX(0);transition:transform .3s}
-.card:hover::before,.card:focus-within::before{transform:scaleX(1)}
-.card:hover,.card:focus-within{transform:translateY(-3px);box-shadow:var(--shadow-gold);border-color:var(--gold-primary)}
-.card img{width:100%;height:140px;object-fit:cover}
-.card-content{padding:1rem}
-.card h3{margin-bottom:.3rem;font-size:.95rem;font-weight:700}
-.card p{color:var(--tp-gray);font-size:.8rem;line-height:1.5}
-.icon-grid{padding:60px 20px;background:var(--tp-white)}
-.icon-grid-container{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:var(--max);margin:0 auto}
-.icon-card{background:var(--tp-white);border:1px solid var(--tp-light);border-radius:8px;padding:1rem;display:flex;align-items:center;gap:.75rem;transition:all .3s;cursor:pointer}
-.icon-card:hover,.icon-card:focus{transform:translateY(-2px);box-shadow:var(--shadow-gold);border-color:var(--gold-primary);outline:none}
-.icon-card-icon{font-size:1.5rem;flex-shrink:0}
-.icon-card-meta{flex:1}
-.icon-card-title{font-weight:700;font-size:.85rem;margin-bottom:.15rem;color:var(--tp-black)}
-.icon-card-desc{font-size:.7rem;color:var(--tp-gray)}
-.social-connect{padding:60px 20px;background:linear-gradient(135deg,var(--tp-off) 0%,var(--gold-pale) 100%)}
-.social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:var(--max);margin:2rem auto 0}
-.social-card{background:var(--tp-white);border:2px solid var(--tp-light);border-radius:12px;padding:1.5rem;text-align:center;transition:all .3s}
-.social-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold);border-color:var(--gold-primary)}
-.social-card-icon{width:44px;height:44px;margin:0 auto .75rem;display:flex;align-items:center;justify-content:center}
-.social-card-icon svg{width:100%;height:100%}
-.social-card-title{font-size:1rem;font-weight:700;margin-bottom:.3rem;color:var(--tp-black)}
-.social-card-desc{font-size:.8rem;color:var(--tp-gray);margin-bottom:1rem}
-.social-qr-link{display:block;text-decoration:none;margin:0 auto .75rem}
-.social-qr{width:120px;height:120px;background:var(--tp-white);border:1px solid var(--tp-light);border-radius:12px;margin:0 auto .5rem;padding:8px;display:flex;align-items:center;justify-content:center;transition:border-color .3s}
-.social-qr img{width:100%;height:100%;object-fit:contain}
-.social-qr-link:hover .social-qr,.social-qr-link:focus .social-qr{border-color:var(--gold-primary)}
-.social-handle{display:block;font-size:.85rem;font-weight:700;color:var(--tp-black)}
-.world-map-section{padding:60px 20px;background:var(--tp-white);text-align:center}
-.world-map-container{max-width:var(--max);margin:2rem auto 0;position:relative}
-.world-map-container img{width:100%;height:auto;border-radius:8px;box-shadow:var(--shadow-lg)}
-.office-section{padding:60px 20px;background:var(--tp-off)}
-.office-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:var(--max);margin:1.5rem auto 0}
-.office-card{background:var(--tp-white);border:1px solid var(--tp-light);border-radius:8px;overflow:hidden;transition:all .3s}
-.office-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold);border-color:var(--gold-primary)}
-.office-image{width:100%;height:180px;object-fit:cover}
-.office-info{padding:1rem}
-.office-name{font-size:1rem;font-weight:700;margin-bottom:.3rem;color:var(--tp-black)}
-.office-features{list-style:none;padding:0}
-.office-features li{font-size:.8rem;color:var(--tp-gray);padding:.15rem 0;padding-left:.875rem;position:relative}
-.office-features li:before{content:'•';position:absolute;left:0;color:var(--gold-primary)}
-.office-card.coming-soon{position:relative;opacity:.85}
-.office-card.coming-soon::after{content:'TP 오피스 오픈 예정';position:absolute;top:12px;right:12px;background:linear-gradient(135deg,var(--gold-primary),var(--gold-light));color:var(--tp-black);padding:.3rem .75rem;border-radius:20px;font-size:.7rem;font-weight:700;box-shadow:0 2px 8px rgba(255,215,0,.4)}
-.office-card.coming-soon .office-image{filter:grayscale(30%)}
-.wfh-card.coming-soon::after{content:'오픈 예정'}
-.lifestyle-section{padding:60px 20px;background:var(--tp-white)}
-.lifestyle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:var(--max);margin:2rem auto 0}
-.lifestyle-item{position:relative;overflow:hidden;border-radius:8px;height:200px;background:var(--tp-off);cursor:pointer;transition:all .3s}
-.lifestyle-item:hover{transform:scale(1.03);box-shadow:var(--shadow-lg)}
-.lifestyle-item img{width:100%;height:100%;object-fit:cover}
-.lifestyle-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.8),transparent);color:var(--tp-white);padding:1rem .75rem .75rem;font-size:.8rem;font-weight:500}
-.testimonials{padding:60px 20px;background:var(--tp-off)}
-.testimonial-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:1.5rem}
-.testimonial{background:var(--tp-white);padding:1.5rem;border-radius:8px;position:relative;border:1px solid var(--tp-light);transition:all .3s}
-.testimonial:hover{box-shadow:var(--shadow-gold);transform:translateY(-2px);border-color:var(--gold-primary)}
-.testimonial::before{content:'"';font-size:3rem;color:var(--gold-primary);position:absolute;top:8px;left:16px;font-family:Georgia,serif;opacity:.5}
-.testimonial-content{margin-bottom:1rem;padding-top:1.5rem;font-size:.9rem;line-height:1.8;color:var(--tp-dark)}
-.testimonial-author{display:flex;align-items:center;gap:.75rem}
-.author-img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-primary)}
-.author-info strong{display:block;font-size:.85rem;margin-bottom:.1rem}
-.author-info span{color:var(--tp-gray);font-size:.75rem}
-.video-section{padding:60px 20px;background:var(--tp-white)}
-.video-grid{max-width:var(--max);margin:1.5rem auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-.video-card{background:var(--tp-white);border:1px solid var(--tp-light);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-.video-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--gold-primary)}
-.video-embed{aspect-ratio:16/9;background:#000}
-.video-embed iframe{width:100%;height:100%;border:0;display:block}
-.video-meta{padding:12px 14px 16px}
-.video-title{font-size:.98rem;font-weight:800;color:var(--tp-black);margin:2px 0 6px}
-.video-desc{font-size:.82rem;color:var(--tp-gray);margin-bottom:8px}
-.video-link{font-size:.85rem;color:var(--gold-dark);text-decoration:underline}
-.cities{padding:60px 20px;background:var(--tp-off)}
-.city-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
-.city-card{background:var(--tp-white);border:1px solid var(--tp-light);border-radius:8px;overflow:hidden;transition:all .3s}
-.city-card:hover,.city-card:focus-within{transform:translateY(-3px);box-shadow:var(--shadow-gold);border-color:var(--gold-primary)}
-.city-card img{width:100%;height:180px;object-fit:cover}
-.city-card-content{padding:1rem}
-.city-card h3{font-size:1.2rem;margin-bottom:.3rem;font-weight:700}
-.city-country{color:var(--tp-gray);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem}
-.city-features{list-style:none;padding:0}
-.city-features li{padding:.3rem 0;border-bottom:1px solid var(--tp-light);color:var(--tp-gray);font-size:.8rem;position:relative;padding-left:1rem}
-.city-features li:last-child{border-bottom:none}
-.city-features li:before{content:'◆';position:absolute;left:0;color:var(--gold-primary);font-size:.6rem}
-.city-card a{color:var(--tp-black);font-weight:600;text-decoration:underline;display:inline-block;margin-top:.75rem;font-size:.85rem}
-.city-card.coming-soon{position:relative}
-.city-card.coming-soon::before{content:'TP 오피스 오픈 예정';position:absolute;top:12px;right:12px;background:linear-gradient(135deg,var(--gold-primary),var(--gold-light));color:var(--tp-black);padding:.3rem .75rem;border-radius:20px;font-size:.7rem;font-weight:700;z-index:2;box-shadow:0 2px 8px rgba(255,215,0,.4)}
-.benefits{padding:60px 20px;background:var(--tp-black);color:var(--tp-white)}
-.benefits .section-title{color:var(--tp-white)}
-.benefits .section-subtitle{color:rgba(255,255,255,.7)}
-.benefits-list{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
-.benefit-item{text-align:center;padding:1.5rem;border:1px solid rgba(212,175,55,.3);background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(212,175,55,.02));transition:all .3s;border-radius:8px;position:relative;overflow:hidden}
-.benefit-item::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,transparent,rgba(212,175,55,.15));opacity:0;transition:opacity .3s}
-.benefit-item:hover::before{opacity:1}
-.benefit-item:hover{border-color:var(--gold-primary);transform:translateY(-3px)}
-.benefit-icon{font-size:2.5rem;margin-bottom:.75rem;opacity:.9}
-.benefit-text h4{font-size:.95rem;margin-bottom:.3rem;font-weight:700;color:var(--gold-light)}
-.benefit-text p{color:rgba(255,255,255,.7);font-size:.8rem}
-.interview-process{padding:60px 20px;background:var(--tp-white)}
-.process-rail{counter-reset:step;list-style:none;max-width:var(--max);margin:2rem auto 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
-.process-rail::before{content:"";position:absolute;top:30px;left:8px;right:8px;height:2px;background:linear-gradient(90deg,var(--tp-light),var(--gold-primary),var(--tp-light));border-radius:2px;z-index:0}
-.step-card{background:var(--tp-white);border:1px solid var(--tp-light);border-radius:12px;padding:14px 14px 16px;box-shadow:var(--shadow-sm);position:relative;z-index:1;transition:box-shadow .25s ease,transform .25s ease,border-color .25s ease}
-.step-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold);border-color:var(--gold-primary)}
-.step-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.step-dot{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:999px;background:var(--gold-primary);color:var(--tp-black);font-weight:800;border:3px solid var(--tp-white);box-shadow:0 2px 8px rgba(212,175,55,.25);flex-shrink:0}
-.step-title{font-size:.98rem;font-weight:800;color:var(--tp-black)}
-.step-desc{font-size:.82rem;color:var(--tp-gray);margin:2px 0 0}
-.text-link{color:var(--gold-dark);text-decoration:underline}
-.faq-section{padding:60px 20px;background:var(--tp-off)}
-.faq-container{max-width:700px;margin:2rem auto 0}
-.faq-item{background:var(--tp-white);border:1px solid var(--tp-light);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
-.faq-question{padding:1rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .3s;font-size:.9rem}
-.faq-question:hover{background:var(--gold-pale)}
-.faq-question::after{content:'+';font-size:1.25rem;color:var(--gold-primary)}
-.faq-item.active .faq-question::after{content:'−'}
-.faq-item.active .faq-question{background:var(--gold-pale)}
-.faq-answer{padding:0 1rem;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
-.faq-item.active .faq-answer{padding:0 1rem 1rem;max-height:500px}
-.faq-answer p{color:var(--tp-gray-dark);line-height:1.8;font-size:.85rem}
-.contact-min{padding:60px 20px;background:var(--tp-off)}
-.cta-links{max-width:880px;margin:1.25rem auto 0;display:grid;gap:12px}
-.cta-link{display:grid;grid-template-columns:40px 1fr 24px;align-items:center;gap:10px;background:var(--tp-white);border:1px solid var(--tp-light);border-radius:12px;padding:14px 14px;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-.cta-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold);border-color:var(--gold-primary)}
-.cta-ico{font-size:1.25rem}
-.cta-main strong{display:block;font-size:.95rem;font-weight:800;color:var(--tp-black);line-height:1.25}
-.cta-main em{display:block;font-style:normal;font-size:.78rem;color:var(--tp-gray);margin-top:2px}
-.cta-arrow{font-weight:800;font-size:1rem;color:var(--gold-primary)}
-footer{background:var(--tp-black);color:var(--tp-white);padding:40px 20px 16px;position:relative;overflow:hidden}
-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold-primary),transparent)}
-.footer-content{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:2fr repeat(3,1fr);gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.footer-brand{display:flex;flex-direction:column;gap:.875rem}
-.footer-logo{display:flex;align-items:center;gap:.625rem}
-.footer-logo img{width:42px;height:42px;filter:brightness(0) invert(1)}
-.footer-logo-text{font-size:1.15rem;font-weight:700}
-.footer-desc{opacity:.8;line-height:1.75;font-size:.85rem}
-.footer-section h3{margin-bottom:.75rem;font-size:.9rem;letter-spacing:.05em;opacity:.9;color:var(--gold-primary)}
-.footer-section ul{list-style:none}
-.footer-section li{margin-bottom:.3rem}
-.footer-section a{opacity:.7;transition:opacity .3s;font-size:.8rem}
-.footer-section a:hover,.footer-section a:focus{opacity:1;color:var(--gold-light);outline:none}
-.badges{display:flex;gap:.75rem;align-items:center;margin-top:.75rem;flex-wrap:wrap}
-.badges .badge-item{display:flex;align-items:center;gap:.3rem;font-size:.8rem;opacity:.8}
-.footer-cta{margin-top:1rem}
-.footer-bottom{text-align:center;padding-top:12px;font-size:.75rem;opacity:.6}
-.footer-bottom a{color:var(--tp-white);text-decoration:underline;margin:0 .3rem}
-.ssm-info{font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:.5rem}
-.floating-apply{position:fixed;bottom:20px;right:20px;background:var(--tp-black);color:var(--tp-white);padding:.75rem 1.25rem;border-radius:50px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.3);z-index:999;transition:all .3s;border:2px solid var(--gold-primary);font-size:.85rem;backdrop-filter:blur(10px)}
-.floating-apply:hover,.floating-apply:focus{transform:scale(1.05);box-shadow:var(--shadow-gold);background:var(--gold-primary);color:var(--tp-black);outline:none}
-.floating-casual{position:fixed;bottom:20px;right:130px;background:rgba(255,255,255,.9);color:var(--tp-black);padding:.75rem 1.25rem;border-radius:50px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:998;transition:all .3s;border:2px solid var(--tp-black);font-size:.85rem;backdrop-filter:blur(10px)}
-.floating-casual:hover,.floating-casual:focus{transform:scale(1.05);box-shadow:var(--shadow-gold);border-color:var(--gold-primary);outline:none}
-.back-to-top{position:fixed;bottom:80px;right:20px;width:40px;height:40px;background:rgba(255,255,255,.9);border:2px solid var(--gold-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;z-index:997;backdrop-filter:blur(10px);font-size:1rem;font-weight:bold;color:var(--gold-dark)}
-.back-to-top.show{opacity:1;visibility:visible}
-.back-to-top:hover{background:var(--gold-primary);color:var(--tp-black);transform:translateY(-2px)}
-.klp-apply-section{padding:80px 20px;background:linear-gradient(180deg,var(--tp-off) 0%,#0a0a0a 15%);color:#F5F1E8;position:relative;overflow:hidden}
-.klp-apply-section::before{content:'';position:absolute;top:15%;left:50%;transform:translateX(-50%);width:1px;height:72px;background:linear-gradient(to bottom,transparent,#D4AF37);opacity:.7}
-.klp-apply-section .apply-container{max-width:560px;margin:0 auto;position:relative;z-index:1}
-.klp-apply-section .eyebrow{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:#D4AF37;text-align:center;font-weight:600;margin-bottom:24px}
-.klp-apply-section h2{font-size:clamp(28px,4.5vw,40px);font-weight:700;text-align:center;letter-spacing:-.035em;line-height:1.2;margin-bottom:18px;color:#F5F1E8}
-.klp-apply-section h2 em{color:#D4AF37;font-style:normal;font-weight:700}
-.klp-apply-section .lede{text-align:center;color:#8a8275;margin-bottom:56px;font-size:15px}
-.klp-apply-section form{display:grid;gap:28px}
-.klp-apply-section .field label.field-label{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#D4AF37;margin-bottom:10px;font-weight:500}
-.klp-apply-section .field label.field-label .opt{color:#8a8275;font-weight:300;letter-spacing:.05em;text-transform:none;margin-left:6px}
-.klp-apply-section .field input[type="text"],.klp-apply-section .field input[type="email"],.klp-apply-section .field input[type="tel"],.klp-apply-section .field select{width:100%;padding:14px 0 12px;background:transparent;border:none;border-bottom:1px solid rgba(212,175,55,.18);color:#F5F1E8;font-family:inherit;font-size:16px;transition:border-color .3s ease;outline:none}
-.klp-apply-section .field input:focus,.klp-apply-section .field select:focus{border-bottom-color:#D4AF37}
-.klp-apply-section .field input::placeholder{color:#3a3630}
-.klp-apply-section .field select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1L6 6L11 1' stroke='%23D4AF37' stroke-width='1.5'/></svg>");background-repeat:no-repeat;background-position:right 4px center;padding-right:28px;cursor:pointer}
-.klp-apply-section .field select option{background:#141210;color:#F5F1E8}
-.klp-apply-section .phone-group{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:end}
-.klp-apply-section .radio-group{display:flex;flex-wrap:wrap;gap:10px;position:relative}
-.klp-apply-section .radio-group input[type="radio"]{position:absolute;opacity:0;pointer-events:none}
-.klp-apply-section .radio-group label{display:inline-flex;align-items:center;padding:10px 18px;border:1px solid rgba(212,175,55,.18);border-radius:999px;cursor:pointer;font-size:14px;color:#F5F1E8;transition:all .2s ease;user-select:none}
-.klp-apply-section .radio-group label:hover{border-color:rgba(212,175,55,.55)}
-.klp-apply-section .radio-group input[type="radio"]:checked+label{background:rgba(212,175,55,.08);border-color:#D4AF37;color:#F4D47C}
-.klp-apply-section .consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#8a8275;cursor:pointer;line-height:1.5}
-.klp-apply-section .consent input[type="checkbox"]{margin-top:3px;accent-color:#D4AF37;width:16px;height:16px;flex-shrink:0}
-.klp-apply-section button.submit{width:100%;padding:18px;background:#D4AF37;border:none;color:#0a0a0a;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;transition:all .3s ease;margin-top:8px}
-.klp-apply-section button.submit:hover{background:#F4D47C;transform:translateY(-1px)}
-.klp-apply-section button.submit:disabled{opacity:.6;cursor:wait;transform:none}
-.klp-apply-section .error{color:#e67e7e;font-size:12px;margin-top:6px;display:none}
-.klp-apply-section .field.has-error input,.klp-apply-section .field.has-error select{border-bottom-color:#e67e7e}
-.klp-apply-section .field.has-error .radio-group{padding-bottom:4px;border-bottom:1px dashed #e67e7e}
-.klp-apply-section .field.has-error .error{display:block}
-.klp-apply-section .required{color:#e67e7e}
-.klp-apply-section .kakao-success{display:none;text-align:center}
-.klp-apply-section .kakao-success.active{display:block;animation:klpFadeIn .7s cubic-bezier(.16,1,.3,1)}
-@keyframes klpFadeIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.klp-apply-section .checkmark{width:72px;height:72px;margin:0 auto 32px;border:1px solid #D4AF37;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:30px}
-.klp-apply-section .kakao-success h3{font-size:28px;font-weight:700;letter-spacing:-.03em;margin-bottom:12px;color:#F5F1E8}
-.klp-apply-section .kakao-success>p{color:#8a8275;margin-bottom:40px}
-.klp-apply-section .kakao-id-card{border:1px solid #D4AF37;border-radius:12px;padding:24px;background:#141210;margin:0 auto 28px;max-width:340px;display:flex;flex-direction:column;align-items:center;gap:8px}
-.klp-apply-section .kakao-id-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#D4AF37}
-.klp-apply-section .kakao-id-value{font-size:28px;font-weight:600;font-variant-numeric:tabular-nums;color:#F5F1E8;letter-spacing:.02em}
-.klp-apply-section .copy-btn{margin-top:8px;padding:8px 20px;background:transparent;border:1px solid #D4AF37;border-radius:6px;color:#D4AF37;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s ease}
-.klp-apply-section .copy-btn:hover{background:rgba(212,175,55,.08)}
-.klp-apply-section .kakao-steps{list-style:none;text-align:left;max-width:380px;margin:0 auto 32px;display:flex;flex-direction:column;gap:14px}
-.klp-apply-section .kakao-steps li{display:flex;align-items:center;gap:12px;font-size:14px;color:#F5F1E8;line-height:1.5}
-.klp-apply-section .kakao-steps .step-num{width:28px;height:28px;border:1px solid #D4AF37;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#D4AF37;font-size:13px;font-weight:600;flex-shrink:0}
-.klp-apply-section .apply-divider{height:1px;background:rgba(212,175,55,.18);margin:40px auto 20px;max-width:100px}
-.klp-apply-section .success-footer{font-size:12px;color:#8a8275}
-@media(min-width:720px){.cta-links{grid-template-columns:1fr 1fr}}
-@media(max-width:980px){.process-rail{grid-template-columns:1fr 1fr 1fr}.community-stats{grid-template-columns:repeat(2,1fr)}.social-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:900px){nav{display:none}.mobile-toggle{display:block}.video-grid{grid-template-columns:1fr}.floating-casual{bottom:80px;right:20px}.back-to-top{bottom:140px}}
-@media(max-width:768px){.hero h1{font-size:1.8rem}.section-title{font-size:1.4rem}.hero-stats{justify-content:center}.stat-item{padding-right:1.25rem}.about-content{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.icon-grid-container{grid-template-columns:repeat(2,1fr)}.city-cards{grid-template-columns:1fr}.benefits-list{grid-template-columns:repeat(2,1fr)}.footer-content{grid-template-columns:1fr;text-align:center}.floating-apply{bottom:14px;right:14px;padding:.625rem 1rem;font-size:.8rem}.social-proof-inner{flex-direction:column;gap:.5rem}.gptw-header{flex-direction:column;text-align:center}.gptw-title-block{text-align:center}.gptw-section .section-title,.gptw-section .section-subtitle{text-align:center}.gptw-gallery{grid-template-columns:repeat(2,1fr)}.gptw-stats{gap:1.5rem}.gptw-stat-number{font-size:2rem}}
-@media(max-width:640px){.process-rail{grid-template-columns:1fr}.process-rail::before{display:none}.community-stats{grid-template-columns:1fr}.social-grid{grid-template-columns:1fr}}
-@media(max-width:480px){.cards{grid-template-columns:1fr}.benefits-list{grid-template-columns:1fr}.icon-grid-container{grid-template-columns:1fr}.klp-apply-section .phone-group{grid-template-columns:100px 1fr;gap:12px}.klp-apply-section .radio-group label{padding:9px 14px;font-size:13px}.klp-apply-section .kakao-id-card{padding:20px}.klp-apply-section .kakao-id-value{font-size:24px}}
-/* ── centering overrides ── */
-.hero-container{text-align:center}.hero-subtitle{margin-left:auto;margin-right:auto}.hero-cta{justify-content:center}.hero-stats{justify-content:center}.gptw-title-block{text-align:center}.gptw-section .section-title,.gptw-section .section-subtitle{text-align:center}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* ==========================================================================
+   index.html — page-specific styles.
+   Mostly this restyles the sections carried over from the previous site into
+   the Boarding Soft token system. Their markup and Korean copy are unchanged.
+   ========================================================================== */
+
+/* Shared rhythm for every ported section -------------------------------- */
+.gptw-section, .korean-community, .priority-menu, .social-connect,
+.icon-grid, .cities, .video-section, .world-map-section, .office-section,
+.lifestyle-section, .testimonials, .contact-min {
+  padding: 76px 0;
+}
+.gptw-section, .priority-menu, .cities, .office-section, .contact-min { background: var(--n-200); }
+.korean-community, .social-connect, .video-section, .lifestyle-section { background: #fff; }
+.icon-grid, .world-map-section, .testimonials { background: var(--n-100); }
+
+.gptw-section .container, .korean-community .container, .priority-menu .container,
+.social-connect .container, .icon-grid .container, .cities .container,
+.video-section .container, .world-map-section .container, .office-section .container,
+.lifestyle-section .container, .testimonials .container, .contact-min .container {
+  max-width: var(--max); margin: 0 auto; padding: 0 24px;
+}
+
+/* The old decorated heading becomes a centred Boarding Soft heading. */
+.section-title-decorated { text-align: center; }
+.gptw-section .section-title, .korean-community .section-title,
+.priority-menu .section-title, .social-connect .section-title,
+.icon-grid .section-title, .cities .section-title, .video-section .section-title,
+.world-map-section .section-title, .office-section .section-title,
+.lifestyle-section .section-title, .testimonials .section-title,
+.contact-min .section-title {
+  text-align: center; margin-top: 0;
+}
+.gptw-section .section-subtitle, .korean-community .section-subtitle,
+.priority-menu .section-subtitle, .social-connect .section-subtitle,
+.icon-grid .section-subtitle, .cities .section-subtitle,
+.video-section .section-subtitle, .world-map-section .section-subtitle,
+.office-section .section-subtitle, .lifestyle-section .section-subtitle,
+.testimonials .section-subtitle, .contact-min .section-subtitle {
+  text-align: center; margin-bottom: 40px;
+}
+
+/* GPTW ------------------------------------------------------------------- */
+.gptw-announcement {
+  background: #fff; border: 1px solid var(--n-300); border-left: 4px solid var(--pink);
+  border-radius: var(--r-card); padding: 26px 30px; margin-bottom: 40px;
+}
+.gptw-announcement h3 { font-size: 1.15rem; font-weight: 700; color: var(--slate); margin-bottom: 12px; }
+.gptw-announcement p { font-size: .94rem; font-weight: 300; color: var(--ink-soft); margin-bottom: 8px; }
+.gptw-announcement strong { color: var(--pink); font-weight: 700; }
+.gptw-quote {
+  border-left: 2px solid var(--n-400); padding-left: 16px;
+  margin-top: 14px !important; font-style: italic;
+}
+.gptw-header { display: flex; align-items: center; justify-content: center; gap: 26px; flex-wrap: wrap; margin-bottom: 24px; }
+.gptw-badge { width: 120px; height: auto; object-fit: contain; }
+.gptw-highlight { color: var(--pink); }
+.gptw-description {
+  max-width: 860px; margin: 0 auto 36px; text-align: center;
+  font-size: .94rem; font-weight: 300; color: var(--ink-soft); line-height: 1.85;
+}
+.gptw-description strong { color: var(--pink); font-weight: 700; }
+.gptw-banner { border-radius: var(--r-card); overflow: hidden; margin-bottom: 24px; box-shadow: var(--shadow-md); }
+.gptw-banner img { display: block; width: 100%; }
+.gptw-gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 36px; }
+.gptw-gallery-item { border-radius: var(--r-sm); overflow: hidden; box-shadow: var(--shadow-sm); }
+.gptw-gallery-item img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.gptw-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.gptw-stat {
+  background: #fff; border: 1px solid var(--n-300); border-radius: var(--r-pill);
+  padding: 14px 32px; text-align: center; box-shadow: var(--shadow-sm);
+}
+.gptw-stat-number { font-size: 1.6rem; font-weight: 900; color: var(--slate); line-height: 1; }
+.gptw-stat-label { font-size: .78rem; color: var(--ink-soft); margin-top: 5px; }
+.gptw-years { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: .88rem; color: var(--ink-soft); }
+.gptw-years img { width: 40px; height: 40px; object-fit: contain; }
+.gptw-years strong { color: var(--pink); }
+
+/* Community stats -------------------------------------------------------- */
+.community-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.community-stat {
+  background: var(--n-100); border: 1px solid var(--n-300);
+  border-radius: var(--r-card); padding: 26px 18px; text-align: center;
+  transition: border-color .25s var(--ease), transform .25s var(--ease);
+}
+.community-stat:hover { border-color: var(--pink); transform: translateY(-3px); }
+.community-stat-icon { font-size: 1.9rem; line-height: 1; }
+.community-stat-number { font-size: 1.7rem; font-weight: 900; color: var(--slate); margin-top: 10px; line-height: 1; }
+.community-stat-label { font-size: .8rem; color: var(--ink-soft); margin-top: 6px; }
+
+/* Priority menu cards ---------------------------------------------------- */
+.priority-menu .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.priority-menu .card {
+  display: block; background: #fff; border: 1px solid var(--n-300);
+  border-radius: var(--r-card); overflow: hidden;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.priority-menu .card:hover { border-color: var(--pink); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.priority-menu .card img { display: block; width: 100%; height: 170px; object-fit: cover; }
+.priority-menu .card-content { padding: 20px 22px; }
+.priority-menu .card-content h3 { font-size: 1.02rem; font-weight: 700; color: var(--slate); }
+.priority-menu .card-content p { font-size: .86rem; font-weight: 300; color: var(--ink-soft); margin-top: 6px; }
+
+/* Social cards ----------------------------------------------------------- */
+.social-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.social-card {
+  background: #fff; border: 1px solid var(--n-300); border-radius: var(--r-card);
+  padding: 26px 20px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.social-card:hover { border-color: var(--pink); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.social-card-icon { width: 34px; height: 34px; }
+.social-card-icon svg { width: 100%; height: 100%; }
+.social-card-title { font-size: 1rem; font-weight: 700; color: var(--slate); }
+.social-card-desc { font-size: .8rem; font-weight: 300; color: var(--ink-soft); min-height: 2.4em; }
+.social-qr-link { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 4px 0 6px; }
+.social-qr {
+  width: 108px; height: 108px; display: block;
+  border: 1px solid var(--n-300); border-radius: var(--r-sm);
+  padding: 6px; background: #fff;
+}
+.social-qr img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.social-handle { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-soft); word-break: break-all; }
+.social-card .btn { margin-top: auto; }
+
+/* Icon grid -------------------------------------------------------------- */
+.icon-grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.icon-card {
+  display: flex; align-items: center; gap: 14px;
+  background: #fff; border: 1px solid var(--n-300); border-radius: var(--r-sm);
+  padding: 18px 20px;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.icon-card:hover { border-color: var(--pink); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.icon-card-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+.icon-card-title { font-size: .94rem; font-weight: 700; color: var(--slate); }
+.icon-card-desc { font-size: .78rem; font-weight: 300; color: var(--ink-soft); margin-top: 3px; }
+
+/* City cards ------------------------------------------------------------- */
+.city-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.city-card {
+  background: #fff; border: 1px solid var(--n-300); border-radius: var(--r-card);
+  overflow: hidden; display: flex; flex-direction: column; position: relative;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.city-card:hover { border-color: var(--pink); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.city-card img { display: block; width: 100%; height: 165px; object-fit: cover; }
+.city-card-content { padding: 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.city-card-content h3 { font-size: 1.05rem; font-weight: 700; color: var(--slate); }
+.city-country { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; color: var(--pink); margin-top: 4px; }
+.city-features { list-style: none; margin: 14px 0 16px; display: flex; flex-direction: column; gap: 7px; }
+.city-features li { font-size: .83rem; font-weight: 300; color: var(--ink-soft); padding-left: 16px; position: relative; line-height: 1.55; }
+.city-features li::before { content: ''; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--pink); }
+.city-card-content > a { margin-top: auto; font-size: .86rem; font-weight: 700; color: var(--pink); }
+
+/* "Coming soon" treatment, shared by city / office cards */
+.city-card.coming-soon::after, .office-card.coming-soon::after {
+  content: 'COMING SOON';
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; font-weight: 600;
+  background: var(--slate); color: #fff; padding: 5px 11px; border-radius: var(--r-pill);
+}
+.city-card.coming-soon img, .office-card.coming-soon img { filter: grayscale(.55); }
+
+/* Videos ----------------------------------------------------------------- */
+.video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.video-card {
+  background: #fff; border: 1px solid var(--n-300); border-radius: var(--r-card); overflow: hidden;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.video-card:hover { border-color: var(--pink); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.video-embed { position: relative; aspect-ratio: 16 / 9; background: var(--n-300); }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-meta { padding: 18px 20px; display: block; }
+.video-title { font-size: .94rem; font-weight: 700; color: var(--slate); line-height: 1.45; }
+.video-desc { font-size: .8rem; font-weight: 300; color: var(--ink-soft); margin-top: 5px; }
+.video-link { display: inline-block; margin-top: 10px; font-size: .82rem; font-weight: 700; color: var(--pink); }
+
+/* World map -------------------------------------------------------------- */
+.world-map-container {
+  border-radius: var(--r-card); overflow: hidden;
+  background: #fff; border: 1px solid var(--n-300); padding: 20px;
+}
+.world-map-container img { display: block; width: 100%; }
+
+/* Offices ---------------------------------------------------------------- */
+.office-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.office-card {
+  background: #fff; border: 1px solid var(--n-300); border-radius: var(--r-card);
+  overflow: hidden; position: relative;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.office-card:hover { border-color: var(--pink); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.office-image { display: block; width: 100%; height: 180px; object-fit: cover; }
+.office-info { padding: 20px 22px; }
+.office-name { font-size: 1rem; font-weight: 700; color: var(--slate); }
+.office-features { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.office-features li { font-size: .82rem; font-weight: 300; color: var(--ink-soft); padding-left: 16px; position: relative; }
+.office-features li::before { content: ''; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--n-400); }
+
+/* Lifestyle -------------------------------------------------------------- */
+.lifestyle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.lifestyle-item { position: relative; border-radius: var(--r-sm); overflow: hidden; aspect-ratio: 4 / 3; }
+.lifestyle-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s var(--ease); }
+.lifestyle-item:hover img { transform: scale(1.06); }
+.lifestyle-caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 22px 14px 12px; font-size: .82rem; font-weight: 700; color: #fff;
+  background: linear-gradient(to top, rgba(52, 53, 74, .85), transparent);
+}
+
+/* Testimonials ----------------------------------------------------------- */
+.testimonial-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.testimonial {
+  background: #fff; border: 1px solid var(--n-300); border-radius: var(--r-card);
+  padding: 26px 24px; display: flex; flex-direction: column;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.testimonial:hover { border-color: var(--pink); box-shadow: var(--shadow-md); }
+.testimonial-content {
+  font-size: .9rem; font-weight: 300; color: var(--ink-soft);
+  line-height: 1.8; flex: 1; position: relative; padding-top: 22px;
+}
+.testimonial-content::before {
+  content: '"'; position: absolute; top: -6px; left: -2px;
+  font-size: 2.6rem; font-weight: 900; color: var(--pink); opacity: .3; line-height: 1;
+}
+.testimonial-author { display: flex; align-items: center; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--n-300); }
+.author-img { width: 38px; height: 38px; border-radius: 50%; object-fit: contain; background: var(--n-200); padding: 5px; }
+.author-info { display: flex; flex-direction: column; line-height: 1.35; }
+.author-info strong { font-size: .88rem; font-weight: 700; color: var(--slate); }
+.author-info span { font-size: .75rem; color: var(--ink-mute); }
+
+/* Contact CTA links ------------------------------------------------------ */
+.cta-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 800px; margin: 0 auto; }
+.cta-link {
+  display: flex; align-items: center; gap: 16px;
+  background: #fff; border: 1px solid var(--n-300); border-radius: var(--r-card);
+  padding: 22px 24px;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.cta-link:hover { border-color: var(--pink); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.cta-ico { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+.cta-main { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.cta-main strong { font-size: .98rem; font-weight: 700; color: var(--slate); }
+.cta-main em { font-size: .8rem; font-weight: 300; font-style: normal; color: var(--ink-soft); margin-top: 3px; }
+.cta-arrow { color: var(--pink); font-size: 1.2rem; font-weight: 700; flex-shrink: 0; }
+
+/* ==========================================================================
+   Inline apply funnel (#apply)
+   Markup, field names, IDs and the submit flow are unchanged from the
+   previous site — this is styling only. The .klp-apply-section class is
+   load-bearing: clearErrors() scopes its query to it.
+   ========================================================================== */
+
+.klp-apply-section { padding: 80px 0; background: #fff; }
+.klp-apply-section .apply-container {
+  max-width: 620px; margin: 0 auto; padding: 44px 40px;
+  background: var(--slate); border-radius: 28px; color: #fff;
+  box-shadow: var(--shadow-xl);
+}
+.klp-apply-section .eyebrow {
+  font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em;
+  font-weight: 600; color: var(--pink); text-align: center; text-transform: uppercase;
+}
+.klp-apply-section h2 {
+  font-size: clamp(1.5rem, 3vw, 1.95rem); font-weight: 900; line-height: 1.3;
+  text-align: center; margin-top: 12px; color: #fff; letter-spacing: -.02em;
+}
+.klp-apply-section h2 em { font-style: normal; color: var(--pink); }
+.klp-apply-section .lede {
+  text-align: center; font-size: .92rem; font-weight: 300;
+  color: var(--on-slate-mute); margin: 14px 0 30px;
+}
+.klp-apply-section form { display: flex; flex-direction: column; gap: 18px; }
+.klp-apply-section .field { display: flex; flex-direction: column; gap: 7px; }
+.klp-apply-section .field-label { font-size: .85rem; font-weight: 700; color: rgba(255, 255, 255, .92); }
+.klp-apply-section .field-label .required { color: var(--pink); }
+.klp-apply-section .field-label .opt { font-weight: 400; color: var(--on-slate-mute); font-size: .78rem; }
+.klp-apply-section input[type="text"],
+.klp-apply-section input[type="email"],
+.klp-apply-section input[type="tel"],
+.klp-apply-section select {
+  width: 100%; padding: 13px 16px;
+  font-family: inherit; font-size: .92rem; color: var(--slate);
+  background: var(--n-100); border: 1.5px solid transparent; border-radius: 14px;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+}
+.klp-apply-section input::placeholder { color: #a9a8b8; }
+.klp-apply-section input:focus, .klp-apply-section select:focus {
+  outline: none; border-color: var(--pink); background: #fff;
+}
+.klp-apply-section .phone-group { display: flex; gap: 10px; }
+.klp-apply-section .phone-group select { flex: 0 0 122px; }
+.klp-apply-section .phone-group input { flex: 1 1 auto; min-width: 0; }
+
+/* Radio pills — the input/label pairing is preserved for the existing JS. */
+.klp-apply-section .radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
+.klp-apply-section .radio-group input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+.klp-apply-section .radio-group label {
+  padding: 9px 18px; border-radius: var(--r-pill); cursor: pointer;
+  font-size: .86rem; font-weight: 500; color: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, .08); border: 1.5px solid rgba(255, 255, 255, .2);
+  transition: background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+}
+.klp-apply-section .radio-group label:hover { background: rgba(255, 255, 255, .16); color: #fff; }
+.klp-apply-section .radio-group input[type="radio"]:checked + label {
+  background: var(--pink); border-color: var(--pink); color: #fff; font-weight: 700;
+}
+.klp-apply-section .radio-group input[type="radio"]:focus-visible + label { outline: 3px solid var(--pink); outline-offset: 3px; }
+
+.klp-apply-section .consent {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: .82rem; color: var(--on-slate-mute); line-height: 1.6; cursor: pointer;
+}
+.klp-apply-section .consent input[type="checkbox"] {
+  margin-top: 3px; width: 17px; height: 17px; accent-color: var(--pink); flex-shrink: 0;
+}
+.klp-apply-section .error { display: none; font-size: .78rem; font-weight: 500; color: #ff9ecb; }
+.klp-apply-section .field.has-error .error { display: block; }
+.klp-apply-section .field.has-error input,
+.klp-apply-section .field.has-error select { border-color: #ff9ecb; }
+.klp-apply-section .field.has-error .radio-group label { border-color: #ff9ecb; }
+
+.klp-apply-section .submit {
+  margin-top: 6px; padding: 15px 32px; width: 100%;
+  background: var(--pink); color: #fff; border: 0; border-radius: var(--r-pill);
+  font-family: inherit; font-size: .96rem; font-weight: 700; cursor: pointer;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.klp-apply-section .submit:hover:not(:disabled) { background: var(--pink-hover); transform: translateY(-2px); }
+.klp-apply-section .submit:disabled { opacity: .6; cursor: not-allowed; }
+
+/* Success view */
+.klp-apply-section .kakao-success { display: none; text-align: center; }
+.klp-apply-section .kakao-success.active { display: block; }
+.klp-apply-section .checkmark {
+  width: 60px; height: 60px; margin: 0 auto 20px; border-radius: 50%;
+  background: var(--pink); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-size: 1.9rem;
+}
+.klp-apply-section .kakao-success h3 { font-size: 1.35rem; font-weight: 900; color: #fff; }
+.klp-apply-section .kakao-success > p { font-size: .92rem; font-weight: 300; color: var(--on-slate-mute); margin-top: 12px; line-height: 1.7; }
+.klp-apply-section .kakao-id-card {
+  display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
+  background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: var(--r-sm); padding: 18px 22px; margin: 24px 0;
+}
+.klp-apply-section .kakao-id-label { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .14em; color: var(--on-slate-mute); }
+.klp-apply-section .kakao-id-value { font-family: var(--font-mono); font-size: 1.15rem; font-weight: 600; color: #fff; }
+.klp-apply-section .copy-btn {
+  padding: 8px 18px; border-radius: var(--r-pill); cursor: pointer;
+  background: var(--pink); color: #fff; border: 0;
+  font-family: inherit; font-size: .8rem; font-weight: 700;
+  transition: background .2s var(--ease);
+}
+.klp-apply-section .copy-btn:hover { background: var(--pink-hover); }
+.klp-apply-section .kakao-steps { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 11px; margin-top: 20px; }
+.klp-apply-section .kakao-steps li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: .88rem; font-weight: 300; color: rgba(255, 255, 255, .85); line-height: 1.6;
+}
+.klp-apply-section .step-num {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--pink); color: #fff;
+  font-family: var(--font-mono); font-size: .74rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+}
+.klp-apply-section .apply-divider { height: 1px; background: rgba(255, 255, 255, .14); margin-top: 26px; }
+
+/* Hero typewriter ---------------------------------------------------------- */
+#hero-rotate { display: inline-block; min-width: 1px; }
+
+/* Responsive --------------------------------------------------------------- */
+@media (max-width: 980px) {
+  .social-grid, .video-grid, .city-cards, .lifestyle-grid, .icon-grid-container,
+  .community-stats { grid-template-columns: repeat(2, 1fr); }
+  .priority-menu .cards, .office-grid, .testimonial-cards { grid-template-columns: repeat(2, 1fr); }
+  .gptw-gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .gptw-section, .korean-community, .priority-menu, .social-connect,
+  .icon-grid, .cities, .video-section, .world-map-section, .office-section,
+  .lifestyle-section, .testimonials, .contact-min { padding: 56px 0; }
+  .gptw-section .container, .korean-community .container, .priority-menu .container,
+  .social-connect .container, .icon-grid .container, .cities .container,
+  .video-section .container, .world-map-section .container, .office-section .container,
+  .lifestyle-section .container, .testimonials .container, .contact-min .container { padding: 0 18px; }
+  .social-grid, .video-grid, .city-cards, .icon-grid-container,
+  .priority-menu .cards, .office-grid, .testimonial-cards, .cta-links { grid-template-columns: 1fr; }
+  .lifestyle-grid, .community-stats { grid-template-columns: repeat(2, 1fr); }
+  .gptw-gallery { grid-template-columns: repeat(2, 1fr); }
+  .gptw-announcement { padding: 20px 22px; }
+  .klp-apply-section { padding: 56px 0; }
+  .klp-apply-section .apply-container { padding: 32px 22px; border-radius: 22px; margin: 0 18px; }
+  .klp-apply-section .phone-group { flex-wrap: wrap; }
+  .klp-apply-section .phone-group select { flex: 1 1 100%; }
+}
 </style>
 </head>
 <body>
-<a href="#main" class="sr-only">본문으로 이동</a>
-<header role="banner">
-  <div class="header-inner">
-    <a class="brand" href="index.html"><img src="photos/tp-logo.png" alt="TP" width="40" height="40"><div class="brand-text"><span class="brand-name">TP</span><span class="brand-tagline">말레이시아·태국</span></div></a>
-    <nav aria-label="주요 내비게이션"><ul><li><a href="index.html" aria-current="page">홈</a></li><li><a href="open-jobs.html">채용공고</a></li><li><a href="about-tp.html">기업소개</a></li><li><a href="salary-and-benefits.html">근무조건·복지</a></li><li><a href="hiring-process.html">채용프로세스</a></li><li><a href="why-malaysia-thailand.html">도시안내</a></li><li><a href="relocation-visa.html">이주·비자</a></li><li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="apply-btn">지원하기</a></li></ul></nav>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-  <nav class="mobile-menu" id="mobileMenu" aria-label="모바일 내비게이션"><ul><li><a href="index.html">홈</a></li><li><a href="open-jobs.html">채용공고</a></li><li><a href="about-tp.html">기업소개</a></li><li><a href="salary-and-benefits.html">근무조건·복지</a></li><li><a href="hiring-process.html">채용프로세스</a></li><li><a href="why-malaysia-thailand.html">도시안내</a></li><li><a href="relocation-visa.html">이주·비자</a></li><li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="apply-btn">지원하기</a></li></ul></nav>
-</header>
-<main id="main">
-  <section class="hero"><div class="hero-container"><h1><span id="hero-rotate"></span></h1><p class="hero-subtitle">여러분의 다음 커리어, 여기서 시작됩니다<br>무한한 가능성을 가진 글로벌 리더로의 성장<br>합리적인 생활비, 높은 삶의 질 - 말레이시아에서 해외 생활을 시작하세요!</p><div class="hero-cta"><a href="open-jobs.html" class="btn btn-gold">채용공고</a><a href="relocation-visa.html" class="btn btn-secondary">이주 지원 상세</a></div><div class="hero-stats"><div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">거점 국가 수</span></div><div class="stat-item"><span class="stat-number">500K+</span><span class="stat-label">전 세계 임직원 수</span></div><div class="stat-item"><span class="stat-number">7,000+</span><span class="stat-label">말레이시아·태국 임직원 수</span></div></div></div></section>
-  <section class="social-proof-banner"><div class="social-proof-inner"><div class="proof-item"><span class="number">200+</span><span>명의 한국팀 동료</span></div><div class="proof-item"><span class="number">6</span><span>년 연속 Great Place to Work® 인증</span></div><div class="proof-item"><span class="number">5</span><span>년 연속 World's Best Workplaces<sup>TM</sup> 선정</span></div></div></section>
-  <section class="about-section" id="about"><div class="container"><h2 class="section-title section-title-decorated" style="font-weight:300;">TP 말레이시아·태국 채용 포털에 오신 것을 환영합니다</h2><p class="section-subtitle">글로벌 인재로 성장하는 가장 확실한 커리어 트랙</p><div class="about-content"><div class="about-text"><p>TP(Teleperformance)는 1978년 프랑스 파리에서 설립된 글로벌 BPO(Business Process Outsourcing) 선두 기업이며, 현재 전 세계 100개국 이상에서 50만 명 이상의 직원이 근무하고 있습니다.</p><p>TP는 독보적인 디지털 솔루션과 우수한 인재를 결합하여 Fortune 500대 기업에 최상의 고객 경험(CX) 서비스를 제공합니다.</p><p>현재 말레이시아와 태국 지사에서 한국어 역량을 보유한 신입 및 경력 인재를 적극 채용하고 있습니다. 다양성을 존중하는 TP에서 글로벌 커리어의 첫걸음을 내디뎌 보세요!</p><div id="gptwYears" class="gptw-years"></div></div><div class="about-image"><img src="photos/great-place-to-work.png" alt="Great Place to Work® 인증 로고" loading="lazy"></div></div></div></section>
-  <section class="gptw-section" id="world-best-workplaces"><div class="container"><div class="gptw-announcement"><h3>🎉 포춘(Fortune)지 선정 세계에서 가장 일하기 좋은 기업</h3><p>TP가 Great Place to Work®의 「World's Best Workplaces™」에 <strong>5년 연속</strong> 공식 선정되었습니다!</p><p class="gptw-quote">이 인증은 실제 직원들의 신뢰와 피드백을 바탕으로 그 우수성을 인정받고 있으며, 구성원과 함께 성장하는 TP만의 건강한 조직 문화를 입증하는 결과입니다.</p></div><div class="gptw-header"><img src="photos/worlds-best-workplaces.png" alt="World's Best Workplaces 2025" class="gptw-badge"><div class="gptw-title-block"><h2 class="section-title">World's Best Workplaces™ <span class="gptw-highlight">5년 연속 수상</span></h2><p class="section-subtitle">Great Place to Work® 인증</p></div></div><p class="gptw-description">TP는 Great Place to Work®의 「World's Best Workplaces™」에 <strong>5년 연속</strong> 공식 인증을 받았습니다.<br>해당 인증은 임직원의 신뢰와 피드백을 바탕으로 그 우수성을 인정받고 있으며, 사람 중심의 가치를 실현하는 TP만의 건강한 조직 문화를 입증하는 결과입니다.<br>함께 성장하는 에너지가 TP의 원동력입니다. 모든 구성원의 고유한 역량을 존중하는 열린 문화를 바탕으로, 지속 가능한 미래와 사회적 가치 창출을 위해 앞장서겠습니다.</p><div class="gptw-banner"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_Banner.png" alt="GPTW World Best Workplaces 배너" loading="lazy"></div><div class="gptw-gallery"><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_1.png" alt="GPTW 이미지 1" loading="lazy"></div><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_2.png" alt="GPTW 이미지 2" loading="lazy"></div><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_3.png" alt="GPTW 이미지 3" loading="lazy"></div><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_4.png" alt="GPTW 이미지 4" loading="lazy"></div><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_5.png" alt="GPTW 이미지 5" loading="lazy"></div></div><div class="gptw-stats"><div class="gptw-stat"><div class="gptw-stat-number">5</div><div class="gptw-stat-label">연속 수상 연수</div></div><div class="gptw-stat"><div class="gptw-stat-number">100+</div><div class="gptw-stat-label">사업 거점 국가 수</div></div><div class="gptw-stat"><div class="gptw-stat-number">500K+</div><div class="gptw-stat-label">전 세계 임직원 수</div></div></div></div></section>
-  <section class="korean-community" id="korean-community"><div class="container"><h2 class="section-title section-title-decorated">TP 커뮤니티</h2><p class="section-subtitle">함께하세요!</p><div class="community-stats"><div class="community-stat"><div class="community-stat-icon">👥</div><div class="community-stat-number">200+</div><div class="community-stat-label">한국팀 동료</div></div><div class="community-stat"><div class="community-stat-icon">💬</div><div class="community-stat-number">10+</div><div class="community-stat-label">WhatsApp 그룹</div></div><div class="community-stat"><div class="community-stat-icon">🎉</div><div class="community-stat-number">12+</div><div class="community-stat-label">연간 행사</div></div><div class="community-stat"><div class="community-stat-icon">🍜</div><div class="community-stat-number">50+</div><div class="community-stat-label">동료 추천 한식당</div></div></div></div></section>
-  <section class="priority-menu"><div class="container"><h2 class="section-title section-title-decorated">취업 정보</h2><p class="section-subtitle">필요한 정보를 신속하게 확인하세요</p><div class="cards"><a href="about-tp.html" class="card"><img src="photos/gbs.jpeg" alt="기업소개" loading="lazy"><div class="card-content"><h3>기업소개</h3><p>세계 최대 BPO 기업</p></div></a><a href="open-jobs.html" class="card"><img src="photos/reception.png" alt="채용공고" loading="lazy"><div class="card-content"><h3>채용공고</h3><p>한국어 인재 포지션</p></div></a><a href="salary-and-benefits.html" class="card"><img src="photos/reception-1.png" alt="근무조건·복지" loading="lazy"><div class="card-content"><h3>근무조건·복지</h3><p>완벽한 대우와 복리후생</p></div></a><a href="relocation-visa.html" class="card"><img src="photos/condo.jpg" alt="이주 지원" loading="lazy"><div class="card-content"><h3>이주·비자</h3><p>전 과정 지원 시스템</p></div></a><a href="testimonials.html" class="card"><img src="photos/kl1.jpg" alt="직원 후기" loading="lazy"><div class="card-content"><h3>직원 후기</h3><p>실제 근무 경험</p></div></a><a href="why-malaysia-thailand.html" class="card"><img src="photos/kl2.jpg" alt="도시안내" loading="lazy"><div class="card-content"><h3>도시안내</h3><p>살기 좋은 환경과 성장 기회</p></div></a><a href="hiring-process.html" class="card"><img src="photos/reception-2.png" alt="채용프로세스" loading="lazy"><div class="card-content"><h3>채용프로세스</h3><p>전 과정 온라인 진행</p></div></a><a href="office-environment.html" class="card"><img src="photos/gtower.jpg" alt="TP 오피스 위치" loading="lazy"><div class="card-content"><h3>TP 오피스 위치·VR 투어</h3><p>사무실 환경과 커리어 패스</p></div></a><a href="https://tpmyandtpth.github.io/xRAF/" target="_blank" rel="noopener noreferrer" class="card"><img src="photos/tp-logo.png" alt="추천 채용 제도" loading="lazy" style="object-fit:contain;padding:1.5rem;background:#f5f5f5"><div class="card-content"><h3>추천 채용 제도</h3><p>지인 추천하고 보상금 받기 (외부 및 사내 임직원 대상)</p></div></a></div></div></section>
-  <section class="social-connect" id="social"><div class="container"><h2 class="section-title section-title-decorated">공식 계정</h2><p class="section-subtitle">SNS를 통해 최신 채용 정보를 받아보세요</p><div class="social-grid"><div class="social-card"><div class="social-card-icon" style="color:#FFCD00"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>KakaoTalk</title><path d="M22.125 0H1.875C.8394 0 0 .8394 0 1.875v20.25C0 23.1606.8394 24 1.875 24h20.25C23.1606 24 24 23.1606 24 22.125V1.875C24 .8394 23.1606 0 22.125 0zM12 18.75c-.591 0-1.1697-.0413-1.7317-.1209-.5626.3965-3.813 2.6797-4.1198 2.7225 0 0-.1258.0489-.2328-.0141s-.0876-.2282-.0876-.2282c.0322-.2198.8426-3.0183.992-3.5333-2.7452-1.36-4.5701-3.7686-4.5701-6.5135C2.25 6.8168 6.6152 3.375 12 3.375s9.75 3.4418 9.75 7.6875c0 4.2457-4.3652 7.6875-9.75 7.6875zM8.0496 9.8672h-.8777v3.3417c0 .2963-.2523.5372-.5625.5372s-.5625-.2409-.5625-.5372V9.8672h-.8777c-.3044 0-.552-.2471-.552-.5508s.2477-.5508.552-.5508h2.8804c.3044 0 .552.2471.552.5508s-.2477.5508-.552.5508zm10.9879 2.9566a.558.558 0 0 1 .108.4167.5588.5588 0 0 1-.2183.371.5572.5572 0 0 1-.3383.1135.558.558 0 0 1-.4493-.2236l-1.3192-1.7479-.1952.1952v1.2273a.5635.5635 0 0 1-.5627.5628.563.563 0 0 1-.5625-.5625V9.3281c0-.3102.2523-.5625.5625-.5625s.5625.2523.5625.5625v1.209l1.5694-1.5694c.0807-.0807.1916-.1252.312-.1252.1404 0 .2814.0606.3871.1661.0985.0984.1573.2251.1654.3566.0082.1327-.036.2542-.1241.3425l-1.2818 1.2817 1.3845 1.8344zm-8.3502-3.5023c-.095-.2699-.3829-.5475-.7503-.5557-.3663.0083-.6542.2858-.749.5551l-1.3455 3.5415c-.1708.5305-.0217.7272.1333.7988a.8568.8568 0 0 0 .3576.0776c.2346 0 .4139-.0952.4678-.2481l.2787-.7297 1.7152.0001.2785.7292c.0541.1532.2335.2484.4681.2484a.8601.8601 0 0 0 .3576-.0775c.1551-.0713.3041-.2681.1329-.7999l-1.3449-3.5398zm-1.3116 2.4433l.5618-1.5961.5618 1.5961H9.3757zm5.9056 1.3836c0 .2843-.2418.5156-.5391.5156h-1.8047c-.2973 0-.5391-.2314-.5391-.5156V9.3281c0-.3102.2576-.5625.5742-.5625s.5742.2523.5742.5625v3.3047h1.1953c.2974 0 .5392.2314.5392.5156z"/></svg></div><div class="social-card-title">카카오톡</div><div class="social-card-desc">카카오톡 ID로 친구 추가</div><a href="klp-apply-form.html" class="social-qr-link" aria-label="카카오톡 친구 추가 방법 보기"><span class="social-qr"><img src="photos/qr-kakao.png" alt="카카오톡 친구 추가 QR 코드" loading="lazy"></span><span class="social-handle">tpmy5114526</span></a><a href="klp-apply-form.html" class="btn btn-sm btn-ghost">친구 추가 방법</a></div><div class="social-card"><div class="social-card-icon" style="color:#000000"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div><div class="social-card-title">TikTok</div><div class="social-card-desc">짧은 영상으로 TP 생활 엿보기</div><a href="https://www.tiktok.com/@wearetpinmalaysia" target="_blank" rel="noopener noreferrer" class="social-qr-link" aria-label="TikTok @wearetpinmalaysia 팔로우하기"><span class="social-qr"><img src="photos/qr-tiktok.png" alt="TikTok QR 코드" loading="lazy"></span><span class="social-handle">@wearetpinmalaysia</span></a><a href="https://www.tiktok.com/@wearetpinmalaysia" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">팔로우하기</a></div><div class="social-card"><div class="social-card-icon" style="color:#FF0069"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Instagram</title><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></div><div class="social-card-title">Instagram</div><div class="social-card-desc">직원 생활과 채용 정보</div><a href="https://www.instagram.com/wearetpinmalaysia" target="_blank" rel="noopener noreferrer" class="social-qr-link" aria-label="Instagram @wearetpinmalaysia 팔로우하기"><span class="social-qr"><img src="photos/qr-instagram.png" alt="Instagram QR 코드" loading="lazy"></span><span class="social-handle">@wearetpinmalaysia</span></a><a href="https://www.instagram.com/wearetpinmalaysia" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">팔로우하기</a></div><div class="social-card"><div class="social-card-icon" style="color:#FF0000"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><div class="social-card-title">YouTube</div><div class="social-card-desc">임직원 소식과 채용 정보</div><a href="https://www.youtube.com/@wearetpgroup" target="_blank" rel="noopener noreferrer" class="social-qr-link" aria-label="YouTube TP Malaysia 채널 보기"><span class="social-qr"><img src="photos/qr-youtube.png" alt="YouTube QR 코드" loading="lazy"></span><span class="social-handle">TP Malaysia</span></a><a href="https://www.youtube.com/@wearetpgroup" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">지금 시청하기</a></div></div></div></section>
-  <section class="icon-grid" id="resources"><div class="container"><h2 class="section-title section-title-decorated">생활 정보·지원</h2><p class="section-subtitle">유용한 정보와 채용 관련 지원</p><div class="icon-grid-container"><a href="cost-of-living.html" class="icon-card"><span class="icon-card-icon">💰</span><div class="icon-card-meta"><div class="icon-card-title">말레이시아 생활비</div><div class="icon-card-desc">식비·교통비·주거비</div></div></a><a href="area-around-office.html" class="icon-card"><span class="icon-card-icon">📍</span><div class="icon-card-meta"><div class="icon-card-title">오피스 주변</div><div class="icon-card-desc">주변 환경 정보</div></div></a><a href="daily-life-malaysia.html" class="icon-card"><span class="icon-card-icon">🇲🇾</span><div class="icon-card-meta"><div class="icon-card-title">생활가이드</div><div class="icon-card-desc">KL vs 페낭</div></div></a><a href="#social" class="icon-card" id="kakaoCard"><span class="icon-card-icon">💬</span><div class="icon-card-meta"><div class="icon-card-title">카카오톡 공식 계정</div><div class="icon-card-desc">최신 정보 받기</div></div></a></div></div></section>
-  <section class="cities" id="cities"><div class="container"><h2 class="section-title section-title-decorated">근무 도시 안내</h2><p class="section-subtitle">말레이시아·태국의 매력적인 도시 4곳</p><div class="city-cards"><article class="city-card"><img src="photos/kl1.jpg" alt="쿠알라룸푸르" loading="lazy"><div class="city-card-content"><h3>쿠알라룸푸르 (KL)</h3><p class="city-country">말레이시아</p><ul class="city-features"><li>다수의 한국인이 거주하는 국제 도시</li><li>돈키호테, 이온, 이세탄 등 쇼핑센터</li><li>영어 가능 병원·클리닉 완비</li><li>지하철·모노레일 통근 편리</li></ul><a href="why-malaysia-thailand.html#kl">자세히 보기 →</a></div></article><article class="city-card"><img src="photos/penang.jpg" alt="페낭" loading="lazy"><div class="city-card-content"><h3>페낭 (Penang)</h3><p class="city-country">말레이시아</p><ul class="city-features"><li>조지타운 유네스코 세계문화유산 지정 도시</li><li>도시와 자연환경이 어우러진 인프라</li><li>매우 저렴한 물가와 편안한 생활</li><li>한국인 커뮤니티 활성화</li></ul><a href="why-malaysia-thailand.html#penang">자세히 보기 →</a></div></article><article class="city-card"><img src="photos/bangkok2.jpg" alt="방콕" loading="lazy"><div class="city-card-content"><h3>방콕 (Bangkok)</h3><p class="city-country">태국</p><ul class="city-features"><li>8만 명 이상의 한국인이 거주하는 도시</li><li>한국 마트, 이세탄 등 쇼핑센터</li><li>BTS와 MRT로 편리한 이동</li><li>매우 높은 의료 수준</li></ul><a href="why-malaysia-thailand.html#bangkok">자세히 보기 →</a></div></article><article class="city-card coming-soon"><img src="photos/kl2.jpg" alt="조호르" loading="lazy"><div class="city-card-content"><h3>조호르 (Johor)</h3><p class="city-country">말레이시아</p><ul class="city-features"><li>싱가포르 인접, 교통 편리</li><li>쿠알라룸푸르보다 저렴한 생활비</li><li>신흥 개발 지역</li><li>TP 오피스 오픈 예정</li></ul><a href="why-malaysia-thailand.html#johor">자세히 보기 →</a></div></article></div></div></section>
-  <section class="video-section" id="videos"><div class="container"><h2 class="section-title section-title-decorated">임직원 인터뷰</h2><p class="section-subtitle">TP 구성원들의 회사생활 이야기</p><div class="video-grid"><article class="video-card"><div class="video-embed"><iframe src="https://www.youtube.com/embed/N6l7PUQR0tw" title="TP 직원 인터뷰: 최신 영상" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></div><header class="video-meta"><h3 class="video-title">TP 직원 인터뷰: 최신 영상</h3><p class="video-desc">생생한 경험을 더 자세히</p><a class="video-link" href="https://youtu.be/N6l7PUQR0tw" target="_blank" rel="noopener noreferrer">YouTube에서 보기 →</a></header></article><article class="video-card"><div class="video-embed"><iframe src="https://www.youtube.com/embed/H4SVUrCjTPM" title="TP 직원 인터뷰: Operations Customer Expert 편" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></div><header class="video-meta"><h3 class="video-title">TP 직원 인터뷰: Operations Customer Expert 편</h3><p class="video-desc">CX 팀원의 일상</p><a class="video-link" href="https://youtu.be/H4SVUrCjTPM" target="_blank" rel="noopener noreferrer">YouTube에서 보기 →</a></header></article><article class="video-card"><div class="video-embed"><iframe src="https://www.youtube.com/embed/VB6KSdFYLdE" title="TP 직원 인터뷰: Team Lead 편" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></div><header class="video-meta"><h3 class="video-title">TP 직원 인터뷰: Team Lead 편</h3><p class="video-desc">팀 관리와 인재 육성</p><a class="video-link" href="https://youtu.be/VB6KSdFYLdE" target="_blank" rel="noopener noreferrer">YouTube에서 보기 →</a></header></article><article class="video-card"><div class="video-embed"><iframe src="https://www.youtube.com/embed/pa-qdCGkxA4" title="TP 직원 인터뷰: Operations Manager 편" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></div><header class="video-meta"><h3 class="video-title">TP 직원 인터뷰: Operations Manager 편</h3><p class="video-desc">생산성과 품질의 중요성</p><a class="video-link" href="https://youtu.be/pa-qdCGkxA4" target="_blank" rel="noopener noreferrer">YouTube에서 보기 →</a></header></article></div></div></section>
-  <section class="world-map-section"><div class="container"><h2 class="section-title section-title-decorated">TP 글로벌 지사</h2><p class="section-subtitle">100개국 이상에서 서비스 제공</p><div class="world-map-container"><img src="photos/world-map-locations.png" alt="TP 글로벌 분포 지도" loading="lazy"></div></div></section>
-  <section class="office-section" id="office"><div class="container"><h2 class="section-title section-title-decorated">TP 오피스 위치</h2><p class="section-subtitle">쾌적하고 교통이 편리한 근무지</p><div class="office-grid"><div class="office-card"><img src="photos/gtower.jpg" alt="G Tower KL" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">G Tower (쿠알라룸푸르)</h3><ul class="office-features"><li>Ampang Park 역 연결</li><li>KLCC 도보 거리</li><li>최고급 오피스 빌딩</li></ul></div></div><div class="office-card"><img src="photos/lv-inside1.png" alt="Penang Livingston" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">Livingston (페낭)</h3><ul class="office-features"><li>조용한 환경</li><li>식당·약국 근처</li><li>교통 편리</li></ul></div></div><div class="office-card"><img src="photos/reception-1.png" alt="Penang One Precinct" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">One Precinct (페낭)</h3><ul class="office-features"><li>Bayan Baru 지역</li><li>공항에서 15분</li><li>Queensbay Mall 인근</li></ul></div></div><div class="office-card"><img src="photos/gbs.jpeg" alt="GBS@Mahsuri" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">GBS@Mahsuri (페낭)</h3><ul class="office-features"><li>페낭 GBS Hub</li><li>IT/BPO 클러스터</li><li>생활 편의시설 밀집</li></ul></div></div><div class="office-card"><img src="photos/kl1.jpg" alt="KCP" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">KCP (켈라나 자야 센트럴 포인트)</h3><ul class="office-features"><li>LRT 역 인근</li><li>쇼핑 편리</li></ul></div></div><div class="office-card"><img src="photos/singha-complex1.jpg" alt="Bangkok Singha Complex" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">Singha Complex (방콕)</h3><ul class="office-features"><li>BTS/MRT 인근</li><li>한인 지역</li><li>복합 상업 단지 내 위치</li></ul></div></div><div class="office-card coming-soon"><img src="photos/kl2.jpg" alt="Sunway" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">Sunway (선웨이)</h3><ul class="office-features"><li>선웨이 피라미드 쇼핑몰 인근</li><li>BRT 연결</li><li>신흥 상업 지구</li></ul></div></div><div class="office-card coming-soon"><img src="photos/penang.jpg" alt="Johor" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">Johor (조호르)</h3><ul class="office-features"><li>싱가포르 인접</li><li>저렴한 생활비</li><li>TP 신규 오피스 오픈</li></ul></div></div><div class="office-card coming-soon wfh-card"><img src="photos/condo.jpg" alt="WFH" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">WFH (재택근무)</h3><ul class="office-features"><li>원격 근무 옵션</li><li>유연한 근무 형태</li><li>일부 포지션 적용</li></ul></div></div></div><div style="text-align:center;margin-top:2rem"><a href="https://vtour.cloud/mh2n0j/29cekgq3/" target="_blank" rel="noopener noreferrer" class="btn btn-gold">VR 오피스 투어 →</a></div></div></section>
-  <section class="lifestyle-section"><div class="container"><h2 class="section-title section-title-decorated">워라밸을 지키는 풍요로운 일상</h2><p class="section-subtitle">주말에는 여행, 퇴근 후에는 취미와 휴식, 매일이 특별한 삶을 누려보세요</p><div class="lifestyle-grid"><div class="lifestyle-item"><img src="photos/kl2.jpg" alt="쇼핑" loading="lazy"><div class="lifestyle-caption">쇼핑</div></div><div class="lifestyle-item"><img src="photos/penang.jpg" alt="해변 생활" loading="lazy"><div class="lifestyle-caption">해변</div></div><div class="lifestyle-item"><img src="photos/bangkok1.jpg" alt="야시장" loading="lazy"><div class="lifestyle-caption">야시장</div></div><div class="lifestyle-item"><img src="photos/condo.jpg" alt="수영장 콘도" loading="lazy"><div class="lifestyle-caption">수영장·헬스장</div></div><div class="lifestyle-item"><img src="photos/kl1.jpg" alt="도시 경관" loading="lazy"><div class="lifestyle-caption">도시 경관</div></div><div class="lifestyle-item"><img src="photos/bangkok2.jpg" alt="문화 체험" loading="lazy"><div class="lifestyle-caption">문화 체험</div></div><div class="lifestyle-item"><img src="photos/penang.jpg" alt="주말 여행" loading="lazy"><div class="lifestyle-caption">주말 여행</div></div><div class="lifestyle-item"><img src="photos/cafe-penang.jpg" alt="카페 탐방" loading="lazy"><div class="lifestyle-caption">카페 탐방</div></div></div></div></section>
-  <section class="testimonials" id="testimonials"><div class="container"><h2 class="section-title section-title-decorated">직원 후기</h2><p class="section-subtitle">TP 선배들의 솔직한 이야기</p><div class="testimonial-cards"><div class="testimonial"><p class="testimonial-content">물가가 저렴해서 카페와 외식을 부담 없이 즐길 수 있어요. 출퇴근 스트레스가 사라지고, 평일 저녁에도 여유롭게 요가를 하거나 친구들과 만날 수 있어요.</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="TP" class="author-img"><div class="author-info"><strong>M.S</strong><span>채용팀·20대 여성</span></div></div></div><div class="testimonial"><p class="testimonial-content">매주 주말 콘도의 수영장, 사우나, 헬스장을 이용해요. 한국에서는 상상도 못했던 생활! 쉬는 날에는 친구들과 해변이나 야시장에 가요. 워라밸이 정말 좋아요!</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>A.T</strong><span>고객 지원·30대 남성</span></div></div></div><div class="testimonial"><p class="testimonial-content">영어를 못해도 한국어 중심의 업무부터 시작할 수 있어서 안심이에요. 차근차근 스킬을 향상시킬 수 있는 환경이 있어서, 지금은 영어 소통도 즐기고 있어요.</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>R.H</strong><span>전 영업직·30대</span></div></div></div><div class="testimonial"><p class="testimonial-content">"다름도 괜찮다"는 가치관 덕분에 마음이 자유로워졌어요. 한국에 있을 때보다 주변 시선을 덜 신경 쓰게 됐어요. 다양성을 존중하는 문화가 정말 편해요.</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>H.N</strong><span>채용팀</span></div></div></div><div class="testimonial"><p class="testimonial-content">나이나 경력에 관계없이 노력하면 인정받는 회사 문화가 좋아요. 저도 팀 리더로 승진한 경험이 있어서, 커리어 가능성이 넓어졌어요.</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>N.T</strong><span>팀 리더·40대</span></div></div></div><div class="testimonial"><p class="testimonial-content">말레이시아 생활이 생각보다 편해요. 한식도 풍부해서 향수병이 없어요. 주말에는 주변 국가로 여행도 다녀요!</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>H.K</strong><span>QA 스페셜리스트·20대</span></div></div></div></div></div></section>
-  <section class="benefits" id="benefits"><div class="container"><h2 class="section-title">복리후생</h2><p class="section-subtitle">안심·성장·행복</p><div class="benefits-list"><div class="benefit-item"><div class="benefit-icon">🏥</div><div class="benefit-text"><h4>건강</h4><p>의료보험·병가</p></div></div><div class="benefit-item"><div class="benefit-icon">✈️</div><div class="benefit-text"><h4>이주 지원</h4><p>편도 항공권·초기 숙소</p></div></div><div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text"><h4>각종 수당</h4><p>야간·초과근무</p></div></div><div class="benefit-item"><div class="benefit-icon">📚</div><div class="benefit-text"><h4>교육</h4><p>트레이닝 프로그램</p></div></div><div class="benefit-item"><div class="benefit-icon">🎯</div><div class="benefit-text"><h4>커리어 개발</h4><p>내부 이동·승진 제도</p></div></div><div class="benefit-item"><div class="benefit-icon">🏖️</div><div class="benefit-text"><h4>휴식</h4><p>연간 유급 휴가</p></div></div></div></div></section>
-  <section class="interview-process" id="interview"><div class="container"><h2 class="section-title section-title-decorated">채용프로세스</h2><p class="section-subtitle">전 과정 온라인 진행, 모든 단계 한국어 지원</p><ol class="process-rail"><li class="step-card"><div class="step-head"><span class="step-dot">1</span><h3 class="step-title">서류 심사</h3></div><p class="step-desc">이력서 제출</p></li><li class="step-card"><div class="step-head"><span class="step-dot">2</span><h3 class="step-title">온라인 테스트</h3></div><p class="step-desc">간단한 언어·역량 테스트</p></li><li class="step-card"><div class="step-head"><span class="step-dot">3</span><h3 class="step-title">1차 면접 (채용팀 면접)</h3></div><p class="step-desc">기본 사항 및 업무 내용 관련</p></li><li class="step-card"><div class="step-head"><span class="step-dot">4</span><h3 class="step-title">2차 면접 (실무팀 면접)</h3></div><p class="step-desc">소속 팀과의 인터뷰</p></li><li class="step-card"><div class="step-head"><span class="step-dot">5</span><h3 class="step-title">채용·비자 수속</h3></div><p class="step-desc">비자 신청부터 출국까지 전 과정 동행</p></li></ol></div></section>
+<a class="skip-link" href="#main">본문 바로가기</a>
 
-  <section class="faq-section" id="faq"><div class="container"><h2 class="section-title section-title-decorated">FAQ</h2><p class="section-subtitle">자주 묻는 질문</p><div class="faq-container"><div class="faq-item"><div class="faq-question">영어를 잘 못해도 지원할 수 있나요?</div><div class="faq-answer"><p>네, 한국어 포지션이 많습니다. 입사 후 업무에 적응하는 과정에서 차근차근 스킬을 향상시킬 수 있습니다.</p></div></div><div class="faq-item"><div class="faq-question">비자 수속이 어렵나요?</div><div class="faq-answer"><p>회사에서 직접 신청하니 안심하세요. 필요 서류 또한 안내해 드리며, 신청부터 승인까지 전 과정 지원합니다.</p></div></div><div class="faq-item"><div class="faq-question">집은 어떻게 구하나요?</div><div class="faq-answer"><p>현지 부동산 리스트를 공유해 드리며, 오리엔테이션에서 정보를 제공해 드립니다. 말레이시아의 경우 임시 숙소를 제공하므로 안심하고 천천히 집을 찾을 수 있습니다.</p></div></div><div class="faq-item"><div class="faq-question">교대 근무가 있나요?</div><div class="faq-answer"><p>프로젝트(팀)에 따라 상이합니다. 주간 근무 및 교대 근무 프로젝트가 있습니다.</p></div></div><div class="faq-item"><div class="faq-question">한국어만 사용하며 근무할 수 있나요?</div><div class="faq-answer"><p>사내 커뮤니케이션에 기본 영어가 필요한 경우도 있지만, 한국팀의 경우 한국어 사용 비중이 높습니다.</p></div></div><div class="faq-item"><div class="faq-question">경력이 있어야 하나요?</div><div class="faq-answer"><p>아니요, 포지션에 따라 상이하지만 기본 자격요건에 충족되는 경우 대부분 신입도 지원 가능합니다.</p></div></div></div></div></section>
+  <div class="departure-board">
+    <div class="inner">
+      <span class="board-chip">TP-2026</span>
+      <span class="board-route"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></svg>SEOUL <span aria-hidden="true">→</span> KUALA LUMPUR</span>
+      <span class="board-status"><span class="dot"></span>NOW BOARDING</span>
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="photos/tp-logo.png" alt="TP" width="34" height="34">
+        <span class="brand-text"><span class="brand-name">TP</span><span class="brand-tagline">말레이시아·태국</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 내비게이션"><ul><li><a href="index.html" aria-current="page">홈</a></li><li><a href="open-jobs.html">채용공고</a></li><li><a href="about-tp.html">기업소개</a></li><li><a href="salary-and-benefits.html">근무조건·복지</a></li><li><a href="hiring-process.html">채용프로세스</a></li><li><a href="why-malaysia-thailand.html">도시안내</a></li><li><a href="relocation-visa.html">이주·비자</a></li><li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">지원하기</a></li></ul></nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="모바일 내비게이션"><ul><li><a href="index.html" aria-current="page">홈</a></li><li><a href="open-jobs.html">채용공고</a></li><li><a href="about-tp.html">기업소개</a></li><li><a href="salary-and-benefits.html">근무조건·복지</a></li><li><a href="hiring-process.html">채용프로세스</a></li><li><a href="why-malaysia-thailand.html">도시안내</a></li><li><a href="relocation-visa.html">이주·비자</a></li><li><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">지원하기</a></li></ul></nav>
+  </header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-eyebrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></svg>TP KOREA CAREERS</span>
+        <h1>당신의 커리어,<br>여기서 이륙합니다</h1>
+        <p class="hero-sub">서류부터 비자, 항공권, 첫 숙소까지 — 해외 취업의 모든 단계를 TP 한국팀이 함께합니다.</p>
+        <div class="hero-cta">
+          <a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-lg">지원하기</a>
+          <a href="#positions" class="btn btn-secondary btn-lg">포지션 둘러보기</a>
+        </div>
+      </div>
+      <div class="pass">
+        <div class="pass-head">
+          <span><span class="board-chip">TP-2026</span> <span class="label">BOARDING PASS</span></span>
+          <span class="board-status"><span class="dot"></span>NOW BOARDING</span>
+        </div>
+        <div class="pass-body">
+          <div class="route-ends">
+            <div class="airport"><div class="code">ICN</div><div class="city">SEOUL</div></div>
+            <div class="airport"><div class="code">KUL</div><div class="city">KUALA LUMPUR</div></div>
+          </div>
+          <div class="route" aria-hidden="true">
+            <div class="track"></div>
+            <div class="progress"></div>
+            <svg class="icon plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </div>
+          <div class="pass-meta">
+            <div><div class="k">PASSENGER</div><div class="v">FUTURE TP EXPERT</div></div>
+            <div style="text-align:right"><div class="k">GATE</div><div class="v">2026</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight section-softer">
+    <div class="container">
+      <div class="stat-chips">
+        <span class="stat-chip"><span class="n">200+</span><span class="l">한국팀 동료</span></span>
+        <span class="stat-chip"><span class="n">100+</span><span class="l">거점 국가</span></span>
+        <span class="stat-chip"><span class="n">5년 연속</span><span class="l">GPTW 수상</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head"><h2 class="section-title">어디부터 시작할까요?</h2></div>
+      <div class="grid grid-3">
+        <a class="ticket" href="open-jobs.html">
+          <div class="ticket-head">
+            <span class="ticket-name"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>채용공고</span>
+            <span class="ticket-gate">GATE 01</span>
+          </div>
+          <div class="ticket-body">
+            <p>한국어 인재 포지션을 확인하세요.</p>
+            <span class="ticket-go">보러가기 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="ticket" href="relocation-visa.html">
+          <div class="ticket-head">
+            <span class="ticket-name"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2"/><path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14"/><path d="M10 20h4"/><circle cx="16" cy="20" r="2"/><circle cx="8" cy="20" r="2"/></svg>이주 · 비자</span>
+            <span class="ticket-gate">GATE 02</span>
+          </div>
+          <div class="ticket-body">
+            <p>항공권부터 비자까지 전 과정을 지원합니다.</p>
+            <span class="ticket-go">보러가기 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="ticket" href="salary-and-benefits.html">
+          <div class="ticket-head">
+            <span class="ticket-name"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4"/><path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3"/><path d="M5.89 9.71c-2.15 2.15-2.3 5.47-.35 7.43l4.24-4.25.7-.7.71-.71 2.12-2.12c-1.95-1.96-5.27-1.8-7.42.35"/><path d="M11 15.5c.5 2.5-.17 4.5-1 6.5h4c2-5.5-.5-12-1-14"/></svg>근무조건 · 복지</span>
+            <span class="ticket-gate">GATE 03</span>
+          </div>
+          <div class="ticket-body">
+            <p>급여, 수당, 휴가를 상세히 안내합니다.</p>
+            <span class="ticket-go">보러가기 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="benefits">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">WHY TP</div>
+        <h2 class="section-title">복리후생</h2>
+        <p class="section-subtitle">안심 · 성장 · 행복</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card card-hover" data-reveal>
+          <div class="card-body">
+            <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></svg></div>
+            <div class="card-title" style="margin-top:16px">출국 전 과정 지원</div>
+            <div class="card-desc">항공권 · 비자 · 초기 정착까지 전담팀이 함께합니다.</div>
+          </div>
+        </div>
+        <div class="card card-hover" data-reveal>
+          <div class="card-body">
+            <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></div>
+            <div class="card-title" style="margin-top:16px">한국어 근무환경</div>
+            <div class="card-desc">채용부터 온보딩까지 모든 과정을 한국어로 안내합니다.</div>
+          </div>
+        </div>
+        <div class="card card-hover" data-reveal>
+          <div class="card-body">
+            <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+            <div class="card-title" style="margin-top:16px">글로벌 커리어</div>
+            <div class="card-desc">100개국 이상의 거점에서 성장하는 커리어 경로를 제공합니다.</div>
+          </div>
+        </div>
+        <div class="card card-hover" data-reveal>
+          <div class="card-body">
+            <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg></div>
+            <div class="card-title" style="margin-top:16px">복지 · 수당</div>
+            <div class="card-desc">주거 지원, 항공권, 경쟁력 있는 급여 패키지를 제공합니다.</div>
+          </div>
+        </div>
+        <div class="card card-hover" data-reveal>
+          <div class="card-body">
+            <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+            <div class="card-title" style="margin-top:16px">체계적인 교육</div>
+            <div class="card-desc">입사 후 직무 · 언어 트레이닝 프로그램을 지원합니다.</div>
+          </div>
+        </div>
+        <div class="card card-hover" data-reveal>
+          <div class="card-body">
+            <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></div>
+            <div class="card-title" style="margin-top:16px">다양한 동료</div>
+            <div class="card-desc">전 세계에서 모인 200여 명의 한국팀 동료가 함께합니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-softer" id="interview">
+    <div class="container" style="max-width:1000px">
+      <div class="section-head">
+        <div class="section-eyebrow">HIRING JOURNEY</div>
+        <h2 class="section-title">채용 여정</h2>
+        <p class="section-subtitle">전 과정 온라인 · 모든 단계 한국어 지원</p>
+      </div>
+      <div class="journey">
+        <div class="journey-line" aria-hidden="true"></div>
+        <div class="journey-step" data-reveal>
+          <div class="tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+          <div class="t">서류 심사</div>
+          <div class="s">이력서 제출</div>
+        </div>
+        <div class="journey-step" data-reveal>
+          <div class="tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
+          <div class="t">온라인 테스트</div>
+          <div class="s">언어 · 역량</div>
+        </div>
+        <div class="journey-step" data-reveal>
+          <div class="tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="t">1차 면접</div>
+          <div class="s">채용팀</div>
+        </div>
+        <div class="journey-step" data-reveal>
+          <div class="tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <div class="t">2차 면접</div>
+          <div class="s">실무팀</div>
+        </div>
+        <div class="journey-step" data-reveal>
+          <div class="tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></svg></div>
+          <div class="t">비자 · 출국</div>
+          <div class="s">전 과정 동행</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="positions">
+    <div class="container" style="max-width:920px">
+      <div class="section-head">
+        <div class="section-eyebrow">OPEN ROLES</div>
+        <h2 class="section-title">채용 중인 포지션</h2>
+      </div>
+      <div class="positions" id="positionList"></div>
+    </div>
+  </section>
+
+  <section class="gptw-section" id="world-best-workplaces"><div class="container"><div class="gptw-announcement"><h3>🎉 포춘(Fortune)지 선정 세계에서 가장 일하기 좋은 기업</h3><p>TP가 Great Place to Work®의 「World's Best Workplaces™」에 <strong>5년 연속</strong> 공식 선정되었습니다!</p><p class="gptw-quote">이 인증은 실제 직원들의 신뢰와 피드백을 바탕으로 그 우수성을 인정받고 있으며, 구성원과 함께 성장하는 TP만의 건강한 조직 문화를 입증하는 결과입니다.</p></div><div class="gptw-header"><img src="photos/worlds-best-workplaces.png" alt="World's Best Workplaces 2025" class="gptw-badge"><div class="gptw-title-block"><h2 class="section-title">World's Best Workplaces™ <span class="gptw-highlight">5년 연속 수상</span></h2><p class="section-subtitle">Great Place to Work® 인증</p></div></div><p class="gptw-description">TP는 Great Place to Work®의 「World's Best Workplaces™」에 <strong>5년 연속</strong> 공식 인증을 받았습니다.<br>해당 인증은 임직원의 신뢰와 피드백을 바탕으로 그 우수성을 인정받고 있으며, 사람 중심의 가치를 실현하는 TP만의 건강한 조직 문화를 입증하는 결과입니다.<br>함께 성장하는 에너지가 TP의 원동력입니다. 모든 구성원의 고유한 역량을 존중하는 열린 문화를 바탕으로, 지속 가능한 미래와 사회적 가치 창출을 위해 앞장서겠습니다.</p><div class="gptw-banner"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_Banner.png" alt="GPTW World Best Workplaces 배너" loading="lazy"></div><div class="gptw-gallery"><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_1.png" alt="GPTW 이미지 1" loading="lazy"></div><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_2.png" alt="GPTW 이미지 2" loading="lazy"></div><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_3.png" alt="GPTW 이미지 3" loading="lazy"></div><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_4.png" alt="GPTW 이미지 4" loading="lazy"></div><div class="gptw-gallery-item"><img src="photos/GMT_SoMe_GPTWWorldBestWorkplacesKit_November_2025_5.png" alt="GPTW 이미지 5" loading="lazy"></div></div><div class="gptw-stats"><div class="gptw-stat"><div class="gptw-stat-number">5</div><div class="gptw-stat-label">연속 수상 연수</div></div><div class="gptw-stat"><div class="gptw-stat-number">100+</div><div class="gptw-stat-label">사업 거점 국가 수</div></div><div class="gptw-stat"><div class="gptw-stat-number">500K+</div><div class="gptw-stat-label">전 세계 임직원 수</div></div></div></div></section>
+
+  <section class="korean-community" id="korean-community"><div class="container"><h2 class="section-title section-title-decorated">TP 커뮤니티</h2><p class="section-subtitle">함께하세요!</p><div class="community-stats"><div class="community-stat"><div class="community-stat-icon">👥</div><div class="community-stat-number">200+</div><div class="community-stat-label">한국팀 동료</div></div><div class="community-stat"><div class="community-stat-icon">💬</div><div class="community-stat-number">10+</div><div class="community-stat-label">WhatsApp 그룹</div></div><div class="community-stat"><div class="community-stat-icon">🎉</div><div class="community-stat-number">12+</div><div class="community-stat-label">연간 행사</div></div><div class="community-stat"><div class="community-stat-icon">🍜</div><div class="community-stat-number">50+</div><div class="community-stat-label">동료 추천 한식당</div></div></div></div></section>
+
+  <section class="priority-menu"><div class="container"><h2 class="section-title section-title-decorated">취업 정보</h2><p class="section-subtitle">필요한 정보를 신속하게 확인하세요</p><div class="cards"><a href="about-tp.html" class="card"><img src="photos/gbs.jpeg" alt="기업소개" loading="lazy"><div class="card-content"><h3>기업소개</h3><p>세계 최대 BPO 기업</p></div></a><a href="open-jobs.html" class="card"><img src="photos/reception.png" alt="채용공고" loading="lazy"><div class="card-content"><h3>채용공고</h3><p>한국어 인재 포지션</p></div></a><a href="salary-and-benefits.html" class="card"><img src="photos/reception-1.png" alt="근무조건·복지" loading="lazy"><div class="card-content"><h3>근무조건·복지</h3><p>완벽한 대우와 복리후생</p></div></a><a href="relocation-visa.html" class="card"><img src="photos/condo.jpg" alt="이주 지원" loading="lazy"><div class="card-content"><h3>이주·비자</h3><p>전 과정 지원 시스템</p></div></a><a href="testimonials.html" class="card"><img src="photos/kl1.jpg" alt="직원 후기" loading="lazy"><div class="card-content"><h3>직원 후기</h3><p>실제 근무 경험</p></div></a><a href="why-malaysia-thailand.html" class="card"><img src="photos/kl2.jpg" alt="도시안내" loading="lazy"><div class="card-content"><h3>도시안내</h3><p>살기 좋은 환경과 성장 기회</p></div></a><a href="hiring-process.html" class="card"><img src="photos/reception-2.png" alt="채용프로세스" loading="lazy"><div class="card-content"><h3>채용프로세스</h3><p>전 과정 온라인 진행</p></div></a><a href="office-environment.html" class="card"><img src="photos/gtower.jpg" alt="TP 오피스 위치" loading="lazy"><div class="card-content"><h3>TP 오피스 위치·VR 투어</h3><p>사무실 환경과 커리어 패스</p></div></a><a href="https://tpmyandtpth.github.io/xRAF/" target="_blank" rel="noopener noreferrer" class="card"><img src="photos/tp-logo.png" alt="추천 채용 제도" loading="lazy" style="object-fit:contain;padding:1.5rem;background:#f5f5f5"><div class="card-content"><h3>추천 채용 제도</h3><p>지인 추천하고 보상금 받기 (외부 및 사내 임직원 대상)</p></div></a></div></div></section>
+
+  <section class="social-connect" id="social"><div class="container"><h2 class="section-title section-title-decorated">공식 계정</h2><p class="section-subtitle">SNS를 통해 최신 채용 정보를 받아보세요</p><div class="social-grid"><div class="social-card"><div class="social-card-icon" style="color:#FFCD00"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>KakaoTalk</title><path d="M22.125 0H1.875C.8394 0 0 .8394 0 1.875v20.25C0 23.1606.8394 24 1.875 24h20.25C23.1606 24 24 23.1606 24 22.125V1.875C24 .8394 23.1606 0 22.125 0zM12 18.75c-.591 0-1.1697-.0413-1.7317-.1209-.5626.3965-3.813 2.6797-4.1198 2.7225 0 0-.1258.0489-.2328-.0141s-.0876-.2282-.0876-.2282c.0322-.2198.8426-3.0183.992-3.5333-2.7452-1.36-4.5701-3.7686-4.5701-6.5135C2.25 6.8168 6.6152 3.375 12 3.375s9.75 3.4418 9.75 7.6875c0 4.2457-4.3652 7.6875-9.75 7.6875zM8.0496 9.8672h-.8777v3.3417c0 .2963-.2523.5372-.5625.5372s-.5625-.2409-.5625-.5372V9.8672h-.8777c-.3044 0-.552-.2471-.552-.5508s.2477-.5508.552-.5508h2.8804c.3044 0 .552.2471.552.5508s-.2477.5508-.552.5508zm10.9879 2.9566a.558.558 0 0 1 .108.4167.5588.5588 0 0 1-.2183.371.5572.5572 0 0 1-.3383.1135.558.558 0 0 1-.4493-.2236l-1.3192-1.7479-.1952.1952v1.2273a.5635.5635 0 0 1-.5627.5628.563.563 0 0 1-.5625-.5625V9.3281c0-.3102.2523-.5625.5625-.5625s.5625.2523.5625.5625v1.209l1.5694-1.5694c.0807-.0807.1916-.1252.312-.1252.1404 0 .2814.0606.3871.1661.0985.0984.1573.2251.1654.3566.0082.1327-.036.2542-.1241.3425l-1.2818 1.2817 1.3845 1.8344zm-8.3502-3.5023c-.095-.2699-.3829-.5475-.7503-.5557-.3663.0083-.6542.2858-.749.5551l-1.3455 3.5415c-.1708.5305-.0217.7272.1333.7988a.8568.8568 0 0 0 .3576.0776c.2346 0 .4139-.0952.4678-.2481l.2787-.7297 1.7152.0001.2785.7292c.0541.1532.2335.2484.4681.2484a.8601.8601 0 0 0 .3576-.0775c.1551-.0713.3041-.2681.1329-.7999l-1.3449-3.5398zm-1.3116 2.4433l.5618-1.5961.5618 1.5961H9.3757zm5.9056 1.3836c0 .2843-.2418.5156-.5391.5156h-1.8047c-.2973 0-.5391-.2314-.5391-.5156V9.3281c0-.3102.2576-.5625.5742-.5625s.5742.2523.5742.5625v3.3047h1.1953c.2974 0 .5392.2314.5392.5156z"/></svg></div><div class="social-card-title">카카오톡</div><div class="social-card-desc">카카오톡 ID로 친구 추가</div><a href="klp-apply-form.html" class="social-qr-link" aria-label="카카오톡 친구 추가 방법 보기"><span class="social-qr"><img src="photos/qr-kakao.png" alt="카카오톡 친구 추가 QR 코드" loading="lazy"></span><span class="social-handle">tpmy5114526</span></a><a href="klp-apply-form.html" class="btn btn-sm btn-ghost">친구 추가 방법</a></div><div class="social-card"><div class="social-card-icon" style="color:#000000"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div><div class="social-card-title">TikTok</div><div class="social-card-desc">짧은 영상으로 TP 생활 엿보기</div><a href="https://www.tiktok.com/@wearetpinmalaysia" target="_blank" rel="noopener noreferrer" class="social-qr-link" aria-label="TikTok @wearetpinmalaysia 팔로우하기"><span class="social-qr"><img src="photos/qr-tiktok.png" alt="TikTok QR 코드" loading="lazy"></span><span class="social-handle">@wearetpinmalaysia</span></a><a href="https://www.tiktok.com/@wearetpinmalaysia" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">팔로우하기</a></div><div class="social-card"><div class="social-card-icon" style="color:#FF0069"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Instagram</title><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></div><div class="social-card-title">Instagram</div><div class="social-card-desc">직원 생활과 채용 정보</div><a href="https://www.instagram.com/wearetpinmalaysia" target="_blank" rel="noopener noreferrer" class="social-qr-link" aria-label="Instagram @wearetpinmalaysia 팔로우하기"><span class="social-qr"><img src="photos/qr-instagram.png" alt="Instagram QR 코드" loading="lazy"></span><span class="social-handle">@wearetpinmalaysia</span></a><a href="https://www.instagram.com/wearetpinmalaysia" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">팔로우하기</a></div><div class="social-card"><div class="social-card-icon" style="color:#FF0000"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><div class="social-card-title">YouTube</div><div class="social-card-desc">임직원 소식과 채용 정보</div><a href="https://www.youtube.com/@wearetpgroup" target="_blank" rel="noopener noreferrer" class="social-qr-link" aria-label="YouTube TP Malaysia 채널 보기"><span class="social-qr"><img src="photos/qr-youtube.png" alt="YouTube QR 코드" loading="lazy"></span><span class="social-handle">TP Malaysia</span></a><a href="https://www.youtube.com/@wearetpgroup" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">지금 시청하기</a></div></div></div></section>
+
+  <section class="icon-grid" id="resources"><div class="container"><h2 class="section-title section-title-decorated">생활 정보·지원</h2><p class="section-subtitle">유용한 정보와 채용 관련 지원</p><div class="icon-grid-container"><a href="cost-of-living.html" class="icon-card"><span class="icon-card-icon">💰</span><div class="icon-card-meta"><div class="icon-card-title">말레이시아 생활비</div><div class="icon-card-desc">식비·교통비·주거비</div></div></a><a href="area-around-office.html" class="icon-card"><span class="icon-card-icon">📍</span><div class="icon-card-meta"><div class="icon-card-title">오피스 주변</div><div class="icon-card-desc">주변 환경 정보</div></div></a><a href="daily-life-malaysia.html" class="icon-card"><span class="icon-card-icon">🇲🇾</span><div class="icon-card-meta"><div class="icon-card-title">생활가이드</div><div class="icon-card-desc">KL vs 페낭</div></div></a><a href="#social" class="icon-card" id="kakaoCard"><span class="icon-card-icon">💬</span><div class="icon-card-meta"><div class="icon-card-title">카카오톡 공식 계정</div><div class="icon-card-desc">최신 정보 받기</div></div></a></div></div></section>
+
+  <section class="cities" id="cities"><div class="container"><h2 class="section-title section-title-decorated">근무 도시 안내</h2><p class="section-subtitle">말레이시아·태국의 매력적인 도시 4곳</p><div class="city-cards"><article class="city-card"><img src="photos/kl1.jpg" alt="쿠알라룸푸르" loading="lazy"><div class="city-card-content"><h3>쿠알라룸푸르 (KL)</h3><p class="city-country">말레이시아</p><ul class="city-features"><li>다수의 한국인이 거주하는 국제 도시</li><li>돈키호테, 이온, 이세탄 등 쇼핑센터</li><li>영어 가능 병원·클리닉 완비</li><li>지하철·모노레일 통근 편리</li></ul><a href="why-malaysia-thailand.html#kl">자세히 보기 →</a></div></article><article class="city-card"><img src="photos/penang.jpg" alt="페낭" loading="lazy"><div class="city-card-content"><h3>페낭 (Penang)</h3><p class="city-country">말레이시아</p><ul class="city-features"><li>조지타운 유네스코 세계문화유산 지정 도시</li><li>도시와 자연환경이 어우러진 인프라</li><li>매우 저렴한 물가와 편안한 생활</li><li>한국인 커뮤니티 활성화</li></ul><a href="why-malaysia-thailand.html#penang">자세히 보기 →</a></div></article><article class="city-card"><img src="photos/bangkok2.jpg" alt="방콕" loading="lazy"><div class="city-card-content"><h3>방콕 (Bangkok)</h3><p class="city-country">태국</p><ul class="city-features"><li>8만 명 이상의 한국인이 거주하는 도시</li><li>한국 마트, 이세탄 등 쇼핑센터</li><li>BTS와 MRT로 편리한 이동</li><li>매우 높은 의료 수준</li></ul><a href="why-malaysia-thailand.html#bangkok">자세히 보기 →</a></div></article><article class="city-card coming-soon"><img src="photos/kl2.jpg" alt="조호르" loading="lazy"><div class="city-card-content"><h3>조호르 (Johor)</h3><p class="city-country">말레이시아</p><ul class="city-features"><li>싱가포르 인접, 교통 편리</li><li>쿠알라룸푸르보다 저렴한 생활비</li><li>신흥 개발 지역</li><li>TP 오피스 오픈 예정</li></ul><a href="why-malaysia-thailand.html#johor">자세히 보기 →</a></div></article></div></div></section>
+
+  <section class="video-section" id="videos"><div class="container"><h2 class="section-title section-title-decorated">임직원 인터뷰</h2><p class="section-subtitle">TP 구성원들의 회사생활 이야기</p><div class="video-grid"><article class="video-card"><div class="video-embed"><iframe src="https://www.youtube.com/embed/N6l7PUQR0tw" title="TP 직원 인터뷰: 최신 영상" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></div><header class="video-meta"><h3 class="video-title">TP 직원 인터뷰: 최신 영상</h3><p class="video-desc">생생한 경험을 더 자세히</p><a class="video-link" href="https://youtu.be/N6l7PUQR0tw" target="_blank" rel="noopener noreferrer">YouTube에서 보기 →</a></header></article><article class="video-card"><div class="video-embed"><iframe src="https://www.youtube.com/embed/H4SVUrCjTPM" title="TP 직원 인터뷰: Operations Customer Expert 편" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></div><header class="video-meta"><h3 class="video-title">TP 직원 인터뷰: Operations Customer Expert 편</h3><p class="video-desc">CX 팀원의 일상</p><a class="video-link" href="https://youtu.be/H4SVUrCjTPM" target="_blank" rel="noopener noreferrer">YouTube에서 보기 →</a></header></article><article class="video-card"><div class="video-embed"><iframe src="https://www.youtube.com/embed/VB6KSdFYLdE" title="TP 직원 인터뷰: Team Lead 편" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></div><header class="video-meta"><h3 class="video-title">TP 직원 인터뷰: Team Lead 편</h3><p class="video-desc">팀 관리와 인재 육성</p><a class="video-link" href="https://youtu.be/VB6KSdFYLdE" target="_blank" rel="noopener noreferrer">YouTube에서 보기 →</a></header></article><article class="video-card"><div class="video-embed"><iframe src="https://www.youtube.com/embed/pa-qdCGkxA4" title="TP 직원 인터뷰: Operations Manager 편" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></div><header class="video-meta"><h3 class="video-title">TP 직원 인터뷰: Operations Manager 편</h3><p class="video-desc">생산성과 품질의 중요성</p><a class="video-link" href="https://youtu.be/pa-qdCGkxA4" target="_blank" rel="noopener noreferrer">YouTube에서 보기 →</a></header></article></div></div></section>
+
+  <section class="world-map-section"><div class="container"><h2 class="section-title section-title-decorated">TP 글로벌 지사</h2><p class="section-subtitle">100개국 이상에서 서비스 제공</p><div class="world-map-container"><img src="photos/world-map-locations.png" alt="TP 글로벌 분포 지도" loading="lazy"></div></div></section>
+
+  <section class="office-section" id="office"><div class="container"><h2 class="section-title section-title-decorated">TP 오피스 위치</h2><p class="section-subtitle">쾌적하고 교통이 편리한 근무지</p><div class="office-grid"><div class="office-card"><img src="photos/gtower.jpg" alt="G Tower KL" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">G Tower (쿠알라룸푸르)</h3><ul class="office-features"><li>Ampang Park 역 연결</li><li>KLCC 도보 거리</li><li>최고급 오피스 빌딩</li></ul></div></div><div class="office-card"><img src="photos/lv-inside1.png" alt="Penang Livingston" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">Livingston (페낭)</h3><ul class="office-features"><li>조용한 환경</li><li>식당·약국 근처</li><li>교통 편리</li></ul></div></div><div class="office-card"><img src="photos/reception-1.png" alt="Penang One Precinct" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">One Precinct (페낭)</h3><ul class="office-features"><li>Bayan Baru 지역</li><li>공항에서 15분</li><li>Queensbay Mall 인근</li></ul></div></div><div class="office-card"><img src="photos/gbs.jpeg" alt="GBS@Mahsuri" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">GBS@Mahsuri (페낭)</h3><ul class="office-features"><li>페낭 GBS Hub</li><li>IT/BPO 클러스터</li><li>생활 편의시설 밀집</li></ul></div></div><div class="office-card"><img src="photos/kl1.jpg" alt="KCP" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">KCP (켈라나 자야 센트럴 포인트)</h3><ul class="office-features"><li>LRT 역 인근</li><li>쇼핑 편리</li></ul></div></div><div class="office-card"><img src="photos/singha-complex1.jpg" alt="Bangkok Singha Complex" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">Singha Complex (방콕)</h3><ul class="office-features"><li>BTS/MRT 인근</li><li>한인 지역</li><li>복합 상업 단지 내 위치</li></ul></div></div><div class="office-card coming-soon"><img src="photos/kl2.jpg" alt="Sunway" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">Sunway (선웨이)</h3><ul class="office-features"><li>선웨이 피라미드 쇼핑몰 인근</li><li>BRT 연결</li><li>신흥 상업 지구</li></ul></div></div><div class="office-card coming-soon"><img src="photos/penang.jpg" alt="Johor" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">Johor (조호르)</h3><ul class="office-features"><li>싱가포르 인접</li><li>저렴한 생활비</li><li>TP 신규 오피스 오픈</li></ul></div></div><div class="office-card coming-soon wfh-card"><img src="photos/condo.jpg" alt="WFH" class="office-image" loading="lazy"><div class="office-info"><h3 class="office-name">WFH (재택근무)</h3><ul class="office-features"><li>원격 근무 옵션</li><li>유연한 근무 형태</li><li>일부 포지션 적용</li></ul></div></div></div><div style="text-align:center;margin-top:2rem"><a href="https://vtour.cloud/mh2n0j/29cekgq3/" target="_blank" rel="noopener noreferrer" class="btn btn-gold">VR 오피스 투어 →</a></div></div></section>
+
+  <section class="lifestyle-section"><div class="container"><h2 class="section-title section-title-decorated">워라밸을 지키는 풍요로운 일상</h2><p class="section-subtitle">주말에는 여행, 퇴근 후에는 취미와 휴식, 매일이 특별한 삶을 누려보세요</p><div class="lifestyle-grid"><div class="lifestyle-item"><img src="photos/kl2.jpg" alt="쇼핑" loading="lazy"><div class="lifestyle-caption">쇼핑</div></div><div class="lifestyle-item"><img src="photos/penang.jpg" alt="해변 생활" loading="lazy"><div class="lifestyle-caption">해변</div></div><div class="lifestyle-item"><img src="photos/bangkok1.jpg" alt="야시장" loading="lazy"><div class="lifestyle-caption">야시장</div></div><div class="lifestyle-item"><img src="photos/condo.jpg" alt="수영장 콘도" loading="lazy"><div class="lifestyle-caption">수영장·헬스장</div></div><div class="lifestyle-item"><img src="photos/kl1.jpg" alt="도시 경관" loading="lazy"><div class="lifestyle-caption">도시 경관</div></div><div class="lifestyle-item"><img src="photos/bangkok2.jpg" alt="문화 체험" loading="lazy"><div class="lifestyle-caption">문화 체험</div></div><div class="lifestyle-item"><img src="photos/penang.jpg" alt="주말 여행" loading="lazy"><div class="lifestyle-caption">주말 여행</div></div><div class="lifestyle-item"><img src="photos/cafe-penang.jpg" alt="카페 탐방" loading="lazy"><div class="lifestyle-caption">카페 탐방</div></div></div></div></section>
+
+  <section class="testimonials" id="testimonials"><div class="container"><h2 class="section-title section-title-decorated">직원 후기</h2><p class="section-subtitle">TP 선배들의 솔직한 이야기</p><div class="testimonial-cards"><div class="testimonial"><p class="testimonial-content">물가가 저렴해서 카페와 외식을 부담 없이 즐길 수 있어요. 출퇴근 스트레스가 사라지고, 평일 저녁에도 여유롭게 요가를 하거나 친구들과 만날 수 있어요.</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="TP" class="author-img"><div class="author-info"><strong>M.S</strong><span>채용팀·20대 여성</span></div></div></div><div class="testimonial"><p class="testimonial-content">매주 주말 콘도의 수영장, 사우나, 헬스장을 이용해요. 한국에서는 상상도 못했던 생활! 쉬는 날에는 친구들과 해변이나 야시장에 가요. 워라밸이 정말 좋아요!</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>A.T</strong><span>고객 지원·30대 남성</span></div></div></div><div class="testimonial"><p class="testimonial-content">영어를 못해도 한국어 중심의 업무부터 시작할 수 있어서 안심이에요. 차근차근 스킬을 향상시킬 수 있는 환경이 있어서, 지금은 영어 소통도 즐기고 있어요.</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>R.H</strong><span>전 영업직·30대</span></div></div></div><div class="testimonial"><p class="testimonial-content">"다름도 괜찮다"는 가치관 덕분에 마음이 자유로워졌어요. 한국에 있을 때보다 주변 시선을 덜 신경 쓰게 됐어요. 다양성을 존중하는 문화가 정말 편해요.</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>H.N</strong><span>채용팀</span></div></div></div><div class="testimonial"><p class="testimonial-content">나이나 경력에 관계없이 노력하면 인정받는 회사 문화가 좋아요. 저도 팀 리더로 승진한 경험이 있어서, 커리어 가능성이 넓어졌어요.</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>N.T</strong><span>팀 리더·40대</span></div></div></div><div class="testimonial"><p class="testimonial-content">말레이시아 생활이 생각보다 편해요. 한식도 풍부해서 향수병이 없어요. 주말에는 주변 국가로 여행도 다녀요!</p><div class="testimonial-author"><img src="photos/tp-logo.png" alt="직원" class="author-img"><div class="author-info"><strong>H.K</strong><span>QA 스페셜리스트·20대</span></div></div></div></div></div></section>
+
+  <section class="section section-softer" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">FAQ</div>
+        <h2 class="section-title">자주 묻는 질문</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-question" type="button">영어를 잘 못해도 지원할 수 있나요?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-answer"><p>네, 한국어 포지션이 많습니다. 입사 후 업무에 적응하는 과정에서 차근차근 스킬을 향상시킬 수 있습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">비자 수속이 어렵나요?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-answer"><p>회사에서 직접 신청하니 안심하세요. 필요 서류 또한 안내해 드리며, 신청부터 승인까지 전 과정 지원합니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">집은 어떻게 구하나요?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-answer"><p>현지 부동산 리스트를 공유해 드리며, 오리엔테이션에서 정보를 제공해 드립니다. 말레이시아의 경우 임시 숙소를 제공하므로 안심하고 천천히 집을 찾을 수 있습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">교대 근무가 있나요?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-answer"><p>프로젝트(팀)에 따라 상이합니다. 주간 근무 및 교대 근무 프로젝트가 있습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">한국어만 사용하며 근무할 수 있나요?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-answer"><p>사내 커뮤니케이션에 기본 영어가 필요한 경우도 있지만, 한국팀의 경우 한국어 사용 비중이 높습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">경력이 있어야 하나요?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-answer"><p>아니요, 포지션에 따라 상이하지만 기본 자격요건에 충족되는 경우 대부분 신입도 지원 가능합니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="contact-min" id="contact"><div class="container"><h2 class="section-title section-title-decorated">문의 및 지원</h2><p class="section-subtitle">지원 전 혹은 지원 과정에서 궁금증을 해결하세요</p><div class="cta-links"><a class="cta-link" href="klp-apply-form.html"><span class="cta-ico">💬</span><span class="cta-main"><strong>카카오톡 상담 신청</strong><em>간단한 정보 입력 후 카카오톡으로 안내</em></span><span class="cta-arrow">→</span></a><a class="cta-link" href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer"><span class="cta-ico">✍️</span><span class="cta-main"><strong>지원하기</strong><em>이력서 업로드로 간단 지원</em></span><span class="cta-arrow">→</span></a></div></div></section>
+
   <section class="klp-apply-section" id="apply">
     <div class="apply-container">
       <div id="klp-form-view">
@@ -435,25 +757,87 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       </div>
     </div>
   </section>
+
 </main>
-<footer>
-  <div class="footer-content">
-    <div class="footer-brand"><div class="footer-logo"><img src="photos/tp-logo.png" alt="TP"><span class="footer-logo-text">TP</span></div><p class="footer-desc">전 세계 100개국에서 함께하는 글로벌 BPO 리더<br>한국어 역량을 보유한 인재의 새로운 커리어를 지원합니다</p><div class="badges"><span class="badge-item">🏆 6년 연속 말레이시아에서 가장 일하기 좋은 기업</span><span class="badge-item">🏆 5년 연속 세계에서 가장 일하기 좋은 기업</span></div><div class="footer-cta"><a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="btn btn-gold">지원하기</a></div></div>
-    <div class="footer-section"><h3>기업정보</h3><ul><li><a href="about-tp.html">기업소개</a></li><li><a href="salary-and-benefits.html#benefits">근무조건·복지</a></li><li><a href="office-environment.html">TP 오피스 위치</a></li></ul></div>
-    <div class="footer-section"><h3>채용·지원</h3><ul><li><a href="open-jobs.html">채용공고</a></li><li><a href="hiring-process.html">채용프로세스</a></li><li><a href="klp-apply-form.html">카카오톡 상담 신청</a></li></ul></div>
-    <div class="footer-section"><h3>현지생활</h3><ul><li><a href="why-malaysia-thailand.html">도시안내</a></li><li><a href="relocation-visa.html">이주·비자</a></li><li><a href="daily-life-malaysia.html">생활가이드</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p class="ssm-info">Teleperformance Malaysia Sdn Bhd의 SSM(말레이시아 기업위원회) 등록번호: 201601023769 (1194708-K)</p><p>© 2026 TP. All rights reserved. | <a href="#">개인정보 처리방침</a> | <a href="#">이용약관</a></p></div>
-</footer>
-<a href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer" class="floating-apply">지원하기</a>
-<a href="klp-apply-form.html" class="floating-casual">문의하기</a>
-<button class="back-to-top" id="backToTop">↑</button>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo"><img src="photos/tp-logo.png" alt="TP" width="34" height="34"><span>TP</span></div>
+          <p class="footer-desc">전 세계 100개국에서 함께하는 글로벌 BPO 리더<br>한국어 역량을 보유한 인재의 새로운 커리어를 지원합니다</p>
+          <div class="footer-badges">
+            <span class="footer-badge">🏆 6년 연속 말레이시아에서 가장 일하기 좋은 기업</span>
+            <span class="footer-badge">🏆 5년 연속 세계에서 가장 일하기 좋은 기업</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>채용 정보</h4>
+          <ul>
+            <li><a href="open-jobs.html">채용공고</a></li>
+            <li><a href="hiring-process.html">채용프로세스</a></li>
+            <li><a href="salary-and-benefits.html">근무조건·복지</a></li>
+            <li><a href="relocation-visa.html">이주·비자</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>생활 안내</h4>
+          <ul>
+            <li><a href="why-malaysia-thailand.html">도시안내</a></li>
+            <li><a href="cost-of-living.html">생활비</a></li>
+            <li><a href="daily-life-malaysia.html">생활가이드</a></li>
+            <li><a href="office-environment.html">오피스·VR 투어</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Teleperformance. All rights reserved.</span>
+        <span>Teleperformance Malaysia Sdn Bhd의 SSM(말레이시아 기업위원회) 등록번호: 201601023769 (1194708-K)</span>
+      </div>
+    </div>
+  </footer>
+
+<div class="floating">
+  <button class="back-to-top" id="backToTop" type="button" aria-label="맨 위로"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+  <a class="float-btn float-contact" href="#apply"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>문의하기</a>
+  <a class="float-btn float-apply" href="https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></svg>지원하기</a>
+</div>
+
+<script src="assets/klp-theme.js" defer></script>
 <script>
+/* ------------------------------------------------------------------
+   Open positions — edit this list to change what the site advertises.
+   Every 지원하기 button points at the iCIMS Korean-language search.
+   ------------------------------------------------------------------ */
+var KLP_POSITIONS = [
+  { title: '한국어 고객 지원 (CS)',    location: '말레이시아 쿠알라룸푸르', type: '정규직' },
+  { title: '한국어 테크 서포트',       location: '말레이시아 쿠알라룸푸르', type: '정규직' },
+  { title: '한국어 콘텐츠 모더레이터', location: '태국 방콕',              type: '정규직' },
+  { title: '한국어 세일즈 서포트',     location: '말레이시아 페낭',        type: '정규직' }
+];
+var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean';
+
+(function () {
+  var list = document.getElementById('positionList');
+  if (!list) return;
+  var pin = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>';
+  var clock = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+  list.innerHTML = KLP_POSITIONS.map(function (p) {
+    return '<div class="position" data-reveal>' +
+      '<div style="min-width:0">' +
+        '<div class="t">' + p.title + '</div>' +
+        '<div class="meta">' +
+          '<span>' + pin + p.location + '</span>' +
+          '<span>' + clock + p.type + '</span>' +
+          '<span class="badge">한국어</span>' +
+        '</div>' +
+      '</div>' +
+      '<a class="btn btn-accent btn-sm" href="' + KLP_APPLY_URL + '" target="_blank" rel="noopener noreferrer">지원하기</a>' +
+    '</div>';
+  }).join('');
+})();
 (function(){const el=document.getElementById('hero-rotate');if(!el)return;const lines=['한국어로 시작하는 글로벌 커리어','더 넓은 세상, 더 여유로운 일상','전 세계 1위 BPO 기업에 합류하세요'];const speed=50,hold=1500,gap=400;let i=0,j=0,del=false;function tick(){const text=lines[i];el.textContent=del?text.slice(0,j--):text.slice(0,j++);if(!del&&j>text.length){del=true;setTimeout(tick,hold);return}if(del&&j<0){del=false;i=(i+1)%lines.length;setTimeout(tick,gap);return}setTimeout(tick,speed)}tick()})();
 (function(){const el=document.getElementById('gptwYears');if(!el)return;const logo='<img src="photos/great-place-to-work.png" alt="GPTW">';let n=0,target=6,hasAnimated=false;function animate(){if(hasAnimated)return;hasAnimated=true;function step(){n++;el.innerHTML=logo+'<span>Great Place to Work® <strong>'+n+'</strong>년 연속</span>';if(n<target)setTimeout(step,240)}step()}const observer=new IntersectionObserver(entries=>{if(entries[0].isIntersecting)animate()});observer.observe(el)})();
-(function(){const toggle=document.getElementById('mobileToggle');const menu=document.getElementById('mobileMenu');if(toggle&&menu){toggle.addEventListener('click',function(){toggle.classList.toggle('active');menu.classList.toggle('active');toggle.setAttribute('aria-expanded',menu.classList.contains('active'))});menu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{toggle.classList.remove('active');menu.classList.remove('active');toggle.setAttribute('aria-expanded','false')})});document.addEventListener('click',e=>{if(!menu.contains(e.target)&&!toggle.contains(e.target)){menu.classList.remove('active');toggle.classList.remove('active');toggle.setAttribute('aria-expanded','false')}})}})();
-(function(){const backToTop=document.getElementById('backToTop');if(!backToTop)return;window.addEventListener('scroll',()=>{if(window.pageYOffset>300)backToTop.classList.add('show');else backToTop.classList.remove('show')});backToTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})})})();
-(function(){const items=document.querySelectorAll('.faq-item');items.forEach(item=>{const question=item.querySelector('.faq-question');question.addEventListener('click',()=>{const isActive=item.classList.contains('active');items.forEach(i=>i.classList.remove('active'));if(!isActive)item.classList.add('active')})})})();
 (function(){
   var APPS_SCRIPT_URL='https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
   var KAKAO_ID='tpmy5114526';
