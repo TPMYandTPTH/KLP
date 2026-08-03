@@ -56,7 +56,7 @@ NAV = [
     ("salary-and-benefits.html", "근무조건·복지"), ("hiring-process.html", "채용프로세스"),
     ("why-malaysia-thailand.html", "도시안내"), ("relocation-visa.html", "이주·비자"),
 ]
-ICIMS = "https://careerseng-teleperformance.icims.com/jobs/search?ss=1&amp;searchKeyword=korean"
+ICIMS = "https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&amp;iis=KLandingPage&amp;iisn="
 
 
 def nav_links(current, cls=""):
@@ -339,7 +339,7 @@ var KLP_POSITIONS = [
   {{ title: '한국어 콘텐츠 모더레이터', location: '태국 방콕' }},
   {{ title: '한국어 세일즈 서포트',     location: '말레이시아 페낭' }}
 ];
-var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean';
+var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=KLandingPage&iisn=';
 
 (function () {{
   var list = document.getElementById('positionList');

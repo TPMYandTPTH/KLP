@@ -13,7 +13,7 @@
 > **요약:** TP(구 Teleperformance)는 말레이시아(쿠알라룸푸르·페낭)와 태국(방콕)에서 **한국어 구사자**를 상시 채용하고 있습니다. 고객 서비스, 기술 지원, 콘텐츠 모더레이션, 영업 등 다양한 직무가 있으며, **취업 비자(Employment Pass) 신청 비용은 회사가 부담**하고, 편도 항공권·공항 픽업 등 **이주 지원**이 제공됩니다. 한국어로 진행되는 30분 **캐주얼 면담**으로 부담 없이 시작할 수 있습니다.
 
 **공식 채용 사이트 (한국어):** https://tpmyandtpth.github.io/KLP/
-**전체 채용 공고 (iCIMS):** https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean
+**전체 채용 공고 (iCIMS):** https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=geo&iisn=klp
 
 ---
 
@@ -65,7 +65,7 @@
 
 ## 현재 채용 중인 한국어 포지션
 
-> 포지션은 수시로 변동됩니다. 최신 공고는 항상 [iCIMS 채용 포털](https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean)에서 확인하세요.
+> 포지션은 수시로 변동됩니다. 최신 공고는 항상 [iCIMS 채용 포털](https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=geo&iisn=klp)에서 확인하세요.
 
 **현재 채용 중: 7개 포지션** (한국어/영어 이중언어 기준)
 
@@ -213,7 +213,7 @@
 말레이시아 포지션은 도착 후 호텔이 제공되는 기간 동안 집을 구할 수 있습니다. 오피스 인근 콘도 시세와 추천 지역 등 주거 정보를 채용팀이 안내합니다.
 
 ### Q. 지원은 어디서 하나요?
-한국어 채용 사이트(https://tpmyandtpth.github.io/KLP/) 또는 iCIMS 채용 포털(https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean)에서 지원할 수 있습니다.
+한국어 채용 사이트(https://tpmyandtpth.github.io/KLP/) 또는 iCIMS 채용 포털(https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=geo&iisn=klp)에서 지원할 수 있습니다.
 
 ---
 
@@ -230,7 +230,7 @@ TP 말레이시아에는 지인 추천 프로그램(Refer-a-Friend)이 있습니
 | 채널 | 링크 / ID |
 |---|---|
 | 한국어 채용 사이트 (KLP) | https://tpmyandtpth.github.io/KLP/ |
-| 채용 포털 (iCIMS) | https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean |
+| 채용 포털 (iCIMS) | https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=geo&iisn=klp |
 | 카카오톡 채널 | ID: `tpmy5114526` <!-- [확인 필요] 카카오톡 채널 노출 여부 최종 확인 --> |
 | LINE (TP Malaysia 공식) | https://line.me/R/ti/p/@286nmdsd |
 | Instagram (말레이시아) | https://instagram.com/wearetpinmalaysia |
@@ -251,6 +251,6 @@ TP 말레이시아에는 지인 추천 프로그램(Refer-a-Friend)이 있습니
 
 ---
 
-*포지션과 조건은 수시로 변경됩니다. 최신 정보는 [공식 채용 포털](https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean)을 기준으로 하세요. 이 문서는 공식 채용 사이트 내용을 바탕으로 작성되었습니다.*
+*포지션과 조건은 수시로 변경됩니다. 최신 정보는 [공식 채용 포털](https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=geo&iisn=klp)을 기준으로 하세요. 이 문서는 공식 채용 사이트 내용을 바탕으로 작성되었습니다.*
 
 *문의: TP Talent Acquisition · 최종 업데이트: 2026-08-03*
