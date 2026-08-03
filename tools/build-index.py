@@ -91,7 +91,7 @@ HEADER = f'''<header class="site-header" role="banner">
 HERO = f'''<section class="hero">
     <div class="hero-inner">
       <div>
-        <span class="hero-eyebrow">{svg("plane-takeoff")}TP KOREA CAREERS</span>
+        <span class="hero-eyebrow">{svg("plane-takeoff")}TP MALAYSIA / THAILAND CAREERS</span>
         <h1>당신의 커리어,<br>여기서 이륙합니다</h1>
         <p class="hero-sub">서류부터 비자, 항공권, 첫 숙소까지 — 해외 취업의 모든 단계를 TP 한국팀이 함께합니다.</p>
         <div class="hero-cta">
@@ -126,9 +126,12 @@ HERO = f'''<section class="hero">
 STATS = '''<section class="section-tight section-softer">
     <div class="container">
       <div class="stat-chips">
-        <span class="stat-chip"><span class="n">200+</span><span class="l">한국팀 동료</span></span>
-        <span class="stat-chip"><span class="n">100+</span><span class="l">거점 국가</span></span>
-        <span class="stat-chip"><span class="n">5년 연속</span><span class="l">GPTW 수상</span></span>
+        <span class="stat-chip"><span class="n">100+</span><span class="l">거점 국가 수</span></span>
+        <span class="stat-chip"><span class="n">500K+</span><span class="l">전 세계 임직원 수</span></span>
+        <span class="stat-chip"><span class="n">7,000+</span><span class="l">말레이시아·태국 임직원 수</span></span>
+        <span class="stat-chip"><span class="n">200+</span><span class="l">명의 한국팀 동료</span></span>
+        <span class="stat-chip"><span class="n">6</span><span class="l">년 연속 Great Place to Work® 인증</span></span>
+        <span class="stat-chip"><span class="n">5</span><span class="l">년 연속 World\'s Best Workplaces<sup>TM</sup> 선정</span></span>
       </div>
     </div>
   </section>'''
@@ -161,11 +164,11 @@ GATES = f'''<section class="section section-soft">
 # Design benefit copy, with the 170여 개국 figure brought to the site standard.
 BENEFITS = [
     ("plane-takeoff", "출국 전 과정 지원", "항공권 · 비자 · 초기 정착까지 전담팀이 함께합니다."),
-    ("languages", "한국어 근무환경", "채용부터 온보딩까지 모든 과정을 한국어로 안내합니다."),
-    ("globe", "글로벌 커리어", "100개국 이상의 거점에서 성장하는 커리어 경로를 제공합니다."),
-    ("hand-heart", "복지 · 수당", "주거 지원, 항공권, 경쟁력 있는 급여 패키지를 제공합니다."),
-    ("graduation-cap", "체계적인 교육", "입사 후 직무 · 언어 트레이닝 프로그램을 지원합니다."),
-    ("users", "다양한 동료", "전 세계에서 모인 200여 명의 한국팀 동료가 함께합니다."),
+    ("languages", "한국 채용팀", "채용부터 온보딩까지 모든 과정을 한국어로 안내합니다."),
+    ("globe", "글로벌 커리어", "외국계 기업에서의 해외근무 경력을 쌓을 수 있습니다."),
+    ("hand-heart", "복지 · 수당", "다양한 복리후생과 경쟁력 있는 급여 패키지를 제공합니다."),
+    ("graduation-cap", "체계적인 교육", "입사 후 직무 트레이닝 프로그램을 지원합니다."),
+    ("users", "다국적 기업문화", "전 세계에서 모인 200여 명의 한국팀 동료가 함께합니다."),
 ]
 benefits_html = "\n".join(f'''        <div class="card card-hover" data-reveal>
           <div class="card-body">
@@ -331,10 +334,10 @@ doc = f'''<!DOCTYPE html><html lang="ko"><head>
    Every 지원하기 button points at the iCIMS Korean-language search.
    ------------------------------------------------------------------ */
 var KLP_POSITIONS = [
-  {{ title: '한국어 고객 지원 (CS)',    location: '말레이시아 쿠알라룸푸르', type: '정규직' }},
-  {{ title: '한국어 테크 서포트',       location: '말레이시아 쿠알라룸푸르', type: '정규직' }},
-  {{ title: '한국어 콘텐츠 모더레이터', location: '태국 방콕',              type: '정규직' }},
-  {{ title: '한국어 세일즈 서포트',     location: '말레이시아 페낭',        type: '정규직' }}
+  {{ title: '한국어 고객 지원 (CS)',    location: '말레이시아 쿠알라룸푸르' }},
+  {{ title: '한국어 테크 서포트',       location: '말레이시아 쿠알라룸푸르' }},
+  {{ title: '한국어 콘텐츠 모더레이터', location: '태국 방콕' }},
+  {{ title: '한국어 세일즈 서포트',     location: '말레이시아 페낭' }}
 ];
 var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/search?ss=1&searchKeyword=korean';
 
@@ -349,7 +352,7 @@ var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/search?ss
         '<div class="t">' + p.title + '</div>' +
         '<div class="meta">' +
           '<span>' + pin + p.location + '</span>' +
-          '<span>' + clock + p.type + '</span>' +
+          (p.type ? '<span>' + clock + p.type + '</span>' : '') +
           '<span class="badge">한국어</span>' +
         '</div>' +
       '</div>' +

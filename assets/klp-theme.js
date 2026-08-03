@@ -10,6 +10,18 @@
   var reduceMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---- current year ---------------------------------------------------- */
+
+  // Every flight number, gate label and copyright line carries .js-year with
+  // a hardcoded year inside it. That literal is the no-JS fallback and stops
+  // the page flashing an empty slot; this just rolls it over on New Year.
+  function initYear() {
+    var year = String(new Date().getFullYear());
+    Array.prototype.forEach.call(document.querySelectorAll('.js-year'), function (el) {
+      if (el.textContent.trim() !== year) el.textContent = year;
+    });
+  }
+
   /* ---- mobile menu ----------------------------------------------------- */
 
   function initMobileMenu() {
@@ -136,6 +148,7 @@
   /* ---- boot ------------------------------------------------------------ */
 
   function init() {
+    initYear();
     initMobileMenu();
     initFaq();
     initBackToTop();
