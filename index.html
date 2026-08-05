@@ -783,13 +783,14 @@
 <script>
 /* ------------------------------------------------------------------
    Open positions — edit this list to change what the site advertises.
-   Every 지원하기 button points at the iCIMS Korean-language search.
+   Each entry's 지원하기 button points at its own iCIMS posting; entries
+   without a url fall back to KLP_APPLY_URL.
    ------------------------------------------------------------------ */
 var KLP_POSITIONS = [
-  { title: '한국어 고객 지원 (CS)',    location: '말레이시아 쿠알라룸푸르' },
-  { title: '한국어 테크 서포트',       location: '말레이시아 쿠알라룸푸르' },
-  { title: '한국어 콘텐츠 모더레이터', location: '태국 방콕' },
-  { title: '한국어 세일즈 서포트',     location: '말레이시아 페낭' }
+  { title: 'Operations Customer Expert',  location: '말레이시아 페낭',        url: 'https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=KLandingPage&iisn=' },
+  { title: 'Inbound Sales Representative', location: '말레이시아 페낭',        url: 'https://careerseng-teleperformance.icims.com/jobs/49594/inbound-sales-representative---korean---penang/job?mode=job&iis=KLandingPage&iisn=' },
+  { title: 'Ads Sales Specialist',        location: '말레이시아 쿠알라룸푸르', url: 'https://careerseng-teleperformance.icims.com/jobs/68068/ads-sales-specialist---korean---kl/job?mode=job&iis=KLandingPage&iisn=' },
+  { title: 'Operations Customer Expert',  location: '말레이시아 쿠알라룸푸르', url: 'https://careerseng-teleperformance.icims.com/jobs/49427/customer-success-specialist---korean---kl/job?mode=job&iis=Other&iisn=KRLandingPage' }
 ];
 var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=KLandingPage&iisn=';
 
@@ -808,7 +809,7 @@ var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/49422/cus
           '<span class="badge">한국어</span>' +
         '</div>' +
       '</div>' +
-      '<a class="btn btn-accent btn-sm" href="' + KLP_APPLY_URL + '" target="_blank" rel="noopener noreferrer">지원하기</a>' +
+      '<a class="btn btn-accent btn-sm" href="' + (p.url || KLP_APPLY_URL) + '" target="_blank" rel="noopener noreferrer">지원하기</a>' +
     '</div>';
   }).join('');
 })();
