@@ -67,7 +67,7 @@
 
 > 포지션은 수시로 변동됩니다. 최신 공고는 항상 [iCIMS 채용 포털](https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=geo&iisn=klp)에서 확인하세요.
 
-**현재 채용 중: 4개 포지션** (한국어/영어 이중언어 기준)
+**현재 채용 중: 9개 포지션** (한국어/영어 이중언어 기준)
 
 | 포지션 | 근무지 | 언어 | 업무 분야 | 지원 |
 |---|---|---|---|---|
@@ -75,6 +75,11 @@
 | Inbound Sales Representative (인바운드 세일즈) | 페낭 | 한국어/영어 | 인바운드 상담을 통한 제품·서비스 제안 및 판매 | [지원하기](https://careerseng-teleperformance.icims.com/jobs/49594/inbound-sales-representative---korean---penang/job?mode=job&iis=KLandingPage&iisn=) |
 | Ads Sales Specialist (광고 세일즈 전문가) | 쿠알라룸푸르 | 한국어/영어 | 콘텐츠 크리에이터 채널 성장 컨설팅·광고 세일즈 | [지원하기](https://careerseng-teleperformance.icims.com/jobs/68068/ads-sales-specialist---korean---kl/job?mode=job&iis=KLandingPage&iisn=) |
 | Operations Customer Expert (고객 지원 전문가) | 쿠알라룸푸르 | 한국어/영어 | 이커머스·온라인 주문 고객 지원 (전화·이메일) | [지원하기](https://careerseng-teleperformance.icims.com/jobs/49427/customer-success-specialist---korean---kl/job?mode=job&iis=Other&iisn=KRLandingPage) |
+| Content Moderator (콘텐츠 모더레이터) | 페낭 | 한국어/영어 | 온라인 콘텐츠 검토·분류 | [지원하기](https://careerseng-teleperformance.icims.com/jobs/49614/content-moderator---korean---penang/job?mode=job&iis=geo&iisn=klp) |
+| Customer Service Advisor (고객 서비스 상담사) | 방콕 | 한국어/영어 | 소셜미디어 플랫폼 사용자·광고 고객 지원 | [지원하기](https://careerseng-teleperformance.icims.com/jobs/51106/customer-service-advisor---korean---bangkok/job?mode=job&iis=geo&iisn=klp) |
+| Ad Sales Specialist (광고 세일즈 전문가) | 방콕 | 한국어/영어 | 콘텐츠 크리에이터 채널 성장 컨설팅·광고 세일즈 | [지원하기](https://careerseng-teleperformance.icims.com/jobs/50060/ad-sales-specialist---korean---bangkok/job?mode=job&iis=geo&iisn=klp) |
+| Content Moderator (콘텐츠 모더레이터) | 방콕 | 한국어/영어 | 콘텐츠·데이터 검토, 분류, 라벨링 | [지원하기](https://careerseng-teleperformance.icims.com/jobs/49720/content-moderator---korean---bangkok/job?mode=job&iis=geo&iisn=klp) |
+| Procurement Specialist (구매 지원 전문가) | 쿠알라룸푸르 | 한국어/영어 | 구매 결제·조달 운영 (송장 검토, 결제 처리) | [지원하기](https://careerseng-teleperformance.icims.com/jobs/53115/procurement-specialist---korean---kl/job?mode=job&iis=geo&iisn=klp) |
 
 ### 포지션별 핵심 요건 요약
 
@@ -89,6 +94,21 @@
 
 **Operations Customer Expert (쿠알라룸푸르)** - 페낭 포지션과 동일한 직무를 쿠알라룸푸르 오피스에서 수행합니다. 학사/Diploma, 영어 B2 이상, CS·고객지원 경력 6개월 이상 (관련 전공은 대졸 신입 지원 가능).
 [상세 보기 및 지원](https://careerseng-teleperformance.icims.com/jobs/49427/customer-success-specialist---korean---kl/job?mode=job&iis=Other&iisn=KRLandingPage)
+
+**Content Moderator (페낭)** - 커뮤니티 가이드라인에 따라 온라인 콘텐츠를 검토·분류·제거합니다. 민감한 콘텐츠를 다룰 수 있으며, 교대 근무·사무실 근무 포지션입니다. Trust & Safety 웰니스 프로그램이 제공됩니다.
+[상세 보기 및 지원](https://careerseng-teleperformance.icims.com/jobs/49614/content-moderator---korean---penang/job?mode=job&iis=geo&iisn=klp)
+
+**Customer Service Advisor (방콕)** - 소셜미디어 플랫폼의 기능 안내, 광고·프로모션 관련 문의 해결을 담당합니다. 학사(전공 무관), 한국어·영어 능통, 향후 24/7 교대 근무 가능성이 있습니다.
+[상세 보기 및 지원](https://careerseng-teleperformance.icims.com/jobs/51106/customer-service-advisor---korean---bangkok/job?mode=job&iis=geo&iisn=klp)
+
+**Ad Sales Specialist (방콕)** - 콘텐츠 크리에이터의 신뢰받는 컨설턴트로서 채널 성장과 플랫폼 활용을 돕는 세일즈 직무입니다. 세일즈·온라인 광고·소셜미디어 분야 2년 이상 경력, 원어민 수준의 한국어·영어.
+[상세 보기 및 지원](https://careerseng-teleperformance.icims.com/jobs/50060/ad-sales-specialist---korean---bangkok/job?mode=job&iis=geo&iisn=klp)
+
+**Content Moderator (방콕)** - 비디오·오디오·텍스트·이미지 등 콘텐츠와 데이터를 검토·분류·라벨링하며 머신러닝용 데이터셋 작업도 포함됩니다. 학사(전공 무관, 신입 지원 가능), 영어 B2, 24/7 교대·사무실 근무.
+[상세 보기 및 지원](https://careerseng-teleperformance.icims.com/jobs/49720/content-moderator---korean---bangkok/job?mode=job&iis=geo&iisn=klp)
+
+**Procurement Specialist (쿠알라룸푸르)** - 송장 검토·기록, 결제 처리, 정산 등 구매 결제·조달 운영을 담당합니다. 학사 이상, 구매·재무 결제 분야 2년 이상 경력, 영어 B1-B2. SAP 경험 우대.
+[상세 보기 및 지원](https://careerseng-teleperformance.icims.com/jobs/53115/procurement-specialist---korean---kl/job?mode=job&iis=geo&iisn=klp)
 
 전체 목록과 상세 업무 내용은 한국어 채용 사이트에서 확인할 수 있습니다:
 **채용 중인 포지션 보기:** https://tpmyandtpth.github.io/KLP/open-jobs.html
