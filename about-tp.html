@@ -148,7 +148,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 .award-item h3{font-size:1.1rem;font-weight:700;margin-bottom:.3rem;color:var(--tp-black)}
 .award-item p{margin:0;color:var(--tp-gray);font-size:.85rem}
 .gptw-section{padding:60px 20px;background:linear-gradient(135deg,var(--gold-pale) 0%,var(--tp-white) 100%);position:relative;overflow:hidden}
-.gptw-section::before{content:'한';position:absolute;top:50%;right:10%;transform:translateY(-50%);font-size:20rem;color:var(--gold-primary);opacity:.03;pointer-events:none}
+.gptw-section::before{content:'';position:absolute;top:50%;right:10%;width:clamp(220px,32vw,480px);height:clamp(220px,32vw,480px);background-image:url('photos/tp-logo.png');background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.04;filter:saturate(0);transform:translateY(-50%);pointer-events:none}
 .gptw-header{display:flex;align-items:center;justify-content:center;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
 .gptw-badge{width:160px;height:auto;filter:drop-shadow(0 4px 20px rgba(255,215,0,.3));animation:glow 3s ease-in-out infinite}
 @keyframes glow{0%,100%{filter:drop-shadow(0 4px 20px rgba(255,215,0,.3))}50%{filter:drop-shadow(0 4px 30px rgba(255,215,0,.5))}}
