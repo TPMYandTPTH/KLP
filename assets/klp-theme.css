@@ -776,3 +776,25 @@ footer {
   .route .progress { width: calc(100% - 50px); }
   .route .plane { left: calc(100% - 44px); }
 }
+
+/* --------------------------------------------------------------------------
+   Content lists
+
+   The per-page reset (*{padding:0}) strips the default list indent, which
+   leaves outside markers hanging past the container edge where they get
+   clipped. Restore an indent for lists that still draw markers; lists with
+   custom markers (.requirements-list, .city-features, .office-features,
+   .kakao-steps) set list-style:none and are left alone.
+   -------------------------------------------------------------------------- */
+main ul:not([class]),
+main ol:not([class]),
+main ul.muted,
+main ul.lead {
+  padding-left: 1.4em;
+}
+main ul:not([class]) li,
+main ol:not([class]) li,
+main ul.muted li,
+main ul.lead li {
+  margin-bottom: .3rem;
+}
