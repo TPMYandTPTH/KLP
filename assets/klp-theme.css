@@ -185,6 +185,17 @@ img { max-width: 100%; }
 .site-nav a[aria-current="page"]::after { width: 100%; }
 .site-nav .btn::after { display: none; }
 
+/* .site-nav a is more specific than .btn/.btn-sm, so the header CTA was
+   inheriting the nav link's padding (3px 0 — no horizontal padding at all),
+   weight and colour. Give the button its own box back. */
+.site-nav .btn {
+  padding: 9px 20px;
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.site-nav .btn-accent, .site-nav .btn-accent:hover { color: #fff; }
+
 .mobile-toggle {
   display: none; width: 38px; height: 38px;
   background: rgba(255, 255, 255, .1);
