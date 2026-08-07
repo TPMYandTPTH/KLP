@@ -163,7 +163,7 @@ img { max-width: 100%; }
 }
 
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand img { width: 34px; height: 34px; object-fit: contain; filter: brightness(0) invert(1); }
+.brand img { width: 34px; height: 34px; object-fit: contain; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-name { font-size: .95rem; font-weight: 700; color: #fff; }
 .brand-tagline { font-size: .66rem; color: var(--on-slate-mute); letter-spacing: .04em; }
@@ -388,16 +388,12 @@ a.card:hover, .card-hover:hover {
   position: relative; overflow: hidden;
 }
 .hero::before {
-  content: ''; position: absolute;
-  right: 10px; top: 50%; transform: translateY(-50%);
-  /* the hero's right column holds the boarding pass, so size the mark to the
-     gutter beside it: (viewport - hero max-width) / 2, capped either end */
-  width: clamp(90px, calc((100vw - 1120px) / 2 + 24px), 330px);
-  height: clamp(90px, calc((100vw - 1120px) / 2 + 24px), 330px);
+  content: ''; position: absolute; top: 50%; right: 6%;
+  width: clamp(220px, 32vw, 480px); height: clamp(220px, 32vw, 480px);
   background-image: url('../photos/tp-logo.png');
   background-size: contain; background-repeat: no-repeat; background-position: center;
-  opacity: .13; filter: saturate(0);
-  pointer-events: none;
+  opacity: .04; filter: saturate(0);
+  transform: translateY(-50%); pointer-events: none;
 }
 .hero-inner {
   max-width: var(--max); margin: 0 auto;
