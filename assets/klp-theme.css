@@ -389,8 +389,11 @@ a.card:hover, .card-hover:hover {
 }
 .hero::before {
   content: ''; position: absolute;
-  right: -160px; top: -120px; width: 480px; height: 480px;
-  border-radius: 50%; background: rgba(75, 76, 106, .05);
+  right: 6px; top: 50%; transform: translateY(-50%);
+  width: clamp(76px, 7vw, 140px); height: clamp(76px, 7vw, 140px);
+  background-image: url('../photos/tp-logo.png');
+  background-size: contain; background-repeat: no-repeat; background-position: center;
+  opacity: .13; filter: saturate(0);
   pointer-events: none;
 }
 .hero-inner {

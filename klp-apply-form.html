@@ -67,9 +67,12 @@
   position: relative; overflow: hidden;
 }
 .apply-page::before {
-  content: ''; position: absolute; right: -180px; top: -140px;
-  width: 520px; height: 520px; border-radius: 50%;
-  background: rgba(75, 76, 106, .05); pointer-events: none;
+  content: ''; position: absolute; right: 5%; top: 90px;
+  width: clamp(140px, 15vw, 230px); height: clamp(140px, 15vw, 230px);
+  background-image: url('photos/tp-logo.png');
+  background-size: contain; background-repeat: no-repeat; background-position: center;
+  opacity: .07; filter: saturate(0);
+  pointer-events: none;
 }
 .apply-card {
   max-width: 620px; margin: 0 auto; position: relative; z-index: 1;
