@@ -135,6 +135,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 .section-title{font-size:1.6rem;font-weight:900;color:var(--tp-black);margin-bottom:.6rem;text-align:center}
 .section-subtitle{color:var(--tp-gray-dark);text-align:center;margin-bottom:2rem}
 .video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.video-pending{border:1px dashed var(--tp-silver);border-radius:var(--radius);background:var(--tp-off);padding:2rem 1.5rem;text-align:center}
+.video-pending-title{font-size:1rem;font-weight:700;color:var(--tp-black);margin-bottom:.4rem}
+.video-pending-desc{font-size:.9rem;color:var(--tp-gray-dark);margin-bottom:.8rem}
 .coming-soon-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--tp-black);background:var(--gold-primary);padding:.25rem .65rem;border-radius:999px;margin-left:.6rem;vertical-align:middle}
 .video-card{background:var(--tp-white);border:1px solid var(--tp-light);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:all .3s}
 .video-card:hover{border-color:var(--gold-primary);box-shadow:var(--shadow-md)}
@@ -337,7 +340,19 @@ img.card-img,.card>img,.city-card>img,.office-image{border-radius:0}
   <section class="video-section" id="korean-interviews">
     <div class="container">
       <h2 class="section-title">한국인 팀원 인터뷰<span class="coming-soon-badge">Coming Soon</span></h2>
-      <p class="section-subtitle">한국팀 동료들의 생생한 인터뷰를 준비 중입니다. 업데이트 전까지 TP의 최신 기업소개 영상을 먼저 만나보세요.</p>
+      <p class="section-subtitle">한국팀 동료들의 인터뷰 영상을 준비 중입니다. 공개되는 대로 이곳에 업데이트됩니다.</p>
+      <div class="video-pending">
+        <p class="video-pending-title">한국어 인터뷰 영상 준비 중</p>
+        <p class="video-pending-desc">먼저 궁금한 점이 있으시면 카카오톡으로 편하게 문의해 주세요.</p>
+        <a class="video-link" href="klp-apply-form.html">카카오톡 상담 신청 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section" id="tp-brand-videos">
+    <div class="container">
+      <h2 class="section-title">TP 기업 소개 영상</h2>
+      <p class="section-subtitle">TP의 브랜드 스토리와 고객 경험 이야기</p>
       <div class="video-grid">
         <article class="video-card">
           <div class="video-embed">
