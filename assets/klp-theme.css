@@ -815,3 +815,30 @@ main ul.muted li,
 main ul.lead li {
   margin-bottom: .3rem;
 }
+
+
+/* --------------------------------------------------------------------------
+   Footer brand block
+
+   The two footer-desc lines must each stay on one line. Widening the brand
+   column only pushes the wrap point around and still depends on the rendered
+   font, so instead stop the paragraph wrapping at all: an fr track's automatic
+   minimum is min-content, so the column grows to fit the sentence whatever the
+   font metrics turn out to be. Below the stacking breakpoint the block is
+   full-width and wrapping is fine, so the rule is scoped above it.
+
+   These use footer .x (0,2,0) to outrank the per-page inline .footer-content
+   rules, which means the stacked breakpoints have to be restated here.
+   -------------------------------------------------------------------------- */
+@media (min-width: 769px) {
+  footer .footer-desc { white-space: nowrap; }
+}
+@media (max-width: 1100px) {
+  footer .footer-content { grid-template-columns: repeat(3, 1fr); }
+  footer .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 768px) {
+  footer .footer-content { grid-template-columns: 1fr; text-align: center; }
+  footer .footer-brand { grid-column: auto; }
+  footer .footer-desc { white-space: normal; }
+}
