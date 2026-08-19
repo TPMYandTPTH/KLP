@@ -837,6 +837,17 @@ var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/49422/cus
   var MSFORM_URL = 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=r8uPY0y64UOtrlR1yXD-EFRq7qejRMROsF50KatvwRJUME1SSDkwTVFOWVU5VzZQVEFUT0xaWExITi4u&r04ed26baaf8042edb4802225061b77cb=%22%EC%A7%80%EC%9B%90%ED%95%98%EA%B8%B0%22';
   var MSFORM_FIELDS = { name:'r95ddb4f35f2642bdbeaf016e587a6c30', email:'r50bf13b53c534712ab82d35c42492e31', phone:'r56ca613c3bb54239a2652a23618469dc', koreanLevel:'', location:'rc50b00e090b5453bac7b80a5938af408', role:'' };
 
+  /* Choice questions prefill only when the value is the option's exact text,
+     wrapped in quotes — the same shape as the "지원하기" preset above. Our radios
+     carry English values but show Korean labels, so translate before handing
+     over. A field listed here is treated as a choice; anything else goes across
+     as plain text. Keep the right-hand side identical to the option text in
+     Microsoft Forms, character for character. */
+  var MSFORM_CHOICE = {
+    koreanLevel: { Native:'원어민', Fluent:'유창함', Business:'비즈니스', Conversational:'회화 가능' },
+    location:    { Malaysia:'말레이시아', Thailand:'태국', Either:'상관없음' }
+  };
+
   var APPS_SCRIPT_URL='https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
   var KAKAO_ID='tpmy5114526';
   var DEMO_MODE=true;
@@ -854,6 +865,10 @@ var KLP_APPLY_URL = 'https://careerseng-teleperformance.icims.com/jobs/49422/cus
     if(!MSFORM_URL) return '';
     var vals={name:d.name,email:d.email,phone:(d.phoneCode?d.phoneCode+' ':'')+d.phone,
               koreanLevel:d.koreanLevel,location:d.location,role:d.role};
+    Object.keys(MSFORM_CHOICE).forEach(function(k){
+      var opt=MSFORM_CHOICE[k][vals[k]];
+      vals[k]=opt?'"'+opt+'"':'';
+    });
     var parts=[];
     Object.keys(MSFORM_FIELDS).forEach(function(k){
       var param=MSFORM_FIELDS[k];
